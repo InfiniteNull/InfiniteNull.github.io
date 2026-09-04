@@ -1,129 +1,312 @@
 /**
  * app.js - Master Orchestrator for Dev & Data Portfolio Suite
- * Mengelola kartu 9 tools, pencarian, filter kategori, navigasi modal, tema dark/light, dan toast.
+ * Mengelola kartu 22 tools, pencarian, filter kategori, navigasi modal workspace, tema dark/light, dan toast.
  */
 
-// Master Tools Registry Definition
+// Master Tools Registry Definition (22 All-in-One IT & Engineering Tools)
 const TOOLS_REGISTRY = [
+  // ==========================================
+  // KATEGORI 1: JARINGAN & SERVER (network)
+  // ==========================================
   {
-    id: "ai-data-analyzer",
-    title: "AI Sentiment & Data Analyzer",
-    category: "python",
-    techBadge: "Python • Pandas • VADER NLP",
-    techColor: "bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300 border-blue-200 dark:border-blue-800",
-    icon: "brain-circuit",
-    description: "Analisis otomatis data ulasan & survei dari file CSV/Excel menggunakan algoritma VADER Sentiment NLP dan visualisasi grafik.",
-    renderFn: "renderAiDataAnalyzer",
+    id: "subnet-calculator",
+    title: "IP Subnetting & VLSM Calculator",
+    category: "network",
+    techBadge: "IPv4 • CIDR • VLSM • Binary",
+    techColor: "bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300 border-sky-200 dark:border-sky-800",
+    icon: "network",
+    description: "Kalkulator subnet IPv4 otomatis: hitung Network ID, Broadcast, Subnet Mask, Host Range, dan representasi biner.",
+    renderFn: "renderSubnetCalculator",
     docs: `
       <div class="space-y-4">
-        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Arsitektur & Logika Pemrosesan AI</h4>
-        <p>Modul ini dirancang untuk memproses dataset umpan balik (feedback) publik dan survei kepuasan dengan pipeline berikut:</p>
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Arsitektur Perhitungan Subnetting IPv4</h4>
+        <p>Modul ini menerapkan operasi manipulasi bit biner (bitwise operations) standar RFC 791 / RFC 4632:</p>
         <ul class="list-disc pl-5 space-y-1 text-xs">
-          <li><strong>Data Ingestion:</strong> Membaca dataset CSV ke dalam memory buffer menggunakan library Pandas.</li>
-          <li><strong>NLP Tokenization & Polarity:</strong> Menerapkan model VADER (Valence Aware Dictionary and sEntiment Reasoner) untuk menghitung <em>compound score</em> rentang -1.0 (sangat negatif) hingga +1.0 (sangat positif).</li>
-          <li><strong>Categorization:</strong> Mengelompokkan hasil ke dalam kelas Positif (&ge; 0.05), Netral, dan Negatif (&le; -0.05).</li>
-          <li><strong>Aggregation:</strong> Menghasilkan rekap statistik persentase dan visualisasi grafik diagram lingkaran (Chart.js).</li>
+          <li><strong>IP to Integer:</strong> Mengonversi notasi desimal bertitik (dotted decimal) menjadi 32-bit unsigned integer.</li>
+          <li><strong>Netmask & Wildcard:</strong> Menggeser bit <code>(~0 << (32 - CIDR))</code> untuk membentuk mask dan inverse bit untuk wildcard.</li>
+          <li><strong>Network & Broadcast Range:</strong> Melakukan operasi <code>IP & Mask</code> (Network ID) dan <code>Network | Wildcard</code> (Broadcast).</li>
+          <li><strong>Usable Hosts:</strong> Menghitung kapasitas $2^{(32 - CIDR)} - 2$ untuk alokasi host per departemen.</li>
         </ul>
       </div>
     `
   },
   {
-    id: "news-scraper",
-    title: "Tech News & Feeds Scraper",
-    category: "python",
-    techBadge: "Python • BeautifulSoup4 • Requests",
-    techColor: "bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300 border-blue-200 dark:border-blue-800",
-    icon: "newspaper",
-    description: "Otomasi scraping data berita industri teknologi dan publikasi terkini dari platform berita web secara real-time.",
-    renderFn: "renderNewsScraper",
+    id: "firewall-generator",
+    title: "Port Directory & Firewall Rules",
+    category: "network",
+    techBadge: "Linux UFW • iptables • Mikrotik",
+    techColor: "bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300 border-sky-200 dark:border-sky-800",
+    icon: "shield",
+    description: "Direktori pencarian port standar industri dan generator instan syntax command firewall Linux UFW, iptables, dan Mikrotik.",
+    renderFn: "renderFirewallGenerator",
     docs: `
       <div class="space-y-4">
-        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Arsitektur Web Scraping & Otomasi</h4>
-        <p>Modul scraping ini memanfaatkan pipeline penarikan data terstruktur:</p>
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Manajemen Port & Hardening Firewall</h4>
+        <p>Menyederhanakan pembuatan aturan firewall jaringan pada layer 4 transport (TCP/UDP):</p>
         <ul class="list-disc pl-5 space-y-1 text-xs">
-          <li><strong>HTTP Client:</strong> Mengirimkan GET request dengan kustom User-Agent header agar tidak dianggap bot berbahaya.</li>
-          <li><strong>DOM Parsing (BeautifulSoup):</strong> Menelusuri pohon elemen HTML (tag baris artikel, link, skor popularitas, dan penulis).</li>
-          <li><strong>Data Cleaning:</strong> Mengonversi format teks kotor menjadi struktur JSON bersih yang siap disajikan ke API frontend.</li>
+          <li><strong>Universal Port Database:</strong> Basis data port esensial (SSH, HTTP/HTTPS, Database, RTSP, RTMP).</li>
+          <li><strong>Multi-Platform CLI Generator:</strong> Menghasilkan syntax presisi untuk Ubuntu UFW, CentOS/RedHat iptables, dan Mikrotik RouterOS.</li>
         </ul>
       </div>
     `
   },
+  {
+    id: "bandwidth-estimator",
+    title: "Bandwidth & Data Transfer Estimator",
+    category: "network",
+    techBadge: "Network Throughput • Migration",
+    techColor: "bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300 border-sky-200 dark:border-sky-800",
+    icon: "gauge",
+    description: "Kalkulator estimasi durasi transfer data, migrasi server, backup berkala, dan throughput jaringan riil.",
+    renderFn: "renderBandwidthEstimator",
+    docs: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Estimasi Throughput & TCP/IP Overhead</h4>
+        <p>Menghitung waktu transfer data riil dengan memperhitungkan faktor latensi dan overhead protokol (efisiensi 80% - 90%).</p>
+      </div>
+    `
+  },
+  {
+    id: "streaming-calculator",
+    title: "Streaming Bitrate & Storage",
+    category: "network",
+    techBadge: "RTMP • HLS • RTSP • Nginx Media",
+    techColor: "bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300 border-sky-200 dark:border-sky-800",
+    icon: "video",
+    description: "Kalkulasi kebutuhan bandwidth egress live streaming (RTMP/HLS/RTSP) dan estimasi kapasitas disk recording Nginx.",
+    renderFn: "renderStreamingCalculator",
+    docs: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Kalkulasi Infrastruktur Media Server</h4>
+        <p>Dirancang berdasarkan pengalaman merancang Nginx Media Server pada Linux Virtual Machine:</p>
+        <ul class="list-disc pl-5 space-y-1 text-xs">
+          <li><strong>Bandwidth Egress:</strong> Total bandwidth keluar = (Bitrate Video + Audio) $\times$ Jumlah Concurrent Viewers.</li>
+          <li><strong>Storage DVR/VOD:</strong> Estimasi penyimpanan per jam dan akumulasi bulanan untuk arsip rekaman video streaming.</li>
+        </ul>
+      </div>
+    `
+  },
+  {
+    id: "cron-builder",
+    title: "Cron Task Scheduler Builder",
+    category: "network",
+    techBadge: "Linux Crontab • Shell Script",
+    techColor: "bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300 border-sky-200 dark:border-sky-800",
+    icon: "clock",
+    description: "Generator visual ekspresi cron Linux untuk otomasi backup database, pemeliharaan server, dan penjadwalan script.",
+    renderFn: "renderCronBuilder",
+    docs: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Otomasi Server dengan Crontab</h4>
+        <p>Memvisualisasikan ekspresi 5-field standar cron Linux (Menit, Jam, Hari/Bulan, Bulan, Hari/Minggu) serta mensimulasikan timeline 5 jadwal eksekusi berikutnya.</p>
+      </div>
+    `
+  },
+
+  // ==========================================
+  // KATEGORI 2: KEAMANAN SISTEM (security)
+  // ==========================================
   {
     id: "auth-sandbox",
     title: "Auth & Security Service",
-    category: "backend",
-    techBadge: "Node.js • Express • Bcrypt • JWT",
+    category: "security",
+    techBadge: "Node.js • Bcrypt • JWT • SQLite",
     techColor: "bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800",
     icon: "shield-check",
-    description: "Sistem autentikasi aman dengan Bcrypt Password Hashing, JSON Web Token (JWT) bearer verification, dan database SQLite.",
+    description: "Sistem autentikasi aman dengan Bcrypt Password Hashing (Salt 10), JSON Web Token (JWT) bearer verification, dan database SQLite.",
     renderFn: "renderAuthSandbox",
     docs: `
       <div class="space-y-4">
         <h4 class="text-sm font-bold text-slate-900 dark:text-white">Keamanan & Alur Autentikasi Modern</h4>
         <ul class="list-disc pl-5 space-y-1 text-xs">
-          <li><strong>Password Hashing:</strong> Password pengguna tidak pernah disimpan dalam plain text, melainkan dienkripsi dengan <em>Bcrypt salt rounds = 10</em>.</li>
-          <li><strong>JWT Stateless Session:</strong> Setelah login sukses, server menerbitkan token JWT bertanda tangan kriptografis untuk otorisasi endpoint tertutup.</li>
-          <li><strong>Relational Storage:</strong> Data pengguna disimpan dalam tabel SQLite dengan constraint <code>UNIQUE(email)</code>.</li>
+          <li><strong>Password Hashing:</strong> Password dienkripsi dengan <em>Bcrypt salt rounds = 10</em> sebelum disimpan.</li>
+          <li><strong>JWT Stateless Session:</strong> Token terenkripsi untuk otorisasi endpoint REST API.</li>
+          <li><strong>Relational Storage:</strong> Data pengguna disimpan dengan constraint unik pada SQLite.</li>
         </ul>
+      </div>
+    `
+  },
+  {
+    id: "security-headers",
+    title: "Security Headers Analyzer",
+    category: "security",
+    techBadge: "OWASP • HSTS • CSP • CORS",
+    techColor: "bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800",
+    icon: "shield-alert",
+    description: "Audit implementasi HTTP security headers (CSP, HSTS, X-Frame-Options, MIME Sniffing) dan penilaian skor grade keamanan.",
+    renderFn: "renderSecurityHeaders",
+    docs: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Web Hardening & Vulnerability Mitigation</h4>
+        <p>Menganalisis header respon web untuk mencegah serangan umum seperti Clickjacking, Cross-Site Scripting (XSS), dan SSL Stripping.</p>
+      </div>
+    `
+  },
+  {
+    id: "crypto-hash",
+    title: "Crypto Hash & Integrity Verifier",
+    category: "security",
+    techBadge: "SHA-256 • SHA-512 • MD5 • HMAC",
+    techColor: "bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800",
+    icon: "hash",
+    description: "Generator hash kriptografis standar industri (SHA-256, SHA-512, MD5, HMAC) dan verifikasi pencocokan integritas data.",
+    renderFn: "renderCryptoHash",
+    docs: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Kriptografi & Verifikasi Integritas</h4>
+        <p>Memanfaatkan Web Crypto API native untuk menghitung one-way cryptographic digest guna memastikan file atau password tidak mengalami tampering.</p>
+      </div>
+    `
+  },
+  {
+    id: "password-entropy",
+    title: "Password Entropy & Brute-Force",
+    category: "security",
+    techBadge: "Entropy Math • Security Audit",
+    techColor: "bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800",
+    icon: "key-round",
+    description: "Analisis kekuatan kata sandi berdasarkan entropy bit dan estimasi waktu peretasan brute-force CPU vs GPU Cluster.",
+    renderFn: "renderPasswordEntropy",
+    docs: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Pengukuran Entropi Informasi (Shannon Entropy)</h4>
+        <p>Menghitung kekuatan kombinasi karakter $E = L \times \log_2(N)$ serta mensimulasikan waktu cracking menggunakan rig GPU modern.</p>
+      </div>
+    `
+  },
+  {
+    id: "payload-encoder",
+    title: "Security Payload Encoder / Decoder",
+    category: "security",
+    techBadge: "Base64 • URL • Hex • Unicode",
+    techColor: "bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800",
+    icon: "binary",
+    description: "Konversi instan multi-format string untuk Base64, Hexadecimal, URL-Encoding, HTML Entities, dan sanitasi payload.",
+    renderFn: "renderPayloadEncoder",
+    docs: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Alat Bantu Analisis Payload Keamanan</h4>
+        <p>Mempermudah analisis data biner, decode authorization token Basic/Bearer, dan sanitasi string input dari karakter berbahaya.</p>
+      </div>
+    `
+  },
+  {
+    id: "jwt-debugger",
+    title: "JWT Inspector & Claims Debugger",
+    category: "security",
+    techBadge: "JWT • JSON Claims • Signature",
+    techColor: "bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800",
+    icon: "key",
+    description: "Dekonstruksi struktur token JWT (Header, Payload Claims, Expiration Date) dan verifikasi HMACSHA256 signature.",
+    renderFn: "renderJwtDebugger",
+    docs: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Dekonstruksi Token JWT</h4>
+        <p>Membedah 3 bagian token JWT terpisah titik (Header.Payload.Signature) untuk memeriksa hak akses role dan timestamp kedaluwarsa.</p>
+      </div>
+    `
+  },
+
+  // ==========================================
+  // KATEGORI 3: DATABASE & BACKEND (database)
+  // ==========================================
+  {
+    id: "ai-data-analyzer",
+    title: "AI Sentiment & Data Analyzer",
+    category: "database",
+    techBadge: "Python • Pandas • VADER NLP",
+    techColor: "bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300 border-purple-200 dark:border-purple-800",
+    icon: "brain-circuit",
+    description: "Analisis otomatis dataset survei & ulasan dari file CSV menggunakan algoritma VADER Sentiment NLP dan visualisasi Chart.js.",
+    renderFn: "renderAiDataAnalyzer",
+    docs: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Arsitektur Pemrosesan Data & NLP</h4>
+        <p>Membaca dataset tabular CSV, mengekstraksi kolom teks, dan menghitung compound polarity score sentiment secara otomatis.</p>
       </div>
     `
   },
   {
     id: "inventory-sandbox",
     title: "Inventory & Warehouse CRUD",
-    category: "backend",
-    techBadge: "Node.js • SQLite • RESTful API",
-    techColor: "bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800",
+    category: "database",
+    techBadge: "Node.js • SQLite • REST API",
+    techColor: "bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300 border-purple-200 dark:border-purple-800",
     icon: "boxes",
     description: "Pengelolaan aset dan inventaris barang gudang berbasis database SQL dengan fitur alert stok menipis dan filter kategori.",
     renderFn: "renderInventorySandbox",
     docs: `
       <div class="space-y-4">
-        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Pola Arsitektur RESTful CRUD & Database</h4>
-        <ul class="list-disc pl-5 space-y-1 text-xs">
-          <li><strong>Standard Endpoints:</strong> Mengimplementasikan kaidah HTTP Method baku: <code>GET</code> (baca), <code>POST</code> (tambah), <code>PUT/PATCH</code> (edit stok), <code>DELETE</code> (hapus).</li>
-          <li><strong>Controller & Service Pattern:</strong> Memisahkan logika rute URL dengan logika kueri database SQL agar kode mudah dirawat.</li>
-          <li><strong>Business Logic:</strong> Menghitung total valuasi aset secara dinamis dan memberikan peringatan stok &le; 3.</li>
-        </ul>
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Arsitektur RESTful CRUD & Database SQL</h4>
+        <p>Mengimplementasikan operasi Create, Read, Update, Delete dengan query SQL parameterized untuk mencegah SQL Injection.</p>
       </div>
     `
   },
   {
     id: "library-sandbox",
     title: "Library Management System",
-    category: "backend",
+    category: "database",
     techBadge: "Node.js • SQLite • SQL Transactions",
-    techColor: "bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800",
+    techColor: "bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300 border-purple-200 dark:border-purple-800",
     icon: "book-marked",
-    description: "Sistem katalog perpustakaan dan pencatatan transaksi peminjaman buku dengan integritas relasi antar tabel database SQL.",
+    description: "Sistem sirkulasi peminjaman buku perpustakaan dengan integritas relasional antar tabel dan validasi stok eksemplar.",
     renderFn: "renderLibrarySandbox",
     docs: `
       <div class="space-y-4">
-        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Integritas Transaksi & Relasi Data</h4>
-        <ul class="list-disc pl-5 space-y-1 text-xs">
-          <li><strong>Atomicity Transaction:</strong> Memastikan saat buku dipinjam, pengurangan stok pada tabel <code>books</code> dan pencatatan log pada tabel <code>borrowings</code> terjadi secara bersamaan tanpa anomali.</li>
-          <li><strong>Stok Validation:</strong> Mencegah peminjaman jika stok eksemplar buku bernilai 0.</li>
-        </ul>
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Integritas Transaksi Database Relasional</h4>
+        <p>Memanfaatkan konsep ACID transaction pada database SQLite untuk memastikan ketersediaan buku berkurang secara konsisten saat dipinjam.</p>
       </div>
     `
   },
   {
-    id: "image-optimizer",
-    title: "Image Optimizer & Converter",
-    category: "utility",
-    techBadge: "JavaScript • HTML5 Canvas • Sharp Engine",
-    techColor: "bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 border-amber-200 dark:border-amber-800",
-    icon: "image",
-    description: "Kompresi ukuran file foto dan konversi format ke WebP/JPEG/PNG secara instan tanpa mengorbankan kualitas visual.",
-    renderFn: "renderImageOptimizer",
+    id: "json-sql-converter",
+    title: "JSON to SQL / CSV Converter",
+    category: "database",
+    techBadge: "SQL Schema • Batch INSERT • CSV",
+    techColor: "bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300 border-purple-200 dark:border-purple-800",
+    icon: "database",
+    description: "Mengonversi data JSON array menjadi perintah SQL INSERT INTO, skema CREATE TABLE, dan format CSV terstruktur.",
+    renderFn: "renderJsonSqlConverter",
     docs: `
       <div class="space-y-4">
-        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Teknologi Kompresi Citra</h4>
-        <p>Mengurangi beban bandwidth dan mempercepat loading web:</p>
-        <ul class="list-disc pl-5 space-y-1 text-xs">
-          <li><strong>Modern Format (WebP):</strong> Menggunakan algoritma kompresi prediktif yang 30-70% lebih kecil dibanding JPEG biasa.</li>
-          <li><strong>Canvas Resizing:</strong> Mengubah resolusi piksel secara proporsional sesuai rasio aspek gambar asli.</li>
-        </ul>
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Transformasi Data JSON ke Relasional</h4>
+        <p>Memetakan tipe data dinamis JSON (String, Number, Boolean) ke tipe data kolom SQL (TEXT, INTEGER, REAL) secara otomatis.</p>
+      </div>
+    `
+  },
+  {
+    id: "log-analyzer",
+    title: "Nginx Access Log Analyzer",
+    category: "database",
+    techBadge: "Log Parsing • Status Codes • Top IPs",
+    techColor: "bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300 border-purple-200 dark:border-purple-800",
+    icon: "file-text",
+    description: "Parsing dan agregasi statistik raw access logs server: breakdown status code 200/404/500, top visitor IP, dan deteksi request mencurigakan.",
+    renderFn: "renderLogAnalyzer",
+    docs: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Log Processing & Anomaly Detection</h4>
+        <p>Menggunakan pola Regular Expression standar Combined Log Format untuk mengagregasi ribuan baris log server Nginx secara efisien.</p>
+      </div>
+    `
+  },
+
+  // ==========================================
+  // KATEGORI 4: UTILITAS & HARDWARE (utility)
+  // ==========================================
+  {
+    id: "news-scraper",
+    title: "Tech News & Feeds Scraper",
+    category: "utility",
+    techBadge: "Python • BeautifulSoup4 • Feed",
+    techColor: "bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 border-amber-200 dark:border-amber-800",
+    icon: "newspaper",
+    description: "Otomasi scraping data berita industri teknologi dan publikasi terkini dari platform berita web secara real-time.",
+    renderFn: "renderNewsScraper",
+    docs: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Otomasi Web Scraping</h4>
+        <p>Mengirimkan HTTP request dengan custom User-Agent dan mem-parsing elemen HTML untuk menyajikan feed berita bersih.</p>
       </div>
     `
   },
@@ -131,15 +314,31 @@ const TOOLS_REGISTRY = [
     id: "api-checker",
     title: "API Health & Latency Checker",
     category: "utility",
-    techBadge: "JavaScript ES6+ • Asynchronous Fetch",
+    techBadge: "HTTP Ping • Latency ms • JSON Viewer",
     techColor: "bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 border-amber-200 dark:border-amber-800",
-    icon: "activity",
-    description: "Alat pengujian kesehatan endpoint API secara real-time dengan metrik latency (ms), HTTP status code, dan viewer JSON response.",
+    icon: "radio",
+    description: "Pengujian responsivitas endpoint REST API (GET, POST, PUT, DELETE), waktu latensi (ms), dan viewer response JSON.",
     renderFn: "renderApiChecker",
     docs: `
       <div class="space-y-4">
-        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Pengujian Konektivitas & Latensi</h4>
-        <p>Membantu developer memantau responsivitas microservice dan third-party API menggunakan <code>performance.now()</code> dan <code>fetch()</code> asynchronous.</p>
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Pengujian REST API Real-Time</h4>
+        <p>Memanfaatkan Performance Navigation Timing API browser untuk mengukur Round Trip Time (RTT) latensi koneksi API.</p>
+      </div>
+    `
+  },
+  {
+    id: "image-optimizer",
+    title: "Image Optimizer & Converter",
+    category: "utility",
+    techBadge: "HTML5 Canvas • WebP • Compression",
+    techColor: "bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 border-amber-200 dark:border-amber-800",
+    icon: "image",
+    description: "Kompresi ukuran foto hingga 70%, resize lebar gambar proporsional, dan konversi ke WebP / PNG / JPG di sisi client.",
+    renderFn: "renderImageOptimizer",
+    docs: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Pemrosesan Gambar di Sisi Client</h4>
+        <p>Menggunakan HTML5 Canvas API untuk melakukan re-sampling piksel dan kompresi format WebP modern tanpa membebani server.</p>
       </div>
     `
   },
@@ -147,15 +346,15 @@ const TOOLS_REGISTRY = [
     id: "currency-converter",
     title: "Real-Time Currency Calculator",
     category: "utility",
-    techBadge: "JavaScript • Open Exchange API",
+    techBadge: "Exchange Rates • Offline Cache",
     techColor: "bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 border-amber-200 dark:border-amber-800",
-    icon: "dollar-sign",
-    description: "Kalkulator konversi nilai tukar mata uang global (IDR, USD, EUR, SGD, JPY, dll) dengan integrasi live feed kurs dunia.",
+    icon: "coins",
+    description: "Konversi kurs mata uang dunia (USD, IDR, EUR, SGD, JPY, dll) dengan integrasi feed Open Exchange dan cache lokal.",
     renderFn: "renderCurrencyConverter",
     docs: `
       <div class="space-y-4">
-        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Kalkulasi Kurs & Offline Resilience</h4>
-        <p>Mengambil data kurs valuta asing terkini melalui open API dengan sistem fallback cache offline untuk menjaga aplikasi tetap berfungsi saat jaringan terputus.</p>
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Integrasi Feed Nilai Tukar</h4>
+        <p>Mengambil data kurs valuta asing secara asinkron dengan strategi cache LocalStorage untuk performa instan.</p>
       </div>
     `
   },
@@ -163,358 +362,447 @@ const TOOLS_REGISTRY = [
     id: "typing-test",
     title: "Typing Speed & Accuracy Test",
     category: "utility",
-    techBadge: "JavaScript • DOM Event Engine",
+    techBadge: "WPM • Accuracy % • Real-time Stats",
     techColor: "bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 border-amber-200 dark:border-amber-800",
     icon: "keyboard",
-    description: "Alat uji kecepatan dan ketepatan ketik interaktif dengan penghitungan metrik standar WPM (Words Per Minute) dan akurasi %.",
+    description: "Uji kecepatan ketik dengan metrik standar WPM (Words Per Minute), persentase akurasi, dan timer 60 detik.",
     renderFn: "renderTypingTest",
     docs: `
       <div class="space-y-4">
-        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Logika Penghitungan WPM & Akurasi</h4>
-        <p>Menggunakan standar internasional: <code>WPM = ((Total Karakter Benar - Error) / 5) / Waktu (Menit)</code>.</p>
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Engine Pengukuran Kecepatan Ketik</h4>
+        <p>Menghitung statistik pengetikan secara real-time berdasarkan rumus standar industri: $\\text{WPM} = (\\text{Karakter}/5) / \\text{Menit}$.</p>
+      </div>
+    `
+  },
+  {
+    id: "raid-calculator",
+    title: "RAID Storage & Capacity Calculator",
+    category: "utility",
+    techBadge: "RAID 0/1/5/6/10 • Storage Server",
+    techColor: "bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 border-amber-200 dark:border-amber-800",
+    icon: "hard-drive",
+    description: "Kalkulasi kapasitas usable, alokasi parity redundancy, dan toleransi kerusakan disk untuk RAID 0, 1, 5, 6, dan 10.",
+    renderFn: "renderRaidCalculator",
+    docs: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Kalkulasi Redundansi RAID Array</h4>
+        <p>Menghitung efisiensi penyimpanan fisik dan fault tolerance disk untuk standarisasi server storage institusi dan perbankan.</p>
+      </div>
+    `
+  },
+  {
+    id: "psu-calculator",
+    title: "PC Power Supply (PSU) Calculator",
+    category: "utility",
+    techBadge: "Hardware Wattage • PC Deployment",
+    techColor: "bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 border-amber-200 dark:border-amber-800",
+    icon: "cpu",
+    description: "Kalkulator kebutuhan daya listrik hardware PC (CPU, GPU, RAM, Storage, Fans) untuk standarisasi PC Deployment kantor.",
+    renderFn: "renderPsuCalculator",
+    docs: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Standarisasi PC Deployment & Hardware</h4>
+        <p>Menghitung total daya beban penuh (TDP) dan menambahkan safety headroom 40% untuk menjaga efisiensi power supply 80 PLUS.</p>
+      </div>
+    `
+  },
+  {
+    id: "regex-tester",
+    title: "Regex Tester & Validator",
+    category: "utility",
+    techBadge: "RegExp • Match Highlighting • Forms",
+    techColor: "bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 border-amber-200 dark:border-amber-800",
+    icon: "code-2",
+    description: "Pengujian Regular Expression interaktif dengan visual highlighting, deteksi capture groups, dan template pola umum.",
+    renderFn: "renderRegexTester",
+    docs: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Engine Evaluasi Regular Expression</h4>
+        <p>Mengeksekusi pola RegExp JavaScript dengan flags global/case-insensitive dan memvisualisasikan posisi index setiap kecocokan string.</p>
+      </div>
+    `
+  },
+  {
+    id: "markdown-preview",
+    title: "Markdown Live Editor & Preview",
+    category: "utility",
+    techBadge: "Markdown • HTML Parser • Live Render",
+    techColor: "bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 border-amber-200 dark:border-amber-800",
+    icon: "file-code",
+    description: "Editor dokumen markdown instan dengan live preview, rendering tabel, code syntax highlighting, dan tombol salin HTML.",
+    renderFn: "renderMarkdownPreview",
+    docs: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Parser Markdown Ringan Sisi Client</h4>
+        <p>Mengonversi sintaks Markdown standar (Heading, Table, Code Block, Checklist) ke elemen HTML semantik secara real-time.</p>
       </div>
     `
   }
 ];
 
-// Content for the General Technical Showcase & Interview Guide Modal
-const INTERVIEW_GUIDE_CONTENT = `
-  <div class="space-y-6">
-    
-    <div class="p-4 bg-sky-50 dark:bg-sky-950/40 border border-sky-200 dark:border-sky-800 rounded-xl">
-      <h4 class="text-sm font-bold text-sky-900 dark:text-sky-200 mb-1">💡 Panduan Teknis & Pertanyaan Wawancara Arsitektur</h4>
-      <p class="text-xs text-sky-700 dark:text-sky-300">Gunakan poin-poin di bawah ini saat menjelaskan arsitektur proyek kepada rekan teknis, recruiter, atau klien.</p>
-    </div>
+// App State Management
+let currentCategory = 'all';
+let currentSearch = '';
+let activeTool = null;
+let activeModalTab = 'sandbox'; // 'sandbox', 'code', 'docs'
 
-    <!-- Question 1 -->
-    <div class="border border-slate-200 dark:border-slate-800 rounded-xl p-4 bg-white dark:bg-slate-900">
-      <h5 class="text-xs font-bold text-slate-900 dark:text-white mb-2">Q1: "Bisa jelaskan arsitektur dan kapabilitas sistem pada website portofolio ini?"</h5>
-      <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-        <strong>Jawaban yang Disarankan:</strong><br>
-        <em>"Website ini adalah <strong>Dev & Data Tools Suite</strong>, sebuah platform terintegrasi yang menggabungkan 9 tools fungsional dengan pendekatan <strong>Polyglot Architecture</strong>. Proyek ini mendemonstrasikan kapabilitas di 3 ranah utama: <strong>Pertama</strong>, pemrosesan dan analisis data AI berbasis <strong>Python (Pandas & VADER NLP)</strong>. <strong>Kedua</strong>, perancangan RESTful API backend dan database relasional berbasis <strong>Node.js Express & SQLite (SQL)</strong>. Serta <strong>Ketiga</strong>, pembuatan antarmuka web modern yang responsif dan interaktif berbasis <strong>Modern JavaScript & Tailwind CSS</strong>."</em>
-      </p>
-    </div>
+// DOM Elements
+const toolsGrid = document.getElementById('toolsGrid');
+const searchInput = document.getElementById('toolSearchInput');
+const categoryFilterContainer = document.getElementById('categoryFilterContainer');
+const emptyState = document.getElementById('emptyState');
+const toolCountBadge = document.getElementById('toolCountBadge');
 
-    <!-- Question 2 -->
-    <div class="border border-slate-200 dark:border-slate-800 rounded-xl p-4 bg-white dark:bg-slate-900">
-      <h5 class="text-xs font-bold text-slate-900 dark:text-white mb-2">Q2: "Bagaimana integrasi Python dalam workflow sistem ini?"</h5>
-      <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-        <strong>Jawaban yang Disarankan:</strong><br>
-        <em>"Python diimplementasikan khusus untuk domain data engineering dan automasi. Pada modul <strong>AI Data Analyzer</strong>, Pandas digunakan untuk membaca dan memanipulasi dataset secara efisien, sedangkan VADER NLP menghitung skor polaritas sentimen untuk mengkategorikan review publik/pengguna. Pada modul <strong>News Scraper</strong>, BeautifulSoup4 mengekstraksi data berita terkini secara terstruktur menjadi format JSON siap saji."</em>
-      </p>
-    </div>
+// Modal Elements
+const toolModal = document.getElementById('toolModal');
+const toolModalTitle = document.getElementById('toolModalTitle');
+const toolModalCategory = document.getElementById('toolModalCategory');
+const toolModalDesc = document.getElementById('toolModalDesc');
+const toolModalCloseBtn = document.getElementById('toolModalCloseBtn');
 
-    <!-- Question 3 -->
-    <div class="border border-slate-200 dark:border-slate-800 rounded-xl p-4 bg-white dark:bg-slate-900">
-      <h5 class="text-xs font-bold text-slate-900 dark:text-white mb-2">Q3: "Bagaimana penerapan keamanan data dan arsitektur database?"</h5>
-      <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-        <strong>Jawaban yang Disarankan:</strong><br>
-        <em>"Untuk backend autentikasi, saya menggunakan Node.js Express dengan standar industri: enkripsi password menggunakan <strong>Bcrypt (10 salt rounds)</strong> dan sesi berbasis <strong>JSON Web Token (JWT)</strong> yang stateless. Di sisi database relasional (SQLite), parameterized query diterapkan untuk mencegah risiko SQL Injection serta menjaga integritas transaksi atomik saat memproses data inventaris dan peminjaman buku."</em>
-      </p>
-    </div>
+const tabSandboxBtn = document.getElementById('tabSandboxBtn');
+const tabCodeBtn = document.getElementById('tabCodeBtn');
+const tabDocsBtn = document.getElementById('tabDocsBtn');
 
-  </div>
-`;
+const tabContentSandbox = document.getElementById('tabContentSandbox');
+const tabContentCode = document.getElementById('tabContentCode');
+const tabContentDocs = document.getElementById('tabContentDocs');
 
-// App Initialization
-document.addEventListener('DOMContentLoaded', () => {
-  const toolsGrid = document.getElementById('toolsGrid');
-  const searchInput = document.getElementById('toolSearchInput');
-  const filterBtns = document.querySelectorAll('.category-filter-btn');
-  const themeToggleBtn = document.getElementById('themeToggleBtn');
-  const themeIconSun = document.getElementById('themeIconSun');
-  const themeIconMoon = document.getElementById('themeIconMoon');
+const codeSnippetFilename = document.getElementById('codeSnippetFilename');
+const codeSnippetPath = document.getElementById('codeSnippetPath');
+const codeSnippetContent = document.getElementById('codeSnippetContent');
+const copyCodeBtn = document.getElementById('copyCodeBtn');
 
-  // Modal Elements
-  const toolModal = document.getElementById('toolModal');
-  const modalCloseBtn = document.getElementById('modalCloseBtn');
-  const modalTitle = document.getElementById('modalTitle');
-  const modalSubtitle = document.getElementById('modalSubtitle');
-  const modalTechBadge = document.getElementById('modalTechBadge');
-  const modalIconContainer = document.getElementById('modalIconContainer');
-  const modalIcon = document.getElementById('modalIcon');
+// Developer Profile Modal Elements
+const aboutDevBtn = document.getElementById('aboutDevBtn');
+const aboutDevModal = document.getElementById('aboutDevModal');
+const aboutDevModalCloseBtn = document.getElementById('aboutDevModalCloseBtn');
 
-  const tabBtnDemo = document.getElementById('tabBtnDemo');
-  const tabBtnCode = document.getElementById('tabBtnCode');
-  const tabBtnDocs = document.getElementById('tabBtnDocs');
-  const tabDemoContent = document.getElementById('modalTabDemoContent');
-  const tabCodeContent = document.getElementById('modalTabCodeContent');
-  const tabDocsContent = document.getElementById('modalTabDocsContent');
-  const modalCodeSnippet = document.getElementById('modalCodeSnippet');
-  const codeLanguageLabel = document.getElementById('codeLanguageLabel');
-  const codeFilePathLabel = document.getElementById('codeFilePathLabel');
-  const copyCodeBtn = document.getElementById('copyCodeBtn');
-  const modalDocsBody = document.getElementById('modalDocsBody');
+// Theme Switcher Elements
+const themeToggleBtn = document.getElementById('themeToggleBtn');
+const themeIconSun = document.getElementById('themeIconSun');
+const themeIconMoon = document.getElementById('themeIconMoon');
 
-  // Interview Modal
-  const interviewModal = document.getElementById('interviewModal');
-  const viewInterviewDocBtn = document.getElementById('viewInterviewDocBtn');
-  const interviewModalCloseBtn = document.getElementById('interviewModalCloseBtn');
-  const interviewModalContent = document.getElementById('interviewModalContent');
+// Toast Notification Function
+window.showToast = function(message, type = 'info') {
+  const container = document.getElementById('toastContainer');
+  if (!container) return;
 
-  let activeCategory = 'all';
-  let activeTool = null;
+  const toast = document.createElement('div');
+  let bgClass = "bg-slate-900 text-white dark:bg-white dark:text-slate-900";
+  let iconName = "info";
 
-  // Initialize Theme (Default to light or user preference)
-  const savedTheme = localStorage.getItem('theme') || 'light';
-  applyTheme(savedTheme);
-
-  themeToggleBtn.addEventListener('click', () => {
-    const isDark = document.documentElement.classList.contains('dark');
-    const newTheme = isDark ? 'light' : 'dark';
-    applyTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-  });
-
-  function applyTheme(theme) {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-      themeIconSun.classList.remove('hidden');
-      themeIconMoon.classList.add('hidden');
-    } else {
-      document.documentElement.classList.remove('dark');
-      themeIconSun.classList.add('hidden');
-      themeIconMoon.classList.remove('hidden');
-    }
-    if (window.lucide) lucide.createIcons();
+  if (type === 'success') {
+    bgClass = "bg-emerald-600 text-white";
+    iconName = "check-circle";
+  } else if (type === 'error') {
+    bgClass = "bg-red-600 text-white";
+    iconName = "alert-circle";
   }
 
-  // Render Grid Cards
-  function renderCards() {
-    const query = (searchInput.value || '').toLowerCase().trim();
-    
-    const filteredTools = TOOLS_REGISTRY.filter(tool => {
-      const matchCat = activeCategory === 'all' || tool.category === activeCategory;
-      const matchSearch = tool.title.toLowerCase().includes(query) || 
-                          tool.techBadge.toLowerCase().includes(query) ||
-                          tool.description.toLowerCase().includes(query);
-      return matchCat && matchSearch;
-    });
+  toast.className = `flex items-center gap-2 px-4 py-2.5 rounded-lg shadow-lg text-xs font-semibold ${bgClass} transition-all duration-300 transform translate-y-2 opacity-0`;
+  toast.innerHTML = `
+    <i data-lucide="${iconName}" class="w-4 h-4"></i>
+    <span>${message}</span>
+  `;
 
-    if (filteredTools.length === 0) {
-      toolsGrid.innerHTML = `
-        <div class="col-span-full py-12 text-center bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl">
-          <i data-lucide="search-x" class="w-8 h-8 mx-auto text-slate-400 mb-2"></i>
-          <p class="text-sm font-semibold text-slate-700 dark:text-slate-300">Tidak ada tool yang cocok dengan pencarian Anda.</p>
-          <p class="text-xs text-slate-400 mt-1">Coba gunakan kata kunci lain atau pilih tab Semua Tools.</p>
-        </div>
-      `;
-      if (window.lucide) lucide.createIcons();
-      return;
-    }
+  container.appendChild(toast);
+  if (window.lucide) lucide.createIcons();
 
-    toolsGrid.innerHTML = filteredTools.map(tool => `
-      <div class="tool-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 flex flex-col justify-between hover:border-sky-500/80 dark:hover:border-sky-500/80 cursor-pointer group" data-tool-id="${tool.id}">
-        <div>
-          <div class="flex items-start justify-between gap-3 mb-3">
-            <div class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 flex items-center justify-center group-hover:bg-sky-50 group-hover:text-sky-600 dark:group-hover:bg-sky-950 dark:group-hover:text-sky-400 transition">
-              <i data-lucide="${tool.icon}" class="w-5 h-5"></i>
-            </div>
-            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-semibold border ${tool.techColor}">
-              ${tool.techBadge.split('•')[0].trim()}
-            </span>
+  requestAnimationFrame(() => {
+    toast.classList.remove('translate-y-2', 'opacity-0');
+  });
+
+  setTimeout(() => {
+    toast.classList.add('opacity-0', 'translate-y-2');
+    setTimeout(() => toast.remove(), 300);
+  }, 2800);
+};
+
+// ==========================================
+// RENDER TOOLS GRID
+// ==========================================
+function renderToolsGrid() {
+  toolsGrid.innerHTML = '';
+
+  const filteredTools = TOOLS_REGISTRY.filter(tool => {
+    const matchesCategory = currentCategory === 'all' || tool.category === currentCategory;
+    const matchesSearch = tool.title.toLowerCase().includes(currentSearch.toLowerCase()) ||
+                          tool.description.toLowerCase().includes(currentSearch.toLowerCase()) ||
+                          tool.techBadge.toLowerCase().includes(currentSearch.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
+
+  if (toolCountBadge) {
+    toolCountBadge.textContent = `${filteredTools.length} dari ${TOOLS_REGISTRY.length} Tools`;
+  }
+
+  if (filteredTools.length === 0) {
+    emptyState.classList.remove('hidden');
+    toolsGrid.classList.add('hidden');
+    return;
+  }
+
+  emptyState.classList.add('hidden');
+  toolsGrid.classList.remove('hidden');
+
+  filteredTools.forEach(tool => {
+    const card = document.createElement('div');
+    card.className = "tool-card bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 p-5 flex flex-col justify-between hover:shadow-lg transition-all duration-200 cursor-pointer group";
+    card.dataset.toolId = tool.id;
+
+    card.innerHTML = `
+      <div class="space-y-3">
+        <div class="flex items-center justify-between">
+          <div class="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-300 group-hover:scale-105 transition-transform duration-200">
+            <i data-lucide="${tool.icon}" class="w-5 h-5"></i>
           </div>
+          <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold border ${tool.techColor}">
+            ${tool.techBadge}
+          </span>
+        </div>
 
-          <h3 class="text-base font-bold text-slate-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-400 transition leading-snug">
+        <div>
+          <h3 class="font-bold text-slate-900 dark:text-white text-base group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
             ${tool.title}
           </h3>
-
-          <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 line-clamp-2 leading-relaxed">
+          <p class="mt-1.5 text-xs text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-2">
             ${tool.description}
           </p>
         </div>
-
-        <div class="mt-5 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
-          <span class="text-[11px] font-mono text-slate-400">${tool.techBadge}</span>
-          <span class="inline-flex items-center gap-1 text-xs font-bold text-sky-600 dark:text-sky-400 group-hover:translate-x-0.5 transition">
-            <span>Buka Tool</span>
-            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-          </span>
-        </div>
       </div>
-    `).join('');
 
-    if (window.lucide) lucide.createIcons();
+      <div class="pt-4 mt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between">
+        <span class="text-[11px] font-semibold text-slate-400 group-hover:text-sky-600 dark:group-hover:text-sky-400 flex items-center gap-1 transition-colors">
+          Buka Workspace <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </span>
+        <div class="w-2 h-2 rounded-full bg-emerald-500"></div>
+      </div>
+    `;
 
-    // Attach click events on cards
-    document.querySelectorAll('.tool-card').forEach(card => {
-      card.addEventListener('click', () => {
-        const id = card.dataset.toolId;
-        openToolModal(id);
-      });
-    });
-  }
-
-  // Filter Buttons Handler
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active', 'bg-sky-600', 'text-white'));
-      btn.classList.add('active');
-      activeCategory = btn.dataset.category;
-      renderCards();
-    });
+    card.addEventListener('click', () => openToolModal(tool));
+    toolsGrid.appendChild(card);
   });
 
-  searchInput.addEventListener('input', renderCards);
+  if (window.lucide) {
+    lucide.createIcons();
+  }
+}
 
-  // Open Tool Modal
-  function openToolModal(toolId) {
-    const tool = TOOLS_REGISTRY.find(t => t.id === toolId);
-    if (!tool) return;
-    activeTool = tool;
+// ==========================================
+// MODAL WORKSPACE MANAGEMENT
+// ==========================================
+function openToolModal(tool) {
+  activeTool = tool;
 
-    modalTitle.textContent = tool.title;
-    modalSubtitle.textContent = tool.description;
-    modalTechBadge.textContent = tool.techBadge;
-    modalIcon.setAttribute('data-lucide', tool.icon);
+  toolModalTitle.textContent = tool.title;
+  toolModalCategory.textContent = tool.techBadge;
+  toolModalDesc.textContent = tool.description;
 
-    // Render Live Demo Container
-    tabDemoContent.innerHTML = '';
-    if (window[tool.renderFn]) {
-      window[tool.renderFn](tabDemoContent);
-    } else {
-      tabDemoContent.innerHTML = `<p class="text-xs text-slate-500">Komponen demo sedang dipersiapkan...</p>`;
-    }
+  // Set default tab
+  switchModalTab('sandbox');
 
-    // Prepare Code Inspector Tab
-    const snippetData = window.TOOL_CODE_SNIPPETS?.[tool.id] || {
-      filename: "source-code.js",
-      language: "JavaScript",
-      path: `modules/${tool.id}.js`,
-      code: `// Kode sumber untuk modul ${tool.title}`
-    };
+  // Show modal
+  toolModal.classList.remove('hidden');
+  toolModal.classList.add('flex');
+  document.body.style.overflow = 'hidden';
 
-    codeLanguageLabel.textContent = snippetData.language;
-    codeFilePathLabel.textContent = `/${snippetData.path}`;
-    modalCodeSnippet.textContent = snippetData.code;
-
-    // Prepare Docs Tab
-    modalDocsBody.innerHTML = tool.docs || `<p>Dokumentasi teknis untuk modul ini.</p>`;
-
-    // Switch to Demo Tab by default
-    switchModalTab('demo');
-
-    toolModal.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-
-    if (window.lucide) lucide.createIcons();
+  // Render Tool interactive content
+  if (typeof window[tool.renderFn] === 'function') {
+    window[tool.renderFn](tabContentSandbox);
+  } else {
+    tabContentSandbox.innerHTML = `<div class="p-4 text-center text-xs text-slate-400">Modul '${tool.title}' siap dijalankan.</div>`;
   }
 
-  function closeModal() {
-    toolModal.classList.add('hidden');
-    document.body.style.overflow = '';
-  }
+  // Load Source Code snippet
+  loadCodeSnippet(tool.id);
 
-  modalCloseBtn.addEventListener('click', closeModal);
-  toolModal.addEventListener('click', (e) => {
-    if (e.target === toolModal) closeModal();
+  // Load Architecture documentation
+  tabContentDocs.innerHTML = tool.docs || `<div class="p-4 text-center text-xs text-slate-400">Dokumentasi teknis tersedia pada file README.md repository.</div>`;
+
+  if (window.lucide) {
+    lucide.createIcons();
+  }
+}
+
+function closeToolModal() {
+  toolModal.classList.add('hidden');
+  toolModal.classList.remove('flex');
+  document.body.style.overflow = '';
+  activeTool = null;
+  tabContentSandbox.innerHTML = '';
+}
+
+function switchModalTab(tab) {
+  activeModalTab = tab;
+
+  // Reset tab buttons
+  [tabSandboxBtn, tabCodeBtn, tabDocsBtn].forEach(btn => {
+    if (!btn) return;
+    btn.className = "px-4 py-2 text-xs font-semibold text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white border-b-2 border-transparent transition";
   });
 
-  // Modal Tab Switchers
-  tabBtnDemo.addEventListener('click', () => switchModalTab('demo'));
-  tabBtnCode.addEventListener('click', () => switchModalTab('code'));
-  tabBtnDocs.addEventListener('click', () => switchModalTab('docs'));
+  // Hide all contents
+  tabContentSandbox.classList.add('hidden');
+  tabContentCode.classList.add('hidden');
+  tabContentDocs.classList.add('hidden');
 
-  function switchModalTab(tabName) {
-    [tabBtnDemo, tabBtnCode, tabBtnDocs].forEach(btn => {
-      btn.classList.remove('active', 'border-sky-600', 'text-sky-600', 'dark:text-sky-400');
-      btn.classList.add('border-transparent', 'text-slate-500');
-    });
-
-    [tabDemoContent, tabCodeContent, tabDocsContent].forEach(p => p.classList.add('hidden'));
-
-    if (tabName === 'demo') {
-      tabBtnDemo.classList.add('active', 'border-sky-600', 'text-sky-600', 'dark:text-sky-400');
-      tabBtnDemo.classList.remove('border-transparent', 'text-slate-500');
-      tabDemoContent.classList.remove('hidden');
-    } else if (tabName === 'code') {
-      tabBtnCode.classList.add('active', 'border-sky-600', 'text-sky-600', 'dark:text-sky-400');
-      tabBtnCode.classList.remove('border-transparent', 'text-slate-500');
-      tabCodeContent.classList.remove('hidden');
-    } else if (tabName === 'docs') {
-      tabBtnDocs.classList.add('active', 'border-sky-600', 'text-sky-600', 'dark:text-sky-400');
-      tabBtnDocs.classList.remove('border-transparent', 'text-slate-500');
-      tabDocsContent.classList.remove('hidden');
-    }
+  if (tab === 'sandbox') {
+    tabSandboxBtn.className = "px-4 py-2 text-xs font-bold text-sky-600 dark:text-sky-400 border-b-2 border-sky-600 dark:border-sky-400 transition";
+    tabContentSandbox.classList.remove('hidden');
+  } else if (tab === 'code') {
+    tabCodeBtn.className = "px-4 py-2 text-xs font-bold text-sky-600 dark:text-sky-400 border-b-2 border-sky-600 dark:border-sky-400 transition";
+    tabContentCode.classList.remove('hidden');
+  } else if (tab === 'docs') {
+    tabDocsBtn.className = "px-4 py-2 text-xs font-bold text-sky-600 dark:text-sky-400 border-b-2 border-sky-600 dark:border-sky-400 transition";
+    tabContentDocs.classList.remove('hidden');
   }
 
-  // Copy Code Button
+  if (window.lucide) {
+    lucide.createIcons();
+  }
+}
+
+function loadCodeSnippet(toolId) {
+  if (!window.TOOL_CODE_SNIPPETS || !window.TOOL_CODE_SNIPPETS[toolId]) {
+    codeSnippetFilename.textContent = "Source Code";
+    codeSnippetPath.textContent = "Standar ES6+ / Python Module";
+    codeSnippetContent.textContent = "// Source code sedang dimuat...";
+    return;
+  }
+
+  const snippet = window.TOOL_CODE_SNIPPETS[toolId];
+  codeSnippetFilename.textContent = snippet.filename;
+  codeSnippetPath.textContent = snippet.path;
+  codeSnippetContent.textContent = snippet.code;
+}
+
+// Copy Code Button handler
+if (copyCodeBtn) {
   copyCodeBtn.addEventListener('click', () => {
-    navigator.clipboard.writeText(modalCodeSnippet.textContent);
-    showToast('Source code berhasil disalin ke clipboard!');
-  });
-
-  // Interview Modal Handler
-  viewInterviewDocBtn.addEventListener('click', () => {
-    interviewModalContent.innerHTML = INTERVIEW_GUIDE_CONTENT;
-    interviewModal.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-    if (window.lucide) lucide.createIcons();
-  });
-
-  interviewModalCloseBtn.addEventListener('click', () => {
-    interviewModal.classList.add('hidden');
-    document.body.style.overflow = '';
-  });
-
-  interviewModal.addEventListener('click', (e) => {
-    if (e.target === interviewModal) {
-      interviewModal.classList.add('hidden');
-      document.body.style.overflow = '';
-    }
-  });
-
-  // Developer Profile Modal Handler
-  const aboutDevModal = document.getElementById('aboutDevModal');
-  const aboutDevBtn = document.getElementById('aboutDevBtn');
-  const aboutDevModalCloseBtn = document.getElementById('aboutDevModalCloseBtn');
-
-  if (aboutDevBtn && aboutDevModal) {
-    aboutDevBtn.addEventListener('click', () => {
-      aboutDevModal.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-      if (window.lucide) lucide.createIcons();
+    const code = codeSnippetContent.textContent;
+    navigator.clipboard.writeText(code).then(() => {
+      showToast("Source code berhasil disalin ke clipboard!", "success");
+    }).catch(() => {
+      showToast("Gagal menyalin source code", "error");
     });
+  });
+}
 
-    if (aboutDevModalCloseBtn) {
-      aboutDevModalCloseBtn.addEventListener('click', () => {
-        aboutDevModal.classList.add('hidden');
-        document.body.style.overflow = '';
-      });
-    }
+// ==========================================
+// DEVELOPER PROFILE MODAL
+// ==========================================
+function openDevModal() {
+  aboutDevModal.classList.remove('hidden');
+  aboutDevModal.classList.add('flex');
+  document.body.style.overflow = 'hidden';
+  if (window.lucide) lucide.createIcons();
+}
 
-    aboutDevModal.addEventListener('click', (e) => {
-      if (e.target === aboutDevModal) {
-        aboutDevModal.classList.add('hidden');
-        document.body.style.overflow = '';
-      }
+function closeDevModal() {
+  aboutDevModal.classList.add('hidden');
+  aboutDevModal.classList.remove('flex');
+  document.body.style.overflow = '';
+}
+
+// ==========================================
+// THEME SWITCHER (DARK / LIGHT)
+// ==========================================
+function initTheme() {
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+    document.documentElement.classList.add('dark');
+    themeIconSun.classList.remove('hidden');
+    themeIconMoon.classList.add('hidden');
+  } else {
+    document.documentElement.classList.remove('dark');
+    themeIconSun.classList.add('hidden');
+    themeIconMoon.classList.remove('hidden');
+  }
+}
+
+function toggleTheme() {
+  const isDark = document.documentElement.classList.toggle('dark');
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+
+  if (isDark) {
+    themeIconSun.classList.remove('hidden');
+    themeIconMoon.classList.add('hidden');
+  } else {
+    themeIconSun.classList.add('hidden');
+    themeIconMoon.classList.remove('hidden');
+  }
+}
+
+// ==========================================
+// EVENT LISTENERS & INITIALIZATION
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
+  renderToolsGrid();
+
+  // Search Input
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      currentSearch = e.target.value;
+      renderToolsGrid();
     });
   }
 
-  // Global Toast Notification Helper
-  window.showToast = function(message) {
-    let container = document.querySelector('.toast-container');
-    if (!container) {
-      container = document.createElement('div');
-      container.className = 'toast-container';
-      document.body.appendChild(container);
+  // Category Filters
+  if (categoryFilterContainer) {
+    categoryFilterContainer.addEventListener('click', (e) => {
+      const btn = e.target.closest('.category-filter-btn');
+      if (!btn) return;
+
+      categoryFilterContainer.querySelectorAll('.category-filter-btn').forEach(b => {
+        b.classList.remove('active');
+        b.classList.add('text-slate-600', 'dark:text-slate-400');
+      });
+
+      btn.classList.add('active');
+      btn.classList.remove('text-slate-600', 'dark:text-slate-400');
+      currentCategory = btn.dataset.category;
+      renderToolsGrid();
+    });
+  }
+
+  // Modal Close buttons
+  if (toolModalCloseBtn) toolModalCloseBtn.addEventListener('click', closeToolModal);
+  if (toolModal) {
+    toolModal.addEventListener('click', (e) => {
+      if (e.target === toolModal) closeToolModal();
+    });
+  }
+
+  // Modal Tabs
+  if (tabSandboxBtn) tabSandboxBtn.addEventListener('click', () => switchModalTab('sandbox'));
+  if (tabCodeBtn) tabCodeBtn.addEventListener('click', () => switchModalTab('code'));
+  if (tabDocsBtn) tabDocsBtn.addEventListener('click', () => switchModalTab('docs'));
+
+  // Developer Profile Modal
+  if (aboutDevBtn) aboutDevBtn.addEventListener('click', openDevModal);
+  if (aboutDevModalCloseBtn) aboutDevModalCloseBtn.addEventListener('click', closeDevModal);
+  if (aboutDevModal) {
+    aboutDevModal.addEventListener('click', (e) => {
+      if (e.target === aboutDevModal) closeDevModal();
+    });
+  }
+
+  // Theme Toggle
+  if (themeToggleBtn) themeToggleBtn.addEventListener('click', toggleTheme);
+
+  // Keyboard Shortcuts (Esc to close modal)
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (!toolModal.classList.contains('hidden')) closeToolModal();
+      if (!aboutDevModal.classList.contains('hidden')) closeDevModal();
     }
+  });
 
-    const toast = document.createElement('div');
-    toast.className = 'toast bg-slate-900 text-white dark:bg-white dark:text-slate-900 border border-slate-700 dark:border-slate-200';
-    toast.innerHTML = `<i data-lucide="info" class="w-4 h-4 text-sky-400 dark:text-sky-600"></i><span>${message}</span>`;
-    container.appendChild(toast);
-
-    if (window.lucide) lucide.createIcons();
-
-    setTimeout(() => {
-      toast.style.opacity = '0';
-      toast.style.transform = 'translateY(10px)';
-      toast.style.transition = 'all 0.2s ease-out';
-      setTimeout(() => toast.remove(), 200);
-    }, 2500);
-  };
-
-  // Initial render
-  renderCards();
+  if (window.lucide) {
+    lucide.createIcons();
+  }
 });

@@ -8,7 +8,7 @@ window.TOOL_CODE_SNIPPETS = {
   "ai-data-analyzer": {
     filename: "analyzer.py (Python / Pandas & VADER)",
     language: "Python",
-    path: "backend-python/analyzer.py",
+    path: "python-modules/analyzer.py",
     code: `# ================================================================
 # MODUL AI & SENTIMENT ANALYSIS (PYTHON)
 # Menggunakan Pandas untuk data frame & VADER untuk pemrosesan NLP
@@ -18,17 +18,14 @@ import pandas as pd
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import io
 
-# Inisialisasi model NLP VADER Sentiment
 analyzer = SentimentIntensityAnalyzer()
 
 def analyze_sentiment(text):
     """Menganalisis compound polarity score teks ulasan"""
     if not isinstance(text, str):
         return "Neutral"
-        
     scores = analyzer.polarity_scores(text)
     compound = scores['compound']
-    
     if compound >= 0.05:
         return "Positive"
     elif compound <= -0.05:
@@ -37,11 +34,6 @@ def analyze_sentiment(text):
         return "Neutral"
 
 def process_file_data(file_content, filename):
-    """
-    Membaca dataset CSV/Excel dan menghitung distribusi sentimen
-    secara otomatis menggunakan vektorisasi Pandas.
-    """
-    # 1. Membaca file bytes ke DataFrame
     if filename.endswith('.csv'):
         df = pd.read_csv(io.BytesIO(file_content))
     elif filename.endswith('.xlsx'):
@@ -49,325 +41,488 @@ def process_file_data(file_content, filename):
     else:
         raise ValueError("Format tidak didukung!")
 
-    # 2. Deteksi otomatis kolom ulasan / teks
-    text_col = None
-    for col in df.columns:
-        if col.lower() in ['review', 'text', 'comment', 'ulasan', 'komentar']:
-            text_col = col
-            break
-    if not text_col:
-        text_col = df.select_dtypes(include=['object']).columns[0]
-
-    # 3. Klasifikasi sentimen secara efisien
-    df['AI_Sentiment'] = df[text_col].apply(analyze_sentiment)
-
-    # 4. Rekap statistik untuk Chart visualisasi
-    stats = df['AI_Sentiment'].value_counts().to_dict()
-    return {
-        "total_rows": len(df),
-        "sentiment_stats": stats,
-        "sample_preview": df[[text_col, 'AI_Sentiment']].head(5).to_dict(orient='records')
-    }`
+    text_col = [c for c in df.columns if c.lower() in ['review', 'text', 'comment', 'ulasan', 'komentar']][0]
+    df['Sentiment'] = df[text_col].apply(analyze_sentiment)
+    summary = df['Sentiment'].value_counts().to_dict()
+    return {"total": len(df), "distribution": summary}`
   },
 
   "news-scraper": {
     filename: "scraper.py (Python / BeautifulSoup4)",
     language: "Python",
-    path: "backend-python/scraper.py",
+    path: "python-modules/scraper.py",
     code: `# ================================================================
-# MODUL AUTOMATION & WEB SCRAPING (PYTHON)
-# Menggunakan Requests & BeautifulSoup4 untuk ekstraksi data berita
+# MODUL TECH NEWS SCRAPER (PYTHON)
+# Penarikan data feed berita menggunakan Requests & BeautifulSoup4
 # ================================================================
 
 import requests
 from bs4 import BeautifulSoup
+import json
 
-def scrape_tech_news():
+def fetch_tech_news(limit=15):
     url = "https://news.ycombinator.com/"
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
     }
     
     response = requests.get(url, headers=headers, timeout=10)
     if response.status_code != 200:
-        raise Exception(f"Gagal mengambil target: Status {response.status_code}")
+        raise Exception(f"Failed to fetch news: Status {response.status_code}")
         
     soup = BeautifulSoup(response.text, 'html.parser')
-    news_list = []
+    articles = []
     
-    # Ekstraksi baris artikel
-    articles = soup.find_all('tr', class_='athing')
-    for article in articles[:15]:
-        title_tag = article.find('span', class_='titleline')
-        anchor = title_tag.find('a') if title_tag else None
-        
-        title = anchor.text if anchor else "Tanpa Judul"
-        link = anchor.get('href') if anchor else "#"
-        
-        # Ekstraksi skor poin dari row subtext
-        subtext = article.find_next_sibling('tr')
-        score_elem = subtext.find('span', class_='score') if subtext else None
-        points = int(score_elem.text.split()[0]) if score_elem else 0
-        
-        news_list.append({
-            "title": title,
-            "link": link,
-            "points": points
+    rows = soup.select('tr.athing')
+    for row in rows[:limit]:
+        title_el = row.select_one('span.titleline > a')
+        if not title_el:
+            continue
+            
+        articles.append({
+            "title": title_el.get_text(),
+            "url": title_el.get('href'),
+            "rank": row.select_one('.rank').get_text().replace('.', '')
         })
         
-    return news_list`
+    return articles`
   },
 
   "auth-sandbox": {
-    filename: "server.js (Node.js Express & SQLite)",
+    filename: "auth.js (Node.js / Express, Bcrypt & JWT)",
     language: "JavaScript (Node.js)",
-    path: "backend-nodejs/auth/server.js",
+    path: "backend-modules/routes/auth.js",
     code: `// ================================================================
-// REST API AUTENTIKASI & KEAMANAN (NODE.JS / EXPRESS / BCRYPT)
+// MODUL AUTENTIKASI & KEAMANAN (NODE.JS + BCRYPT + JWT)
 // ================================================================
 
 const express = require('express');
-const bcrypt = require('bcrypt');
+const router = express.Router();
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const db = require('./database');
-const app = express();
+const db = require('../database');
 
-app.use(express.json());
-const SECRET_KEY = process.env.JWT_SECRET || "secure_developer_jwt_secret_key";
+const JWT_SECRET = process.env.JWT_SECRET || 'superSecretKey2026';
 
-// 1. ENDPOINT REGISTRASI (Dengan Password Hashing Salt 10)
-app.post('/api/register', async (req, res) => {
-    const { email, password } = req.body;
-    if (!email || !password) {
-        return res.status(400).json({ error: "Email dan password wajib diisi!" });
-    }
-
+// 1. Endpoint Registrasi User (Bcrypt Password Hashing)
+router.post('/register', async (req, res) => {
     try {
-        const hashedPassword = await bcrypt.hash(password, 10);
-        db.run('INSERT INTO users (email, password_hash) VALUES (?, ?)', [email, hashedPassword], function(err) {
-            if (err) {
-                if (err.message.includes("UNIQUE")) {
-                    return res.status(400).json({ error: "Email sudah terdaftar!" });
-                }
-                return res.status(500).json({ error: "Database error." });
-            }
-            res.status(201).json({ message: "Registrasi berhasil!", userId: this.lastID });
-        });
-    } catch (e) {
-        res.status(500).json({ error: "Kesalahan enkripsi server." });
+        const { username, email, password } = req.body;
+        
+        // Salt rounds 10 standar industri OWASP
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(password, salt);
+        
+        const stmt = db.prepare('INSERT INTO users (username, email, password_hash) VALUES (?, ?, ?)');
+        const result = stmt.run(username, email, hashedPassword);
+        
+        res.status(201).json({ success: true, message: 'User berhasil didaftarkan', userId: result.lastInsertRowid });
+    } catch (err) {
+        res.status(400).json({ error: err.message });
     }
 });
 
-// 2. ENDPOINT LOGIN & GENERATE JWT TOKEN
-app.post('/api/login', (req, res) => {
-    const { email, password } = req.body;
-    db.get('SELECT * FROM users WHERE email = ?', [email], async (err, user) => {
-        if (!user) return res.status(401).json({ error: "Akun tidak ditemukan." });
+// 2. Endpoint Login & Penerbitan JWT Token
+router.post('/login', async (req, res) => {
+    try {
+        const { email, password } = req.body;
+        const user = db.prepare('SELECT * FROM users WHERE email = ?').get(email);
+        if (!user) return res.status(401).json({ error: 'Kredensial tidak valid' });
+        
+        const isValid = await bcrypt.compare(password, user.password_hash);
+        if (!isValid) return res.status(401).json({ error: 'Kredensial tidak valid' });
+        
+        const token = jwt.sign(
+            { id: user.id, email: user.email, role: 'admin' },
+            JWT_SECRET,
+            { expiresIn: '8h' }
+        );
+        
+        res.json({ success: true, token, user: { id: user.id, username: user.username, email: user.email } });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
 
-        const isMatch = await bcrypt.compare(password, user.password_hash);
-        if (!isMatch) return res.status(401).json({ error: "Password salah!" });
-
-        const token = jwt.sign({ userId: user.id, email: user.email }, SECRET_KEY, { expiresIn: '2h' });
-        res.json({ message: "Login sukses!", token });
-    });
-});`
+module.exports = router;`
   },
 
   "inventory-sandbox": {
-    filename: "productController.js (Node.js & SQL CRUD)",
-    language: "JavaScript / SQL",
-    path: "backend-nodejs/inventory/controllers/productController.js",
+    filename: "inventory.js (Node.js / SQLite REST API)",
+    language: "JavaScript (Node.js)",
+    path: "backend-modules/routes/inventory.js",
     code: `// ================================================================
-// CONTROLLER CRUD INVENTARIS BARANG (NODE.JS & SQLITE)
+// MANAJEMEN INVENTARIS GUDANG (RESTful API CRUD)
 // ================================================================
 
-const db = require('../config/database');
+const express = require('express');
+const router = express.Router();
+const db = require('../database');
 
-// [READ] Mengambil seluruh stok barang
-exports.getAllProducts = (req, res) => {
-    db.all('SELECT * FROM products ORDER BY id DESC', [], (err, rows) => {
-        if (err) return res.status(500).json({ error: "Gagal mengambil data." });
-        res.json({ status: "success", data: rows });
-    });
-};
+router.get('/products', (req, res) => {
+    const products = db.prepare('SELECT * FROM products ORDER BY id DESC').all();
+    res.json(products);
+});
 
-// [CREATE] Menambah barang baru
-exports.addProduct = (req, res) => {
+router.post('/products', (req, res) => {
     const { name, category, stock, price } = req.body;
-    if (!name || !category || price === undefined) {
-        return res.status(400).json({ error: "Data wajib diisi lengkap!" });
-    }
+    const stmt = db.prepare('INSERT INTO products (name, category, stock, price) VALUES (?, ?, ?, ?)');
+    const info = stmt.run(name, category, stock, price);
+    res.status(201).json({ id: info.lastInsertRowid, name, category, stock, price });
+});
 
-    const query = 'INSERT INTO products (name, category, stock, price) VALUES (?, ?, ?, ?)';
-    db.run(query, [name, category, stock || 0, price], function(err) {
-        if (err) return res.status(500).json({ error: err.message });
-        res.status(201).json({ message: "Barang disimpan!", id: this.lastID });
-    });
-};
-
-// [UPDATE] Mengubah jumlah stok
-exports.updateStock = (req, res) => {
+router.put('/products/:id/stock', (req, res) => {
     const { id } = req.params;
-    const { stock } = req.body;
-    db.run('UPDATE products SET stock = ? WHERE id = ?', [stock, id], function(err) {
-        if (err || this.changes === 0) return res.status(404).json({ error: "Barang tidak ada" });
-        res.json({ message: "Stok berhasil diperbarui!" });
-    });
-};
+    const { delta } = req.body;
+    db.prepare('UPDATE products SET stock = MAX(0, stock + ?) WHERE id = ?').run(delta, id);
+    res.json({ success: true });
+});
 
-// [DELETE] Menghapus data barang
-exports.deleteProduct = (req, res) => {
-    db.run('DELETE FROM products WHERE id = ?', [req.params.id], function(err) {
-        if (err || this.changes === 0) return res.status(404).json({ error: "Gagal menghapus" });
-        res.json({ message: "Barang berhasil dihapus!" });
-    });
-};`
+router.delete('/products/:id', (req, res) => {
+    db.prepare('DELETE FROM products WHERE id = ?').run(req.params.id);
+    res.json({ success: true });
+});
+
+module.exports = router;`
   },
 
   "library-sandbox": {
-    filename: "libraryController.js (Node.js & Transaksi SQL)",
-    language: "JavaScript / SQL",
-    path: "backend-nodejs/library/controllers/libraryController.js",
+    filename: "library.js (Node.js / SQL Transactions)",
+    language: "JavaScript (Node.js)",
+    path: "backend-modules/routes/library.js",
     code: `// ================================================================
-// MANAJEMEN TRANSAKSI PEMINJAMAN BUKU (NODE.JS & DATABASE SQL)
+// SISTEM PEMINJAMAN BUKU PERPUSTAKAAN (SQL TRANSAKSI)
 // ================================================================
 
-const db = require('../config/database');
+const express = require('express');
+const router = express.Router();
+const db = require('../database');
 
-// [TRANSACTION] Proses Peminjaman Buku dengan Validasi Stok
-exports.borrowBook = (req, res) => {
-    const { book_id, member_id } = req.body;
-
-    // 1. Cek ketersediaan buku
-    db.get('SELECT available_copies, title FROM books WHERE id = ?', [book_id], (err, book) => {
+router.post('/borrow', (req, res) => {
+    const { bookId, memberName } = req.body;
+    
+    // Gunakan transaksi ACID agar stok dan mutasi log konsisten
+    const borrowTransaction = db.transaction((bId, member) => {
+        const book = db.prepare('SELECT available_copies FROM books WHERE id = ?').get(bId);
         if (!book || book.available_copies <= 0) {
-            return res.status(400).json({ error: "Buku tidak tersedia atau stok habis!" });
+            throw new Error('Eksemplar buku tidak tersedia');
         }
-
-        // 2. Eksekusi transaksi atomik (Update stok & simpan log peminjaman)
-        db.serialize(() => {
-            db.run('UPDATE books SET available_copies = available_copies - 1 WHERE id = ?', [book_id]);
-            db.run('INSERT INTO borrowings (book_id, member_id, status) VALUES (?, ?, "BORROWED")', 
-                [book_id, member_id], 
-                function(err) {
-                    if (err) return res.status(500).json({ error: "Gagal transaksi." });
-                    res.json({ message: \`Buku "\${book.title}" berhasil dipinjam!\` });
-                }
-            );
-        });
+        
+        db.prepare('UPDATE books SET available_copies = available_copies - 1 WHERE id = ?').run(bId);
+        db.prepare('INSERT INTO borrowings (book_id, member_name, borrow_date) VALUES (?, ?, datetime("now"))').run(bId, member);
     });
-};`
-  },
 
-  "image-optimizer": {
-    filename: "imageOptimizer.js (Node.js & Sharp)",
-    language: "JavaScript / Node.js",
-    path: "backend-nodejs/image-optimizer/index.js",
-    code: `// ================================================================
-// IMAGE OPTIMIZER & WEBP CONVERTER (NODE.JS & SHARP)
-// ================================================================
-
-const sharp = require('sharp');
-
-async function optimizeImageBuffer(fileBuffer, { width, quality = 80, format = 'webp' }) {
-    let pipeline = sharp(fileBuffer);
-    
-    // Resize jika parameter lebar disertakan
-    if (width) {
-        pipeline = pipeline.resize({ width: parseInt(width), withoutEnlargement: true });
+    try {
+        borrowTransaction(bookId, memberName);
+        res.json({ success: true, message: 'Buku berhasil dipinjam' });
+    } catch (err) {
+        res.status(400).json({ error: err.message });
     }
-    
-    // Format conversion & compression
-    if (format === 'webp') {
-        pipeline = pipeline.webp({ quality });
-    } else if (format === 'jpeg' || format === 'jpg') {
-        pipeline = pipeline.jpeg({ quality });
-    } else if (format === 'png') {
-        pipeline = pipeline.png({ quality });
-    }
-    
-    return await pipeline.toBuffer();
-}`
+});
+
+module.exports = router;`
   },
 
   "api-checker": {
-    filename: "api-checker.js (JavaScript ES6+ Fetch)",
-    language: "JavaScript",
-    path: "frontend/js/api-checker.js",
-    code: `// ================================================================
-// ASYNCHRONOUS API HEALTH CHECKER (MODERN JAVASCRIPT ES6+)
-// ================================================================
-
+    filename: "api-checker.js (Client-side Latency Ping)",
+    language: "JavaScript ES6+",
+    path: "js/api-checker.js",
+    code: `// Mengukur Latensi Network & HTTP Status Real-Time
 async function pingEndpoint(url, method = 'GET') {
-    const startTime = performance.now();
+    const start = performance.now();
     try {
-        const response = await fetch(url, {
-            method: method,
-            mode: 'cors',
-            cache: 'no-cache'
-        });
-        const latency = Math.round(performance.now() - startTime);
-        
-        return {
-            status: response.status,
-            ok: response.ok,
-            statusText: response.statusText,
-            latencyMs: latency,
-            type: response.type
-        };
+        const res = await fetch(url, { method });
+        const latency = Math.round(performance.now() - start);
+        const data = await res.json();
+        return { status: res.status, statusText: res.statusText, latency, data };
     } catch (err) {
-        return {
-            status: 0,
-            ok: false,
-            statusText: 'Connection Failed / CORS Blocked',
-            latencyMs: Math.round(performance.now() - startTime),
-            error: err.message
-        };
+        const latency = Math.round(performance.now() - start);
+        return { error: err.message, latency };
     }
+}`
+  },
+
+  "image-optimizer": {
+    filename: "image-optimizer.js (HTML5 Canvas Compression)",
+    language: "JavaScript ES6+",
+    path: "js/image-optimizer.js",
+    code: `// Kompresi Gambar Berbasis Canvas & Konversi WebP
+function compressImage(file, quality = 0.7, maxWidth = 1200) {
+    return new Promise((resolve) => {
+        const img = new Image();
+        img.src = URL.createObjectURL(file);
+        img.onload = () => {
+            const scale = maxWidth / Math.max(img.width, maxWidth);
+            const canvas = document.createElement('canvas');
+            canvas.width = img.width * scale;
+            canvas.height = img.height * scale;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            canvas.toBlob((blob) => resolve(blob), 'image/webp', quality);
+        };
+    });
 }`
   },
 
   "currency-converter": {
-    filename: "currency-converter.js (JavaScript API Math)",
-    language: "JavaScript",
-    path: "frontend/js/currency-converter.js",
-    code: `// ================================================================
-// REAL-TIME CURRENCY EXCHANGE CALCULATOR (JAVASCRIPT)
-// ================================================================
+    filename: "currency-converter.js (Live Exchange Feed)",
+    language: "JavaScript ES6+",
+    path: "js/currency-converter.js",
+    code: `// Kalkulasi Kurs Valuta Asing dengan Caching Offline
+async function getExchangeRates(base = 'USD') {
+    const cacheKey = \`rates_\${base}\`;
+    const cached = localStorage.getItem(cacheKey);
+    if (cached) return JSON.parse(cached);
 
-async function convertCurrency(amount, fromCur, toCur) {
-    const API_URL = \`https://open.er-api.com/v6/latest/\${fromCur}\`;
-    const res = await fetch(API_URL);
+    const res = await fetch(\`https://open.er-api.com/v6/latest/\${base}\`);
     const data = await res.json();
-    
-    if (data && data.rates && data.rates[toCur]) {
-        const rate = data.rates[toCur];
-        const result = amount * rate;
-        return { rate, result, lastUpdated: data.time_last_update_utc };
-    }
-    throw new Error("Gagal mengambil data kurs terkini.");
+    localStorage.setItem(cacheKey, JSON.stringify(data.rates));
+    return data.rates;
 }`
   },
 
   "typing-test": {
-    filename: "typing-test.js (JavaScript Event Listener & Math)",
-    language: "JavaScript",
-    path: "frontend/js/typing-test.js",
-    code: `// ================================================================
-// TYPING SPEED & ACCURACY ENGINE (JAVASCRIPT)
-// ================================================================
-
-function calculateTypingStats(charCount, errorCount, timeElapsedSeconds) {
-    const timeInMinutes = timeElapsedSeconds / 60;
-    // Standar internasional: 1 kata dihitung 5 karakter (Words Per Minute)
-    const wordsTyped = (charCount - errorCount) / 5;
-    const wpm = timeInMinutes > 0 ? Math.max(0, Math.round(wordsTyped / timeInMinutes)) : 0;
-    
-    const accuracy = charCount > 0 
-        ? Math.max(0, Math.round(((charCount - errorCount) / charCount) * 100)) 
-        : 100;
-        
+    filename: "typing-test.js (WPM & Accuracy Engine)",
+    language: "JavaScript ES6+",
+    path: "js/typing-test.js",
+    code: `// Engine Kalkulasi Words Per Minute (WPM) & Akurasi
+function calculateTypingStats(typedChars, correctChars, elapsedSeconds) {
+    const minutes = elapsedSeconds / 60;
+    const words = typedChars / 5; // Standar 5 karakter = 1 kata
+    const wpm = minutes > 0 ? Math.round(words / minutes) : 0;
+    const accuracy = typedChars > 0 ? Math.round((correctChars / typedChars) * 100) : 100;
     return { wpm, accuracy };
+}`
+  },
+
+  "subnet-calculator": {
+    filename: "subnet-calculator.js (IPv4 & CIDR Subnetting)",
+    language: "JavaScript ES6+",
+    path: "js/subnet-calculator.js",
+    code: `// Algoritma Perhitungan Subnet IPv4, Netmask & Host Range
+function calculateIPv4Subnet(ipStr, cidr) {
+    const ipNum = ipStr.split('.').reduce((acc, oct) => (acc << 8) + parseInt(oct, 10), 0) >>> 0;
+    const maskNum = cidr === 0 ? 0 : (~0 << (32 - cidr)) >>> 0;
+    const wildcardNum = (~maskNum) >>> 0;
+    const networkNum = (ipNum & maskNum) >>> 0;
+    const broadcastNum = (networkNum | wildcardNum) >>> 0;
+    const usableHosts = Math.pow(2, 32 - cidr) - 2;
+
+    return { networkNum, broadcastNum, maskNum, wildcardNum, usableHosts };
+}`
+  },
+
+  "firewall-generator": {
+    filename: "firewall-generator.js (UFW & iptables Rules)",
+    language: "JavaScript ES6+",
+    path: "js/firewall-generator.js",
+    code: `// Generator Command Firewall Linux UFW & iptables
+function generateFirewallRules(port, proto, action, srcIp = "") {
+    const isAllow = action === "allow";
+    const ufwAct = isAllow ? "allow" : "deny";
+    const iptAct = isAllow ? "ACCEPT" : "DROP";
+
+    const ufw = srcIp ? \`sudo ufw \${ufwAct} from \${srcIp} to any port \${port} proto \${proto}\` : \`sudo ufw \${ufwAct} \${port}/\${proto}\`;
+    const ipt = srcIp ? \`sudo iptables -A INPUT -s \${srcIp} -p \${proto} --dport \${port} -j \${iptAct}\` : \`sudo iptables -A INPUT -p \${proto} --dport \${port} -j \${iptAct}\`;
+    return { ufw, ipt };
+}`
+  },
+
+  "bandwidth-estimator": {
+    filename: "bandwidth-estimator.js (Network Throughput)",
+    language: "JavaScript ES6+",
+    path: "js/bandwidth-estimator.js",
+    code: `// Estimasi Durasi Transfer Data & Throughput Jaringan
+function estimateTransferTime(bytes, bitsPerSec, efficiency = 0.9) {
+    const effectiveBytesPerSec = (bitsPerSec * efficiency) / 8;
+    const totalSeconds = bytes / effectiveBytesPerSec;
+    return { totalSeconds, effectiveMBps: effectiveBytesPerSec / (1024 * 1024) };
+}`
+  },
+
+  "streaming-calculator": {
+    filename: "streaming-calculator.js (RTMP/HLS Bitrate)",
+    language: "JavaScript ES6+",
+    path: "js/streaming-calculator.js",
+    code: `// Kalkulasi Kebutuhan Egress Bandwidth & Disk Storage Nginx
+function calculateStreamingBandwidth(videoKbps, audioKbps, viewers, hours) {
+    const totalKbps = videoKbps + audioKbps;
+    const egressMbps = (totalKbps / 1000) * viewers;
+    const storagePerHourGb = ((totalKbps * 1000 / 8) * 3600) / (1024 * 1024 * 1024);
+    return { egressMbps, storagePerHourGb, monthlyGb: storagePerHourGb * hours * 30 };
+}`
+  },
+
+  "cron-builder": {
+    filename: "cron-builder.js (Cron Syntax Generator)",
+    language: "JavaScript ES6+",
+    path: "js/cron-builder.js",
+    code: `// Visualizer & Parser Format Crontab Linux
+function buildCrontab(min, hour, dom, month, dow, command) {
+    const expression = \`\${min} \${hour} \${dom} \${month} \${dow}\`;
+    const crontabLine = \`\${expression} \${command}\`;
+    return { expression, crontabLine };
+}`
+  },
+
+  "security-headers": {
+    filename: "security-headers.js (HTTP Hardening Audit)",
+    language: "JavaScript ES6+",
+    path: "js/security-headers.js",
+    code: `// Audit Keberadaan HTTP Security Headers Standar OWASP
+function auditSecurityHeaders(rawHeaders) {
+    const required = ['strict-transport-security', 'content-security-policy', 'x-frame-options', 'x-content-type-options'];
+    const lower = rawHeaders.toLowerCase();
+    const passed = required.filter(h => lower.includes(h));
+    const score = Math.round((passed.length / required.length) * 100);
+    return { score, passed, missing: required.filter(h => !passed.includes(h)) };
+}`
+  },
+
+  "crypto-hash": {
+    filename: "crypto-hash.js (Web Crypto API)",
+    language: "JavaScript ES6+",
+    path: "js/crypto-hash.js",
+    code: `// Digest Hash Kriptografi SHA-256 / SHA-512 via Web Crypto
+async function generateSha256(text) {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(text);
+    const hashBuf = await crypto.subtle.digest('SHA-256', data);
+    return Array.from(new Uint8Array(hashBuf)).map(b => b.toString(16).padStart(2, '0')).join('');
+}`
+  },
+
+  "password-entropy": {
+    filename: "password-entropy.js (Entropy & Brute-force)",
+    language: "JavaScript ES6+",
+    path: "js/password-entropy.js",
+    code: `// Perhitungan Entropi Bit & Waktu Retak Password
+function calculateEntropy(pwd) {
+    let pool = 0;
+    if (/[a-z]/.test(pwd)) pool += 26;
+    if (/[A-Z]/.test(pwd)) pool += 26;
+    if (/[0-9]/.test(pwd)) pool += 10;
+    if (/[^a-zA-Z0-9]/.test(pwd)) pool += 33;
+    const entropyBits = pwd.length > 0 && pool > 0 ? (pwd.length * Math.log2(pool)) : 0;
+    return entropyBits;
+}`
+  },
+
+  "payload-encoder": {
+    filename: "payload-encoder.js (Payload Sanitizer)",
+    language: "JavaScript ES6+",
+    path: "js/payload-encoder.js",
+    code: `// Multi-format Encoder & Decoder Sanitizer
+function encodePayload(str) {
+    return {
+        base64: btoa(unescape(encodeURIComponent(str))),
+        url: encodeURIComponent(str),
+        hex: Array.from(str).map(c => c.charCodeAt(0).toString(16).padStart(2, '0')).join(' ')
+    };
+}`
+  },
+
+  "jwt-debugger": {
+    filename: "jwt-debugger.js (Token Claims Parser)",
+    language: "JavaScript ES6+",
+    path: "js/jwt-debugger.js",
+    code: `// Parsing Payload & Header JSON Web Token (JWT)
+function decodeJwt(token) {
+    const parts = token.split('.');
+    if (parts.length < 2) throw new Error("Invalid JWT token format");
+    const header = JSON.parse(atob(parts[0].replace(/-/g, '+').replace(/_/g, '/')));
+    const payload = JSON.parse(atob(parts[1].replace(/-/g, '+').replace(/_/g, '/')));
+    return { header, payload, isExpired: payload.exp && payload.exp < Date.now() / 1000 };
+}`
+  },
+
+  "json-sql-converter": {
+    filename: "json-sql-converter.js (Schema Generator)",
+    language: "JavaScript ES6+",
+    path: "js/json-sql-converter.js",
+    code: `// Mengubah Objek JSON ke Query SQL INSERT & Skema Relasional
+function jsonToSql(jsonData, tableName = 'my_table') {
+    const cols = Object.keys(jsonData[0]);
+    let sql = \`CREATE TABLE \${tableName} (\${cols.map(c => \`\${c} TEXT\`).join(', ')});\n\`;
+    jsonData.forEach(row => {
+        const vals = cols.map(c => \`'\${String(row[c]).replace(/'/g, "''")}'\`).join(', ');
+        sql += \`INSERT INTO \${tableName} (\${cols.join(', ')}) VALUES (\${vals});\n\`;
+    });
+    return sql;
+}`
+  },
+
+  "log-analyzer": {
+    filename: "log-analyzer.js (Log Regex Parser)",
+    language: "JavaScript ES6+",
+    path: "js/log-analyzer.js",
+    code: `// Parsing Nginx Access Log dengan Pola Regex Baku
+function parseAccessLog(logLines) {
+    const regex = /^(\\S+)\\s+\\S+\\s+\\S+\\s+\\[([^\\]]+)\\]\\s+"(\\S+)\\s+(\\S+)\\s*([^"]*)"\\s+(\\d{3})\\s+(\\S+)/;
+    return logLines.map(line => {
+        const m = line.match(regex);
+        return m ? { ip: m[1], timestamp: m[2], method: m[3], path: m[4], status: parseInt(m[6], 10) } : null;
+    }).filter(Boolean);
+}`
+  },
+
+  "raid-calculator": {
+    filename: "raid-calculator.js (RAID Array Engine)",
+    language: "JavaScript ES6+",
+    path: "js/raid-calculator.js",
+    code: `// Kalkulasi Kapasitas Efektif & Redundansi RAID 0, 1, 5, 6, 10
+function calculateRaidArray(type, disks, diskSizeTb) {
+    if (type === "0") return { usable: disks * diskSizeTb, parity: 0 };
+    if (type === "1") return { usable: diskSizeTb, parity: (disks - 1) * diskSizeTb };
+    if (type === "5") return { usable: (disks - 1) * diskSizeTb, parity: diskSizeTb };
+    if (type === "6") return { usable: (disks - 2) * diskSizeTb, parity: 2 * diskSizeTb };
+    if (type === "10") return { usable: (disks / 2) * diskSizeTb, parity: (disks / 2) * diskSizeTb };
+}`
+  },
+
+  "psu-calculator": {
+    filename: "psu-calculator.js (Hardware Wattage)",
+    language: "JavaScript ES6+",
+    path: "js/psu-calculator.js",
+    code: `// Estimasi Kebutuhan Daya Listrik Komponen PC & Headroom PSU
+function calculatePsuWattage(cpuTdp, gpuTdp, ramSticks, nvmeCount, hddCount, fans) {
+    const baseMobo = 35;
+    const totalWatt = cpuTdp + gpuTdp + (ramSticks * 5) + (nvmeCount * 7) + (hddCount * 12) + (fans * 4) + baseMobo;
+    const recommendedPsu = Math.ceil((totalWatt * 1.4) / 50) * 50;
+    return { totalWatt, recommendedPsu };
+}`
+  },
+
+  "regex-tester": {
+    filename: "regex-tester.js (Regex Engine)",
+    language: "JavaScript ES6+",
+    path: "js/regex-tester.js",
+    code: `// Engine Evaluasi Match & Capture Group Regex
+function testRegex(patternStr, flags, testStr) {
+    const regex = new RegExp(patternStr, flags.includes('g') ? flags : flags + 'g');
+    const matches = [];
+    let m;
+    while ((m = regex.exec(testStr)) !== null) {
+        matches.push({ val: m[0], index: m.index });
+        if (regex.lastIndex === m.index) regex.lastIndex++;
+    }
+    return matches;
+}`
+  },
+
+  "markdown-preview": {
+    filename: "markdown-preview.js (Markdown Parser)",
+    language: "JavaScript ES6+",
+    path: "js/markdown-preview.js",
+    code: `// Lightweight Client-Side Markdown Parser
+function parseMarkdownToHtml(md) {
+    return md
+        .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+        .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+        .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+        .replace(/\\*\\*([^\\*]+)\\*\\*/gim, '<strong>$1</strong>')
+        .replace(/\\*([^\\*]+)\\*/gim, '<em>$1</em>')
+        .replace(/\`([^\`]+)\`/gim, '<code>$1</code>');
 }`
   }
 };
