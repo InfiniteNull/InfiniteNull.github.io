@@ -10,7 +10,7 @@ window.I18N_DICT = {
     projectSwitcherLabel: "Pilih Portofolio:",
     labelProjectSimrs: "Project 2: SIMRS Laravel (Hospital System)",
     labelProjectDevTools: "Project 1: Dev Suite (29 Tools)",
-    currentProjectBadge: "Target: Staf Pengembangan TI (PT Abna)",
+    currentProjectBadge: "Sistem Informasi Manajemen Rumah Sakit",
 
     // Header
     headerSubtitle: "IT Support • Network Admin • VAPT Security • Data Analytics & Web Suite",
@@ -96,7 +96,7 @@ window.I18N_DICT = {
     projectSwitcherLabel: "Select Portfolio:",
     labelProjectSimrs: "Project 2: SIMRS Laravel (Hospital System)",
     labelProjectDevTools: "Project 1: Dev Suite (29 Tools)",
-    currentProjectBadge: "Target: IT Systems Developer (PT Abna)",
+    currentProjectBadge: "Hospital Management Information System",
 
     // Header
     headerSubtitle: "IT Support • Network Admin • VAPT Security • Data Analytics & Web Suite",

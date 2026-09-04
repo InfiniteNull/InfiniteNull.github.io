@@ -1,7 +1,7 @@
 /**
  * simrs-laravel-suite.js - Sistem Informasi Manajemen Rumah Sakit (SIMRS)
  * Standar Arsitektur: Laravel 11 MVC + Service Layer + Permenkes No. 24/2022 (RME SatuSehat)
- * Didesain khusus untuk kebutuhan operasional rumah sakit & kurikulum PT Abna
+ * Didesain untuk kebutuhan operasional rumah sakit modern
  */
 
 (function () {
@@ -150,7 +150,7 @@
         </div>
 
         <!-- Segmented Tab Navigation -->
-        <div class="flex items-center gap-1 border-b border-slate-200 dark:border-slate-800 overflow-x-auto pb-px scrollbar-none" id="simrsTabNav">
+        <div class="flex items-center gap-1 border-b border-slate-200 dark:border-slate-800 overflow-x-auto pb-px scrollbar-none" id="simrsSubTabs">
           <button data-tab="pendaftaran" class="simrs-tab-link ${currentTab === 'pendaftaran' ? 'active' : ''} px-4 py-2.5 text-xs font-semibold rounded-t-lg transition flex items-center gap-2">
             <i data-lucide="clipboard-list" class="w-4 h-4"></i>
             <span>${isEn ? "1. Admission & Queue" : "1. Pendaftaran & Antrean"}</span>
