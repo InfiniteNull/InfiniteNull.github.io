@@ -23,6 +23,29 @@ window.DATA_QC_SAMPLE_B = [
 ];
 
 window.renderDataQcInspector = function(container) {
+  const isEn = (window.currentLang || 'id') === 'en';
+
+  const t = {
+    subTabAudit: isEn ? "1. Quality Control & Outlier Audit" : "1. Quality Control & Outlier Audit",
+    subTabJoin: isEn ? "2. Multi-Dataset Integration (Join)" : "2. Multi-Dataset Integration (Join)",
+    exportReport: isEn ? "Export QC Report" : "Export QC Report",
+    healthTitle: isEn ? "DATA HEALTH SCORE" : "DATA HEALTH SCORE",
+    healthSub: isEn ? "Dataset ready for production analysis" : "Kualitas dataset siap analisis",
+    completeness: isEn ? "Completeness" : "Completeness (Kelengkapan)",
+    uniqueness: isEn ? "Uniqueness (Primary Key)" : "Uniqueness (Keunikan Key)",
+    outliers: isEn ? "Statistical Outliers (IQR)" : "Statistical Outliers (IQR)",
+    outlierHeading: isEn ? "Anomaly Detection & Record Audit (Tukey's Fences IQR)" : "Deteksi Anomali & Audit Rekaman (Tukey's Fences IQR)",
+    joinHeading: isEn ? "Relational Join Engine (Dataset A ⨝ Dataset B)" : "Relational Join Engine (Dataset A ⨝ Dataset B)",
+    joinDesc: isEn ? "Merges employee dataset with department master table on Foreign Key id_divisi." : "Menggabungkan data karyawan dengan master divisi berdasarkan Foreign Key id_divisi.",
+    joinTypeLabel: isEn ? "Join Type:" : "Tipe Join:",
+    joinInner: isEn ? "INNER JOIN (Matching Keys Only)" : "INNER JOIN (Hanya Kunci Cocok)",
+    joinLeft: isEn ? "LEFT JOIN (All Employees)" : "LEFT JOIN (Semua Karyawan)",
+    joinRight: isEn ? "RIGHT JOIN (All Departments)" : "RIGHT JOIN (Semua Divisi)",
+    joinFull: isEn ? "FULL OUTER JOIN (All Records)" : "FULL OUTER JOIN (Semua Baris)",
+    alertTitle: isEn ? "Data Integration Audit Note:" : "Catatan Integritas Integrasi Data:",
+    alertBody: isEn ? "1 employee record (EMP-06: Eka Wijaya) references DIV-DEV which is missing from Department Master (Orphan Foreign Key), and 1 department (DIV-HRD) has zero assigned staff." : "Ditemukan 1 data karyawan (EMP-06: Eka Wijaya) dengan foreign key DIV-DEV yang tidak ditemukan di Master Divisi (Orphan Foreign Key), serta 1 divisi (DIV-HRD) yang belum memiliki alokasi staf karyawan."
+  };
+
   container.innerHTML = `
     <div class="space-y-6">
       
@@ -31,17 +54,17 @@ window.renderDataQcInspector = function(container) {
         <div class="flex items-center gap-2">
           <button id="qcSubTabAudit" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900 transition flex items-center gap-1.5 font-mono">
             <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
-            <span>1. Quality Control & Outlier Audit</span>
+            <span>${t.subTabAudit}</span>
           </button>
           <button id="qcSubTabJoin" class="px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition flex items-center gap-1.5 font-mono">
             <i data-lucide="git-merge" class="w-3.5 h-3.5"></i>
-            <span>2. Multi-Dataset Integration (Join)</span>
+            <span>${t.subTabJoin}</span>
           </button>
         </div>
 
         <button id="btnExportQcReport" class="px-3 py-1.5 text-xs font-mono rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition flex items-center gap-1.5">
           <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
-          <span>Export QC Report</span>
+          <span>${t.exportReport}</span>
         </button>
       </div>
 
@@ -52,30 +75,30 @@ window.renderDataQcInspector = function(container) {
         <div class="grid grid-cols-1 sm:grid-cols-4 gap-3">
           
           <div class="p-4 rounded-xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 flex flex-col justify-between">
-            <div class="text-xs text-slate-400 dark:text-slate-600 font-mono">DATA HEALTH SCORE</div>
+            <div class="text-xs text-slate-400 dark:text-slate-600 font-mono">${t.healthTitle}</div>
             <div class="my-2">
               <span id="qcHealthScoreVal" class="text-3xl font-extrabold font-mono">94.2%</span>
               <span class="ml-1 px-1.5 py-0.5 text-[10px] font-bold rounded bg-emerald-500/20 text-emerald-400 dark:text-emerald-700 border border-emerald-500/30">GRADE A</span>
             </div>
-            <div class="text-[11px] text-slate-400 dark:text-slate-500">Kualitas dataset siap analisis</div>
+            <div class="text-[11px] text-slate-400 dark:text-slate-500">${t.healthSub}</div>
           </div>
 
           <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-1">
-            <div class="text-xs text-slate-500 font-mono">Completeness (Kelengkapan)</div>
+            <div class="text-xs text-slate-500 font-mono">${t.completeness}</div>
             <div class="text-xl font-bold font-mono text-slate-900 dark:text-white" id="qcScoreCompleteness">100%</div>
-            <div class="text-[11px] text-slate-400">0 sel null / missing</div>
+            <div class="text-[11px] text-slate-400">${isEn ? '0 null / missing cells' : '0 sel null / missing'}</div>
           </div>
 
           <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-1">
-            <div class="text-xs text-slate-500 font-mono">Uniqueness (Keunikan Key)</div>
+            <div class="text-xs text-slate-500 font-mono">${t.uniqueness}</div>
             <div class="text-xl font-bold font-mono text-slate-900 dark:text-white" id="qcScoreUniqueness">100%</div>
-            <div class="text-[11px] text-slate-400">0 duplikasi Primary Key</div>
+            <div class="text-[11px] text-slate-400">${isEn ? '0 duplicate Primary Keys' : '0 duplikasi Primary Key'}</div>
           </div>
 
           <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-1">
-            <div class="text-xs text-slate-500 font-mono">Statistical Outliers (IQR)</div>
-            <div class="text-xl font-bold font-mono text-amber-600 dark:text-amber-400" id="qcScoreOutliers">1 Anomali</div>
-            <div class="text-[11px] text-slate-400">Di luar batas 1.5x IQR</div>
+            <div class="text-xs text-slate-500 font-mono">${t.outliers}</div>
+            <div class="text-xl font-bold font-mono text-amber-600 dark:text-amber-400" id="qcScoreOutliers">${isEn ? '1 Anomaly' : '1 Anomali'}</div>
+            <div class="text-[11px] text-slate-400">${isEn ? 'Outside 1.5x IQR boundary' : 'Di luar batas 1.5x IQR'}</div>
           </div>
 
         </div>
@@ -85,9 +108,9 @@ window.renderDataQcInspector = function(container) {
           <div class="flex items-center justify-between">
             <h5 class="text-xs font-bold font-mono text-slate-900 dark:text-white flex items-center gap-1.5">
               <i data-lucide="alert-triangle" class="w-3.5 h-3.5 text-amber-500"></i>
-              <span>Deteksi Anomali & Audit Rekaman (Tukey's Fences IQR)</span>
+              <span>${t.outlierHeading}</span>
             </h5>
-            <span class="text-[11px] font-mono text-slate-500">Target Kolom: <strong>gaji</strong></span>
+            <span class="text-[11px] font-mono text-slate-500">${isEn ? 'Target Column:' : 'Target Kolom:'} <strong>gaji</strong></span>
           </div>
 
           <div class="border border-slate-200 dark:border-slate-800 rounded-lg overflow-x-auto">
@@ -95,11 +118,11 @@ window.renderDataQcInspector = function(container) {
               <thead class="bg-slate-50 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 border-b border-slate-200 dark:border-slate-800">
                 <tr>
                   <th class="px-3 py-2">Emp ID</th>
-                  <th class="px-3 py-2">Nama</th>
-                  <th class="px-3 py-2">Divisi</th>
-                  <th class="px-3 py-2">Gaji (IDR)</th>
+                  <th class="px-3 py-2">${isEn ? 'Name' : 'Nama'}</th>
+                  <th class="px-3 py-2">${isEn ? 'Department' : 'Divisi'}</th>
+                  <th class="px-3 py-2">${isEn ? 'Salary (IDR)' : 'Gaji (IDR)'}</th>
                   <th class="px-3 py-2">Status QC</th>
-                  <th class="px-3 py-2">Catatan Audit</th>
+                  <th class="px-3 py-2">${isEn ? 'Audit Log Note' : 'Catatan Audit'}</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-slate-100 dark:divide-slate-800/60" id="qcAuditTableBody">
@@ -119,21 +142,21 @@ window.renderDataQcInspector = function(container) {
             <div>
               <h5 class="text-xs font-bold font-mono text-slate-900 dark:text-white flex items-center gap-1.5">
                 <i data-lucide="git-merge" class="w-3.5 h-3.5 text-slate-500"></i>
-                <span>Relational Join Engine (Dataset A ⨝ Dataset B)</span>
+                <span>${t.joinHeading}</span>
               </h5>
               <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                Menggabungkan data karyawan dengan master divisi berdasarkan Foreign Key <code>id_divisi</code>.
+                ${t.joinDesc}
               </p>
             </div>
 
             <!-- Join Type Selector -->
             <div class="flex items-center gap-2">
-              <label class="text-xs font-mono text-slate-500">Tipe Join:</label>
+              <label class="text-xs font-mono text-slate-500">${t.joinTypeLabel}</label>
               <select id="qcJoinTypeSelect" class="px-2.5 py-1.5 text-xs font-mono rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 focus:outline-none">
-                <option value="inner" selected>INNER JOIN (Hanya Kunci Cocok)</option>
-                <option value="left">LEFT JOIN (Semua Karyawan)</option>
-                <option value="right">RIGHT JOIN (Semua Divisi)</option>
-                <option value="full">FULL OUTER JOIN (Semua Baris)</option>
+                <option value="inner" selected>${t.joinInner}</option>
+                <option value="left">${t.joinLeft}</option>
+                <option value="right">${t.joinRight}</option>
+                <option value="full">${t.joinFull}</option>
               </select>
             </div>
           </div>
@@ -144,11 +167,11 @@ window.renderDataQcInspector = function(container) {
               <thead class="bg-slate-50 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 border-b border-slate-200 dark:border-slate-800">
                 <tr>
                   <th class="px-3 py-2">Emp ID</th>
-                  <th class="px-3 py-2">Nama Karyawan</th>
+                  <th class="px-3 py-2">${isEn ? 'Employee Name' : 'Nama Karyawan'}</th>
                   <th class="px-3 py-2">Divisi Key</th>
-                  <th class="px-3 py-2">Nama Divisi Tergabung</th>
+                  <th class="px-3 py-2">${isEn ? 'Merged Department' : 'Nama Divisi Tergabung'}</th>
                   <th class="px-3 py-2">Head Dept</th>
-                  <th class="px-3 py-2">Status Integritas</th>
+                  <th class="px-3 py-2">${isEn ? 'Integrity Status' : 'Status Integritas'}</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-slate-100 dark:divide-slate-800/60" id="qcJoinTableBody">
@@ -161,7 +184,7 @@ window.renderDataQcInspector = function(container) {
           <div id="qcMismatchAlert" class="p-3 rounded-lg bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/50 text-xs text-amber-800 dark:text-amber-300 flex items-start gap-2">
             <i data-lucide="info" class="w-4 h-4 mt-0.5 flex-shrink-0"></i>
             <div>
-              <strong>Catatan Integritas Integrasi Data:</strong> Ditemukan 1 data karyawan (<code>EMP-06: Eka Wijaya</code>) dengan foreign key <code>DIV-DEV</code> yang tidak ditemukan di Master Divisi (Orphan Foreign Key), serta 1 divisi (<code>DIV-HRD</code>) yang belum memiliki alokasi staf karyawan.
+              <strong>${t.alertTitle}</strong> ${t.alertBody}
             </div>
           </div>
         </div>
@@ -204,11 +227,11 @@ function switchQcTab(tab) {
 }
 
 function renderAuditTable() {
+  const isEn = (window.currentLang || 'id') === 'en';
   const tbody = document.getElementById('qcAuditTableBody');
   if (!tbody) return;
 
   const salaries = window.DATA_QC_SAMPLE_A.map(d => d.gaji).sort((a, b) => a - b);
-  // Calculate IQR
   const q1 = salaries[Math.floor(salaries.length * 0.25)];
   const q3 = salaries[Math.floor(salaries.length * 0.75)];
   const iqr = q3 - q1;
@@ -220,14 +243,14 @@ function renderAuditTable() {
     const isOrphan = row.id_divisi === 'DIV-DEV';
 
     let statusBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">VALID</span>`;
-    let note = "Sesuai rentang distribusi normal.";
+    let note = isEn ? "Within normal distribution boundaries." : "Sesuai rentang distribusi normal.";
 
     if (isOutlier) {
       statusBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800">OUTLIER (IQR)</span>`;
-      note = `Nilai gaji Rp ${row.gaji.toLocaleString()} > batas wajar IQR (Rp ${Math.round(upperFence).toLocaleString()}).`;
+      note = isEn ? `Salary IDR ${row.gaji.toLocaleString()} > upper IQR fence (IDR ${Math.round(upperFence).toLocaleString()}).` : `Nilai gaji Rp ${row.gaji.toLocaleString()} > batas wajar IQR (Rp ${Math.round(upperFence).toLocaleString()}).`;
     } else if (isOrphan) {
       statusBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-sky-100 dark:bg-sky-950/60 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800">ORPHAN FK</span>`;
-      note = "Kode divisi tidak terdaftar pada tabel referensi master.";
+      note = isEn ? "Foreign key is not present in department master table." : "Kode divisi tidak terdaftar pada tabel referensi master.";
     }
 
     html += `
@@ -246,6 +269,7 @@ function renderAuditTable() {
 }
 
 function renderJoinTable() {
+  const isEn = (window.currentLang || 'id') === 'en';
   const tbody = document.getElementById('qcJoinTableBody');
   const joinType = document.getElementById('qcJoinTypeSelect') ? document.getElementById('qcJoinTypeSelect').value : 'inner';
   if (!tbody) return;
@@ -269,7 +293,7 @@ function renderJoinTable() {
         emp_id: a.emp_id,
         nama: a.nama,
         id_divisi: a.id_divisi,
-        nama_divisi: b ? b.nama_divisi : "<NULL: Divisi Tidak Ditemukan>",
+        nama_divisi: b ? b.nama_divisi : (isEn ? "<NULL: Department Not Found>" : "<NULL: Divisi Tidak Ditemukan>"),
         head: b ? b.head_dept : "N/A",
         status: b ? "MATCHED" : "UNMATCHED_LEFT"
       });
@@ -282,11 +306,10 @@ function renderJoinTable() {
           results.push({ emp_id: a.emp_id, nama: a.nama, id_divisi: b.id_divisi, nama_divisi: b.nama_divisi, head: b.head_dept, status: "MATCHED" });
         });
       } else {
-        results.push({ emp_id: "<NULL>", nama: "<Belum Ada Staf>", id_divisi: b.id_divisi, nama_divisi: b.nama_divisi, head: b.head_dept, status: "UNMATCHED_RIGHT" });
+        results.push({ emp_id: "<NULL>", nama: (isEn ? "<No Assigned Staff>" : "<Belum Ada Staf>"), id_divisi: b.id_divisi, nama_divisi: b.nama_divisi, head: b.head_dept, status: "UNMATCHED_RIGHT" });
       }
     });
   } else if (joinType === 'full') {
-    // Left pass
     const matchedB = new Set();
     datasetA.forEach(a => {
       const b = datasetB.find(d => d.id_divisi === a.id_divisi);
@@ -295,15 +318,14 @@ function renderJoinTable() {
         emp_id: a.emp_id,
         nama: a.nama,
         id_divisi: a.id_divisi,
-        nama_divisi: b ? b.nama_divisi : "<NULL: Divisi Tidak Ditemukan>",
+        nama_divisi: b ? b.nama_divisi : (isEn ? "<NULL: Department Not Found>" : "<NULL: Divisi Tidak Ditemukan>"),
         head: b ? b.head_dept : "N/A",
         status: b ? "MATCHED" : "UNMATCHED_LEFT"
       });
     });
-    // Right unmatched pass
     datasetB.forEach(b => {
       if (!matchedB.has(b.id_divisi)) {
-        results.push({ emp_id: "<NULL>", nama: "<Belum Ada Staf>", id_divisi: b.id_divisi, nama_divisi: b.nama_divisi, head: b.head_dept, status: "UNMATCHED_RIGHT" });
+        results.push({ emp_id: "<NULL>", nama: (isEn ? "<No Assigned Staff>" : "<Belum Ada Staf>"), id_divisi: b.id_divisi, nama_divisi: b.nama_divisi, head: b.head_dept, status: "UNMATCHED_RIGHT" });
       }
     });
   }
@@ -311,7 +333,7 @@ function renderJoinTable() {
   let html = '';
   results.forEach(r => {
     let badgeClass = "bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300";
-    let statusText = "Matched (Sesuai)";
+    let statusText = isEn ? "Matched" : "Matched (Sesuai)";
     if (r.status === 'UNMATCHED_LEFT') {
       badgeClass = "bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300";
       statusText = "Orphan Record";
@@ -336,6 +358,7 @@ function renderJoinTable() {
 }
 
 function exportQcReport() {
+  const isEn = (window.currentLang || 'id') === 'en';
   const report = `# ============================================================
 # DATA QUALITY CONTROL & INTEGRATION AUDIT REPORT
 # Generated by Dataset Integration & QC Inspector
@@ -359,6 +382,6 @@ function exportQcReport() {
 `;
 
   navigator.clipboard.writeText(report).then(() => {
-    if (window.showToast) window.showToast("Laporan QC Audit berhasil disalin ke clipboard!", "success");
+    if (window.showToast) window.showToast(isEn ? "QC Audit Report copied to clipboard!" : "Laporan QC Audit berhasil disalin ke clipboard!", "success");
   });
 }

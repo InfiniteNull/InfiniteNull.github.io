@@ -72,6 +72,16 @@ window.I18N_DICT = {
     skillProgTitle: "Bahasa Pemrograman & Backend:",
     skillProgDesc: "Python (Pandas, VADER, BS4, FastAPI), Node.js (Express, Sharp), C++, SQL (SQLite), JavaScript ES6+.",
     
+    footerBioText: "Lulusan S1 Informatika Universitas Potensi Utama. Praktisi IT Support (Bank Sinarmas), IT Researcher (Adzkia Kedinasan), Network Administrator (Komdigi & Kominfo), VAPT Security, serta Analisis Data & Software Engineering.",
+    footerTechHeading: "Kompetensi & Teknologi",
+    footerTechList: `
+      <li>• <strong>Infrastruktur & Media:</strong> Nginx Media Server (RTMP, HLS, RTSP), Linux VM</li>
+      <li>• <strong>Data & NLP:</strong> Python (Pandas, VADER Lexicon, BeautifulSoup, FastAPI)</li>
+      <li>• <strong>Backend & Jaringan:</strong> Node.js REST API, SQLite, IP Routing, PC Deployment</li>
+      <li>• <strong>Keamanan:</strong> VAPT (Burp Suite, OWASP ZAP), OSINT, Bcrypt, JWT</li>
+    `,
+    footerLinksHeading: "Tautan & Portofolio",
+    footerLinksDesc: "Seluruh 29 modul aplikasi dirancang secara modular dan dapat dicoba secara interaktif.",
     footerTagline: "© 2026 Rizki Ananda, S.Kom (@InfiniteNull) • Dibangun dengan Clean Code & Standar Profesional IT."
   },
 
@@ -101,7 +111,7 @@ window.I18N_DICT = {
     
     // Modal Workspace
     tabDemo: "Interactive Live Demo",
-    tabCode: "Original Source Code",
+    tabCode: "Original Source Code (Python / Node.js)",
     tabDocs: "Architecture & Technical Docs",
     copyCode: "Copy Code",
     
@@ -142,6 +152,17 @@ window.I18N_DICT = {
     skillProgTitle: "Programming & Backend:",
     skillProgDesc: "Python (Pandas, VADER, BS4, FastAPI), Node.js (Express, Sharp), C++, SQL (SQLite), JavaScript ES6+.",
     
+    // Footer section
+    footerBioText: "B.Sc. in Computer Science graduate from Universitas Potensi Utama. IT Support Practitioner (Bank Sinarmas), IT Researcher (Adzkia Kedinasan), Certified Network Administrator (Komdigi & Kominfo), VAPT Security, and Data Analytics & Software Engineering.",
+    footerTechHeading: "Competencies & Tech Stack",
+    footerTechList: `
+      <li>• <strong>Infrastructure & Media:</strong> Nginx Media Server (RTMP, HLS, RTSP), Linux VM</li>
+      <li>• <strong>Data & NLP:</strong> Python (Pandas, VADER Lexicon, BeautifulSoup, FastAPI)</li>
+      <li>• <strong>Backend & Networking:</strong> Node.js REST API, SQLite, IP Routing, PC Deployment</li>
+      <li>• <strong>Security:</strong> VAPT (Burp Suite, OWASP ZAP), OSINT, Bcrypt, JWT</li>
+    `,
+    footerLinksHeading: "Links & Portfolio",
+    footerLinksDesc: "All 29 modular application tools are designed for real-time interactive exploration.",
     footerTagline: "© 2026 Rizki Ananda, S.Kom (@InfiniteNull) • Handcrafted with Clean Code & Professional IT Standards."
   }
 };
@@ -309,12 +330,33 @@ window.setLanguage = function(lang) {
   const skillProgDesc = document.getElementById('skillProgDesc');
   if (skillProgDesc) skillProgDesc.textContent = dict.skillProgDesc;
 
+  // 9. Footer Translations
+  const footerBioText = document.getElementById('footerBioText');
+  if (footerBioText) footerBioText.textContent = dict.footerBioText;
+
+  const footerTechHeading = document.getElementById('footerTechHeading');
+  if (footerTechHeading) footerTechHeading.textContent = dict.footerTechHeading;
+
+  const footerTechList = document.getElementById('footerTechList');
+  if (footerTechList) footerTechList.innerHTML = dict.footerTechList;
+
+  const footerLinksHeading = document.getElementById('footerLinksHeading');
+  if (footerLinksHeading) footerLinksHeading.textContent = dict.footerLinksHeading;
+
+  const footerLinksDesc = document.getElementById('footerLinksDesc');
+  if (footerLinksDesc) footerLinksDesc.textContent = dict.footerLinksDesc;
+
   const footerTagline = document.getElementById('footerTagline');
   if (footerTagline) footerTagline.textContent = dict.footerTagline;
 
   // Re-render Tools Grid to update titles & descriptions
   if (typeof window.renderToolsGrid === 'function') {
     window.renderToolsGrid();
+  }
+
+  // If a modal is open, refresh its content in the active language
+  if (window.activeTool && typeof window.openToolModal === 'function') {
+    window.openToolModal(window.activeTool);
   }
 
   if (window.showToast) {

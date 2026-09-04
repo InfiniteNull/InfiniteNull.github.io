@@ -30,6 +30,18 @@ const TOOLS_REGISTRY = [
           <li><strong>Usable Hosts:</strong> Menghitung kapasitas $2^{(32 - CIDR)} - 2$ untuk alokasi host per departemen.</li>
         </ul>
       </div>
+    `,
+    docs_en: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">IPv4 Subnetting Architecture & Bitwise Logic</h4>
+        <p>Implements standard RFC 791 / RFC 4632 bitwise manipulation operations:</p>
+        <ul class="list-disc pl-5 space-y-1 text-xs">
+          <li><strong>IP to Integer:</strong> Converts dotted decimal string notation into a 32-bit unsigned integer.</li>
+          <li><strong>Netmask & Wildcard:</strong> Shifts bits <code>(~0 << (32 - CIDR))</code> to construct subnet mask and bitwise inverse for wildcard.</li>
+          <li><strong>Network & Broadcast Range:</strong> Executes <code>IP & Mask</code> (Network ID) and <code>Network | Wildcard</code> (Broadcast).</li>
+          <li><strong>Usable Hosts:</strong> Computes $2^{(32 - CIDR)} - 2$ capacity for departmental IP allocation.</li>
+        </ul>
+      </div>
     `
   },
   {
@@ -52,6 +64,16 @@ const TOOLS_REGISTRY = [
           <li><strong>Multi-Platform CLI Generator:</strong> Menghasilkan syntax presisi untuk Ubuntu UFW, CentOS/RedHat iptables, dan Mikrotik RouterOS.</li>
         </ul>
       </div>
+    `,
+    docs_en: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Port Management & Firewall Hardening</h4>
+        <p>Streamlines Layer 4 transport protocol (TCP/UDP) security rule configurations:</p>
+        <ul class="list-disc pl-5 space-y-1 text-xs">
+          <li><strong>Universal Port Directory:</strong> Essential standard service ports database (SSH, HTTP/HTTPS, Database, RTSP, RTMP).</li>
+          <li><strong>Multi-Platform CLI Generator:</strong> Generates exact syntax for Ubuntu UFW, CentOS/RHEL iptables, and Mikrotik RouterOS.</li>
+        </ul>
+      </div>
     `
   },
   {
@@ -69,6 +91,12 @@ const TOOLS_REGISTRY = [
       <div class="space-y-4">
         <h4 class="text-sm font-bold text-slate-900 dark:text-white">Estimasi Throughput & TCP/IP Overhead</h4>
         <p>Menghitung waktu transfer data riil dengan memperhitungkan faktor latensi dan overhead protokol (efisiensi 80% - 90%).</p>
+      </div>
+    `,
+    docs_en: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Throughput Estimation & TCP/IP Overhead</h4>
+        <p>Calculates real-world data transfer times by factoring in protocol headers and network latency efficiency (80% - 90%).</p>
       </div>
     `
   },
@@ -92,6 +120,16 @@ const TOOLS_REGISTRY = [
           <li><strong>Storage DVR/VOD:</strong> Estimasi penyimpanan per jam dan akumulasi bulanan untuk arsip rekaman video streaming.</li>
         </ul>
       </div>
+    `,
+    docs_en: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Media Server Infrastructure Sizing</h4>
+        <p>Designed based on practical experience architecting Nginx Media Servers on Linux Virtual Machines:</p>
+        <ul class="list-disc pl-5 space-y-1 text-xs">
+          <li><strong>Egress Bandwidth:</strong> Total outbound bandwidth = (Video Bitrate + Audio) $\times$ Concurrent Viewers.</li>
+          <li><strong>DVR/VOD Storage:</strong> Hourly and monthly storage estimations for continuous stream recording archives.</li>
+        </ul>
+      </div>
     `
   },
   {
@@ -109,6 +147,12 @@ const TOOLS_REGISTRY = [
       <div class="space-y-4">
         <h4 class="text-sm font-bold text-slate-900 dark:text-white">Otomasi Server dengan Crontab</h4>
         <p>Memvisualisasikan ekspresi 5-field standar cron Linux (Menit, Jam, Hari/Bulan, Bulan, Hari/Minggu) serta mensimulasikan timeline 5 jadwal eksekusi berikutnya.</p>
+      </div>
+    `,
+    docs_en: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Server Automation with Crontab</h4>
+        <p>Visualizes standard Linux 5-field cron syntax (Minute, Hour, Day of Month, Month, Day of Week) and simulates the next 5 upcoming run times.</p>
       </div>
     `
   },
@@ -136,6 +180,16 @@ const TOOLS_REGISTRY = [
           <li><strong>Relational Storage:</strong> Data pengguna disimpan dengan constraint unik pada SQLite.</li>
         </ul>
       </div>
+    `,
+    docs_en: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Modern Authentication & Security Architecture</h4>
+        <ul class="list-disc pl-5 space-y-1 text-xs">
+          <li><strong>Password Hashing:</strong> Passwords hashed with <em>Bcrypt salt rounds = 10</em> before database persistence.</li>
+          <li><strong>JWT Stateless Session:</strong> Cryptographically signed bearer tokens for REST API authorization.</li>
+          <li><strong>Relational Storage:</strong> Secure storage with unique username constraints on SQLite.</li>
+        </ul>
+      </div>
     `
   },
   {
@@ -153,6 +207,12 @@ const TOOLS_REGISTRY = [
       <div class="space-y-4">
         <h4 class="text-sm font-bold text-slate-900 dark:text-white">Web Hardening & Vulnerability Mitigation</h4>
         <p>Menganalisis header respon web untuk mencegah serangan umum seperti Clickjacking, Cross-Site Scripting (XSS), dan SSL Stripping.</p>
+      </div>
+    `,
+    docs_en: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Web Hardening & Vulnerability Mitigation</h4>
+        <p>Analyzes HTTP response headers to defend against common web vectors including Clickjacking, Cross-Site Scripting (XSS), and SSL Stripping.</p>
       </div>
     `
   },
@@ -172,6 +232,12 @@ const TOOLS_REGISTRY = [
         <h4 class="text-sm font-bold text-slate-900 dark:text-white">Kriptografi & Verifikasi Integritas</h4>
         <p>Memanfaatkan Web Crypto API native untuk menghitung one-way cryptographic digest guna memastikan file atau password tidak mengalami tampering.</p>
       </div>
+    `,
+    docs_en: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Cryptography & Integrity Verification</h4>
+        <p>Leverages native Web Crypto API to calculate one-way cryptographic digests to guarantee files and payloads remain tamper-free.</p>
+      </div>
     `
   },
   {
@@ -189,6 +255,12 @@ const TOOLS_REGISTRY = [
       <div class="space-y-4">
         <h4 class="text-sm font-bold text-slate-900 dark:text-white">Pengukuran Entropi Informasi (Shannon Entropy)</h4>
         <p>Menghitung kekuatan kombinasi karakter $E = L \times \log_2(N)$ serta mensimulasikan waktu cracking menggunakan rig GPU modern.</p>
+      </div>
+    `,
+    docs_en: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Shannon Entropy & Brute-Force Modeling</h4>
+        <p>Calculates character pool strength $E = L \times \log_2(N)$ and simulates offline cracking duration across CPU vs multi-GPU compute rigs.</p>
       </div>
     `
   },
@@ -208,6 +280,12 @@ const TOOLS_REGISTRY = [
         <h4 class="text-sm font-bold text-slate-900 dark:text-white">Alat Bantu Analisis Payload Keamanan</h4>
         <p>Mempermudah analisis data biner, decode authorization token Basic/Bearer, dan sanitasi string input dari karakter berbahaya.</p>
       </div>
+    `,
+    docs_en: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Security Payload Analysis Toolkit</h4>
+        <p>Facilitates binary stream inspections, Basic/Bearer authorization token decoding, and string sanitization against dangerous injections.</p>
+      </div>
     `
   },
   {
@@ -225,6 +303,12 @@ const TOOLS_REGISTRY = [
       <div class="space-y-4">
         <h4 class="text-sm font-bold text-slate-900 dark:text-white">Dekonstruksi Token JWT</h4>
         <p>Membedah 3 bagian token JWT terpisah titik (Header.Payload.Signature) untuk memeriksa hak akses role dan timestamp kedaluwarsa.</p>
+      </div>
+    `,
+    docs_en: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">JWT Token Structure Deconstruction</h4>
+        <p>Parses 3 dot-delimited token segments (Header.Payload.Signature) to inspect role permissions and expiration timestamps.</p>
       </div>
     `
   },
@@ -253,6 +337,17 @@ const TOOLS_REGISTRY = [
           <li><strong>Data Aggregation:</strong> Agregasi distribusi rating dan visualisasi statistik via Chart.js.</li>
         </ul>
       </div>
+    `,
+    docs_en: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">NLP Lexicon Processing & Data Vectorization</h4>
+        <p>Deterministic rule-based NLP text analysis engine using VADER lexicon scoring for structured sentiment evaluation:</p>
+        <ul class="list-disc pl-5 space-y-1 text-xs">
+          <li><strong>Text Normalization & Tokenization:</strong> String cleaning, punctuation emphasis handling, and lexicon lookup.</li>
+          <li><strong>Compound Valence Scoring:</strong> Calculates normalized compound polarity scores mathematically.</li>
+          <li><strong>Data Aggregation:</strong> Rating distributions and statistical summaries visualized via Chart.js.</li>
+        </ul>
+      </div>
     `
   },
   {
@@ -270,6 +365,12 @@ const TOOLS_REGISTRY = [
       <div class="space-y-4">
         <h4 class="text-sm font-bold text-slate-900 dark:text-white">Arsitektur RESTful CRUD & Database SQL</h4>
         <p>Mengimplementasikan operasi Create, Read, Update, Delete dengan query SQL parameterized untuk mencegah SQL Injection.</p>
+      </div>
+    `,
+    docs_en: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">RESTful CRUD & SQL Database Architecture</h4>
+        <p>Implements Create, Read, Update, and Delete operations with parameterized SQL queries to prevent SQL injection vulnerabilities.</p>
       </div>
     `
   },
@@ -289,6 +390,12 @@ const TOOLS_REGISTRY = [
         <h4 class="text-sm font-bold text-slate-900 dark:text-white">Integritas Transaksi Database Relasional</h4>
         <p>Memanfaatkan konsep ACID transaction pada database SQLite untuk memastikan ketersediaan buku berkurang secara konsisten saat dipinjam.</p>
       </div>
+    `,
+    docs_en: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Relational Database Transaction Integrity</h4>
+        <p>Utilizes ACID transaction concepts on SQLite to guarantee consistent book copy stock deduction upon checkout.</p>
+      </div>
     `
   },
   {
@@ -307,6 +414,12 @@ const TOOLS_REGISTRY = [
         <h4 class="text-sm font-bold text-slate-900 dark:text-white">Transformasi Data JSON ke Relasional</h4>
         <p>Memetakan tipe data dinamis JSON (String, Number, Boolean) ke tipe data kolom SQL (TEXT, INTEGER, REAL) secara otomatis.</p>
       </div>
+    `,
+    docs_en: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">JSON to Relational Data Transformation</h4>
+        <p>Automatically maps dynamic JSON primitives (String, Number, Boolean) to relational SQL column types (TEXT, INTEGER, REAL).</p>
+      </div>
     `
   },
   {
@@ -323,6 +436,12 @@ const TOOLS_REGISTRY = [
       <div class="space-y-4">
         <h4 class="text-sm font-bold text-slate-900 dark:text-white">Log Processing & Anomaly Detection</h4>
         <p>Menggunakan pola Regular Expression standar Combined Log Format untuk mengagregasi ribuan baris log server Nginx secara efisien.</p>
+      </div>
+    `,
+    docs_en: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Log Processing & Anomaly Detection</h4>
+        <p>Uses regular expression pattern matching on Combined Log Format to aggregate thousands of server access entries efficiently.</p>
       </div>
     `
   },
@@ -347,6 +466,17 @@ const TOOLS_REGISTRY = [
           <li><strong>Standardisasi ISO-8601:</strong> Penyeragaman format string tanggal ke format standar internasional <code>YYYY-MM-DD</code>.</li>
         </ul>
       </div>
+    `,
+    docs_en: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Data Wrangling & Preparation Pipeline Architecture</h4>
+        <p>Applies standard deterministic tabular data cleaning operations:</p>
+        <ul class="list-disc pl-5 space-y-1 text-xs">
+          <li><strong>Row Deduplication:</strong> Eliminates duplicate records using compound key hash serialization.</li>
+          <li><strong>Missing Value Imputation:</strong> Handles missing numeric values with Median (outlier-robust) and Mode for categorical columns.</li>
+          <li><strong>ISO-8601 Standardization:</strong> Normalizes heterogeneous date strings into universal <code>YYYY-MM-DD</code> format.</li>
+        </ul>
+      </div>
     `
   },
   {
@@ -369,6 +499,16 @@ const TOOLS_REGISTRY = [
           <li><strong>Relational Merge & Join:</strong> Penggabungan dataset multidimensi dengan deteksi otomatis rekaman orphan / foreign key mismatch.</li>
         </ul>
       </div>
+    `,
+    docs_en: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Dataset Integration & Quality Control (QC)</h4>
+        <p>Comprehensive evaluation of relational integrity and statistical data distributions:</p>
+        <ul class="list-disc pl-5 space-y-1 text-xs">
+          <li><strong>Tukey's Fences IQR:</strong> Flags numeric anomalies outside $Q_1 - 1.5 \\times \\text{IQR}$ and $Q_3 + 1.5 \\times \\text{IQR}$.</li>
+          <li><strong>Relational Merge & Join:</strong> Multi-table dataset integration with automated orphan record / foreign key mismatch alerts.</li>
+        </ul>
+      </div>
     `
   },
   {
@@ -389,6 +529,16 @@ const TOOLS_REGISTRY = [
         <ul class="list-disc pl-5 space-y-1 text-xs">
           <li><strong>Analisis Varians:</strong> Menghitung deviasi $\\Delta = \\text{Realisasi} - \\text{Target}$ untuk evaluasi efisiensi operasional.</li>
           <li><strong>Achievement Rate:</strong> Persentase pemenuhan kuota target per divisi/cabang.</li>
+        </ul>
+      </div>
+    `,
+    docs_en: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Administrative & Operational Performance Tracking</h4>
+        <p>Periodic reporting and data recapitulation tool for executive management visibility:</p>
+        <ul class="list-disc pl-5 space-y-1 text-xs">
+          <li><strong>Variance Analysis:</strong> Calculates deviation $\\Delta = \\text{Actual} - \\text{Target}$ to assess operational efficiency.</li>
+          <li><strong>Achievement Rate:</strong> Percentage of target quota fulfillment across divisions and branches.</li>
         </ul>
       </div>
     `
@@ -414,6 +564,17 @@ const TOOLS_REGISTRY = [
           <li><strong>Multi-Platform Mapping:</strong> Menerjemahkan formula Excel ke klausa SQL dan fungsi Pandas secara akurat.</li>
         </ul>
       </div>
+    `,
+    docs_en: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Spreadsheet Logic & Formula Engineering</h4>
+        <p>Bridges office spreadsheet calculation workflows with modern data engineering:</p>
+        <ul class="list-disc pl-5 space-y-1 text-xs">
+          <li><strong>Relational Lookup:</strong> Simulates XLOOKUP/VLOOKUP with instant row matching.</li>
+          <li><strong>Reshaping & Aggregation:</strong> Pivot table matrices with SUM, AVERAGE, COUNT, MAX, and MIN functions.</li>
+          <li><strong>Multi-Platform Mapping:</strong> Translates Excel formulas directly into SQL clauses and Pandas code snippets.</li>
+        </ul>
+      </div>
     `
   },
 
@@ -436,6 +597,12 @@ const TOOLS_REGISTRY = [
         <h4 class="text-sm font-bold text-slate-900 dark:text-white">Otomasi Web Scraping</h4>
         <p>Mengirimkan HTTP request dengan custom User-Agent dan mem-parsing elemen HTML untuk menyajikan feed berita bersih.</p>
       </div>
+    `,
+    docs_en: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Automated Web Scraping Engine</h4>
+        <p>Dispatches HTTP requests with customized User-Agents and parses HTML DOM elements to present a clean news feed.</p>
+      </div>
     `
   },
   {
@@ -453,6 +620,12 @@ const TOOLS_REGISTRY = [
       <div class="space-y-4">
         <h4 class="text-sm font-bold text-slate-900 dark:text-white">Pengujian REST API Real-Time</h4>
         <p>Memanfaatkan Performance Navigation Timing API browser untuk mengukur Round Trip Time (RTT) latensi koneksi API.</p>
+      </div>
+    `,
+    docs_en: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Real-Time REST API Health & Latency Testing</h4>
+        <p>Utilizes browser Performance Navigation Timing APIs to measure Round Trip Time (RTT) latency and HTTP status responses.</p>
       </div>
     `
   },
@@ -472,6 +645,12 @@ const TOOLS_REGISTRY = [
         <h4 class="text-sm font-bold text-slate-900 dark:text-white">Pemrosesan Gambar di Sisi Client</h4>
         <p>Menggunakan HTML5 Canvas API untuk melakukan re-sampling piksel dan kompresi format WebP modern tanpa membebani server.</p>
       </div>
+    `,
+    docs_en: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Client-Side Canvas Image Processing</h4>
+        <p>Uses HTML5 Canvas API for pixel re-sampling and modern WebP compression without server-side compute overhead.</p>
+      </div>
     `
   },
   {
@@ -489,6 +668,12 @@ const TOOLS_REGISTRY = [
       <div class="space-y-4">
         <h4 class="text-sm font-bold text-slate-900 dark:text-white">Integrasi Feed Nilai Tukar</h4>
         <p>Mengambil data kurs valuta asing secara asinkron dengan strategi cache LocalStorage untuk performa instan.</p>
+      </div>
+    `,
+    docs_en: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Foreign Exchange Feed Integration</h4>
+        <p>Fetches asynchronous currency exchange rates with LocalStorage caching strategies for instantaneous responsiveness.</p>
       </div>
     `
   },
@@ -508,6 +693,12 @@ const TOOLS_REGISTRY = [
         <h4 class="text-sm font-bold text-slate-900 dark:text-white">Engine Pengukuran Kecepatan Ketik</h4>
         <p>Menghitung statistik pengetikan secara real-time berdasarkan rumus standar industri: $\\text{WPM} = (\\text{Karakter}/5) / \\text{Menit}$.</p>
       </div>
+    `,
+    docs_en: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Typing Benchmark Engine</h4>
+        <p>Calculates real-time metrics adhering to standard formula: $\\text{WPM} = (\\text{Characters}/5) / \\text{Minutes}$.</p>
+      </div>
     `
   },
   {
@@ -525,6 +716,12 @@ const TOOLS_REGISTRY = [
       <div class="space-y-4">
         <h4 class="text-sm font-bold text-slate-900 dark:text-white">Kalkulasi Redundansi RAID Array</h4>
         <p>Menghitung efisiensi penyimpanan fisik dan fault tolerance disk untuk standarisasi server storage institusi dan perbankan.</p>
+      </div>
+    `,
+    docs_en: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">RAID Array Redundancy Calculations</h4>
+        <p>Calculates raw vs usable storage capacity and disk fault tolerance according to enterprise banking and storage standards.</p>
       </div>
     `
   },
@@ -544,6 +741,12 @@ const TOOLS_REGISTRY = [
         <h4 class="text-sm font-bold text-slate-900 dark:text-white">Standarisasi PC Deployment & Hardware</h4>
         <p>Menghitung total daya beban penuh (TDP) dan menambahkan safety headroom 40% untuk menjaga efisiensi power supply 80 PLUS.</p>
       </div>
+    `,
+    docs_en: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">PC Deployment & Hardware Power Sizing</h4>
+        <p>Calculates total thermal design power (TDP) with a 40% safety headroom to maintain 80 PLUS power supply efficiency.</p>
+      </div>
     `
   },
   {
@@ -562,6 +765,12 @@ const TOOLS_REGISTRY = [
         <h4 class="text-sm font-bold text-slate-900 dark:text-white">Engine Evaluasi Regular Expression</h4>
         <p>Mengeksekusi pola RegExp JavaScript dengan flags global/case-insensitive dan memvisualisasikan posisi index setiap kecocokan string.</p>
       </div>
+    `,
+    docs_en: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Regular Expression Evaluation Engine</h4>
+        <p>Executes JavaScript RegExp patterns with global/case-insensitive flags and maps character index spans for visual match highlighting.</p>
+      </div>
     `
   },
   {
@@ -579,6 +788,12 @@ const TOOLS_REGISTRY = [
       <div class="space-y-4">
         <h4 class="text-sm font-bold text-slate-900 dark:text-white">Parser Markdown Ringan Sisi Client</h4>
         <p>Mengonversi sintaks Markdown standar (Heading, Table, Code Block, Checklist) ke elemen HTML semantik secara real-time.</p>
+      </div>
+    `,
+    docs_en: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Lightweight Client-Side Markdown Parser</h4>
+        <p>Parses Markdown syntax (Headings, Tables, Code Blocks, Checklists) into semantic HTML elements in real time.</p>
       </div>
     `
   }
@@ -706,8 +921,11 @@ window.renderToolsGrid = function() {
 // ==========================================
 // MODAL WORKSPACE MANAGEMENT
 // ==========================================
+window.activeTool = null;
+
 function openToolModal(tool) {
   activeTool = tool;
+  window.activeTool = tool;
   const lang = window.currentLang || 'id';
 
   const toolModal = document.getElementById('toolModal');
@@ -720,6 +938,7 @@ function openToolModal(tool) {
 
   const title = (lang === 'en' && tool.title_en) ? tool.title_en : tool.title;
   const desc = (lang === 'en' && tool.desc_en) ? tool.desc_en : tool.description;
+  const docs = (lang === 'en' && tool.docs_en) ? tool.docs_en : tool.docs;
 
   if (modalTitle) modalTitle.textContent = title;
   if (modalTechBadge) modalTechBadge.textContent = tool.techBadge;
@@ -750,13 +969,14 @@ function openToolModal(tool) {
 
   // Load Architecture documentation
   if (modalDocsBody) {
-    modalDocsBody.innerHTML = tool.docs || `<div class="p-8 text-center text-xs text-slate-400">Dokumentasi teknis lengkap tersedia pada file README.md repository.</div>`;
+    modalDocsBody.innerHTML = docs || `<div class="p-8 text-center text-xs text-slate-400">Dokumentasi teknis lengkap tersedia pada file README.md repository.</div>`;
   }
 
   if (window.lucide) {
     lucide.createIcons();
   }
 }
+window.openToolModal = openToolModal;
 
 function closeToolModal() {
   const toolModal = document.getElementById('toolModal');
@@ -768,6 +988,7 @@ function closeToolModal() {
   }
   document.body.style.overflow = '';
   activeTool = null;
+  window.activeTool = null;
   if (modalTabDemoContent) modalTabDemoContent.innerHTML = '';
 }
 
@@ -791,14 +1012,16 @@ function switchModalTab(tab) {
   if (modalTabCodeContent) modalTabCodeContent.classList.add('hidden');
   if (modalTabDocsContent) modalTabDocsContent.classList.add('hidden');
 
+  const activeClass = "modal-tab-btn active py-3 border-b-2 border-slate-900 dark:border-slate-100 text-slate-900 dark:text-white font-semibold transition flex items-center gap-1.5";
+
   if (tab === 'demo') {
-    if (tabBtnDemo) tabBtnDemo.className = "modal-tab-btn active py-3 border-b-2 border-sky-600 text-sky-600 dark:text-sky-400 font-semibold transition flex items-center gap-1.5";
+    if (tabBtnDemo) tabBtnDemo.className = activeClass;
     if (modalTabDemoContent) modalTabDemoContent.classList.remove('hidden');
   } else if (tab === 'code') {
-    if (tabBtnCode) tabBtnCode.className = "modal-tab-btn active py-3 border-b-2 border-sky-600 text-sky-600 dark:text-sky-400 font-semibold transition flex items-center gap-1.5";
+    if (tabBtnCode) tabBtnCode.className = activeClass;
     if (modalTabCodeContent) modalTabCodeContent.classList.remove('hidden');
   } else if (tab === 'docs') {
-    if (tabBtnDocs) tabBtnDocs.className = "modal-tab-btn active py-3 border-b-2 border-sky-600 text-sky-600 dark:text-sky-400 font-semibold transition flex items-center gap-1.5";
+    if (tabBtnDocs) tabBtnDocs.className = activeClass;
     if (modalTabDocsContent) modalTabDocsContent.classList.remove('hidden');
   }
 

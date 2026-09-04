@@ -5,19 +5,21 @@
  */
 
 window.renderSubnetCalculator = function(container) {
+  const isEn = (window.currentLang || 'id') === 'en';
+
   container.innerHTML = `
     <div class="space-y-6">
       <!-- Input Section -->
       <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 sm:p-5 shadow-sm space-y-4">
         <h4 class="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
           <i data-lucide="network" class="w-4 h-4 text-sky-600"></i>
-          <span>Kalkulator Subnet IPv4 & CIDR</span>
+          <span>${isEn ? 'IPv4 Subnet & CIDR Calculator' : 'Kalkulator Subnet IPv4 & CIDR'}</span>
         </h4>
         
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
           <div class="sm:col-span-2 space-y-1">
             <label class="text-xs font-semibold text-slate-600 dark:text-slate-400">IP Address</label>
-            <input type="text" id="subnetIpInput" value="192.168.1.100" placeholder="e.g. 192.168.1.1 atau 10.0.0.1" class="w-full px-3 py-2 text-xs font-mono rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-sky-500 outline-none" />
+            <input type="text" id="subnetIpInput" value="192.168.1.100" placeholder="${isEn ? 'e.g. 192.168.1.1 or 10.0.0.1' : 'e.g. 192.168.1.1 atau 10.0.0.1'}" class="w-full px-3 py-2 text-xs font-mono rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-sky-500 outline-none" />
           </div>
           <div class="space-y-1">
             <label class="text-xs font-semibold text-slate-600 dark:text-slate-400">CIDR Prefix</label>
@@ -30,10 +32,10 @@ window.renderSubnetCalculator = function(container) {
         <div class="flex flex-wrap items-center gap-2 pt-1">
           <button id="calcSubnetBtn" class="px-4 py-2 bg-sky-600 hover:bg-sky-700 text-white rounded-lg text-xs font-semibold flex items-center gap-1.5 transition shadow-sm">
             <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
-            <span>Hitung Subnet</span>
+            <span>${isEn ? 'Calculate Subnet' : 'Hitung Subnet'}</span>
           </button>
           <div class="flex items-center gap-1.5 overflow-x-auto text-[11px] text-slate-500">
-            <span>Preset Cepat:</span>
+            <span>${isEn ? 'Quick Presets:' : 'Preset Cepat:'}</span>
             <button class="preset-ip-btn px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 hover:text-sky-600 font-mono" data-ip="192.168.10.1" data-cidr="24">/24 (Class C)</button>
             <button class="preset-ip-btn px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 hover:text-sky-600 font-mono" data-ip="172.16.0.1" data-cidr="20">/20 (Class B)</button>
             <button class="preset-ip-btn px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 hover:text-sky-600 font-mono" data-ip="10.20.30.1" data-cidr="16">/16 (Class A)</button>
@@ -47,7 +49,7 @@ window.renderSubnetCalculator = function(container) {
         <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
           <span class="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white flex items-center gap-2">
             <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500"></i>
-            Hasil Kalkulasi Subnet
+            ${isEn ? 'Subnet Calculation Results' : 'Hasil Kalkulasi Subnet'}
           </span>
           <span id="subnetClassBadge" class="px-2.5 py-0.5 rounded text-[11px] font-mono font-bold bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300">
             Class C • Private IP
@@ -83,7 +85,7 @@ window.renderSubnetCalculator = function(container) {
 
         <!-- Binary Representation -->
         <div class="space-y-2 pt-2 border-t border-slate-100 dark:border-slate-800">
-          <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Representasi Biner</span>
+          <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">${isEn ? 'Binary Representation' : 'Representasi Biner'}</span>
           <div class="bg-slate-950 text-slate-200 p-3 rounded-lg font-mono text-[11px] space-y-1 overflow-x-auto border border-slate-800">
             <div class="flex justify-between gap-4"><span class="text-slate-400">IP Biner:</span> <span id="resIpBinary" class="text-sky-400">11000000.10101000.00000001.01100100</span></div>
             <div class="flex justify-between gap-4"><span class="text-slate-400">Mask Biner:</span> <span id="resMaskBinary" class="text-amber-400">11111111.11111111.11111111.00000000</span></div>
@@ -133,7 +135,7 @@ window.renderSubnetCalculator = function(container) {
 
     const ipRegex = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
     if (!ipRegex.test(ipStr)) {
-      if (window.showToast) showToast("Format IPv4 tidak valid!", "error");
+      if (window.showToast) showToast(isEn ? "Invalid IPv4 address format!" : "Format IPv4 tidak valid!", "error");
       return;
     }
 
@@ -154,7 +156,7 @@ window.renderSubnetCalculator = function(container) {
     container.querySelector('#resSubnetMask').textContent = numToIp(maskNum);
     container.querySelector('#resWildcard').textContent = numToIp(wildcardNum);
     container.querySelector('#resHostRange').textContent = `${numToIp(firstHostNum)} - ${numToIp(lastHostNum)}`;
-    container.querySelector('#resTotalHosts').textContent = `${usableHosts.toLocaleString()} Usable (Total: ${totalHosts.toLocaleString()})`;
+    container.querySelector('#resTotalHosts').textContent = `${usableHosts.toLocaleString()} ${isEn ? 'Usable' : 'Usable'} (Total: ${totalHosts.toLocaleString()})`;
 
     container.querySelector('#resIpBinary').textContent = numToBinary(ipNum);
     container.querySelector('#resMaskBinary').textContent = numToBinary(maskNum);
@@ -174,7 +176,7 @@ window.renderSubnetCalculator = function(container) {
 
     container.querySelector('#subnetClassBadge').textContent = `${ipClass} • ${isPrivate ? 'Private IP' : 'Public IP'}`;
 
-    if (window.showToast) showToast("Subnet berhasil dikalkulasi!", "success");
+    if (window.showToast) showToast(isEn ? "Subnet calculated successfully!" : "Subnet berhasil dikalkulasi!", "success");
   }
 
   container.querySelector('#calcSubnetBtn').addEventListener('click', calculateSubnet);
@@ -188,3 +190,4 @@ window.renderSubnetCalculator = function(container) {
 
   calculateSubnet();
 };
+

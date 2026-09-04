@@ -19,6 +19,37 @@ let cleanedData = [];
 
 window.renderDataCleanerStudio = function(container) {
   rawCleanerData = JSON.parse(JSON.stringify(window.DATA_CLEANER_SAMPLE));
+  const lang = window.currentLang || 'id';
+  const isEn = lang === 'en';
+
+  const t = {
+    title: isEn ? "Raw Tabular Data Cleaning & Imputation Pipeline" : "Pipeline Pembersihan & Imputasi Data Mentah",
+    desc: isEn ? "Data Wrangling pipeline: null detection, mean/mode imputation, deduplication, and text/date standardization." : "Simulasi alur Data Wrangling: deteksi null, imputasi rata-rata/modus, deduplikasi, dan standardisasi teks.",
+    reset: isEn ? "Reset Sample" : "Reset Sample",
+    upload: isEn ? "Upload CSV" : "Upload CSV",
+    missingLabel: isEn ? "Missing Values" : "Missing Values",
+    missingMean: isEn ? "Impute Mean (Num) / Mode (Cat)" : "Impute Mean (Num) / Mode (Cat)",
+    missingDrop: isEn ? "Drop Rows with Null" : "Drop Rows with Null",
+    missingFill: isEn ? 'Fill with "N/A" / 0' : 'Fill with "N/A" / 0',
+    missingIgnore: isEn ? "Leave Raw (Empty)" : "Biarkan Kosong (Raw)",
+    dedupLabel: isEn ? "Deduplication" : "Deduplikasi",
+    dedupExact: isEn ? "Remove Exact Duplicate Rows" : "Hapus Baris Duplikat Tepat",
+    dedupKeep: isEn ? "Keep All Duplicates" : "Pertahankan Semua Duplikat",
+    textLabel: isEn ? "Text & Whitespace" : "Format Teks & Spasi",
+    textTitle: isEn ? "Trim Space + Title Case" : "Trim Space + Title Case",
+    textLower: isEn ? "Trim Space + Lowercase" : "Trim Space + Lowercase",
+    textUpper: isEn ? "Trim Space + UPPERCASE" : "Trim Space + UPPERCASE",
+    textTrim: isEn ? "Trim Whitespace Only" : "Trim Whitespace Only",
+    dateLabel: isEn ? "Date Standardization" : "Standardisasi Tanggal",
+    dateIso: isEn ? "ISO-8601 (YYYY-MM-DD)" : "ISO-8601 (YYYY-MM-DD)",
+    dateDmy: isEn ? "DD/MM/YYYY" : "DD/MM/YYYY",
+    dateRaw: isEn ? "Keep Original Format" : "Biarkan Format Asli",
+    execute: isEn ? "Execute Cleaning Pipeline" : "Eksekusi Pipeline Pembersihan",
+    tabClean: isEn ? "Clean Dataset (Output)" : "Clean Dataset (Hasil)",
+    tabRaw: isEn ? "Raw Dirty Dataset (Input)" : "Raw Dirty Dataset (Mentah)",
+    download: isEn ? "Download CSV" : "Download CSV",
+    copyScript: isEn ? "Copy Pandas Script" : "Copy Pandas Script"
+  };
   
   container.innerHTML = `
     <div class="space-y-6">
@@ -29,21 +60,21 @@ window.renderDataCleanerStudio = function(container) {
           <div>
             <h4 class="font-bold text-slate-900 dark:text-white text-sm flex items-center gap-2">
               <i data-lucide="filter" class="w-4 h-4 text-slate-700 dark:text-slate-300"></i>
-              <span>Pipeline Pembersihan & Imputasi Data Mentah</span>
+              <span>${t.title}</span>
             </h4>
             <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-              Simulasi alur Data Wrangling: deteksi null, imputasi rata-rata/modus, deduplikasi, dan standardisasi teks.
+              ${t.desc}
             </p>
           </div>
           
           <div class="flex items-center gap-2">
             <button id="btnResetCleanerData" class="px-3 py-1.5 text-xs font-mono rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 transition flex items-center gap-1.5">
               <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
-              <span>Reset Sample</span>
+              <span>${t.reset}</span>
             </button>
             <label class="px-3 py-1.5 text-xs font-mono rounded-lg bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-200 transition flex items-center gap-1.5 cursor-pointer">
               <i data-lucide="upload" class="w-3.5 h-3.5"></i>
-              <span>Upload CSV</span>
+              <span>${t.upload}</span>
               <input type="file" id="cleanerCsvFileInput" accept=".csv" class="hidden" />
             </label>
           </div>
@@ -56,13 +87,13 @@ window.renderDataCleanerStudio = function(container) {
           <div class="space-y-1.5 p-3 rounded-lg bg-slate-50 dark:bg-slate-800/40 border border-slate-200/80 dark:border-slate-700/80">
             <label class="font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
               <i data-lucide="help-circle" class="w-3.5 h-3.5 text-slate-500"></i>
-              <span>Missing Values</span>
+              <span>${t.missingLabel}</span>
             </label>
             <select id="optMissingStrategy" class="w-full px-2.5 py-1.5 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-mono text-xs focus:outline-none">
-              <option value="impute_mean_mode" selected>Impute Mean (Num) / Mode (Cat)</option>
-              <option value="drop_rows">Drop Rows with Null</option>
-              <option value="fill_custom">Fill with "N/A" / 0</option>
-              <option value="ignore">Biarkan Kosong (Raw)</option>
+              <option value="impute_mean_mode" selected>${t.missingMean}</option>
+              <option value="drop_rows">${t.missingDrop}</option>
+              <option value="fill_custom">${t.missingFill}</option>
+              <option value="ignore">${t.missingIgnore}</option>
             </select>
           </div>
 
@@ -70,11 +101,11 @@ window.renderDataCleanerStudio = function(container) {
           <div class="space-y-1.5 p-3 rounded-lg bg-slate-50 dark:bg-slate-800/40 border border-slate-200/80 dark:border-slate-700/80">
             <label class="font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
               <i data-lucide="copy" class="w-3.5 h-3.5 text-slate-500"></i>
-              <span>Deduplikasi</span>
+              <span>${t.dedupLabel}</span>
             </label>
             <select id="optDedupStrategy" class="w-full px-2.5 py-1.5 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-mono text-xs focus:outline-none">
-              <option value="remove_exact" selected>Hapus Baris Duplikat Tepat</option>
-              <option value="keep_all">Pertahankan Semua Duplikat</option>
+              <option value="remove_exact" selected>${t.dedupExact}</option>
+              <option value="keep_all">${t.dedupKeep}</option>
             </select>
           </div>
 
@@ -82,13 +113,13 @@ window.renderDataCleanerStudio = function(container) {
           <div class="space-y-1.5 p-3 rounded-lg bg-slate-50 dark:bg-slate-800/40 border border-slate-200/80 dark:border-slate-700/80">
             <label class="font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
               <i data-lucide="type" class="w-3.5 h-3.5 text-slate-500"></i>
-              <span>Format Teks & Spasi</span>
+              <span>${t.textLabel}</span>
             </label>
             <select id="optTextFormat" class="w-full px-2.5 py-1.5 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-mono text-xs focus:outline-none">
-              <option value="trim_titlecase" selected>Trim Space + Title Case</option>
-              <option value="trim_lowercase">Trim Space + Lowercase</option>
-              <option value="trim_uppercase">Trim Space + UPPERCASE</option>
-              <option value="trim_only">Trim Whitespace Only</option>
+              <option value="trim_titlecase" selected>${t.textTitle}</option>
+              <option value="trim_lowercase">${t.textLower}</option>
+              <option value="trim_uppercase">${t.textUpper}</option>
+              <option value="trim_only">${t.textTrim}</option>
             </select>
           </div>
 
@@ -96,12 +127,12 @@ window.renderDataCleanerStudio = function(container) {
           <div class="space-y-1.5 p-3 rounded-lg bg-slate-50 dark:bg-slate-800/40 border border-slate-200/80 dark:border-slate-700/80">
             <label class="font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
               <i data-lucide="calendar" class="w-3.5 h-3.5 text-slate-500"></i>
-              <span>Standardisasi Tanggal</span>
+              <span>${t.dateLabel}</span>
             </label>
             <select id="optDateFormat" class="w-full px-2.5 py-1.5 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-mono text-xs focus:outline-none">
-              <option value="iso_8601" selected>ISO-8601 (YYYY-MM-DD)</option>
-              <option value="dmy_slash">DD/MM/YYYY</option>
-              <option value="raw">Biarkan Format Asli</option>
+              <option value="iso_8601" selected>${t.dateIso}</option>
+              <option value="dmy_slash">${t.dateDmy}</option>
+              <option value="raw">${t.dateRaw}</option>
             </select>
           </div>
 
@@ -110,7 +141,7 @@ window.renderDataCleanerStudio = function(container) {
         <div class="flex justify-end pt-2">
           <button id="btnExecuteCleanPipeline" class="px-5 py-2 text-xs font-bold rounded-lg bg-slate-900 text-white dark:bg-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-100 transition flex items-center gap-2 shadow-sm font-mono">
             <i data-lucide="play" class="w-3.5 h-3.5"></i>
-            <span>Eksekusi Pipeline Pembersihan</span>
+            <span>${t.execute}</span>
           </button>
         </div>
       </div>
@@ -125,21 +156,21 @@ window.renderDataCleanerStudio = function(container) {
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-2">
             <button id="tabViewClean" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900 transition">
-              Clean Dataset (Hasil)
+              ${t.tabClean}
             </button>
             <button id="tabViewRaw" class="px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-              Raw Dirty Dataset (Mentah)
+              ${t.tabRaw}
             </button>
           </div>
 
           <div class="flex items-center gap-2">
             <button id="btnDownloadCleanCsv" class="px-3 py-1.5 text-xs font-mono rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition flex items-center gap-1.5">
               <i data-lucide="download" class="w-3.5 h-3.5"></i>
-              <span>Download CSV</span>
+              <span>${t.download}</span>
             </button>
             <button id="btnCopyPandasCode" class="px-3 py-1.5 text-xs font-mono rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition flex items-center gap-1.5">
               <i data-lucide="code" class="w-3.5 h-3.5"></i>
-              <span>Copy Pandas Script</span>
+              <span>${t.copyScript}</span>
             </button>
           </div>
         </div>
@@ -161,7 +192,7 @@ window.renderDataCleanerStudio = function(container) {
   document.getElementById('btnResetCleanerData').addEventListener('click', () => {
     rawCleanerData = JSON.parse(JSON.stringify(window.DATA_CLEANER_SAMPLE));
     executeCleaningPipeline();
-    if (window.showToast) window.showToast("Sample data di-reset ke kondisi awal.", "info");
+    if (window.showToast) window.showToast(isEn ? "Sample data reset to original state." : "Sample data di-reset ke kondisi awal.", "info");
   });
 
   document.getElementById('tabViewClean').addEventListener('click', (e) => {
@@ -192,11 +223,11 @@ window.renderDataCleanerStudio = function(container) {
           if (results.data && results.data.length > 0) {
             rawCleanerData = results.data;
             executeCleaningPipeline();
-            if (window.showToast) window.showToast(`Berhasil memuat ${results.data.length} baris data CSV!`, "success");
+            if (window.showToast) window.showToast(isEn ? `Loaded ${results.data.length} CSV rows!` : `Berhasil memuat ${results.data.length} baris data CSV!`, "success");
           }
         },
         error: function(err) {
-          if (window.showToast) window.showToast("Gagal membaca file CSV: " + err.message, "error");
+          if (window.showToast) window.showToast((isEn ? "Failed to read CSV: " : "Gagal membaca file CSV: ") + err.message, "error");
         }
       });
     }
@@ -207,6 +238,7 @@ window.renderDataCleanerStudio = function(container) {
 };
 
 function executeCleaningPipeline() {
+  const isEn = (window.currentLang || 'id') === 'en';
   const missingStrategy = document.getElementById('optMissingStrategy') ? document.getElementById('optMissingStrategy').value : 'impute_mean_mode';
   const dedupStrategy = document.getElementById('optDedupStrategy') ? document.getElementById('optDedupStrategy').value : 'remove_exact';
   const textFormat = document.getElementById('optTextFormat') ? document.getElementById('optTextFormat').value : 'trim_titlecase';
@@ -268,7 +300,7 @@ function executeCleaningPipeline() {
               cleanRow[key] = String(numStats[key].mean);
               missingImputed++;
             } else {
-              cleanRow[key] = "Belum Diketahui";
+              cleanRow[key] = isEn ? "Unknown" : "Belum Diketahui";
               missingImputed++;
             }
           } else if (missingStrategy === 'fill_custom') {
@@ -319,19 +351,19 @@ function executeCleaningPipeline() {
   if (metricsGrid) {
     metricsGrid.innerHTML = `
       <div class="p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
-        <div class="text-xs text-slate-500 dark:text-slate-400">Total Baris Mentah</div>
+        <div class="text-xs text-slate-500 dark:text-slate-400">${isEn ? 'Total Raw Rows' : 'Total Baris Mentah'}</div>
         <div class="text-lg font-bold font-mono text-slate-900 dark:text-white mt-1">${initialCount}</div>
       </div>
       <div class="p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
-        <div class="text-xs text-slate-500 dark:text-slate-400">Baris Bersih Final</div>
+        <div class="text-xs text-slate-500 dark:text-slate-400">${isEn ? 'Clean Final Rows' : 'Baris Bersih Final'}</div>
         <div class="text-lg font-bold font-mono text-emerald-600 dark:text-emerald-400 mt-1">${cleanedData.length}</div>
       </div>
       <div class="p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
-        <div class="text-xs text-slate-500 dark:text-slate-400">Null Diimputasi</div>
+        <div class="text-xs text-slate-500 dark:text-slate-400">${isEn ? 'Nulls Imputed' : 'Null Diimputasi'}</div>
         <div class="text-lg font-bold font-mono text-sky-600 dark:text-sky-400 mt-1">${missingImputed}</div>
       </div>
       <div class="p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
-        <div class="text-xs text-slate-500 dark:text-slate-400">Duplikat Tereliminasi</div>
+        <div class="text-xs text-slate-500 dark:text-slate-400">${isEn ? 'Duplicates Dropped' : 'Duplikat Tereliminasi'}</div>
         <div class="text-lg font-bold font-mono text-amber-600 dark:text-amber-400 mt-1">${duplicatesRemoved}</div>
       </div>
     `;
@@ -399,6 +431,7 @@ function downloadCleanCsv() {
   if (!cleanedData || cleanedData.length === 0) return;
   if (!window.Papa) return;
 
+  const isEn = (window.currentLang || 'id') === 'en';
   const csv = Papa.unparse(cleanedData);
   const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
   const url = URL.createObjectURL(blob);
@@ -407,13 +440,14 @@ function downloadCleanCsv() {
   a.download = `clean_dataset_${new Date().toISOString().slice(0, 10)}.csv`;
   a.click();
   URL.revokeObjectURL(url);
-  if (window.showToast) window.showToast("Dataset bersih berhasil diunduh!", "success");
+  if (window.showToast) window.showToast(isEn ? "Clean dataset downloaded successfully!" : "Dataset bersih berhasil diunduh!", "success");
 }
 
 function copyPandasScript() {
+  const isEn = (window.currentLang || 'id') === 'en';
   const script = `# ============================================================
 # Python Pandas Data Cleaning Pipeline
-# Dihasilkan Otomatis oleh Tabular Data Cleaner Studio
+# Generated by Tabular Data Cleaner Studio
 # ============================================================
 import pandas as pd
 import numpy as np
@@ -432,7 +466,7 @@ for col in df.select_dtypes(include=[np.number]).columns:
 for col in df.select_dtypes(include=['object']).columns:
     # Text Trimming & Title Case
     df[col] = df[col].astype(str).str.strip().str.title()
-    df[col] = df[col].replace('Nan', 'Belum Diketahui')
+    df[col] = df[col].replace('Nan', 'Unknown')
 
 # 4. Standardisasi Tanggal (ISO-8601)
 date_cols = [c for c in df.columns if 'tgl' in c.lower() or 'date' in c.lower()]
@@ -445,6 +479,6 @@ print("Data Cleaning Complete. Final Shape:", df.shape)
 `;
 
   navigator.clipboard.writeText(script).then(() => {
-    if (window.showToast) window.showToast("Kode script Python Pandas berhasil disalin!", "success");
+    if (window.showToast) window.showToast(isEn ? "Python Pandas script copied to clipboard!" : "Kode script Python Pandas berhasil disalin!", "success");
   });
 }

@@ -14,6 +14,8 @@ window.SPREADSHEET_SAMPLE_PRODUCTS = [
 ];
 
 window.renderSpreadsheetFormulaEngine = function(container) {
+  const isEn = (window.currentLang || 'id') === 'en';
+
   container.innerHTML = `
     <div class="space-y-6">
       
@@ -23,10 +25,10 @@ window.renderSpreadsheetFormulaEngine = function(container) {
           <div>
             <h4 class="font-bold text-slate-900 dark:text-white text-sm flex items-center gap-2">
               <i data-lucide="table" class="w-4 h-4 text-slate-700 dark:text-slate-300"></i>
-              <span>Simulator Formula Spreadsheet & Transformasi Data</span>
+              <span>${isEn ? 'Spreadsheet Formula Simulator & Data Reshaper' : 'Simulator Formula Spreadsheet & Transformasi Data'}</span>
             </h4>
             <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-              Uji pencarian data relasional (VLOOKUP/XLOOKUP), kalkulasi Pivot Table GroupBy, dan perbandingan sintaks multi-platform.
+              ${isEn ? 'Test relational data lookups (VLOOKUP/XLOOKUP), calculate Pivot Table GroupBy matrices, and compare multi-platform syntax.' : 'Uji pencarian data relasional (VLOOKUP/XLOOKUP), kalkulasi Pivot Table GroupBy, dan perbandingan sintaks multi-platform.'}
             </p>
           </div>
 
@@ -49,7 +51,7 @@ window.renderSpreadsheetFormulaEngine = function(container) {
           
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
             <div>
-              <label class="font-bold text-slate-800 dark:text-slate-200 block mb-1">Lookup Value (Kunci SKU):</label>
+              <label class="font-bold text-slate-800 dark:text-slate-200 block mb-1">${isEn ? 'Lookup Value (SKU Key):' : 'Lookup Value (Kunci SKU):'}</label>
               <select id="lookupSkuSelect" class="w-full px-2.5 py-1.5 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-mono text-xs focus:outline-none">
                 <option value="PRD-101">PRD-101 (Laptop ThinkPad E14)</option>
                 <option value="PRD-102">PRD-102 (Monitor Dell 24 Inch)</option>
@@ -61,18 +63,18 @@ window.renderSpreadsheetFormulaEngine = function(container) {
             </div>
 
             <div>
-              <label class="font-bold text-slate-800 dark:text-slate-200 block mb-1">Kolom Target (Return Column):</label>
+              <label class="font-bold text-slate-800 dark:text-slate-200 block mb-1">${isEn ? 'Target Column (Return Column):' : 'Kolom Target (Return Column):'}</label>
               <select id="lookupTargetCol" class="w-full px-2.5 py-1.5 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-mono text-xs focus:outline-none">
-                <option value="harga" selected>Harga Satuan (IDR)</option>
-                <option value="stok">Jumlah Stok Tersedia</option>
-                <option value="kategori">Kategori Perangkat</option>
-                <option value="cabang">Lokasi Cabang Gudang</option>
+                <option value="harga" selected>${isEn ? 'Unit Price (IDR)' : 'Harga Satuan (IDR)'}</option>
+                <option value="stok">${isEn ? 'Stock Quantity Available' : 'Jumlah Stok Tersedia'}</option>
+                <option value="kategori">${isEn ? 'Product Category' : 'Kategori Perangkat'}</option>
+                <option value="cabang">${isEn ? 'Warehouse Branch Location' : 'Lokasi Cabang Gudang'}</option>
               </select>
             </div>
 
             <div class="flex items-end">
               <div class="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 w-full">
-                <div class="text-[11px] text-slate-500 font-mono">Hasil Pencocokan:</div>
+                <div class="text-[11px] text-slate-500 font-mono">${isEn ? 'Lookup Match Result:' : 'Hasil Pencocokan:'}</div>
                 <div class="text-sm font-bold font-mono text-emerald-600 dark:text-emerald-400" id="lookupResultVal">-</div>
               </div>
             </div>
@@ -80,7 +82,7 @@ window.renderSpreadsheetFormulaEngine = function(container) {
 
           <!-- Formula Code Box -->
           <div class="space-y-2 pt-2 border-t border-slate-100 dark:border-slate-800">
-            <span class="text-xs font-mono font-bold text-slate-700 dark:text-slate-300">Ekivalen Rumus Formula Multi-Platform:</span>
+            <span class="text-xs font-mono font-bold text-slate-700 dark:text-slate-300">${isEn ? 'Multi-Platform Formula Equivalents:' : 'Ekivalen Rumus Formula Multi-Platform:'}</span>
             
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs font-mono">
               <div class="p-3 rounded-lg bg-slate-900 text-slate-200 border border-slate-800 space-y-1">
@@ -104,11 +106,11 @@ window.renderSpreadsheetFormulaEngine = function(container) {
               <thead class="bg-slate-50 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 border-b border-slate-200 dark:border-slate-800">
                 <tr>
                   <th class="px-3 py-2">Col A: SKU</th>
-                  <th class="px-3 py-2">Col B: Nama Produk</th>
-                  <th class="px-3 py-2">Col C: Kategori</th>
-                  <th class="px-3 py-2">Col D: Harga (IDR)</th>
-                  <th class="px-3 py-2">Col E: Stok</th>
-                  <th class="px-3 py-2">Col F: Cabang</th>
+                  <th class="px-3 py-2">${isEn ? 'Col B: Product Name' : 'Col B: Nama Produk'}</th>
+                  <th class="px-3 py-2">${isEn ? 'Col C: Category' : 'Col C: Kategori'}</th>
+                  <th class="px-3 py-2">${isEn ? 'Col D: Price (IDR)' : 'Col D: Harga (IDR)'}</th>
+                  <th class="px-3 py-2">${isEn ? 'Col E: Stock' : 'Col E: Stok'}</th>
+                  <th class="px-3 py-2">${isEn ? 'Col F: Branch' : 'Col F: Cabang'}</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-slate-100 dark:divide-slate-800/60" id="lookupTableBody">
@@ -126,29 +128,29 @@ window.renderSpreadsheetFormulaEngine = function(container) {
           
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
             <div>
-              <label class="font-bold text-slate-800 dark:text-slate-200 block mb-1">Group By (Dimensi Baris):</label>
+              <label class="font-bold text-slate-800 dark:text-slate-200 block mb-1">${isEn ? 'Group By (Row Dimension):' : 'Group By (Dimensi Baris):'}</label>
               <select id="pivotGroupCol" class="w-full px-2.5 py-1.5 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-mono text-xs focus:outline-none">
-                <option value="kategori" selected>Kategori Perangkat</option>
-                <option value="cabang">Lokasi Cabang Gudang</option>
+                <option value="kategori" selected>${isEn ? 'Product Category' : 'Kategori Perangkat'}</option>
+                <option value="cabang">${isEn ? 'Warehouse Branch Location' : 'Lokasi Cabang Gudang'}</option>
               </select>
             </div>
 
             <div>
-              <label class="font-bold text-slate-800 dark:text-slate-200 block mb-1">Values (Metrik Nilai):</label>
+              <label class="font-bold text-slate-800 dark:text-slate-200 block mb-1">${isEn ? 'Values (Metric Column):' : 'Values (Metrik Nilai):'}</label>
               <select id="pivotValCol" class="w-full px-2.5 py-1.5 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-mono text-xs focus:outline-none">
-                <option value="harga" selected>Nilai Harga</option>
-                <option value="stok">Kuantitas Stok</option>
+                <option value="harga" selected>${isEn ? 'Price Value' : 'Nilai Harga'}</option>
+                <option value="stok">${isEn ? 'Stock Quantity' : 'Kuantitas Stok'}</option>
               </select>
             </div>
 
             <div>
-              <label class="font-bold text-slate-800 dark:text-slate-200 block mb-1">Fungsi Agregasi:</label>
+              <label class="font-bold text-slate-800 dark:text-slate-200 block mb-1">${isEn ? 'Aggregation Function:' : 'Fungsi Agregasi:'}</label>
               <select id="pivotAggFunc" class="w-full px-2.5 py-1.5 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-mono text-xs focus:outline-none">
-                <option value="SUM" selected>SUM (Total Akumulasi)</option>
-                <option value="AVERAGE">AVERAGE (Rata-rata)</option>
-                <option value="COUNT">COUNT (Jumlah Baris)</option>
-                <option value="MAX">MAX (Nilai Tertinggi)</option>
-                <option value="MIN">MIN (Nilai Terendah)</option>
+                <option value="SUM" selected>${isEn ? 'SUM (Total Sum)' : 'SUM (Total Akumulasi)'}</option>
+                <option value="AVERAGE">${isEn ? 'AVERAGE (Mean)' : 'AVERAGE (Rata-rata)'}</option>
+                <option value="COUNT">${isEn ? 'COUNT (Row Count)' : 'COUNT (Jumlah Baris)'}</option>
+                <option value="MAX">${isEn ? 'MAX (Maximum Value)' : 'MAX (Nilai Tertinggi)'}</option>
+                <option value="MIN">${isEn ? 'MIN (Minimum Value)' : 'MIN (Nilai Terendah)'}</option>
               </select>
             </div>
           </div>
@@ -158,9 +160,9 @@ window.renderSpreadsheetFormulaEngine = function(container) {
             <table class="w-full text-left text-xs font-mono">
               <thead class="bg-slate-50 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 border-b border-slate-200 dark:border-slate-800">
                 <tr>
-                  <th class="px-3 py-2" id="pivotThGroup">Kategori</th>
-                  <th class="px-3 py-2">Jumlah Record</th>
-                  <th class="px-3 py-2" id="pivotThMetric">Hasil Agregasi</th>
+                  <th class="px-3 py-2" id="pivotThGroup">${isEn ? 'Category' : 'Kategori'}</th>
+                  <th class="px-3 py-2">${isEn ? 'Record Count' : 'Jumlah Record'}</th>
+                  <th class="px-3 py-2" id="pivotThMetric">${isEn ? 'Aggregated Result' : 'Hasil Agregasi'}</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-slate-100 dark:divide-slate-800/60" id="pivotTableBody">
@@ -215,6 +217,7 @@ function switchEngineMode(mode) {
 }
 
 function updateLookupResults() {
+  const isEn = (window.currentLang || 'id') === 'en';
   const sku = document.getElementById('lookupSkuSelect') ? document.getElementById('lookupSkuSelect').value : 'PRD-103';
   const targetCol = document.getElementById('lookupTargetCol') ? document.getElementById('lookupTargetCol').value : 'harga';
 
@@ -269,13 +272,16 @@ function updateLookupResults() {
 }
 
 function updatePivotResults() {
+  const isEn = (window.currentLang || 'id') === 'en';
   const groupCol = document.getElementById('pivotGroupCol') ? document.getElementById('pivotGroupCol').value : 'kategori';
   const valCol = document.getElementById('pivotValCol') ? document.getElementById('pivotValCol').value : 'harga';
   const aggFunc = document.getElementById('pivotAggFunc') ? document.getElementById('pivotAggFunc').value : 'SUM';
 
   const thGroup = document.getElementById('pivotThGroup');
   const thMetric = document.getElementById('pivotThMetric');
-  if (thGroup) thGroup.textContent = groupCol.toUpperCase();
+  if (thGroup) {
+    thGroup.textContent = isEn ? (groupCol === 'kategori' ? 'CATEGORY' : 'BRANCH') : groupCol.toUpperCase();
+  }
   if (thMetric) thMetric.textContent = `${aggFunc}(${valCol.toUpperCase()})`;
 
   const groups = {};
@@ -313,7 +319,7 @@ function updatePivotResults() {
     html += `
       <tr class="hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition">
         <td class="px-3 py-2 font-bold text-slate-900 dark:text-white">${grpKey}</td>
-        <td class="px-3 py-2 font-mono text-slate-500">${arr.length} baris</td>
+        <td class="px-3 py-2 font-mono text-slate-500">${arr.length} ${isEn ? 'rows' : 'baris'}</td>
         <td class="px-3 py-2 font-mono font-bold text-slate-900 dark:text-white">${displayVal}</td>
       </tr>
     `;
@@ -321,3 +327,4 @@ function updatePivotResults() {
 
   tbody.innerHTML = html;
 }
+
