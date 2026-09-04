@@ -125,7 +125,73 @@
   animation: slideUpToast 0.15s ease-out;
 }
 
+/* Project Switcher Styles */
+.project-switcher-btn.active {
+  background-color: #0284c7; /* Sky 600 */
+  color: #ffffff;
+  box-shadow: 0 2px 8px -1px rgba(2, 132, 199, 0.35);
+}
+
+.dark .project-switcher-btn.active {
+  background-color: #0284c7;
+  color: #ffffff;
+}
+
+/* SIMRS Sub-Tab Styling */
+.simrs-subtab-btn {
+  border: 1px solid transparent;
+  color: #64748b;
+}
+
+.simrs-subtab-btn:hover {
+  color: #0f172a;
+  background-color: #f1f5f9;
+}
+
+.dark .simrs-subtab-btn:hover {
+  color: #ffffff;
+  background-color: #1e293b;
+}
+
+.simrs-subtab-btn.active {
+  background-color: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+}
+
+.dark .simrs-subtab-btn.active {
+  background-color: #f8fafc;
+  color: #0f172a;
+  border-color: #f8fafc;
+}
+
+/* Laravel Code Inspector File Tabs */
+.laravel-file-tab-btn {
+  border-color: #e2e8f0;
+  color: #64748b;
+  background-color: #ffffff;
+}
+
+.dark .laravel-file-tab-btn {
+  border-color: #334155;
+  color: #94a3b8;
+  background-color: #0f172a;
+}
+
+.laravel-file-tab-btn.active {
+  background-color: #0284c7;
+  color: #ffffff;
+  border-color: #0284c7;
+}
+
+.dark .laravel-file-tab-btn.active {
+  background-color: #0284c7;
+  color: #ffffff;
+  border-color: #0284c7;
+}
+
 @keyframes slideUpToast {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
 }
+

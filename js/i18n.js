@@ -6,6 +6,12 @@
 
 window.I18N_DICT = {
   id: {
+    // Project Switcher
+    projectSwitcherLabel: "Pilih Portofolio:",
+    labelProjectSimrs: "Project 2: SIMRS Laravel (Hospital System)",
+    labelProjectDevTools: "Project 1: Dev Suite (29 Tools)",
+    currentProjectBadge: "Target: Staf Pengembangan TI (PT Abna)",
+
     // Header
     headerSubtitle: "IT Support • Network Admin • VAPT Security • Data Analytics & Web Suite",
     btnInterviewGuide: "Panduan Teknis",
@@ -86,6 +92,12 @@ window.I18N_DICT = {
   },
 
   en: {
+    // Project Switcher
+    projectSwitcherLabel: "Select Portfolio:",
+    labelProjectSimrs: "Project 2: SIMRS Laravel (Hospital System)",
+    labelProjectDevTools: "Project 1: Dev Suite (29 Tools)",
+    currentProjectBadge: "Target: IT Systems Developer (PT Abna)",
+
     // Header
     headerSubtitle: "IT Support • Network Admin • VAPT Security • Data Analytics & Web Suite",
     btnInterviewGuide: "Technical Guide",
@@ -184,6 +196,19 @@ window.setLanguage = function(lang) {
   if (langLabel) {
     langLabel.textContent = lang === 'id' ? 'ID' : 'EN';
   }
+
+  // Project Switcher Elements
+  const projectSwitcherLabel = document.getElementById('projectSwitcherLabel');
+  if (projectSwitcherLabel) projectSwitcherLabel.textContent = dict.projectSwitcherLabel;
+
+  const labelProjectSimrs = document.getElementById('labelProjectSimrs');
+  if (labelProjectSimrs) labelProjectSimrs.textContent = dict.labelProjectSimrs;
+
+  const labelProjectDevTools = document.getElementById('labelProjectDevTools');
+  if (labelProjectDevTools) labelProjectDevTools.textContent = dict.labelProjectDevTools;
+
+  const currentProjectBadge = document.getElementById('currentProjectBadge');
+  if (currentProjectBadge) currentProjectBadge.textContent = dict.currentProjectBadge;
 
   // 2. Navigation Header & Buttons
   const headerSubtitle = document.getElementById('headerSubtitle');
@@ -352,6 +377,12 @@ window.setLanguage = function(lang) {
   // Re-render Tools Grid to update titles & descriptions
   if (typeof window.renderToolsGrid === 'function') {
     window.renderToolsGrid();
+  }
+
+  // Re-render SIMRS Suite if active
+  if (window.currentProject === 'simrs' && typeof window.renderSimrsSuite === 'function') {
+    const root = document.getElementById('simrsSuiteRoot');
+    if (root) window.renderSimrsSuite(root);
   }
 
   // If a modal is open, refresh its content in the active language

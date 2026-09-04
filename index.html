@@ -94,67 +94,106 @@
   </header>
 
   <!-- ============================================================ -->
-  <!-- HERO & SKILLS BADGES                                         -->
+  <!-- MASTER PORTFOLIO PROJECT SWITCHER                            -->
   <!-- ============================================================ -->
-  <section class="border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-        
-        <div class="max-w-3xl">
-          <h2 id="heroTitleText" class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
-            Web Tools & Data Suite
-          </h2>
-          <p id="heroDescText" class="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
-            Platform utilitas mandiri 29 tools interaktif untuk manajemen jaringan, audit keamanan sistem, database & data wrangling, serta utilitas IT harian.
-          </p>
+  <div class="bg-slate-100/90 dark:bg-slate-900/90 border-b border-slate-200 dark:border-slate-800 py-2.5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span id="projectSwitcherLabel" class="text-[11px] font-mono font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Pilih Portofolio:</span>
+        <div class="inline-flex p-1 rounded-xl bg-slate-200/80 dark:bg-slate-800 border border-slate-300/60 dark:border-slate-700/60" id="projectSwitcherContainer">
+          <button id="projectBtnSimrs" data-project="simrs" class="project-switcher-btn active px-3.5 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-2">
+            <i data-lucide="hospital" class="w-4 h-4"></i>
+            <span id="labelProjectSimrs">Project 2: SIMRS Laravel (Hospital System)</span>
+            <span class="px-1.5 py-0.5 rounded text-[10px] bg-emerald-500 text-white font-mono font-bold">PT Abna</span>
+          </button>
+          <button id="projectBtnDevTools" data-project="devtools" class="project-switcher-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition flex items-center gap-2">
+            <i data-lucide="layout-grid" class="w-4 h-4"></i>
+            <span id="labelProjectDevTools">Project 1: Dev Suite (29 Tools)</span>
+          </button>
         </div>
-
       </div>
 
-      <!-- Category Filter Tabs & Search Bar -->
-      <div class="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <!-- Filter Tabs -->
-        <div class="flex items-center gap-1.5 overflow-x-auto pb-2 md:pb-0 scrollbar-none" id="categoryFilterContainer">
-          <button data-category="all" class="category-filter-btn active px-3.5 py-1.5 rounded-lg text-xs font-semibold transition">
-            Semua Tools (29)
-          </button>
-          <button data-category="network" class="category-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-            Jaringan & Server
-          </button>
-          <button data-category="security" class="category-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-            Keamanan Sistem
-          </button>
-          <button data-category="database" class="category-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-            Data & Backend
-          </button>
-          <button data-category="utility" class="category-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-            Utilitas & Hardware
-          </button>
-        </div>
-
-        <!-- Search Input -->
-        <div class="relative w-full md:w-64">
-          <i data-lucide="search" class="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
-          <input type="text" id="toolSearchInput" placeholder="Cari nama tool / teknologi..." class="w-full pl-9 pr-3 py-1.5 text-xs rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-slate-400 dark:focus:ring-slate-500 transition font-mono" />
-        </div>
+      <div class="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 font-mono">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span id="currentProjectBadge">Target: Staf Pengembangan TI (PT Abna)</span>
       </div>
     </div>
-  </section>
+  </div>
 
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <div id="toolsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-      <!-- Cards will be populated by JavaScript -->
-    </div>
-
-    <!-- Empty State -->
-    <div id="emptyState" class="hidden text-center py-16">
-      <div class="w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-400 flex items-center justify-center mx-auto mb-3 border border-slate-200 dark:border-slate-700">
-        <i data-lucide="search-x" class="w-6 h-6"></i>
-      </div>
-      <h3 id="emptyStateTitle" class="text-sm font-bold text-slate-900 dark:text-white">Tidak ada tool yang cocok</h3>
-      <p id="emptyStateDesc" class="text-xs text-slate-500 dark:text-slate-400 mt-1">Coba gunakan kata kunci pencarian lain atau ubah filter kategori.</p>
+  <!-- ============================================================ -->
+  <!-- PROJECT 2 VIEW: SIMRS LARAVEL ENTERPRISE HOSPITAL SUITE      -->
+  <!-- ============================================================ -->
+  <main id="projectSimrsView" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div id="simrsSuiteRoot">
+      <!-- Populated by simrs-laravel-suite.js -->
     </div>
   </main>
+
+  <!-- ============================================================ -->
+  <!-- PROJECT 1 VIEW: 29 DEV & ENGINEERING TOOLS SUITE             -->
+  <!-- ============================================================ -->
+  <div id="projectDevToolsView" class="hidden">
+    <!-- HERO & SKILLS BADGES -->
+    <section class="border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+          
+          <div class="max-w-3xl">
+            <h2 id="heroTitleText" class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
+              Web Tools & Data Suite
+            </h2>
+            <p id="heroDescText" class="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+              Platform utilitas mandiri 29 tools interaktif untuk manajemen jaringan, audit keamanan sistem, database & data wrangling, serta utilitas IT harian.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Category Filter Tabs & Search Bar -->
+        <div class="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <!-- Filter Tabs -->
+          <div class="flex items-center gap-1.5 overflow-x-auto pb-2 md:pb-0 scrollbar-none" id="categoryFilterContainer">
+            <button data-category="all" class="category-filter-btn active px-3.5 py-1.5 rounded-lg text-xs font-semibold transition">
+              Semua Tools (29)
+            </button>
+            <button data-category="network" class="category-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+              Jaringan & Server
+            </button>
+            <button data-category="security" class="category-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+              Keamanan Sistem
+            </button>
+            <button data-category="database" class="category-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+              Data & Backend
+            </button>
+            <button data-category="utility" class="category-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+              Utilitas & Hardware
+            </button>
+          </div>
+
+          <!-- Search Input -->
+          <div class="relative w-full md:w-64">
+            <i data-lucide="search" class="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+            <input type="text" id="toolSearchInput" placeholder="Cari nama tool / teknologi..." class="w-full pl-9 pr-3 py-1.5 text-xs rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-slate-400 dark:focus:ring-slate-500 transition font-mono" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div id="toolsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- Cards will be populated by JavaScript -->
+      </div>
+
+      <!-- Empty State -->
+      <div id="emptyState" class="hidden text-center py-16">
+        <div class="w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-400 flex items-center justify-center mx-auto mb-3 border border-slate-200 dark:border-slate-700">
+          <i data-lucide="search-x" class="w-6 h-6"></i>
+        </div>
+        <h3 id="emptyStateTitle" class="text-sm font-bold text-slate-900 dark:text-white">Tidak ada tool yang cocok</h3>
+        <p id="emptyStateDesc" class="text-xs text-slate-500 dark:text-slate-400 mt-1">Coba gunakan kata kunci pencarian lain atau ubah filter kategori.</p>
+      </div>
+    </main>
+  </div>
 
   <!-- ============================================================ -->
   <!-- INTERACTIVE TOOL WORKSPACE MODAL / DRAWER                   -->
@@ -519,6 +558,7 @@
   <script src="js/psu-calculator.js"></script>
   <script src="js/regex-tester.js"></script>
   <script src="js/markdown-preview.js"></script>
+  <script src="js/simrs-laravel-suite.js"></script>
   <script src="js/i18n.js"></script>
   <script src="app.js"></script>
 

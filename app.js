@@ -1119,6 +1119,53 @@ function initApp() {
     renderToolsGrid();
   }
 
+  // Master Project Switcher
+  window.currentProject = 'simrs'; // Default to Flagship SIMRS
+
+  window.switchProject = function(projectName) {
+    window.currentProject = projectName;
+    const projectSimrsView = document.getElementById('projectSimrsView');
+    const projectDevToolsView = document.getElementById('projectDevToolsView');
+    const btnSimrs = document.getElementById('projectBtnSimrs');
+    const btnDevTools = document.getElementById('projectBtnDevTools');
+
+    if (projectName === 'simrs') {
+      if (projectSimrsView) projectSimrsView.classList.remove('hidden');
+      if (projectDevToolsView) projectDevToolsView.classList.add('hidden');
+      if (btnSimrs) {
+        btnSimrs.classList.add('active');
+        btnSimrs.classList.remove('text-slate-600', 'dark:text-slate-400');
+      }
+      if (btnDevTools) {
+        btnDevTools.classList.remove('active');
+        btnDevTools.classList.add('text-slate-600', 'dark:text-slate-400');
+      }
+      const root = document.getElementById('simrsSuiteRoot');
+      if (root && typeof window.renderSimrsSuite === 'function') {
+        window.renderSimrsSuite(root);
+      }
+    } else {
+      if (projectSimrsView) projectSimrsView.classList.add('hidden');
+      if (projectDevToolsView) projectDevToolsView.classList.remove('hidden');
+      if (btnDevTools) {
+        btnDevTools.classList.add('active');
+        btnDevTools.classList.remove('text-slate-600', 'dark:text-slate-400');
+      }
+      if (btnSimrs) {
+        btnSimrs.classList.remove('active');
+        btnSimrs.classList.add('text-slate-600', 'dark:text-slate-400');
+      }
+      renderToolsGrid();
+    }
+
+    if (window.lucide) lucide.createIcons();
+  };
+
+  const btnSimrs = document.getElementById('projectBtnSimrs');
+  const btnDevTools = document.getElementById('projectBtnDevTools');
+  if (btnSimrs) btnSimrs.addEventListener('click', () => window.switchProject('simrs'));
+  if (btnDevTools) btnDevTools.addEventListener('click', () => window.switchProject('devtools'));
+
   // Language Switcher Toggle Button
   const langToggleBtn = document.getElementById('langToggleBtn');
   if (langToggleBtn) {
@@ -1218,6 +1265,9 @@ function initApp() {
       if (aboutDevModal && !aboutDevModal.classList.contains('hidden')) closeDevModal();
     }
   });
+
+  // Initial Project Render
+  window.switchProject('simrs');
 
   if (window.lucide) {
     lucide.createIcons();
