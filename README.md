@@ -1,6 +1,12 @@
 # Web Tools & Engineering Suite
 
-🌐 **English** | [🇮🇩 Switch to Indonesian (Bahasa Indonesia)](README_ID.md)
+<div align="center">
+
+[![Language: English](https://img.shields.io/badge/Language-English%20(Active)-0284c7?style=for-the-badge&logo=googletranslate&logoColor=white)](README.md)
+[![Ganti Bahasa: Indonesia](https://img.shields.io/badge/Ganti%20Bahasa-Bahasa%20Indonesia%20%F0%9F%87%AE%F0%9F%87%A9-334155?style=for-the-badge&logo=translate&logoColor=white)](README_ID.md)
+[![Live Demo Platform](https://img.shields.io/badge/Live%20Demo-infinitenull.github.io-059669?style=for-the-badge&logo=githubpages&logoColor=white)](https://infinitenull.github.io/)
+
+</div>
 
 > **Unified Developer & IT Infrastructure Suite (22 Interactive Production-Ready Tools)**  
 > *Engineered by **Rizki Ananda, S.Kom** ([@InfiniteNull](https://github.com/InfiniteNull)) — Computer Science Graduate (S1 Informatika) from Universitas Potensi Utama, IT Specialist, Certified Network Administrator & Security Practitioner.*

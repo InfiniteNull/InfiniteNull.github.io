@@ -1,6 +1,12 @@
 # Web Tools & Engineering Suite
 
-[🇬🇧 Switch to English Version](README.md) | 🌐 **Bahasa Indonesia**
+<div align="center">
+
+[![Switch Language: English](https://img.shields.io/badge/Switch%20Language-English%20Version%20%F0%9F%87%AC%F0%9F%87%A7-334155?style=for-the-badge&logo=translate&logoColor=white)](README.md)
+[![Bahasa: Indonesia](https://img.shields.io/badge/Bahasa-Bahasa%20Indonesia%20(Aktif)-0284c7?style=for-the-badge&logo=googletranslate&logoColor=white)](README_ID.md)
+[![Live Demo Platform](https://img.shields.io/badge/Live%20Demo-infinitenull.github.io-059669?style=for-the-badge&logo=githubpages&logoColor=white)](https://infinitenull.github.io/)
+
+</div>
 
 > **Platform Web Terintegrasi: 22 Tools Rekayasa Perangkat Lunak & Infrastruktur IT**  
 > *Dikembangkan oleh **Rizki Ananda, S.Kom** ([@InfiniteNull](https://github.com/InfiniteNull)) — Lulusan S1 Informatika Universitas Potensi Utama, Praktisi IT Support, Network Administrator & Keamanan Sistem.*
