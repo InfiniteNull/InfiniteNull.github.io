@@ -573,35 +573,35 @@ window.renderToolsGrid = function() {
     const openLabel = lang === 'en' ? 'Open Workspace' : 'Buka Workspace';
 
     const card = document.createElement('div');
-    card.className = "tool-card bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 p-5 flex flex-col justify-between hover:shadow-lg transition-all duration-200 cursor-pointer group";
+    card.className = "tool-card bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-5 flex flex-col justify-between cursor-pointer group";
     card.dataset.toolId = tool.id;
 
     card.innerHTML = `
-      <div class="space-y-3">
+      <div class="space-y-3.5">
         <div class="flex items-center justify-between">
-          <div class="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-300 group-hover:scale-105 transition-transform duration-200">
-            <i data-lucide="${tool.icon}" class="w-5 h-5"></i>
+          <div class="w-9 h-9 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700/60">
+            <i data-lucide="${tool.icon}" class="w-4 h-4"></i>
           </div>
-          <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold border ${tool.techColor}">
+          <span class="px-2 py-0.5 rounded text-[10px] sm:text-[11px] font-mono font-medium border bg-slate-50 dark:bg-slate-800/80 text-slate-600 dark:text-slate-400 border-slate-200 dark:border-slate-700">
             ${tool.techBadge}
           </span>
         </div>
 
         <div>
-          <h3 class="font-bold text-slate-900 dark:text-white text-base group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+          <h3 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
             ${title}
           </h3>
-          <p class="mt-1.5 text-xs text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-2">
+          <p class="mt-1.5 text-xs text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2">
             ${desc}
           </p>
         </div>
       </div>
 
-      <div class="pt-4 mt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between">
-        <span class="text-[11px] font-semibold text-slate-400 group-hover:text-sky-600 dark:group-hover:text-sky-400 flex items-center gap-1 transition-colors">
-          ${openLabel} <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+      <div class="pt-3.5 mt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs">
+        <span class="text-[11px] font-mono font-medium text-slate-500 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white flex items-center gap-1.5 transition-colors">
+          ${openLabel} <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-slate-400 group-hover:translate-x-0.5 transition-transform"></i>
         </span>
-        <div class="w-2 h-2 rounded-full bg-emerald-500"></div>
+        <span class="text-[10px] font-mono text-slate-400 dark:text-slate-500 uppercase tracking-wider">MODULAR</span>
       </div>
     `;
 

@@ -52,20 +52,20 @@
   <!-- ============================================================ -->
   <!-- TOP NAVIGATION BAR                                           -->
   <!-- ============================================================ -->
-  <header class="sticky top-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+  <header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         
         <!-- Logo & Title -->
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-lg bg-slate-900 dark:bg-slate-100 flex items-center justify-center text-white dark:text-slate-900 font-bold font-mono text-lg shadow-sm">
+          <div class="w-9 h-9 rounded-lg bg-slate-900 dark:bg-slate-100 flex items-center justify-center text-white dark:text-slate-900 font-bold font-mono text-sm shadow-sm border border-slate-800 dark:border-slate-300">
             &lt;/&gt;
           </div>
           <div>
             <div class="flex items-center gap-2">
               <h1 class="font-bold text-slate-900 dark:text-white text-base leading-tight">Dev & Data Suite</h1>
-              <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1 animate-pulse"></span> Rizki Ananda, S.Kom
+              <span class="inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+                Rizki Ananda, S.Kom
               </span>
             </div>
             <p id="headerSubtitle" class="text-xs text-slate-500 dark:text-slate-400">IT Support • Network Admin • VAPT Security • Data Analytics & Web Suite</p>
@@ -74,26 +74,26 @@
 
         <!-- Right Controls (Search, Quick Links, Theme Toggle, Language Switcher) -->
         <div class="flex items-center gap-2 sm:gap-3">
-          <button id="viewInterviewDocBtn" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition">
-            <i data-lucide="book-open" class="w-4 h-4 text-sky-600 dark:text-sky-400"></i>
+          <button id="viewInterviewDocBtn" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition border border-slate-200/80 dark:border-slate-700/80">
+            <i data-lucide="book-open" class="w-3.5 h-3.5 text-slate-500"></i>
             <span id="btnInterviewGuideText">Panduan Teknis</span>
           </button>
           
           <button id="aboutDevBtn" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition border border-slate-200 dark:border-slate-700 shadow-sm">
-            <i data-lucide="user" class="w-4 h-4 text-emerald-600 dark:text-emerald-400"></i>
+            <i data-lucide="user" class="w-3.5 h-3.5 text-slate-500"></i>
             <span id="btnAboutDevText" class="font-semibold">Tentang Pengembang</span>
           </button>
 
           <!-- Language Switcher (ID / EN) -->
           <button id="langToggleBtn" aria-label="Toggle Language" class="inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-bold rounded-lg text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition border border-slate-200 dark:border-slate-700 shadow-sm" title="Ganti Bahasa / Switch Language">
-            <i data-lucide="languages" class="w-4 h-4 text-sky-600 dark:text-sky-400"></i>
+            <i data-lucide="languages" class="w-3.5 h-3.5 text-slate-500"></i>
             <span id="langLabel" class="font-mono">ID</span>
           </button>
 
           <!-- Dark/Light Theme Toggle -->
           <button id="themeToggleBtn" aria-label="Toggle Theme" class="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-            <i id="themeIconSun" data-lucide="sun" class="w-5 h-5 hidden"></i>
-            <i id="themeIconMoon" data-lucide="moon" class="w-5 h-5"></i>
+            <i id="themeIconSun" data-lucide="sun" class="w-4 h-4 hidden"></i>
+            <i id="themeIconMoon" data-lucide="moon" class="w-4 h-4"></i>
           </button>
         </div>
 
@@ -109,8 +109,8 @@
       <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
         
         <div class="max-w-3xl">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-sky-50 dark:bg-sky-950/60 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800 mb-3">
-            <i data-lucide="award" class="w-3.5 h-3.5 text-amber-500"></i>
+          <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 mb-3">
+            <i data-lucide="terminal" class="w-3.5 h-3.5 text-slate-500"></i>
             <span id="heroBadgeText">Rizki Ananda, S.Kom • Universitas Potensi Utama</span>
           </div>
           <h2 id="heroTitleText" class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
@@ -130,38 +130,38 @@
           <button data-category="all" class="category-filter-btn active px-3.5 py-1.5 rounded-lg text-xs font-semibold transition">
             Semua Tools (22)
           </button>
-          <button data-category="network" class="category-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition">
+          <button data-category="network" class="category-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition">
             Jaringan & Server
           </button>
-          <button data-category="security" class="category-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition">
+          <button data-category="security" class="category-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition">
             Keamanan Sistem
           </button>
-          <button data-category="database" class="category-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition">
+          <button data-category="database" class="category-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition">
             Database & Backend
           </button>
-          <button data-category="utility" class="category-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition">
+          <button data-category="utility" class="category-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition">
             Utilitas & Hardware
           </button>
         </div>
 
         <!-- Search Input -->
         <div class="relative w-full md:w-64">
-          <i data-lucide="search" class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
-          <input type="text" id="toolSearchInput" placeholder="Cari nama tool / teknologi..." class="w-full pl-9 pr-3 py-1.5 text-xs rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition" />
+          <i data-lucide="search" class="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+          <input type="text" id="toolSearchInput" placeholder="Cari nama tool / teknologi..." class="w-full pl-9 pr-3 py-1.5 text-xs rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-slate-400 dark:focus:ring-slate-500 transition font-mono" />
         </div>
       </div>
     </div>
   </section>
 
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <div id="toolsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div id="toolsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
       <!-- Cards will be populated by JavaScript -->
     </div>
 
     <!-- Empty State -->
     <div id="emptyState" class="hidden text-center py-16">
-      <div class="w-14 h-14 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-400 flex items-center justify-center mx-auto mb-3">
-        <i data-lucide="search-x" class="w-7 h-7"></i>
+      <div class="w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-400 flex items-center justify-center mx-auto mb-3 border border-slate-200 dark:border-slate-700">
+        <i data-lucide="search-x" class="w-6 h-6"></i>
       </div>
       <h3 id="emptyStateTitle" class="text-sm font-bold text-slate-900 dark:text-white">Tidak ada tool yang cocok</h3>
       <p id="emptyStateDesc" class="text-xs text-slate-500 dark:text-slate-400 mt-1">Coba gunakan kata kunci pencarian lain atau ubah filter kategori.</p>
@@ -172,18 +172,18 @@
   <!-- INTERACTIVE TOOL WORKSPACE MODAL / DRAWER                   -->
   <!-- ============================================================ -->
   <div id="toolModal" class="fixed inset-0 z-50 hidden bg-slate-950/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
-    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl w-full max-w-5xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden transition-all animate-in fade-in zoom-in-95 duration-200">
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl w-full max-w-5xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden transition-all duration-150">
       
       <!-- Modal Header -->
       <div class="px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-slate-900/50">
         <div class="flex items-center gap-3">
-          <div id="modalIconContainer" class="w-10 h-10 rounded-xl bg-sky-100 dark:bg-sky-950 text-sky-600 dark:text-sky-400 flex items-center justify-center">
-            <i id="modalIcon" data-lucide="box" class="w-5 h-5"></i>
+          <div id="modalIconContainer" class="w-9 h-9 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700/60 flex items-center justify-center">
+            <i id="modalIcon" data-lucide="box" class="w-4 h-4"></i>
           </div>
           <div>
             <div class="flex items-center gap-2">
               <h3 id="modalTitle" class="text-base font-bold text-slate-900 dark:text-white leading-tight">Nama Tool</h3>
-              <span id="modalTechBadge" class="px-2 py-0.5 rounded text-[11px] font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+              <span id="modalTechBadge" class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
                 Tech
               </span>
             </div>
@@ -200,7 +200,7 @@
 
       <!-- Modal Tab Navigation -->
       <div class="px-6 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex items-center gap-6 text-xs font-medium">
-        <button id="tabBtnDemo" class="modal-tab-btn active py-3 border-b-2 border-sky-600 text-sky-600 dark:text-sky-400 font-semibold transition flex items-center gap-1.5">
+        <button id="tabBtnDemo" class="modal-tab-btn active py-3 border-b-2 border-slate-900 dark:border-slate-100 text-slate-900 dark:text-white font-semibold transition flex items-center gap-1.5">
           <i data-lucide="play" class="w-3.5 h-3.5"></i>
           <span id="tabDemoText">Live Demo Interaktif</span>
         </button>
@@ -233,7 +233,7 @@
                 /ai-data-analyzer/analyzer.py
               </span>
             </div>
-            <button id="copyCodeBtn" class="px-2.5 py-1 rounded text-xs font-medium bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition flex items-center gap-1.5">
+            <button id="copyCodeBtn" class="px-2.5 py-1 rounded text-xs font-medium bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition flex items-center gap-1.5 font-mono">
               <i data-lucide="copy" class="w-3.5 h-3.5"></i>
               <span id="copyCodeBtnText">Salin Kode</span>
             </button>
@@ -257,18 +257,18 @@
   <!-- TENTANG PENGEMBANG / DEVELOPER PROFILE MODAL (LENGKAP)        -->
   <!-- ============================================================ -->
   <div id="aboutDevModal" class="fixed inset-0 z-50 hidden bg-slate-950/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
-    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl w-full max-w-3xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden transition-all animate-in fade-in zoom-in-95 duration-200">
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl w-full max-w-3xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden transition-all duration-150">
       
       <!-- Modal Header -->
       <div class="px-6 py-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50/70 dark:bg-slate-900/50">
         <div class="flex items-center gap-3.5">
-          <div class="w-12 h-12 rounded-xl bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900 flex items-center justify-center font-bold font-mono text-xl shadow-md border border-slate-800 dark:border-slate-300">
+          <div class="w-11 h-11 rounded-xl bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900 flex items-center justify-center font-bold font-mono text-base shadow-md border border-slate-800 dark:border-slate-300">
             RA
           </div>
           <div>
             <div class="flex items-center gap-2">
               <h3 class="font-bold text-slate-900 dark:text-white text-base">Rizki Ananda, S.Kom</h3>
-              <span id="devRoleBadge" class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
+              <span id="devRoleBadge" class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
                 Lulusan S1 Informatika
               </span>
             </div>
@@ -286,7 +286,7 @@
         <!-- Summary / Bio Card -->
         <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 space-y-2">
           <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white">
-            <i data-lucide="user-check" class="w-4 h-4 text-sky-600"></i>
+            <i data-lucide="user-check" class="w-4 h-4 text-slate-500"></i>
             <span id="profileHeading">Profil</span>
           </div>
           <p id="profileBio" class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
@@ -297,7 +297,7 @@
         <!-- Work Experience & Leadership Grid -->
         <div class="space-y-3">
           <h4 class="font-bold text-slate-900 dark:text-white text-xs uppercase tracking-wider flex items-center gap-2">
-            <i data-lucide="briefcase" class="w-4 h-4 text-emerald-600"></i>
+            <i data-lucide="briefcase" class="w-4 h-4 text-slate-500"></i>
             <span id="expHeading">Pengalaman Kerja</span>
           </h4>
           
@@ -308,10 +308,10 @@
               <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                 <div>
                   <span id="job1Title" class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">IT Researcher</span>
-                  <span id="job1Company" class="text-xs text-sky-600 dark:text-sky-400 font-semibold ml-1.5">• ADZKIA KEDINASAN PUSAT</span>
+                  <span id="job1Company" class="text-xs text-slate-600 dark:text-slate-400 font-semibold ml-1.5">• ADZKIA KEDINASAN PUSAT</span>
                 </div>
                 <div class="flex items-center gap-2">
-                  <span id="job1Meta" class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500">Nov 2024 - Jun 2025 (Freelance)</span>
+                  <span id="job1Meta" class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 border border-slate-200 dark:border-slate-700">Nov 2024 - Jun 2025 (Freelance)</span>
                 </div>
               </div>
               <div class="text-[11px] text-slate-400 font-mono">Petisah Hulu, Medan Baru, Kota Medan, Sumatera Utara</div>
@@ -325,10 +325,10 @@
               <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                 <div>
                   <span id="job2Title" class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">IT Support (Vendor Outsourcing)</span>
-                  <span id="job2Company" class="text-xs text-emerald-600 dark:text-emerald-400 font-semibold ml-1.5">• PT Bank Sinarmas, Tbk</span>
+                  <span id="job2Company" class="text-xs text-slate-600 dark:text-slate-400 font-semibold ml-1.5">• PT Bank Sinarmas, Tbk</span>
                 </div>
                 <div class="flex items-center gap-2">
-                  <span id="job2Meta" class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500">Des 2023 (Freelance)</span>
+                  <span id="job2Meta" class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 border border-slate-200 dark:border-slate-700">Des 2023 (Freelance)</span>
                 </div>
               </div>
               <div class="text-[11px] text-slate-400 font-mono">KC Medan Mangkubumi, Aur, Medan Maimun, Kota Medan, Sumatera Utara</div>
@@ -342,8 +342,8 @@
               
               <div class="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 space-y-1.5">
                 <div class="flex items-center justify-between">
-                  <span id="leadShunaTitle" class="font-bold text-sky-600 dark:text-sky-400 text-xs">Ketua Tim Proyek SHUNA AI</span>
-                  <span id="leadShunaScore" class="text-[10px] font-mono px-2 py-0.5 rounded bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 font-bold">Nilai: 81.8</span>
+                  <span id="leadShunaTitle" class="font-bold text-slate-900 dark:text-white text-xs">Ketua Tim Proyek SHUNA AI</span>
+                  <span id="leadShunaScore" class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold border border-slate-200 dark:border-slate-700">Nilai: 81.8</span>
                 </div>
                 <div class="text-[11px] text-slate-400">MSIB Batch 6 Kampus Merdeka @ Skilvul</div>
                 <p id="leadShunaDesc" class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">
@@ -354,7 +354,7 @@
               <div class="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 space-y-1.5">
                 <div class="flex items-center justify-between">
                   <span id="leadOrgTitle" class="font-bold text-slate-900 dark:text-white text-xs">Kepemimpinan Organisasi</span>
-                  <span id="leadOrgSub" class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300">HMPS Informatika</span>
+                  <span id="leadOrgSub" class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">HMPS Informatika</span>
                 </div>
                 <div class="text-[11px] text-slate-400">Universitas Potensi Utama</div>
                 <p id="leadOrgDesc" class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">
@@ -370,7 +370,7 @@
         <!-- Certifications & Networking / Security -->
         <div class="space-y-3">
           <h4 class="font-bold text-slate-900 dark:text-white text-xs uppercase tracking-wider flex items-center gap-2">
-            <i data-lucide="shield-check" class="w-4 h-4 text-amber-500"></i>
+            <i data-lucide="shield-check" class="w-4 h-4 text-slate-500"></i>
             <span id="certHeading">Sertifikasi & Keahlian</span>
           </h4>
 
@@ -378,7 +378,7 @@
             
             <div class="p-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 space-y-1">
               <div class="flex items-center gap-1.5 text-xs font-bold text-slate-900 dark:text-white">
-                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                <span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
                 <span id="cert1Title">Associate Network Administrator (Komdigi RI, 2026)</span>
               </div>
               <p id="cert1Desc" class="text-[11px] text-slate-500 dark:text-slate-400">
@@ -388,7 +388,7 @@
 
             <div class="p-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 space-y-1">
               <div class="flex items-center gap-1.5 text-xs font-bold text-slate-900 dark:text-white">
-                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                <span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
                 <span id="cert2Title">Junior Network Administrator (BBPSDMP Kominfo, 2023)</span>
               </div>
               <p id="cert2Desc" class="text-[11px] text-slate-500 dark:text-slate-400">
@@ -419,7 +419,7 @@
               <span>GitHub: @InfiniteNull</span>
             </a>
           </div>
-          <span class="text-xs text-slate-500 font-medium">Rizki Ananda, S.Kom • Universitas Potensi Utama</span>
+          <span class="text-xs text-slate-500 font-medium font-mono">Rizki Ananda, S.Kom • Universitas Potensi Utama</span>
         </div>
 
       </div>

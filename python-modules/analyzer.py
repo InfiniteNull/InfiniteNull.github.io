@@ -58,7 +58,7 @@ def process_file_data(file_content: bytes, filename: str):
         "total_rows": len(df),
         "analyzed_column": text_column,
         "sentiment_stats": sentiment_counts,
-        "sample_preview": df[[text_column, 'AI_Sentiment']].head(10).to_dict(orient='records')
+        "sample_preview": df[[text_column, 'NLP_Sentiment']].head(10).to_dict(orient='records')
     }
 
 if __name__ == "__main__":
