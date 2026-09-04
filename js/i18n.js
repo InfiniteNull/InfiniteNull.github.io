@@ -7,10 +7,9 @@
 window.I18N_DICT = {
   id: {
     // Project Switcher
-    projectSwitcherLabel: "Pilih Portofolio:",
-    labelProjectSimrs: "Project 2: SIMRS Laravel (Hospital System)",
-    labelProjectDevTools: "Project 1: Dev Suite (29 Tools)",
-    currentProjectBadge: "Sistem Informasi Manajemen Rumah Sakit",
+    projectSwitcherLabel: "Proyek:",
+    labelProjectSimrs: "SIMRS Core (Laravel 11)",
+    labelProjectDevTools: "Dev & Data Suite (29 Tools)",
 
     // Header
     headerSubtitle: "IT Support • Network Admin • VAPT Security • Data Analytics & Web Suite",
@@ -93,10 +92,9 @@ window.I18N_DICT = {
 
   en: {
     // Project Switcher
-    projectSwitcherLabel: "Select Portfolio:",
-    labelProjectSimrs: "Project 2: SIMRS Laravel (Hospital System)",
-    labelProjectDevTools: "Project 1: Dev Suite (29 Tools)",
-    currentProjectBadge: "Hospital Management Information System",
+    projectSwitcherLabel: "Project:",
+    labelProjectSimrs: "SIMRS Core (Laravel 11)",
+    labelProjectDevTools: "Dev & Data Suite (29 Tools)",
 
     // Header
     headerSubtitle: "IT Support • Network Admin • VAPT Security • Data Analytics & Web Suite",
@@ -206,9 +204,6 @@ window.setLanguage = function(lang) {
 
   const labelProjectDevTools = document.getElementById('labelProjectDevTools');
   if (labelProjectDevTools) labelProjectDevTools.textContent = dict.labelProjectDevTools;
-
-  const currentProjectBadge = document.getElementById('currentProjectBadge');
-  if (currentProjectBadge) currentProjectBadge.textContent = dict.currentProjectBadge;
 
   // 2. Navigation Header & Buttons
   const headerSubtitle = document.getElementById('headerSubtitle');
