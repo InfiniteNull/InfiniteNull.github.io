@@ -10,7 +10,7 @@ Dokumen ini disiapkan khusus agar Anda (**Rizki Ananda, S.Kom**) dapat menjawab 
 
 ### Q: "Bisa ceritakan latar belakang profesional Anda dan apa yang Anda bangun pada website ini?"
 > **Jawaban:**  
-> *"Selamat pagi/siang Bapak/Ibu. Nama saya **Rizki Ananda**, lulusan **S1 Informatika (S.Kom) dari Universitas Potensi Utama**. Saya adalah seorang Praktisi IT serba bisa dengan spesialisasi di bidang **IT Support, Administrasi Jaringan, Keamanan Sistem (VAPT), serta Analisis Data & Software Engineering**.*  
+> *"Selamat pagi/siang Bapak/Ibu. Nama saya **Rizki Ananda**, lulusan **S1 Informatika (S.Kom) dari Universitas Potensi Utama** dengan fokus spesialisasi di bidang **IT Support, Administrasi Jaringan, Keamanan Sistem (VAPT), serta Analisis Data & Software Engineering**.*  
 > *Secara profesional, saya memiliki pengalaman kerja teknis di:*  
 > 1. ***IT Researcher di ADZKIA KEDINASAN PUSAT (Nov 2024 - Jun 2025):*** *Merancang & menguji infrastruktur Nginx Media Server pada Linux VM, pengujian 4 protokol streaming video (RTMP, HLS, RTSP, HTTP), pengujian keamanan jaringan (VAPT), serta prototipe absensi face recognition & chatbot.*  
 > 2. ***IT Support di PT Bank Sinarmas, Tbk (Des 2023):*** *Melaksanakan PC Deployment di KC Medan Mangkubumi, meliputi perakitan desktop, instalasi OS, backup & migrasi data profil user secara aman, cable management, hingga konfigurasi peripheral terhubung ke domain internal bank.*  
