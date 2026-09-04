@@ -51,7 +51,27 @@ Dokumen ini disiapkan khusus agar Anda (**Rizki Ananda, S.Kom**) dapat menjawab 
 
 ---
 
-## 5. Pertanyaan Mengenai Keamanan Sistem (VAPT) & Database
+## 5. Pertanyaan Mengenai Data Wrangling & Administrasi Pengolahan Data
+
+### Q: "Bagaimana alur kerja Anda saat melakukan Data Wrangling dan Data Preparation pada data mentah yang kotor?"
+> **Jawaban:**  
+> *"Alur kerja saya mengikuti standar end-to-end data preparation:*  
+> *1. **Data Inspection & Health Check:** Memeriksa struktur awal kolom, persentase nilai null, tipe data, dan duplikasi baris.*  
+> *2. **Pembersihan & Imputasi:** Melakukan deduplikasi, mengisi missing values menggunakan **Median** untuk kolom numerik (karena lebih tahan terhadap outlier) dan **Modus/Konstanta** untuk kategori.*  
+> *3. **Standardisasi Format:** Menyeragamkan string teks (trim whitespace, title case) serta mengonversi format tanggal yang bervariasi ke standar **ISO-8601 (`YYYY-MM-DD`)**.*  
+> *4. **Quality Control & Outlier Check:** Menggunakan metode statistik **Tukey's IQR** ($1.5 \times \text{IQR}$) untuk menemukan nilai anomali dan memastikan relasi primary/foreign key tidak memiliki rekaman orphan.*  
+> *5. **Export & Dokumentasi:** Mengekspor clean dataset dan menyusun script otomatisasi **Python Pandas** yang reusable."*
+
+### Q: "Bagaimana Anda melakukan monitoring laporan operasional dan analisa data administrasi perkantoran?"
+> **Jawaban:**  
+> *"Saya melakukan rekapitulasi data secara periodik (Harian, Mingguan, Bulanan):*  
+> *1. **Agregasi Spreadsheet & Pivot:** Menggunakan fungsi pencarian relasional (**XLOOKUP / VLOOKUP**) dan matriks **Pivot Table / SQL GROUP BY** untuk mengelompokkan data per cabang atau departemen.*  
+> *2. **Analisis Varians:** Membandingkan target vs realisasi aktual untuk menghitung **Tingkat Ketercapaian (Achievement Rate %)** dan **Varians $(\Delta)$**.*  
+> *3. **Evaluasi & Rekomendasi:** Menyajikan ringkasan laporan eksekutif dengan grafik visual (Chart.js) untuk memudahkan manajemen mengambil keputusan."*
+
+---
+
+## 6. Pertanyaan Mengenai Keamanan Sistem (VAPT) & Database
 
 ### Q: "Bagaimana Anda memastikan sistem yang Anda bangun aman dari serangan siber?"
 > **Jawaban:**  
@@ -63,9 +83,10 @@ Dokumen ini disiapkan khusus agar Anda (**Rizki Ananda, S.Kom**) dapat menjawab 
 
 ---
 
-## 6. Tips Sikap & Komunikasi Saat Wawancara:
+## 7. Tips Sikap & Komunikasi Saat Wawancara:
 1. **Perkenalkan Diri dengan Jelas:** *"Nama saya Rizki Ananda, S.Kom..."*
-2. **Tunjukkan Portofolio Live:** Buka website [https://infinitenull.github.io/](https://infinitenull.github.io/), tunjukkan modal profil lengkap Anda dan demo interaktif 22 tools.
-3. **Bawa Nilai Tambah (Value-Add):** Anda adalah kandidat unggul karena memiliki spektrum lengkap: **IT Support fisik di bank, server & streaming di Adzkia, jaringan tersertifikasi Komdigi/Kominfo, keamanan VAPT, serta koding full-stack Python & Node.js**.
+2. **Tunjukkan Portofolio Live:** Buka website [https://infinitenull.github.io/](https://infinitenull.github.io/), tunjukkan modal profil lengkap Anda dan demo interaktif 29 tools.
+3. **Bawa Nilai Tambah (Value-Add):** Anda adalah kandidat unggul karena memiliki spektrum lengkap: **IT Support fisik di bank, server & streaming di Adzkia, jaringan tersertifikasi Komdigi/Kominfo, keamanan VAPT, Data Wrangling & Analytics Python Pandas, serta koding full-stack Node.js & Modern JS**.
 
 **Semoga sukses gemilang dalam karier profesional Anda, Rizki Ananda, S.Kom!**
+

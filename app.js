@@ -315,7 +315,6 @@ const TOOLS_REGISTRY = [
     title_en: "Nginx Access Log Analyzer",
     category: "database",
     techBadge: "Log Parsing • Status Codes • Top IPs",
-    techColor: "bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300 border-purple-200 dark:border-purple-800",
     icon: "file-text",
     description: "Parsing dan agregasi statistik raw access logs server: breakdown status code 200/404/500, top visitor IP, dan deteksi request mencurigakan.",
     desc_en: "Parses server access logs to aggregate HTTP 2xx/4xx/5xx status code ratios, top visitor IPs, and suspicious request paths.",
@@ -324,6 +323,96 @@ const TOOLS_REGISTRY = [
       <div class="space-y-4">
         <h4 class="text-sm font-bold text-slate-900 dark:text-white">Log Processing & Anomaly Detection</h4>
         <p>Menggunakan pola Regular Expression standar Combined Log Format untuk mengagregasi ribuan baris log server Nginx secara efisien.</p>
+      </div>
+    `
+  },
+  {
+    id: "data-cleaner-studio",
+    title: "Tabular Data Cleaner & Imputation Studio",
+    title_en: "Tabular Data Cleaner & Imputation Studio",
+    category: "database",
+    techBadge: "Python Pandas • Data Wrangling • Imputation",
+    techColor: "bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-200 border-slate-200 dark:border-slate-700",
+    icon: "filter",
+    description: "Pembersihan dataset kotor: penanganan missing values (imputasi mean/median/mode), deduplikasi, standardisasi teks/tanggal, dan export Python Pandas.",
+    desc_en: "End-to-end data wrangling: handles missing values (imputation), row deduplication, text and ISO-8601 date formatting, and Pandas script export.",
+    renderFn: "renderDataCleanerStudio",
+    docs: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Arsitektur Pipeline Data Wrangling & Preparation</h4>
+        <p>Menerapkan standar pembersihan data tabular deterministik:</p>
+        <ul class="list-disc pl-5 space-y-1 text-xs">
+          <li><strong>Deduplikasi Baris:</strong> Eliminasi record ganda menggunakan serialisasi hash kunci.</li>
+          <li><strong>Imputasi Missing Values:</strong> Penanganan nilai kosong numerik menggunakan Median (robust terhadap outlier) dan Modus untuk data kategorikal.</li>
+          <li><strong>Standardisasi ISO-8601:</strong> Penyeragaman format string tanggal ke format standar internasional <code>YYYY-MM-DD</code>.</li>
+        </ul>
+      </div>
+    `
+  },
+  {
+    id: "data-qc-inspector",
+    title: "Dataset Integration & Quality Control (QC) Inspector",
+    title_en: "Dataset Integration & Quality Control (QC) Inspector",
+    category: "database",
+    techBadge: "Data Quality • Table Join • IQR Outlier • QC Audit",
+    techColor: "bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-200 border-slate-200 dark:border-slate-700",
+    icon: "clipboard-check",
+    description: "Audit skor kesehatan data (Completeness & Validity), deteksi outlier statistik Tukey IQR, dan simulasi Relational Table Join (Inner/Left/Right/Full).",
+    desc_en: "Data health audit, Tukey's IQR statistical outlier detection, and relational dataset join simulator with orphan record mismatch alerts.",
+    renderFn: "renderDataQcInspector",
+    docs: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Integrasi Dataset & Quality Control (QC)</h4>
+        <p>Evaluasi menyeluruh terhadap integritas relasional dan distribusi statistik data:</p>
+        <ul class="list-disc pl-5 space-y-1 text-xs">
+          <li><strong>Tukey's Fences IQR:</strong> Menandai anomali numerik pada batas $Q_1 - 1.5 \\times \\text{IQR}$ dan $Q_3 + 1.5 \\times \\text{IQR}$.</li>
+          <li><strong>Relational Merge & Join:</strong> Penggabungan dataset multidimensi dengan deteksi otomatis rekaman orphan / foreign key mismatch.</li>
+        </ul>
+      </div>
+    `
+  },
+  {
+    id: "kpi-monitoring-dashboard",
+    title: "Laporan Berkala & KPI Monitoring Dashboard",
+    title_en: "Periodic Report & KPI Monitoring Dashboard",
+    category: "database",
+    techBadge: "Operational Analytics • Variance • Time Series",
+    techColor: "bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-200 border-slate-200 dark:border-slate-700",
+    icon: "trending-up",
+    description: "Monitoring laporan administrasi berkala (Harian, Mingguan, Bulanan): kalkulasi target vs realisasi, achievement rate %, varians, dan visualisasi chart.",
+    desc_en: "Administrative and operational periodic report tracking (Daily, Weekly, Monthly) with target vs actual variance analysis and Chart.js visuals.",
+    renderFn: "renderKpiMonitoringDashboard",
+    docs: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Administrasi & Monitoring Kinerja Operasional</h4>
+        <p>Alat bantu rekapitulasi data harian/mingguan/bulanan untuk pelaporan manajemen eksekutif:</p>
+        <ul class="list-disc pl-5 space-y-1 text-xs">
+          <li><strong>Analisis Varians:</strong> Menghitung deviasi $\\Delta = \\text{Realisasi} - \\text{Target}$ untuk evaluasi efisiensi operasional.</li>
+          <li><strong>Achievement Rate:</strong> Persentase pemenuhan kuota target per divisi/cabang.</li>
+        </ul>
+      </div>
+    `
+  },
+  {
+    id: "spreadsheet-formula-engine",
+    title: "Spreadsheet Formula Simulator & Data Reshaper",
+    title_en: "Spreadsheet Formula Simulator & Data Reshaper",
+    category: "database",
+    techBadge: "Excel XLOOKUP • Pivot Table • SQL GroupBy",
+    techColor: "bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-200 border-slate-200 dark:border-slate-700",
+    icon: "table",
+    description: "Simulasi rumus formula data spreadsheet (XLOOKUP / VLOOKUP), pembuatan matriks Pivot Table GroupBy, dan konversi sintaks otomatis ke SQL dan Pandas.",
+    desc_en: "Simulates spreadsheet data operations (XLOOKUP, VLOOKUP, INDEX-MATCH), pivot table grouping matrices, and instant SQL / Python Pandas conversion.",
+    renderFn: "renderSpreadsheetFormulaEngine",
+    docs: `
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Pengolahan Data & Transformasi Formula</h4>
+        <p>Menjembatani logika pengolahan data spreadsheet perkantoran dengan rekayasa data modern:</p>
+        <ul class="list-disc pl-5 space-y-1 text-xs">
+          <li><strong>Pencarian Relasional:</strong> Simulasi XLOOKUP/VLOOKUP dengan pencocokan baris instan.</li>
+          <li><strong>Reshaping & Agregasi:</strong> Pembentukan matriks Pivot Table dengan fungsi SUM, AVERAGE, COUNT, MAX, MIN.</li>
+          <li><strong>Multi-Platform Mapping:</strong> Menerjemahkan formula Excel ke klausa SQL dan fungsi Pandas secara akurat.</li>
+        </ul>
       </div>
     `
   },

@@ -524,5 +524,151 @@ function parseMarkdownToHtml(md) {
         .replace(/\\*([^\\*]+)\\*/gim, '<em>$1</em>')
         .replace(/\`([^\`]+)\`/gim, '<code>$1</code>');
 }`
+  },
+
+  "data-cleaner-studio": {
+    filename: "data_wrangler_pipeline.py (Python / Pandas Data Preparation)",
+    language: "Python",
+    path: "python-modules/cleaner_pipeline.py",
+    code: `# ================================================================
+# END-TO-END DATA WRANGLING & CLEANING PIPELINE (PYTHON PANDAS)
+# Penanganan Missing Values, Deduplikasi, Normalisasi Teks & Tanggal
+# ================================================================
+
+import pandas as pd
+import numpy as np
+
+def clean_tabular_dataset(input_csv_path, output_csv_path):
+    # 1. Load Raw Dataset
+    df = pd.read_csv(input_csv_path)
+    print(f"[1] Raw Shape: {df.shape}")
+
+    # 2. Deduplikasi Baris Tepat
+    initial_rows = len(df)
+    df = df.drop_duplicates().reset_index(drop=True)
+    print(f"[2] Duplicates Removed: {initial_rows - len(df)}")
+
+    # 3. Handling Missing Values (Imputasi Median & Modus)
+    for col in df.select_dtypes(include=[np.number]).columns:
+        if df[col].isnull().sum() > 0:
+            median_val = df[col].median()
+            df[col] = df[col].fillna(median_val)
+            print(f"[3] Numeric Imputation on '{col}' with Median: {median_val}")
+
+    for col in df.select_dtypes(include=['object']).columns:
+        # Standardisasi String (Trim & Title Case)
+        df[col] = df[col].astype(str).str.strip().str.title()
+        df[col] = df[col].replace({'Nan': 'Belum Diketahui', 'Null': 'Belum Diketahui'})
+
+    # 4. Standardisasi Kolom Tanggal ke ISO-8601 (YYYY-MM-DD)
+    date_cols = [c for c in df.columns if any(k in c.lower() for k in ['tgl', 'date', 'lahir', 'daftar'])]
+    for col in date_cols:
+        df[col] = pd.to_datetime(df[col], errors='coerce').dt.strftime('%Y-%m-%d')
+        print(f"[4] Date Formatted: '{col}' -> ISO-8601")
+
+    # 5. Export Clean Final Dataset
+    df.to_csv(output_csv_path, index=False)
+    print(f"[5] Final Clean Dataset Saved to {output_csv_path}. Shape: {df.shape}")
+    return df`
+  },
+
+  "data-qc-inspector": {
+    filename: "data_qc_audit.py (Python / Data Quality & Relational Join)",
+    language: "Python",
+    path: "python-modules/qc_audit.py",
+    code: `# ================================================================
+# DATASET QUALITY CONTROL & RELATIONAL JOIN ENGINE
+# Evaluasi Skor Kesehatan, Deteksi Outlier IQR, dan Relational Table Join
+# ================================================================
+
+import pandas as pd
+import numpy as np
+
+def audit_data_health(df, numeric_col='gaji'):
+    # 1. Kelengkapan (Completeness Score)
+    total_cells = df.size
+    missing_cells = df.isnull().sum().sum()
+    completeness = ((total_cells - missing_cells) / total_cells) * 100
+
+    # 2. Deteksi Outlier menggunakan Tukey's IQR Method
+    q1 = df[numeric_col].quantile(0.25)
+    q3 = df[numeric_col].quantile(0.75)
+    iqr = q3 - q1
+    upper_bound = q3 + (1.5 * iqr)
+    lower_bound = q1 - (1.5 * iqr)
+    outliers = df[(df[numeric_col] < lower_bound) | (df[numeric_col] > upper_bound)]
+
+    return {
+        "completeness_score": completeness,
+        "iqr_bounds": (lower_bound, upper_bound),
+        "outlier_count": len(outliers),
+        "outlier_records": outliers.to_dict(orient='records')
+    }
+
+def merge_and_audit_datasets(df_employees, df_departments, on_key='id_divisi'):
+    # Relational Join & Identifikasi Orphan Records
+    merged_df = pd.merge(df_employees, df_departments, on=on_key, how='left', indicator=True)
+    orphan_records = merged_df[merged_df['_merge'] == 'left_only']
+    return merged_df, orphan_records`
+  },
+
+  "kpi-monitoring-dashboard": {
+    filename: "kpi_monitoring.py (Python / Operational Analytics & Variance)",
+    language: "Python",
+    path: "python-modules/kpi_monitoring.py",
+    code: `# ================================================================
+# OPERATIONAL KPI & PERIODIC VARIANCE ANALYZER
+# Agregasi Laporan Harian/Mingguan/Bulanan & Evaluasi Target vs Realisasi
+# ================================================================
+
+import pandas as pd
+
+def calculate_kpi_variance(records):
+    """
+    records format: list of dicts [{'periode': 'W1', 'target': 100, 'realisasi': 110}]
+    """
+    df = pd.DataFrame(records)
+    
+    # 1. Variance & Achievement Rate
+    df['variance'] = df['realisasi'] - df['target']
+    df['achievement_rate'] = (df['realisasi'] / df['target']) * 100
+    df['status'] = df['achievement_rate'].apply(lambda x: 'TARGET TERCAPAI' if x >= 100 else 'PERLU EVALUASI')
+
+    summary = {
+        "total_target": int(df['target'].sum()),
+        "total_actual": int(df['realisasi'].sum()),
+        "overall_achievement_rate": round((df['realisasi'].sum() / df['target'].sum()) * 100, 2),
+        "net_variance": int(df['variance'].sum()),
+        "breakdown": df.to_dict(orient='records')
+    }
+    return summary`
+  },
+
+  "spreadsheet-formula-engine": {
+    filename: "formula_reshaper.py (Python / Excel Formula & Pivot GroupBy)",
+    language: "Python",
+    path: "python-modules/formula_reshaper.py",
+    code: `# ================================================================
+# SPREADSHEET FORMULA & PIVOT TABLE RESHAPER
+# Simulasi XLOOKUP, Pivot Aggregator, dan GroupBy Matrix
+# ================================================================
+
+import pandas as pd
+
+def xlookup_simulator(df, lookup_val, lookup_col='sku', return_col='harga'):
+    match = df[df[lookup_col] == lookup_val]
+    if not match.empty:
+        return match[return_col].values[0]
+    return "NOT_FOUND"
+
+def create_pivot_matrix(df, index_col='kategori', value_col='harga', agg_func='sum'):
+    """
+    Ekivalen dengan Pivot Table Excel dan SQL GROUP BY
+    """
+    pivot = df.groupby(index_col).agg(
+        record_count=(index_col, 'count'),
+        aggregated_value=(value_col, agg_func)
+    ).reset_index()
+    return pivot`
   }
 };

@@ -8,7 +8,7 @@
 
 </div>
 
-> **Platform Web Terintegrasi: 22 Tools Rekayasa Perangkat Lunak & Infrastruktur IT**  
+> **Platform Web Terintegrasi: 29 Tools Rekayasa Perangkat Lunak, Data Wrangling & Infrastruktur IT**  
 > *Dikembangkan oleh **Rizki Ananda, S.Kom** ([@InfiniteNull](https://github.com/InfiniteNull)) — Lulusan S1 Informatika Universitas Potensi Utama, Praktisi IT Support, Network Administrator & Keamanan Sistem.*
 
 ---
@@ -29,18 +29,23 @@
     *Melaksanakan proyek PC Deployment: perakitan desktop, instalasi OS, backup & migrasi profil user aman, cable management, hingga konfigurasi peripheral terhubung ke domain internal bank.*
   * **Ketua Tim Proyek SHUNA AI** — *MSIB Batch 6 Kampus Merdeka di Skilvul* (Nilai: 81.8 — Pipeline klasifikasi teks NLP & Python data workflow).
   * **Kepemimpinan Organisasi** — *HMPS Informatika Universitas Potensi Utama* (Reaktivasi & tata kelola internal).
-* **Tools & Keahlian Teknis:** Burp Suite, OWASP ZAP, OSINT, Linux VM, Nginx, Python, Node.js, SQLite, JavaScript ES6+, Tailwind CSS.
+* **Tools & Keahlian Teknis:** Burp Suite, OWASP ZAP, OSINT, Linux VM, Nginx, Python (Pandas, NumPy), Node.js, SQLite, JavaScript ES6+, Tailwind CSS.
 
 ---
 
 ## Gambaran & Arsitektur Sistem
 
-Proyek ini menggabungkan **22 tools utilitas fungsional** ke dalam satu portal antarmuka terpadu (*Unified Suite*). Dibangun dengan arsitektur modular yang terbagi ke dalam **4 Pilar Utama**:
+Proyek ini menggabungkan **29 tools utilitas fungsional** ke dalam satu portal antarmuka terpadu (*Unified Suite*). Dibangun dengan arsitektur modular yang terbagi ke dalam **4 Pilar Utama**:
 
 1. **Jaringan & Server (5 Tools):** Kalkulator subnet IPv4 & VLSM, generator command firewall (UFW / iptables / Mikrotik), estimasi durasi transfer bandwidth, kalkulasi bitrate streaming Nginx (RTMP/HLS), dan visualizer jadwal crontab Linux.
 2. **Keamanan Sistem (6 Tools):** Simulasi autentikasi Bcrypt & JWT, analisis HTTP security headers (CSP/HSTS/CORS), generator hash kriptografis (SHA-256/SHA-512/MD5), kalkulator entropi password, encoder payload multi-format, dan debugger tanda tangan JWT.
-3. **Database & Backend (5 Tools):** Analisis sentimen data NLP VADER, manajemen inventaris gudang SQLite CRUD, sirkulasi peminjaman buku relasional, konverter batch JSON ke SQL `INSERT`, dan parser access log Nginx.
-4. **Utilitas & Hardware (6 Tools):** Pengujian latensi REST API, kompresi foto Canvas WebP, kalkulator kurs valuta asing real-time, uji kecepatan ketik (WPM), kalkulator kapasitas RAID storage (RAID 0/1/5/6/10), dan kalkulator kebutuhan watt PSU PC Deployment.
+3. **Data & Backend (9 Tools):** 
+   - **Data Wrangling & Imputation Studio:** Pembersihan data mentah, deduplikasi, imputasi missing values (mean/median/mode), dan standardisasi tanggal/teks.
+   - **Dataset Integration & Quality Control (QC):** Pengujian skor kesehatan data, deteksi outlier Tukey IQR, dan simulasi table join (Inner/Left/Right/Full).
+   - **Laporan Berkala & KPI Monitoring Dashboard:** Rekapitulasi laporan operasional harian/mingguan/bulanan, variance analysis, dan tracking achievement rate %.
+   - **Spreadsheet Formula & Data Reshaper:** Simulasi VLOOKUP/XLOOKUP, matriks Pivot Table GroupBy, dan konversi ke SQL/Pandas.
+   - Analisis sentimen NLP VADER, manajemen inventaris gudang SQLite CRUD, sirkulasi peminjaman buku relasional, konverter batch JSON ke SQL `INSERT`, dan parser access log Nginx.
+4. **Utilitas & Hardware (9 Tools):** Pengujian latensi REST API, kompresi foto Canvas WebP, kalkulator kurs valuta asing real-time, uji kecepatan ketik (WPM), kalkulator kapasitas RAID storage (RAID 0/1/5/6/10), kalkulator kebutuhan watt PSU PC Deployment, sandbox Regex tester, dan Markdown live preview editor.
 
 ---
 
@@ -50,8 +55,12 @@ Proyek ini menggabungkan **22 tools utilitas fungsional** ke dalam satu portal a
 portfolio-hub/
 ├── index.html                  # Halaman Utama Dashboard & Kontainer Modal
 ├── styles.css                  # Custom styling, animasi & dark/light mode
-├── app.js                      # Master Controller, Registry 22 Tools & i18n
+├── app.js                      # Master Controller, Registry 29 Tools & i18n
 ├── js/                         # Modul JavaScript Setiap Tool
+│   ├── data-cleaner-studio.js     # Studio Data Wrangling & Imputasi
+│   ├── data-qc-inspector.js       # Quality Control Audit & Table Joiner
+│   ├── kpi-monitoring-dashboard.js# Dashboard Laporan Berkala & Tracking KPI
+│   ├── spreadsheet-formula-engine.js# Simulator XLOOKUP & Pivot GroupBy
 │   ├── subnet-calculator.js       # Engine Subnetting IPv4 / CIDR / VLSM
 │   ├── firewall-generator.js      # Direktori Port & Generator Rule Firewall
 │   ├── bandwidth-estimator.js     # Estimasi Durasi Transfer & Throughput Data
@@ -90,7 +99,7 @@ portfolio-hub/
 
 ---
 
-## Rincian 22 Tools Terintegrasi
+## Rincian 29 Tools Terintegrasi
 
 | No | Nama Tool | Kategori | Fitur & Fungsi Utama |
 |:---:|---|---|---|
@@ -105,20 +114,24 @@ portfolio-hub/
 | 9 | **Password Entropy & Brute-Force** | Keamanan Sistem | Perhitungan entropi bit, kebijakan password, dan waktu cracking CPU vs GPU. |
 | 10 | **Security Payload Encoder / Decoder** | Keamanan Sistem | Konversi format Base64, Hexadecimal, URL-Encode, HTML Entities, dan Unicode. |
 | 11 | **JWT Inspector & Claims Debugger** | Keamanan Sistem | Dekonstruksi Header, Payload claims, expiry, dan verifikasi HMACSHA256. |
-| 12 | **NLP Sentiment & Data Analyzer** | Database & Backend | Upload CSV, deteksi ulasan, skor NLP VADER, dan grafik Chart.js. |
-| 13 | **Inventory & Warehouse CRUD** | Database & Backend | Manajemen inventaris barang dengan RESTful API dan notifikasi stok menipis. |
-| 14 | **Library Management System** | Database & Backend | Katalog buku dan transaksi peminjaman dengan integritas ACID SQL. |
-| 15 | **JSON to SQL / CSV Converter** | Database & Backend | Konversi JSON ke perintah `CREATE TABLE`, batch `INSERT`, dan CSV. |
-| 16 | **Nginx Access Log Analyzer** | Database & Backend | Parsing access log server untuk statistik kode 2xx/4xx/5xx dan top IP pengunjung. |
-| 17 | **Tech News & Feeds Scraper** | Utilitas & Hardware | Ekstraksi otomatis artikel teknologi dan headline berita terkini. |
-| 18 | **API Health & Latency Checker** | Utilitas & Hardware | Pengujian endpoint REST API dan pengukuran waktu latensi RTT (ms). |
-| 19 | **Image Optimizer & Converter** | Utilitas & Hardware | Kompresi gambar Canvas dan konversi WebP/JPG menghemat hingga 70% ukuran. |
-| 20 | **Real-Time Currency Calculator** | Utilitas & Hardware | Konversi kurs mata uang dunia live dengan cache offline LocalStorage. |
-| 21 | **Typing Speed & Accuracy Test** | Utilitas & Hardware | Uji kecepatan ketik dengan metrik WPM dan akurasi dengan timer 60 detik. |
-| 22 | **RAID Storage & Capacity Calculator** | Utilitas & Hardware | Kalkulasi kapasitas usable, parity, dan fault tolerance RAID 0, 1, 5, 6, 10. |
-| 23 | **PC Power Supply (PSU) Calculator** | Utilitas & Hardware | Estimasi konsumsi watt hardware PC untuk standarisasi PC Deployment kantor. |
-| 24 | **Regex Tester & Validator** | Utilitas & Hardware | Evaluator pola RegExp dengan visual match highlight dan template umum. |
-| 25 | **Markdown Live Editor & Preview** | Utilitas & Hardware | Editor markdown dengan live render HTML, tabel, code block, dan tombol salin. |
+| 12 | **NLP Sentiment & Data Analyzer** | Data & Backend | Upload CSV, deteksi ulasan, skor NLP VADER, dan grafik Chart.js. |
+| 13 | **Inventory & Warehouse CRUD** | Data & Backend | Manajemen inventaris barang dengan RESTful API dan notifikasi stok menipis. |
+| 14 | **Library Management System** | Data & Backend | Katalog buku dan transaksi peminjaman dengan integritas ACID SQL. |
+| 15 | **JSON to SQL / CSV Converter** | Data & Backend | Konversi JSON ke perintah `CREATE TABLE`, batch `INSERT`, dan CSV. |
+| 16 | **Nginx Access Log Analyzer** | Data & Backend | Parsing access log server untuk statistik kode 2xx/4xx/5xx dan top IP pengunjung. |
+| 17 | **Tabular Data Cleaner & Imputation Studio** | Data & Backend | Pembersihan data mentah, deduplikasi, imputasi missing values, dan export script Pandas. |
+| 18 | **Dataset Integration & Quality Control (QC)** | Data & Backend | Audit skor kesehatan dataset, deteksi outlier Tukey IQR, dan simulasi table join. |
+| 19 | **Laporan Berkala & KPI Monitoring Dashboard**| Data & Backend | Evaluasi laporan harian/mingguan/bulanan, tracking capaian target vs aktual. |
+| 20 | **Spreadsheet Formula Simulator & Data Reshaper**| Data & Backend | Simulasi XLOOKUP/VLOOKUP, matriks Pivot Table GroupBy, dan konversi ke SQL/Pandas. |
+| 21 | **Tech News & Feeds Scraper** | Utilitas & Hardware | Ekstraksi otomatis artikel teknologi dan headline berita terkini. |
+| 22 | **API Health & Latency Checker** | Utilitas & Hardware | Pengujian endpoint REST API dan pengukuran waktu latensi RTT (ms). |
+| 23 | **Image Optimizer & Converter** | Utilitas & Hardware | Kompresi gambar Canvas dan konversi WebP/JPG menghemat hingga 70% ukuran. |
+| 24 | **Real-Time Currency Calculator** | Utilitas & Hardware | Konversi kurs mata uang dunia live dengan cache offline LocalStorage. |
+| 25 | **Typing Speed & Accuracy Test** | Utilitas & Hardware | Uji kecepatan ketik dengan metrik WPM dan akurasi dengan timer 60 detik. |
+| 26 | **RAID Storage & Capacity Calculator** | Utilitas & Hardware | Kalkulasi kapasitas usable, parity, dan fault tolerance RAID 0, 1, 5, 6, 10. |
+| 27 | **PC Power Supply (PSU) Calculator** | Utilitas & Hardware | Estimasi konsumsi watt hardware PC untuk standarisasi PC Deployment kantor. |
+| 28 | **Regex Tester & Validator** | Utilitas & Hardware | Evaluator pola RegExp dengan visual match highlight dan template umum. |
+| 29 | **Markdown Live Editor & Preview** | Utilitas & Hardware | Editor markdown dengan live render HTML, tabel, code block, dan tombol salin. |
 
 ---
 

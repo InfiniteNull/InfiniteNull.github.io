@@ -14,13 +14,13 @@ window.I18N_DICT = {
     // Hero
     heroBadge: "Rizki Ananda, S.Kom • Universitas Potensi Utama",
     heroTitle: "Web Tools & Data Suite",
-    heroDesc: "Platform utilitas mandiri 22 tools interaktif untuk manajemen jaringan, audit keamanan sistem, database & backend, serta utilitas IT harian.",
+    heroDesc: "Platform utilitas mandiri 29 tools interaktif untuk manajemen jaringan, audit keamanan sistem, database & data wrangling, serta utilitas IT harian.",
     
     // Categories
-    catAll: "Semua Tools (22)",
+    catAll: "Semua Tools (29)",
     catNetwork: "Jaringan & Server",
     catSecurity: "Keamanan Sistem",
-    catDatabase: "Database & Backend",
+    catDatabase: "Data & Backend",
     catUtility: "Utilitas & Hardware",
     
     // Search & Empty State
@@ -84,13 +84,13 @@ window.I18N_DICT = {
     // Hero
     heroBadge: "Rizki Ananda, S.Kom • Universitas Potensi Utama",
     heroTitle: "Web Tools & Engineering Suite",
-    heroDesc: "A standalone platform of 22 interactive production-ready tools for network management, system security auditing, database & backend, and daily IT utilities.",
+    heroDesc: "A standalone platform of 29 interactive production-ready tools for network management, system security auditing, database & data wrangling, and daily IT utilities.",
     
     // Categories
-    catAll: "All Tools (22)",
+    catAll: "All Tools (29)",
     catNetwork: "Networking & Server",
     catSecurity: "System Security",
-    catDatabase: "Database & Backend",
+    catDatabase: "Data & Backend",
     catUtility: "Utilities & Hardware",
     
     // Search & Empty State
