@@ -68,20 +68,26 @@
                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1 animate-pulse"></span> Rizki Ananda, S.Kom
               </span>
             </div>
-            <p class="text-xs text-slate-500 dark:text-slate-400">IT Support • Network Admin • VAPT Security • Data Analytics & Web Suite</p>
+            <p id="headerSubtitle" class="text-xs text-slate-500 dark:text-slate-400">IT Support • Network Admin • VAPT Security • Data Analytics & Web Suite</p>
           </div>
         </div>
 
-        <!-- Right Controls (Search, Quick Links, Theme Toggle) -->
-        <div class="flex items-center gap-3">
+        <!-- Right Controls (Search, Quick Links, Theme Toggle, Language Switcher) -->
+        <div class="flex items-center gap-2 sm:gap-3">
           <button id="viewInterviewDocBtn" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition">
             <i data-lucide="book-open" class="w-4 h-4 text-sky-600 dark:text-sky-400"></i>
-            <span>Panduan Teknis & Arsitektur</span>
+            <span id="btnInterviewGuideText">Panduan Teknis</span>
           </button>
           
           <button id="aboutDevBtn" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition border border-slate-200 dark:border-slate-700 shadow-sm">
             <i data-lucide="user" class="w-4 h-4 text-emerald-600 dark:text-emerald-400"></i>
-            <span class="font-semibold">Tentang Pengembang</span>
+            <span id="btnAboutDevText" class="font-semibold">Tentang Pengembang</span>
+          </button>
+
+          <!-- Language Switcher (ID / EN) -->
+          <button id="langToggleBtn" aria-label="Toggle Language" class="inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-bold rounded-lg text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition border border-slate-200 dark:border-slate-700 shadow-sm" title="Ganti Bahasa / Switch Language">
+            <i data-lucide="languages" class="w-4 h-4 text-sky-600 dark:text-sky-400"></i>
+            <span id="langLabel" class="font-mono">ID</span>
           </button>
 
           <!-- Dark/Light Theme Toggle -->
@@ -105,17 +111,15 @@
         <div class="max-w-3xl">
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-sky-50 dark:bg-sky-950/60 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800 mb-3">
             <i data-lucide="award" class="w-3.5 h-3.5 text-amber-500"></i>
-            <span>Rizki Ananda, S.Kom • Universitas Potensi Utama</span>
+            <span id="heroBadgeText">Rizki Ananda, S.Kom • Universitas Potensi Utama</span>
           </div>
-          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
+          <h2 id="heroTitleText" class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
             Web Tools & Data Suite
           </h2>
-          <p class="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+          <p id="heroDescText" class="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
             Platform utilitas mandiri 22 tools interaktif untuk manajemen jaringan, audit keamanan sistem, database & backend, serta utilitas IT harian.
           </p>
         </div>
-
-
 
       </div>
 
@@ -159,8 +163,8 @@
       <div class="w-14 h-14 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-400 flex items-center justify-center mx-auto mb-3">
         <i data-lucide="search-x" class="w-7 h-7"></i>
       </div>
-      <h3 class="text-sm font-bold text-slate-900 dark:text-white">Tidak ada tool yang cocok</h3>
-      <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Coba gunakan kata kunci pencarian lain atau ubah filter kategori.</p>
+      <h3 id="emptyStateTitle" class="text-sm font-bold text-slate-900 dark:text-white">Tidak ada tool yang cocok</h3>
+      <p id="emptyStateDesc" class="text-xs text-slate-500 dark:text-slate-400 mt-1">Coba gunakan kata kunci pencarian lain atau ubah filter kategori.</p>
     </div>
   </main>
 
@@ -198,15 +202,15 @@
       <div class="px-6 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex items-center gap-6 text-xs font-medium">
         <button id="tabBtnDemo" class="modal-tab-btn active py-3 border-b-2 border-sky-600 text-sky-600 dark:text-sky-400 font-semibold transition flex items-center gap-1.5">
           <i data-lucide="play" class="w-3.5 h-3.5"></i>
-          <span>Live Demo Interaktif</span>
+          <span id="tabDemoText">Live Demo Interaktif</span>
         </button>
         <button id="tabBtnCode" class="modal-tab-btn py-3 border-b-2 border-transparent text-slate-500 hover:text-slate-900 dark:hover:text-slate-200 transition flex items-center gap-1.5">
           <i data-lucide="code" class="w-3.5 h-3.5"></i>
-          <span>Source Code Asli (Python / Node.js)</span>
+          <span id="tabCodeText">Source Code Asli (Python / Node.js)</span>
         </button>
         <button id="tabBtnDocs" class="modal-tab-btn py-3 border-b-2 border-transparent text-slate-500 hover:text-slate-900 dark:hover:text-slate-200 transition flex items-center gap-1.5">
           <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
-          <span>Arsitektur & Penjelasan Teknis</span>
+          <span id="tabDocsText">Arsitektur & Penjelasan Teknis</span>
         </button>
       </div>
 
@@ -231,7 +235,7 @@
             </div>
             <button id="copyCodeBtn" class="px-2.5 py-1 rounded text-xs font-medium bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition flex items-center gap-1.5">
               <i data-lucide="copy" class="w-3.5 h-3.5"></i>
-              <span>Salin Kode</span>
+              <span id="copyCodeBtnText">Salin Kode</span>
             </button>
           </div>
           <pre class="bg-slate-900 text-slate-100 p-4 rounded-xl text-xs font-mono overflow-x-auto leading-relaxed border border-slate-800 shadow-inner max-h-[500px]"><code id="modalCodeSnippet"># Memuat kode sumber...</code></pre>
@@ -264,11 +268,11 @@
           <div>
             <div class="flex items-center gap-2">
               <h3 class="font-bold text-slate-900 dark:text-white text-base">Rizki Ananda, S.Kom</h3>
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
+              <span id="devRoleBadge" class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
                 Lulusan S1 Informatika
               </span>
             </div>
-            <p class="text-xs text-slate-500 dark:text-slate-400">Universitas Potensi Utama • Praktisi IT</p>
+            <p id="devRoleSub" class="text-xs text-slate-500 dark:text-slate-400">Universitas Potensi Utama • Praktisi IT</p>
           </div>
         </div>
         <button id="aboutDevModalCloseBtn" class="p-2 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition">
@@ -283,9 +287,9 @@
         <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 space-y-2">
           <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white">
             <i data-lucide="user-check" class="w-4 h-4 text-sky-600"></i>
-            <span>Profil</span>
+            <span id="profileHeading">Profil</span>
           </div>
-          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+          <p id="profileBio" class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
             Lulusan <strong>S1 Informatika (S.Kom) dari Universitas Potensi Utama</strong> dengan spesialisasi di bidang <strong>IT Support, Administrasi Jaringan, Keamanan Sistem (VAPT), serta Analisis Data & Rekayasa Web</strong>. Berpengalaman teknis dalam deployment infrastruktur server, protokol streaming, peremajaan PC perbankan, dan implementasi machine learning.
           </p>
         </div>
@@ -294,7 +298,7 @@
         <div class="space-y-3">
           <h4 class="font-bold text-slate-900 dark:text-white text-xs uppercase tracking-wider flex items-center gap-2">
             <i data-lucide="briefcase" class="w-4 h-4 text-emerald-600"></i>
-            <span>Pengalaman Kerja</span>
+            <span id="expHeading">Pengalaman Kerja</span>
           </h4>
           
           <div class="grid grid-cols-1 gap-3.5">
@@ -303,15 +307,15 @@
             <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-2">
               <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                 <div>
-                  <span class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">IT Researcher</span>
-                  <span class="text-xs text-sky-600 dark:text-sky-400 font-semibold ml-1.5">• ADZKIA KEDINASAN PUSAT</span>
+                  <span id="job1Title" class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">IT Researcher</span>
+                  <span id="job1Company" class="text-xs text-sky-600 dark:text-sky-400 font-semibold ml-1.5">• ADZKIA KEDINASAN PUSAT</span>
                 </div>
                 <div class="flex items-center gap-2">
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500">Nov 2024 - Jun 2025 (Freelance)</span>
+                  <span id="job1Meta" class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500">Nov 2024 - Jun 2025 (Freelance)</span>
                 </div>
               </div>
               <div class="text-[11px] text-slate-400 font-mono">Petisah Hulu, Medan Baru, Kota Medan, Sumatera Utara</div>
-              <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              <p id="job1Desc" class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
                 Bertanggung jawab dalam merancang dan menguji infrastruktur <strong>Nginx Media Server</strong> pada lingkungan Virtual Machine berbasis Linux, serta menguji empat protokol streaming video (<strong>RTMP, HLS, RTSP, dan HTTP</strong>). Melakukan pengujian keamanan jaringan dan <strong>vulnerability assessment (VAPT)</strong> pada sistem internal. Selain itu, mengeksplorasi pengembangan prototipe sistem absensi berbasis <strong>face recognition</strong> dan chatbot interaktif sebagai solusi integrasi sistem.
               </p>
             </div>
@@ -320,15 +324,15 @@
             <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-2">
               <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                 <div>
-                  <span class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">IT Support (Vendor Outsourcing)</span>
-                  <span class="text-xs text-emerald-600 dark:text-emerald-400 font-semibold ml-1.5">• PT Bank Sinarmas, Tbk</span>
+                  <span id="job2Title" class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">IT Support (Vendor Outsourcing)</span>
+                  <span id="job2Company" class="text-xs text-emerald-600 dark:text-emerald-400 font-semibold ml-1.5">• PT Bank Sinarmas, Tbk</span>
                 </div>
                 <div class="flex items-center gap-2">
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500">Des 2023 (Freelance)</span>
+                  <span id="job2Meta" class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500">Des 2023 (Freelance)</span>
                 </div>
               </div>
               <div class="text-[11px] text-slate-400 font-mono">KC Medan Mangkubumi, Aur, Medan Maimun, Kota Medan, Sumatera Utara</div>
-              <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              <p id="job2Desc" class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
                 Bekerja secara independen di bawah naungan vendor IT outsourcing untuk melaksanakan proyek peremajaan perangkat komputer (<strong>PC Deployment</strong>) di Bank Sinarmas KC Medan Mangkubumi. Bertanggung jawab penuh melakukan unboxing, instalasi, dan perakitan PC desktop, melakukan backup dan migrasi data profil user secara aman, instalasi sistem operasi, serta perapian kabel (cable management). Selain itu, menangani konfigurasi perangkat peripheral seperti printer slip dan scanner dokumen hingga komputer siap terhubung ke domain jaringan internal bank.
               </p>
             </div>
@@ -338,22 +342,22 @@
               
               <div class="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 space-y-1.5">
                 <div class="flex items-center justify-between">
-                  <span class="font-bold text-sky-600 dark:text-sky-400 text-xs">Ketua Tim Proyek SHUNA AI</span>
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 font-bold">Nilai: 81.8</span>
+                  <span id="leadShunaTitle" class="font-bold text-sky-600 dark:text-sky-400 text-xs">Ketua Tim Proyek SHUNA AI</span>
+                  <span id="leadShunaScore" class="text-[10px] font-mono px-2 py-0.5 rounded bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 font-bold">Nilai: 81.8</span>
                 </div>
                 <div class="text-[11px] text-slate-400">MSIB Batch 6 Kampus Merdeka @ Skilvul</div>
-                <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">
+                <p id="leadShunaDesc" class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">
                   Memimpin tim merancang aplikasi pelaporan cerdas berbasis Machine Learning dan Natural Language Processing (NLP).
                 </p>
               </div>
 
               <div class="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 space-y-1.5">
                 <div class="flex items-center justify-between">
-                  <span class="font-bold text-slate-900 dark:text-white text-xs">Kepemimpinan Organisasi</span>
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300">HMPS Informatika</span>
+                  <span id="leadOrgTitle" class="font-bold text-slate-900 dark:text-white text-xs">Kepemimpinan Organisasi</span>
+                  <span id="leadOrgSub" class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300">HMPS Informatika</span>
                 </div>
                 <div class="text-[11px] text-slate-400">Universitas Potensi Utama</div>
-                <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">
+                <p id="leadOrgDesc" class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">
                   Memimpin reaktivasi dan tata kelola administrasi internal organisasi Himpunan Mahasiswa Program Studi Informatika.
                 </p>
               </div>
@@ -367,7 +371,7 @@
         <div class="space-y-3">
           <h4 class="font-bold text-slate-900 dark:text-white text-xs uppercase tracking-wider flex items-center gap-2">
             <i data-lucide="shield-check" class="w-4 h-4 text-amber-500"></i>
-            <span>Sertifikasi & Keahlian</span>
+            <span id="certHeading">Sertifikasi & Keahlian</span>
           </h4>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -375,9 +379,9 @@
             <div class="p-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 space-y-1">
               <div class="flex items-center gap-1.5 text-xs font-bold text-slate-900 dark:text-white">
                 <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-                <span>Associate Network Administrator (Komdigi RI, 2026)</span>
+                <span id="cert1Title">Associate Network Administrator (Komdigi RI, 2026)</span>
               </div>
-              <p class="text-[11px] text-slate-500 dark:text-slate-400">
+              <p id="cert1Desc" class="text-[11px] text-slate-500 dark:text-slate-400">
                 Standar perancangan skema IP Addressing, konfigurasi router/switch, dan routing terdistribusi.
               </p>
             </div>
@@ -385,9 +389,9 @@
             <div class="p-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 space-y-1">
               <div class="flex items-center gap-1.5 text-xs font-bold text-slate-900 dark:text-white">
                 <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-                <span>Junior Network Administrator (BBPSDMP Kominfo, 2023)</span>
+                <span id="cert2Title">Junior Network Administrator (BBPSDMP Kominfo, 2023)</span>
               </div>
-              <p class="text-[11px] text-slate-500 dark:text-slate-400">
+              <p id="cert2Desc" class="text-[11px] text-slate-500 dark:text-slate-400">
                 Instalasi jaringan komputer dan pemeliharaan server Linux / Nginx.
               </p>
             </div>
@@ -397,12 +401,12 @@
           <!-- Security & Pentest Tools -->
           <div class="p-3.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-2.5">
             <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-2">
-              <span class="font-bold text-xs text-slate-900 dark:text-white shrink-0">Keamanan Sistem & VAPT:</span>
-              <span class="text-xs text-slate-600 dark:text-slate-400">Burp Suite, OWASP ZAP, Vulnerability Assessment, OSINT, Parameterized SQL Security.</span>
+              <span id="skillSecurityTitle" class="font-bold text-xs text-slate-900 dark:text-white shrink-0">Keamanan Sistem & VAPT:</span>
+              <span id="skillSecurityDesc" class="text-xs text-slate-600 dark:text-slate-400">Burp Suite, OWASP ZAP, Vulnerability Assessment, OSINT, Parameterized SQL Security.</span>
             </div>
             <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-2">
-              <span class="font-bold text-xs text-slate-900 dark:text-white shrink-0">Bahasa Pemrograman & Backend:</span>
-              <span class="text-xs text-slate-600 dark:text-slate-400">Python (Pandas, VADER, BS4, FastAPI), Node.js (Express, Sharp), C++, SQL (SQLite), JavaScript ES6+.</span>
+              <span id="skillProgTitle" class="font-bold text-xs text-slate-900 dark:text-white shrink-0">Bahasa Pemrograman & Backend:</span>
+              <span id="skillProgDesc" class="text-xs text-slate-600 dark:text-slate-400">Python (Pandas, VADER, BS4, FastAPI), Node.js (Express, Sharp), C++, SQL (SQLite), JavaScript ES6+.</span>
             </div>
           </div>
         </div>
@@ -489,7 +493,7 @@
       </div>
 
       <div class="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 text-center text-xs text-slate-500">
-        &copy; 2026 Rizki Ananda, S.Kom (@InfiniteNull) • Handcrafted with Clean Code & Professional IT Standards.
+        <p id="footerTagline">&copy; 2026 Rizki Ananda, S.Kom (@InfiniteNull) • Handcrafted with Clean Code & Professional IT Standards.</p>
       </div>
     </div>
   </footer>
@@ -522,6 +526,7 @@
   <script src="js/psu-calculator.js"></script>
   <script src="js/regex-tester.js"></script>
   <script src="js/markdown-preview.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="app.js"></script>
 
   <script>

@@ -1,5 +1,7 @@
 # Web Tools & Engineering Suite
 
+🌐 **English** | [🇮🇩 Switch to Indonesian (Bahasa Indonesia)](README_ID.md)
+
 > **Unified Developer & IT Infrastructure Suite (22 Interactive Production-Ready Tools)**  
 > *Engineered by **Rizki Ananda, S.Kom** ([@InfiniteNull](https://github.com/InfiniteNull)) — Computer Science Graduate (S1 Informatika) from Universitas Potensi Utama, IT Specialist, Certified Network Administrator & Security Practitioner.*
 

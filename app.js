@@ -1,9 +1,9 @@
 /**
  * app.js - Master Orchestrator for Dev & Data Portfolio Suite
- * Mengelola kartu 22 tools, pencarian, filter kategori, navigasi modal workspace, tema dark/light, dan toast.
+ * Mengelola kartu 22 tools, pencarian, filter kategori, navigasi modal workspace, tema dark/light, dan i18n switcher.
  */
 
-// Master Tools Registry Definition (22 All-in-One IT & Engineering Tools)
+// Master Tools Registry Definition (22 All-in-One IT & Engineering Tools with ID & EN support)
 const TOOLS_REGISTRY = [
   // ==========================================
   // KATEGORI 1: JARINGAN & SERVER (network)
@@ -11,11 +11,13 @@ const TOOLS_REGISTRY = [
   {
     id: "subnet-calculator",
     title: "IP Subnetting & VLSM Calculator",
+    title_en: "IP Subnetting & VLSM Calculator",
     category: "network",
     techBadge: "IPv4 • CIDR • VLSM • Binary",
     techColor: "bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300 border-sky-200 dark:border-sky-800",
     icon: "network",
     description: "Kalkulator subnet IPv4 otomatis: hitung Network ID, Broadcast, Subnet Mask, Host Range, dan representasi biner.",
+    desc_en: "Automatic IPv4 subnet calculator: compute Network ID, Broadcast, Subnet Mask, Usable Host Range, and binary representation.",
     renderFn: "renderSubnetCalculator",
     docs: `
       <div class="space-y-4">
@@ -33,11 +35,13 @@ const TOOLS_REGISTRY = [
   {
     id: "firewall-generator",
     title: "Port Directory & Firewall Rules",
+    title_en: "Port Directory & Firewall Rules",
     category: "network",
     techBadge: "Linux UFW • iptables • Mikrotik",
     techColor: "bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300 border-sky-200 dark:border-sky-800",
     icon: "shield",
     description: "Direktori pencarian port standar industri dan generator instan syntax command firewall Linux UFW, iptables, dan Mikrotik.",
+    desc_en: "Industry standard port directory and instant command generator for Linux UFW, iptables, and Mikrotik RouterOS firewall rules.",
     renderFn: "renderFirewallGenerator",
     docs: `
       <div class="space-y-4">
@@ -53,11 +57,13 @@ const TOOLS_REGISTRY = [
   {
     id: "bandwidth-estimator",
     title: "Bandwidth & Data Transfer Estimator",
+    title_en: "Bandwidth & Data Transfer Estimator",
     category: "network",
     techBadge: "Network Throughput • Migration",
     techColor: "bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300 border-sky-200 dark:border-sky-800",
     icon: "gauge",
     description: "Kalkulator estimasi durasi transfer data, migrasi server, backup berkala, dan throughput jaringan riil.",
+    desc_en: "Estimates data backup & server migration duration accounting for network throughput and TCP/IP protocol overhead.",
     renderFn: "renderBandwidthEstimator",
     docs: `
       <div class="space-y-4">
@@ -69,11 +75,13 @@ const TOOLS_REGISTRY = [
   {
     id: "streaming-calculator",
     title: "Streaming Bitrate & Storage",
+    title_en: "Streaming Bitrate & Storage Calculator",
     category: "network",
     techBadge: "RTMP • HLS • RTSP • Nginx Media",
     techColor: "bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300 border-sky-200 dark:border-sky-800",
     icon: "video",
     description: "Kalkulasi kebutuhan bandwidth egress live streaming (RTMP/HLS/RTSP) dan estimasi kapasitas disk recording Nginx.",
+    desc_en: "Calculates egress live streaming bandwidth (RTMP, HLS, RTSP) and DVR recording disk storage for Nginx Media Servers.",
     renderFn: "renderStreamingCalculator",
     docs: `
       <div class="space-y-4">
@@ -89,11 +97,13 @@ const TOOLS_REGISTRY = [
   {
     id: "cron-builder",
     title: "Cron Task Scheduler Builder",
+    title_en: "Cron Task Scheduler Builder",
     category: "network",
     techBadge: "Linux Crontab • Shell Script",
     techColor: "bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300 border-sky-200 dark:border-sky-800",
     icon: "clock",
     description: "Generator visual ekspresi cron Linux untuk otomasi backup database, pemeliharaan server, dan penjadwalan script.",
+    desc_en: "Visual Linux crontab 5-field generator with upcoming execution timeline simulation for automated maintenance & backup scripts.",
     renderFn: "renderCronBuilder",
     docs: `
       <div class="space-y-4">
@@ -109,11 +119,13 @@ const TOOLS_REGISTRY = [
   {
     id: "auth-sandbox",
     title: "Auth & Security Service",
+    title_en: "Auth & Security Service",
     category: "security",
     techBadge: "Node.js • Bcrypt • JWT • SQLite",
     techColor: "bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800",
     icon: "shield-check",
     description: "Sistem autentikasi aman dengan Bcrypt Password Hashing (Salt 10), JSON Web Token (JWT) bearer verification, dan database SQLite.",
+    desc_en: "Secure authentication sandbox simulating Bcrypt password hashing (Salt 10), stateless JWT session authorization, and SQLite storage.",
     renderFn: "renderAuthSandbox",
     docs: `
       <div class="space-y-4">
@@ -129,11 +141,13 @@ const TOOLS_REGISTRY = [
   {
     id: "security-headers",
     title: "Security Headers Analyzer",
+    title_en: "Security Headers Analyzer",
     category: "security",
     techBadge: "OWASP • HSTS • CSP • CORS",
     techColor: "bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800",
     icon: "shield-alert",
     description: "Audit implementasi HTTP security headers (CSP, HSTS, X-Frame-Options, MIME Sniffing) dan penilaian skor grade keamanan.",
+    desc_en: "Audits HTTP security headers (CSP, HSTS, X-Frame-Options, CORS) against OWASP guidelines with security grading (A+ to F).",
     renderFn: "renderSecurityHeaders",
     docs: `
       <div class="space-y-4">
@@ -145,11 +159,13 @@ const TOOLS_REGISTRY = [
   {
     id: "crypto-hash",
     title: "Crypto Hash & Integrity Verifier",
+    title_en: "Crypto Hash & Integrity Verifier",
     category: "security",
     techBadge: "SHA-256 • SHA-512 • MD5 • HMAC",
     techColor: "bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800",
     icon: "hash",
     description: "Generator hash kriptografis standar industri (SHA-256, SHA-512, MD5, HMAC) dan verifikasi pencocokan integritas data.",
+    desc_en: "Cryptographic hash digest generator (SHA-256, SHA-512, MD5, HMAC) with real-time text and file checksum integrity verification.",
     renderFn: "renderCryptoHash",
     docs: `
       <div class="space-y-4">
@@ -161,11 +177,13 @@ const TOOLS_REGISTRY = [
   {
     id: "password-entropy",
     title: "Password Entropy & Brute-Force",
+    title_en: "Password Entropy & Brute-Force",
     category: "security",
     techBadge: "Entropy Math • Security Audit",
     techColor: "bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800",
     icon: "key-round",
     description: "Analisis kekuatan kata sandi berdasarkan entropy bit dan estimasi waktu peretasan brute-force CPU vs GPU Cluster.",
+    desc_en: "Measures password strength via Shannon entropy bits and estimates offline brute-force cracking duration on single CPU vs GPU clusters.",
     renderFn: "renderPasswordEntropy",
     docs: `
       <div class="space-y-4">
@@ -177,11 +195,13 @@ const TOOLS_REGISTRY = [
   {
     id: "payload-encoder",
     title: "Security Payload Encoder / Decoder",
+    title_en: "Security Payload Encoder / Decoder",
     category: "security",
     techBadge: "Base64 • URL • Hex • Unicode",
     techColor: "bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800",
     icon: "binary",
     description: "Konversi instan multi-format string untuk Base64, Hexadecimal, URL-Encoding, HTML Entities, dan sanitasi payload.",
+    desc_en: "Instant multi-format string conversion for Base64, Hexadecimal, URL-Encoding, HTML Entities, and security payload sanitization.",
     renderFn: "renderPayloadEncoder",
     docs: `
       <div class="space-y-4">
@@ -193,11 +213,13 @@ const TOOLS_REGISTRY = [
   {
     id: "jwt-debugger",
     title: "JWT Inspector & Claims Debugger",
+    title_en: "JWT Inspector & Claims Debugger",
     category: "security",
     techBadge: "JWT • JSON Claims • Signature",
     techColor: "bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800",
     icon: "key",
     description: "Dekonstruksi struktur token JWT (Header, Payload Claims, Expiration Date) dan verifikasi HMACSHA256 signature.",
+    desc_en: "Deconstructs JSON Web Token (Header, Payload claims, expiration timestamps) and visualizes HMACSHA256 signature verification.",
     renderFn: "renderJwtDebugger",
     docs: `
       <div class="space-y-4">
@@ -213,11 +235,13 @@ const TOOLS_REGISTRY = [
   {
     id: "ai-data-analyzer",
     title: "AI Sentiment & Data Analyzer",
+    title_en: "AI Sentiment & Data Analyzer",
     category: "database",
     techBadge: "Python • Pandas • VADER NLP",
     techColor: "bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300 border-purple-200 dark:border-purple-800",
     icon: "brain-circuit",
     description: "Analisis otomatis dataset survei & ulasan dari file CSV menggunakan algoritma VADER Sentiment NLP dan visualisasi Chart.js.",
+    desc_en: "Automated feedback & review dataset processing from CSV files using VADER Sentiment NLP scoring and Chart.js visualization.",
     renderFn: "renderAiDataAnalyzer",
     docs: `
       <div class="space-y-4">
@@ -229,11 +253,13 @@ const TOOLS_REGISTRY = [
   {
     id: "inventory-sandbox",
     title: "Inventory & Warehouse CRUD",
+    title_en: "Inventory & Warehouse CRUD",
     category: "database",
     techBadge: "Node.js • SQLite • REST API",
     techColor: "bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300 border-purple-200 dark:border-purple-800",
     icon: "boxes",
     description: "Pengelolaan aset dan inventaris barang gudang berbasis database SQL dengan fitur alert stok menipis dan filter kategori.",
+    desc_en: "Asset and warehouse stock management sandbox with RESTful CRUD operations, low-stock warnings, and SQL database queries.",
     renderFn: "renderInventorySandbox",
     docs: `
       <div class="space-y-4">
@@ -245,11 +271,13 @@ const TOOLS_REGISTRY = [
   {
     id: "library-sandbox",
     title: "Library Management System",
+    title_en: "Library Management System",
     category: "database",
     techBadge: "Node.js • SQLite • SQL Transactions",
     techColor: "bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300 border-purple-200 dark:border-purple-800",
     icon: "book-marked",
     description: "Sistem sirkulasi peminjaman buku perpustakaan dengan integritas relasional antar tabel dan validasi stok eksemplar.",
+    desc_en: "Relational book circulation and borrowing system ensuring ACID database transaction consistency across relational SQL tables.",
     renderFn: "renderLibrarySandbox",
     docs: `
       <div class="space-y-4">
@@ -261,11 +289,13 @@ const TOOLS_REGISTRY = [
   {
     id: "json-sql-converter",
     title: "JSON to SQL / CSV Converter",
+    title_en: "JSON to SQL / CSV Converter",
     category: "database",
     techBadge: "SQL Schema • Batch INSERT • CSV",
     techColor: "bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300 border-purple-200 dark:border-purple-800",
     icon: "database",
     description: "Mengonversi data JSON array menjadi perintah SQL INSERT INTO, skema CREATE TABLE, dan format CSV terstruktur.",
+    desc_en: "Converts raw JSON arrays into CREATE TABLE DDL schemas, batch SQL INSERT INTO queries, and structured CSV records.",
     renderFn: "renderJsonSqlConverter",
     docs: `
       <div class="space-y-4">
@@ -277,11 +307,13 @@ const TOOLS_REGISTRY = [
   {
     id: "log-analyzer",
     title: "Nginx Access Log Analyzer",
+    title_en: "Nginx Access Log Analyzer",
     category: "database",
     techBadge: "Log Parsing • Status Codes • Top IPs",
     techColor: "bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300 border-purple-200 dark:border-purple-800",
     icon: "file-text",
     description: "Parsing dan agregasi statistik raw access logs server: breakdown status code 200/404/500, top visitor IP, dan deteksi request mencurigakan.",
+    desc_en: "Parses server access logs to aggregate HTTP 2xx/4xx/5xx status code ratios, top visitor IPs, and suspicious request paths.",
     renderFn: "renderLogAnalyzer",
     docs: `
       <div class="space-y-4">
@@ -297,11 +329,13 @@ const TOOLS_REGISTRY = [
   {
     id: "news-scraper",
     title: "Tech News & Feeds Scraper",
+    title_en: "Tech News & Feeds Scraper",
     category: "utility",
     techBadge: "Python • BeautifulSoup4 • Feed",
     techColor: "bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 border-amber-200 dark:border-amber-800",
     icon: "newspaper",
     description: "Otomasi scraping data berita industri teknologi dan publikasi terkini dari platform berita web secara real-time.",
+    desc_en: "Automated real-time scraping aggregator extracting top tech industry publications and trending news headlines.",
     renderFn: "renderNewsScraper",
     docs: `
       <div class="space-y-4">
@@ -313,11 +347,13 @@ const TOOLS_REGISTRY = [
   {
     id: "api-checker",
     title: "API Health & Latency Checker",
+    title_en: "API Health & Latency Checker",
     category: "utility",
     techBadge: "HTTP Ping • Latency ms • JSON Viewer",
     techColor: "bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 border-amber-200 dark:border-amber-800",
     icon: "radio",
     description: "Pengujian responsivitas endpoint REST API (GET, POST, PUT, DELETE), waktu latensi (ms), dan viewer response JSON.",
+    desc_en: "Real-time HTTP REST API endpoint pinger measuring latency (ms), HTTP status codes, and formatting JSON responses.",
     renderFn: "renderApiChecker",
     docs: `
       <div class="space-y-4">
@@ -329,11 +365,13 @@ const TOOLS_REGISTRY = [
   {
     id: "image-optimizer",
     title: "Image Optimizer & Converter",
+    title_en: "Image Optimizer & Converter",
     category: "utility",
     techBadge: "HTML5 Canvas • WebP • Compression",
     techColor: "bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 border-amber-200 dark:border-amber-800",
     icon: "image",
     description: "Kompresi ukuran foto hingga 70%, resize lebar gambar proporsional, dan konversi ke WebP / PNG / JPG di sisi client.",
+    desc_en: "Client-side Canvas image compression & resizer converting to modern WebP / PNG / JPG formats, saving up to 70% file size.",
     renderFn: "renderImageOptimizer",
     docs: `
       <div class="space-y-4">
@@ -345,11 +383,13 @@ const TOOLS_REGISTRY = [
   {
     id: "currency-converter",
     title: "Real-Time Currency Calculator",
+    title_en: "Real-Time Currency Calculator",
     category: "utility",
     techBadge: "Exchange Rates • Offline Cache",
     techColor: "bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 border-amber-200 dark:border-amber-800",
     icon: "coins",
     description: "Konversi kurs mata uang dunia (USD, IDR, EUR, SGD, JPY, dll) dengan integrasi feed Open Exchange dan cache lokal.",
+    desc_en: "Live foreign exchange converter (USD, IDR, EUR, SGD, JPY) integrating open exchange rate APIs with offline cache fallback.",
     renderFn: "renderCurrencyConverter",
     docs: `
       <div class="space-y-4">
@@ -361,11 +401,13 @@ const TOOLS_REGISTRY = [
   {
     id: "typing-test",
     title: "Typing Speed & Accuracy Test",
+    title_en: "Typing Speed & Accuracy Test",
     category: "utility",
     techBadge: "WPM • Accuracy % • Real-time Stats",
     techColor: "bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 border-amber-200 dark:border-amber-800",
     icon: "keyboard",
     description: "Uji kecepatan ketik dengan metrik standar WPM (Words Per Minute), persentase akurasi, dan timer 60 detik.",
+    desc_en: "Typing speed benchmark measuring Words Per Minute (WPM) and accuracy percentage with a real-time 60-second timer.",
     renderFn: "renderTypingTest",
     docs: `
       <div class="space-y-4">
@@ -377,11 +419,13 @@ const TOOLS_REGISTRY = [
   {
     id: "raid-calculator",
     title: "RAID Storage & Capacity Calculator",
+    title_en: "RAID Storage & Capacity Calculator",
     category: "utility",
     techBadge: "RAID 0/1/5/6/10 • Storage Server",
     techColor: "bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 border-amber-200 dark:border-amber-800",
     icon: "hard-drive",
     description: "Kalkulasi kapasitas usable, alokasi parity redundancy, dan toleransi kerusakan disk untuk RAID 0, 1, 5, 6, dan 10.",
+    desc_en: "Calculates usable capacity, parity redundancy overhead, and disk failure fault tolerance for RAID 0, 1, 5, 6, and 10 arrays.",
     renderFn: "renderRaidCalculator",
     docs: `
       <div class="space-y-4">
@@ -393,11 +437,13 @@ const TOOLS_REGISTRY = [
   {
     id: "psu-calculator",
     title: "PC Power Supply (PSU) Calculator",
+    title_en: "PC Power Supply (PSU) Calculator",
     category: "utility",
     techBadge: "Hardware Wattage • PC Deployment",
     techColor: "bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 border-amber-200 dark:border-amber-800",
     icon: "cpu",
     description: "Kalkulator kebutuhan daya listrik hardware PC (CPU, GPU, RAM, Storage, Fans) untuk standarisasi PC Deployment kantor.",
+    desc_en: "Calculates total PC component wattage (CPU, GPU, RAM, NVMe, HDD, Fans) and recommends 80 PLUS power supply sizing.",
     renderFn: "renderPsuCalculator",
     docs: `
       <div class="space-y-4">
@@ -409,11 +455,13 @@ const TOOLS_REGISTRY = [
   {
     id: "regex-tester",
     title: "Regex Tester & Validator",
+    title_en: "Regex Tester & Validator",
     category: "utility",
     techBadge: "RegExp • Match Highlighting • Forms",
     techColor: "bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 border-amber-200 dark:border-amber-800",
     icon: "code-2",
     description: "Pengujian Regular Expression interaktif dengan visual highlighting, deteksi capture groups, dan template pola umum.",
+    desc_en: "Interactive Regular Expression testing sandbox with visual match highlighting, capture group index tracking, and pattern presets.",
     renderFn: "renderRegexTester",
     docs: `
       <div class="space-y-4">
@@ -425,11 +473,13 @@ const TOOLS_REGISTRY = [
   {
     id: "markdown-preview",
     title: "Markdown Live Editor & Preview",
+    title_en: "Markdown Live Editor & Preview",
     category: "utility",
     techBadge: "Markdown • HTML Parser • Live Render",
     techColor: "bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 border-amber-200 dark:border-amber-800",
     icon: "file-code",
     description: "Editor dokumen markdown instan dengan live preview, rendering tabel, code syntax highlighting, dan tombol salin HTML.",
+    desc_en: "Real-time Markdown editor with instant semantic HTML preview rendering, tables, checklists, code blocks, and HTML copy.",
     renderFn: "renderMarkdownPreview",
     docs: `
       <div class="space-y-4">
@@ -484,17 +534,21 @@ window.showToast = function(message, type = 'info') {
 // ==========================================
 // RENDER TOOLS GRID
 // ==========================================
-function renderToolsGrid() {
+window.renderToolsGrid = function() {
   const toolsGrid = document.getElementById('toolsGrid');
   const emptyState = document.getElementById('emptyState');
   if (!toolsGrid) return;
 
   toolsGrid.innerHTML = '';
+  const lang = window.currentLang || 'id';
 
   const filteredTools = TOOLS_REGISTRY.filter(tool => {
+    const title = (lang === 'en' && tool.title_en) ? tool.title_en : tool.title;
+    const desc = (lang === 'en' && tool.desc_en) ? tool.desc_en : tool.description;
+
     const matchesCategory = currentCategory === 'all' || tool.category === currentCategory;
-    const matchesSearch = tool.title.toLowerCase().includes(currentSearch.toLowerCase()) ||
-                          tool.description.toLowerCase().includes(currentSearch.toLowerCase()) ||
+    const matchesSearch = title.toLowerCase().includes(currentSearch.toLowerCase()) ||
+                          desc.toLowerCase().includes(currentSearch.toLowerCase()) ||
                           tool.techBadge.toLowerCase().includes(currentSearch.toLowerCase());
     return matchesCategory && matchesSearch;
   });
@@ -509,6 +563,10 @@ function renderToolsGrid() {
   toolsGrid.classList.remove('hidden');
 
   filteredTools.forEach(tool => {
+    const title = (lang === 'en' && tool.title_en) ? tool.title_en : tool.title;
+    const desc = (lang === 'en' && tool.desc_en) ? tool.desc_en : tool.description;
+    const openLabel = lang === 'en' ? 'Open Workspace' : 'Buka Workspace';
+
     const card = document.createElement('div');
     card.className = "tool-card bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 p-5 flex flex-col justify-between hover:shadow-lg transition-all duration-200 cursor-pointer group";
     card.dataset.toolId = tool.id;
@@ -526,17 +584,17 @@ function renderToolsGrid() {
 
         <div>
           <h3 class="font-bold text-slate-900 dark:text-white text-base group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
-            ${tool.title}
+            ${title}
           </h3>
           <p class="mt-1.5 text-xs text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-2">
-            ${tool.description}
+            ${desc}
           </p>
         </div>
       </div>
 
       <div class="pt-4 mt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between">
         <span class="text-[11px] font-semibold text-slate-400 group-hover:text-sky-600 dark:group-hover:text-sky-400 flex items-center gap-1 transition-colors">
-          Buka Workspace <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          ${openLabel} <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
         </span>
         <div class="w-2 h-2 rounded-full bg-emerald-500"></div>
       </div>
@@ -549,13 +607,14 @@ function renderToolsGrid() {
   if (window.lucide) {
     lucide.createIcons();
   }
-}
+};
 
 // ==========================================
 // MODAL WORKSPACE MANAGEMENT
 // ==========================================
 function openToolModal(tool) {
   activeTool = tool;
+  const lang = window.currentLang || 'id';
 
   const toolModal = document.getElementById('toolModal');
   const modalTitle = document.getElementById('modalTitle');
@@ -565,9 +624,12 @@ function openToolModal(tool) {
   const modalTabDemoContent = document.getElementById('modalTabDemoContent');
   const modalDocsBody = document.getElementById('modalDocsBody');
 
-  if (modalTitle) modalTitle.textContent = tool.title;
+  const title = (lang === 'en' && tool.title_en) ? tool.title_en : tool.title;
+  const desc = (lang === 'en' && tool.desc_en) ? tool.desc_en : tool.description;
+
+  if (modalTitle) modalTitle.textContent = title;
   if (modalTechBadge) modalTechBadge.textContent = tool.techBadge;
-  if (modalSubtitle) modalSubtitle.textContent = tool.description;
+  if (modalSubtitle) modalSubtitle.textContent = desc;
   if (modalIcon) modalIcon.setAttribute('data-lucide', tool.icon);
 
   // Set default tab to demo
@@ -585,7 +647,7 @@ function openToolModal(tool) {
     if (typeof window[tool.renderFn] === 'function') {
       window[tool.renderFn](modalTabDemoContent);
     } else {
-      modalTabDemoContent.innerHTML = `<div class="p-8 text-center text-xs text-slate-400">Modul '${tool.title}' siap dijalankan.</div>`;
+      modalTabDemoContent.innerHTML = `<div class="p-8 text-center text-xs text-slate-400">Modul '${title}' siap dijalankan.</div>`;
     }
   }
 
@@ -731,7 +793,25 @@ function toggleTheme() {
 // ==========================================
 function initApp() {
   initTheme();
-  renderToolsGrid();
+  
+  // Apply saved language or default to ID
+  const savedLang = localStorage.getItem('app_lang') || 'id';
+  if (typeof window.setLanguage === 'function') {
+    window.setLanguage(savedLang);
+  } else {
+    renderToolsGrid();
+  }
+
+  // Language Switcher Toggle Button
+  const langToggleBtn = document.getElementById('langToggleBtn');
+  if (langToggleBtn) {
+    langToggleBtn.addEventListener('click', () => {
+      const nextLang = window.currentLang === 'id' ? 'en' : 'id';
+      if (typeof window.setLanguage === 'function') {
+        window.setLanguage(nextLang);
+      }
+    });
+  }
 
   // Search Input
   const searchInput = document.getElementById('toolSearchInput');
@@ -786,7 +866,7 @@ function initApp() {
       const modalCodeSnippet = document.getElementById('modalCodeSnippet');
       if (!modalCodeSnippet) return;
       navigator.clipboard.writeText(modalCodeSnippet.textContent).then(() => {
-        showToast("Source code berhasil disalin ke clipboard!", "success");
+        showToast(window.currentLang === 'en' ? "Source code copied to clipboard!" : "Source code berhasil disalin ke clipboard!", "success");
       }).catch(() => {
         showToast("Gagal menyalin source code", "error");
       });
