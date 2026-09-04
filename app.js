@@ -444,44 +444,6 @@ const TOOLS_REGISTRY = [
 let currentCategory = 'all';
 let currentSearch = '';
 let activeTool = null;
-let activeModalTab = 'sandbox'; // 'sandbox', 'code', 'docs'
-
-// DOM Elements
-const toolsGrid = document.getElementById('toolsGrid');
-const searchInput = document.getElementById('toolSearchInput');
-const categoryFilterContainer = document.getElementById('categoryFilterContainer');
-const emptyState = document.getElementById('emptyState');
-const toolCountBadge = document.getElementById('toolCountBadge');
-
-// Modal Elements
-const toolModal = document.getElementById('toolModal');
-const toolModalTitle = document.getElementById('toolModalTitle');
-const toolModalCategory = document.getElementById('toolModalCategory');
-const toolModalDesc = document.getElementById('toolModalDesc');
-const toolModalCloseBtn = document.getElementById('toolModalCloseBtn');
-
-const tabSandboxBtn = document.getElementById('tabSandboxBtn');
-const tabCodeBtn = document.getElementById('tabCodeBtn');
-const tabDocsBtn = document.getElementById('tabDocsBtn');
-
-const tabContentSandbox = document.getElementById('tabContentSandbox');
-const tabContentCode = document.getElementById('tabContentCode');
-const tabContentDocs = document.getElementById('tabContentDocs');
-
-const codeSnippetFilename = document.getElementById('codeSnippetFilename');
-const codeSnippetPath = document.getElementById('codeSnippetPath');
-const codeSnippetContent = document.getElementById('codeSnippetContent');
-const copyCodeBtn = document.getElementById('copyCodeBtn');
-
-// Developer Profile Modal Elements
-const aboutDevBtn = document.getElementById('aboutDevBtn');
-const aboutDevModal = document.getElementById('aboutDevModal');
-const aboutDevModalCloseBtn = document.getElementById('aboutDevModalCloseBtn');
-
-// Theme Switcher Elements
-const themeToggleBtn = document.getElementById('themeToggleBtn');
-const themeIconSun = document.getElementById('themeIconSun');
-const themeIconMoon = document.getElementById('themeIconMoon');
 
 // Toast Notification Function
 window.showToast = function(message, type = 'info') {
@@ -523,6 +485,10 @@ window.showToast = function(message, type = 'info') {
 // RENDER TOOLS GRID
 // ==========================================
 function renderToolsGrid() {
+  const toolsGrid = document.getElementById('toolsGrid');
+  const emptyState = document.getElementById('emptyState');
+  if (!toolsGrid) return;
+
   toolsGrid.innerHTML = '';
 
   const filteredTools = TOOLS_REGISTRY.filter(tool => {
@@ -533,17 +499,13 @@ function renderToolsGrid() {
     return matchesCategory && matchesSearch;
   });
 
-  if (toolCountBadge) {
-    toolCountBadge.textContent = `${filteredTools.length} dari ${TOOLS_REGISTRY.length} Tools`;
-  }
-
   if (filteredTools.length === 0) {
-    emptyState.classList.remove('hidden');
+    if (emptyState) emptyState.classList.remove('hidden');
     toolsGrid.classList.add('hidden');
     return;
   }
 
-  emptyState.classList.add('hidden');
+  if (emptyState) emptyState.classList.add('hidden');
   toolsGrid.classList.remove('hidden');
 
   filteredTools.forEach(tool => {
@@ -595,30 +557,45 @@ function renderToolsGrid() {
 function openToolModal(tool) {
   activeTool = tool;
 
-  toolModalTitle.textContent = tool.title;
-  toolModalCategory.textContent = tool.techBadge;
-  toolModalDesc.textContent = tool.description;
+  const toolModal = document.getElementById('toolModal');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalTechBadge = document.getElementById('modalTechBadge');
+  const modalSubtitle = document.getElementById('modalSubtitle');
+  const modalIcon = document.getElementById('modalIcon');
+  const modalTabDemoContent = document.getElementById('modalTabDemoContent');
+  const modalDocsBody = document.getElementById('modalDocsBody');
 
-  // Set default tab
-  switchModalTab('sandbox');
+  if (modalTitle) modalTitle.textContent = tool.title;
+  if (modalTechBadge) modalTechBadge.textContent = tool.techBadge;
+  if (modalSubtitle) modalSubtitle.textContent = tool.description;
+  if (modalIcon) modalIcon.setAttribute('data-lucide', tool.icon);
+
+  // Set default tab to demo
+  switchModalTab('demo');
 
   // Show modal
-  toolModal.classList.remove('hidden');
-  toolModal.classList.add('flex');
-  document.body.style.overflow = 'hidden';
+  if (toolModal) {
+    toolModal.classList.remove('hidden');
+    toolModal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
 
   // Render Tool interactive content
-  if (typeof window[tool.renderFn] === 'function') {
-    window[tool.renderFn](tabContentSandbox);
-  } else {
-    tabContentSandbox.innerHTML = `<div class="p-4 text-center text-xs text-slate-400">Modul '${tool.title}' siap dijalankan.</div>`;
+  if (modalTabDemoContent) {
+    if (typeof window[tool.renderFn] === 'function') {
+      window[tool.renderFn](modalTabDemoContent);
+    } else {
+      modalTabDemoContent.innerHTML = `<div class="p-8 text-center text-xs text-slate-400">Modul '${tool.title}' siap dijalankan.</div>`;
+    }
   }
 
   // Load Source Code snippet
   loadCodeSnippet(tool.id);
 
   // Load Architecture documentation
-  tabContentDocs.innerHTML = tool.docs || `<div class="p-4 text-center text-xs text-slate-400">Dokumentasi teknis tersedia pada file README.md repository.</div>`;
+  if (modalDocsBody) {
+    modalDocsBody.innerHTML = tool.docs || `<div class="p-8 text-center text-xs text-slate-400">Dokumentasi teknis lengkap tersedia pada file README.md repository.</div>`;
+  }
 
   if (window.lucide) {
     lucide.createIcons();
@@ -626,36 +603,47 @@ function openToolModal(tool) {
 }
 
 function closeToolModal() {
-  toolModal.classList.add('hidden');
-  toolModal.classList.remove('flex');
+  const toolModal = document.getElementById('toolModal');
+  const modalTabDemoContent = document.getElementById('modalTabDemoContent');
+
+  if (toolModal) {
+    toolModal.classList.add('hidden');
+    toolModal.classList.remove('flex');
+  }
   document.body.style.overflow = '';
   activeTool = null;
-  tabContentSandbox.innerHTML = '';
+  if (modalTabDemoContent) modalTabDemoContent.innerHTML = '';
 }
 
 function switchModalTab(tab) {
-  activeModalTab = tab;
+  const tabBtnDemo = document.getElementById('tabBtnDemo');
+  const tabBtnCode = document.getElementById('tabBtnCode');
+  const tabBtnDocs = document.getElementById('tabBtnDocs');
 
-  // Reset tab buttons
-  [tabSandboxBtn, tabCodeBtn, tabDocsBtn].forEach(btn => {
+  const modalTabDemoContent = document.getElementById('modalTabDemoContent');
+  const modalTabCodeContent = document.getElementById('modalTabCodeContent');
+  const modalTabDocsContent = document.getElementById('modalTabDocsContent');
+
+  // Reset tab button styles
+  [tabBtnDemo, tabBtnCode, tabBtnDocs].forEach(btn => {
     if (!btn) return;
-    btn.className = "px-4 py-2 text-xs font-semibold text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white border-b-2 border-transparent transition";
+    btn.className = "modal-tab-btn py-3 border-b-2 border-transparent text-slate-500 hover:text-slate-900 dark:hover:text-slate-200 transition flex items-center gap-1.5";
   });
 
   // Hide all contents
-  tabContentSandbox.classList.add('hidden');
-  tabContentCode.classList.add('hidden');
-  tabContentDocs.classList.add('hidden');
+  if (modalTabDemoContent) modalTabDemoContent.classList.add('hidden');
+  if (modalTabCodeContent) modalTabCodeContent.classList.add('hidden');
+  if (modalTabDocsContent) modalTabDocsContent.classList.add('hidden');
 
-  if (tab === 'sandbox') {
-    tabSandboxBtn.className = "px-4 py-2 text-xs font-bold text-sky-600 dark:text-sky-400 border-b-2 border-sky-600 dark:border-sky-400 transition";
-    tabContentSandbox.classList.remove('hidden');
+  if (tab === 'demo') {
+    if (tabBtnDemo) tabBtnDemo.className = "modal-tab-btn active py-3 border-b-2 border-sky-600 text-sky-600 dark:text-sky-400 font-semibold transition flex items-center gap-1.5";
+    if (modalTabDemoContent) modalTabDemoContent.classList.remove('hidden');
   } else if (tab === 'code') {
-    tabCodeBtn.className = "px-4 py-2 text-xs font-bold text-sky-600 dark:text-sky-400 border-b-2 border-sky-600 dark:border-sky-400 transition";
-    tabContentCode.classList.remove('hidden');
+    if (tabBtnCode) tabBtnCode.className = "modal-tab-btn active py-3 border-b-2 border-sky-600 text-sky-600 dark:text-sky-400 font-semibold transition flex items-center gap-1.5";
+    if (modalTabCodeContent) modalTabCodeContent.classList.remove('hidden');
   } else if (tab === 'docs') {
-    tabDocsBtn.className = "px-4 py-2 text-xs font-bold text-sky-600 dark:text-sky-400 border-b-2 border-sky-600 dark:border-sky-400 transition";
-    tabContentDocs.classList.remove('hidden');
+    if (tabBtnDocs) tabBtnDocs.className = "modal-tab-btn active py-3 border-b-2 border-sky-600 text-sky-600 dark:text-sky-400 font-semibold transition flex items-center gap-1.5";
+    if (modalTabDocsContent) modalTabDocsContent.classList.remove('hidden');
   }
 
   if (window.lucide) {
@@ -664,86 +652,89 @@ function switchModalTab(tab) {
 }
 
 function loadCodeSnippet(toolId) {
+  const codeLanguageLabel = document.getElementById('codeLanguageLabel');
+  const codeFilePathLabel = document.getElementById('codeFilePathLabel');
+  const modalCodeSnippet = document.getElementById('modalCodeSnippet');
+
   if (!window.TOOL_CODE_SNIPPETS || !window.TOOL_CODE_SNIPPETS[toolId]) {
-    codeSnippetFilename.textContent = "Source Code";
-    codeSnippetPath.textContent = "Standar ES6+ / Python Module";
-    codeSnippetContent.textContent = "// Source code sedang dimuat...";
+    if (codeLanguageLabel) codeLanguageLabel.textContent = "Script";
+    if (codeFilePathLabel) codeFilePathLabel.textContent = "Source Code Module";
+    if (modalCodeSnippet) modalCodeSnippet.textContent = "// Source code sedang dimuat...";
     return;
   }
 
   const snippet = window.TOOL_CODE_SNIPPETS[toolId];
-  codeSnippetFilename.textContent = snippet.filename;
-  codeSnippetPath.textContent = snippet.path;
-  codeSnippetContent.textContent = snippet.code;
-}
-
-// Copy Code Button handler
-if (copyCodeBtn) {
-  copyCodeBtn.addEventListener('click', () => {
-    const code = codeSnippetContent.textContent;
-    navigator.clipboard.writeText(code).then(() => {
-      showToast("Source code berhasil disalin ke clipboard!", "success");
-    }).catch(() => {
-      showToast("Gagal menyalin source code", "error");
-    });
-  });
+  if (codeLanguageLabel) codeLanguageLabel.textContent = snippet.language || "JavaScript";
+  if (codeFilePathLabel) codeFilePathLabel.textContent = snippet.path || snippet.filename;
+  if (modalCodeSnippet) modalCodeSnippet.textContent = snippet.code;
 }
 
 // ==========================================
 // DEVELOPER PROFILE MODAL
 // ==========================================
 function openDevModal() {
-  aboutDevModal.classList.remove('hidden');
-  aboutDevModal.classList.add('flex');
-  document.body.style.overflow = 'hidden';
-  if (window.lucide) lucide.createIcons();
+  const aboutDevModal = document.getElementById('aboutDevModal');
+  if (aboutDevModal) {
+    aboutDevModal.classList.remove('hidden');
+    aboutDevModal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+    if (window.lucide) lucide.createIcons();
+  }
 }
 
 function closeDevModal() {
-  aboutDevModal.classList.add('hidden');
-  aboutDevModal.classList.remove('flex');
-  document.body.style.overflow = '';
+  const aboutDevModal = document.getElementById('aboutDevModal');
+  if (aboutDevModal) {
+    aboutDevModal.classList.add('hidden');
+    aboutDevModal.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
 }
 
 // ==========================================
 // THEME SWITCHER (DARK / LIGHT)
 // ==========================================
 function initTheme() {
+  const themeIconSun = document.getElementById('themeIconSun');
+  const themeIconMoon = document.getElementById('themeIconMoon');
   const savedTheme = localStorage.getItem('theme');
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
   if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
     document.documentElement.classList.add('dark');
-    themeIconSun.classList.remove('hidden');
-    themeIconMoon.classList.add('hidden');
+    if (themeIconSun) themeIconSun.classList.remove('hidden');
+    if (themeIconMoon) themeIconMoon.classList.add('hidden');
   } else {
     document.documentElement.classList.remove('dark');
-    themeIconSun.classList.add('hidden');
-    themeIconMoon.classList.remove('hidden');
+    if (themeIconSun) themeIconSun.classList.add('hidden');
+    if (themeIconMoon) themeIconMoon.classList.remove('hidden');
   }
 }
 
 function toggleTheme() {
+  const themeIconSun = document.getElementById('themeIconSun');
+  const themeIconMoon = document.getElementById('themeIconMoon');
   const isDark = document.documentElement.classList.toggle('dark');
   localStorage.setItem('theme', isDark ? 'dark' : 'light');
 
   if (isDark) {
-    themeIconSun.classList.remove('hidden');
-    themeIconMoon.classList.add('hidden');
+    if (themeIconSun) themeIconSun.classList.remove('hidden');
+    if (themeIconMoon) themeIconMoon.classList.add('hidden');
   } else {
-    themeIconSun.classList.add('hidden');
-    themeIconMoon.classList.remove('hidden');
+    if (themeIconSun) themeIconSun.classList.add('hidden');
+    if (themeIconMoon) themeIconMoon.classList.remove('hidden');
   }
 }
 
 // ==========================================
 // EVENT LISTENERS & INITIALIZATION
 // ==========================================
-document.addEventListener('DOMContentLoaded', () => {
+function initApp() {
   initTheme();
   renderToolsGrid();
 
   // Search Input
+  const searchInput = document.getElementById('toolSearchInput');
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
       currentSearch = e.target.value;
@@ -752,6 +743,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Category Filters
+  const categoryFilterContainer = document.getElementById('categoryFilterContainer');
   if (categoryFilterContainer) {
     categoryFilterContainer.addEventListener('click', (e) => {
       const btn = e.target.closest('.category-filter-btn');
@@ -770,7 +762,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Modal Close buttons
-  if (toolModalCloseBtn) toolModalCloseBtn.addEventListener('click', closeToolModal);
+  const modalCloseBtn = document.getElementById('modalCloseBtn');
+  const toolModal = document.getElementById('toolModal');
+  if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeToolModal);
   if (toolModal) {
     toolModal.addEventListener('click', (e) => {
       if (e.target === toolModal) closeToolModal();
@@ -778,12 +772,35 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Modal Tabs
-  if (tabSandboxBtn) tabSandboxBtn.addEventListener('click', () => switchModalTab('sandbox'));
-  if (tabCodeBtn) tabCodeBtn.addEventListener('click', () => switchModalTab('code'));
-  if (tabDocsBtn) tabDocsBtn.addEventListener('click', () => switchModalTab('docs'));
+  const tabBtnDemo = document.getElementById('tabBtnDemo');
+  const tabBtnCode = document.getElementById('tabBtnCode');
+  const tabBtnDocs = document.getElementById('tabBtnDocs');
+  if (tabBtnDemo) tabBtnDemo.addEventListener('click', () => switchModalTab('demo'));
+  if (tabBtnCode) tabBtnCode.addEventListener('click', () => switchModalTab('code'));
+  if (tabBtnDocs) tabBtnDocs.addEventListener('click', () => switchModalTab('docs'));
+
+  // Copy Code Button
+  const copyCodeBtn = document.getElementById('copyCodeBtn');
+  if (copyCodeBtn) {
+    copyCodeBtn.addEventListener('click', () => {
+      const modalCodeSnippet = document.getElementById('modalCodeSnippet');
+      if (!modalCodeSnippet) return;
+      navigator.clipboard.writeText(modalCodeSnippet.textContent).then(() => {
+        showToast("Source code berhasil disalin ke clipboard!", "success");
+      }).catch(() => {
+        showToast("Gagal menyalin source code", "error");
+      });
+    });
+  }
 
   // Developer Profile Modal
+  const aboutDevBtn = document.getElementById('aboutDevBtn');
+  const aboutDevModal = document.getElementById('aboutDevModal');
+  const aboutDevModalCloseBtn = document.getElementById('aboutDevModalCloseBtn');
+  const viewInterviewDocBtn = document.getElementById('viewInterviewDocBtn');
+
   if (aboutDevBtn) aboutDevBtn.addEventListener('click', openDevModal);
+  if (viewInterviewDocBtn) viewInterviewDocBtn.addEventListener('click', openDevModal);
   if (aboutDevModalCloseBtn) aboutDevModalCloseBtn.addEventListener('click', closeDevModal);
   if (aboutDevModal) {
     aboutDevModal.addEventListener('click', (e) => {
@@ -792,17 +809,27 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Theme Toggle
+  const themeToggleBtn = document.getElementById('themeToggleBtn');
   if (themeToggleBtn) themeToggleBtn.addEventListener('click', toggleTheme);
 
-  // Keyboard Shortcuts (Esc to close modal)
+  // Keyboard Shortcuts (Esc to close modals)
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      if (!toolModal.classList.contains('hidden')) closeToolModal();
-      if (!aboutDevModal.classList.contains('hidden')) closeDevModal();
+      const toolModal = document.getElementById('toolModal');
+      const aboutDevModal = document.getElementById('aboutDevModal');
+      if (toolModal && !toolModal.classList.contains('hidden')) closeToolModal();
+      if (aboutDevModal && !aboutDevModal.classList.contains('hidden')) closeDevModal();
     }
   });
 
   if (window.lucide) {
     lucide.createIcons();
   }
-});
+}
+
+// Ensure startup on DOM ready or immediately if already loaded
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}
