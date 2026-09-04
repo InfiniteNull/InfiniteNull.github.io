@@ -117,14 +117,6 @@
         <div class="p-6 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
           <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-5">
             <div class="space-y-1.5 max-w-3xl">
-              <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded text-[11px] font-mono font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
-                  Laravel 11 • PHP 8.2 • MySQL 8
-                </span>
-                <span class="px-2 py-0.5 rounded text-[11px] font-mono font-semibold bg-emerald-50 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
-                  Permenkes No. 24/2022 (RME SatuSehat)
-                </span>
-              </div>
               <h2 class="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
                 <i data-lucide="hospital" class="w-5 h-5 text-slate-700 dark:text-slate-300"></i>
                 <span>SIMRS Core — Sistem Informasi Manajemen Rumah Sakit</span>
@@ -132,7 +124,7 @@
               <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
                 ${isEn 
                   ? "Standard hospital information management architecture covering patient admission, electronic medical records (RME SOAP & ICD-10), healthcare insurance (PKS) tracking, and inpatient Bed Occupancy Rate (BOR) indicators."
-                  : "Arsitektur pengelolaan sistem rumah sakit mencakup admisi pendaftaran online, rekam medis elektronik (RME SOAP & ICD-10 Kemenkes), pelacakan kontrak kerjasama asuransi (PKS), dan indikator rawat inap (BOR/ALOS/TOI/BTO)."}
+                  : "Arsitektur pengelolaan sistem rumah sakit mencakup admisi pendaftaran online, rekam medis elektronik (RME SOAP & ICD-10), pelacakan kontrak kerjasama asuransi (PKS), dan indikator rawat inap (BOR/ALOS/TOI/BTO)."}
               </p>
             </div>
 
@@ -445,9 +437,9 @@
         <div class="lg:col-span-6 bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
           <div class="border-b border-slate-100 dark:border-slate-800 pb-3 flex items-center justify-between">
             <h3 class="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white">
-              ${isEn ? "Clinical EMR SOAP Assessment" : "Pengisian Asesmen Medis SOAP (Permenkes No. 24/2022)"}
+              ${isEn ? "Clinical EMR SOAP Assessment" : "Pengisian Asesmen Medis SOAP"}
             </h3>
-            <span class="text-[10px] font-mono text-slate-500">SatuSehat FHIR</span>
+            <span class="text-[10px] font-mono text-slate-500">RME SOAP</span>
           </div>
 
           <form id="formRme" class="space-y-3.5 text-xs">

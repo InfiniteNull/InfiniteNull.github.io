@@ -8,8 +8,8 @@ window.I18N_DICT = {
   id: {
     // Project Switcher
     projectSwitcherLabel: "Proyek:",
-    labelProjectSimrs: "SIMRS Core (Laravel 11)",
-    labelProjectDevTools: "Dev & Data Suite (29 Tools)",
+    labelProjectSimrs: "SIMRS Core",
+    labelProjectDevTools: "Dev & Data Suite",
 
     // Header
     headerSubtitle: "IT Support • Network Admin • VAPT Security • Data Analytics & Web Suite",
@@ -93,8 +93,8 @@ window.I18N_DICT = {
   en: {
     // Project Switcher
     projectSwitcherLabel: "Project:",
-    labelProjectSimrs: "SIMRS Core (Laravel 11)",
-    labelProjectDevTools: "Dev & Data Suite (29 Tools)",
+    labelProjectSimrs: "SIMRS Core",
+    labelProjectDevTools: "Dev & Data Suite",
 
     // Header
     headerSubtitle: "IT Support • Network Admin • VAPT Security • Data Analytics & Web Suite",
