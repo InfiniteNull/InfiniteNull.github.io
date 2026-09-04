@@ -1,7 +1,24 @@
-# 🚀 Dev & Data Tools Suite | Personal Developer Portfolio
+# 🚀 Dev & Data Tools Suite | InfiniteNull, S.Kom
 
 > **Platform Web Terintegrasi: 9 Tools Fungsional (Data Science, Backend RESTful API, Database SQL & Modern Web Utilities)**  
-> *Dibuat sebagai portofolio teknis mandiri untuk mendemonstrasikan kapabilitas rekayasa perangkat lunak full-stack dan pengolahan data modern.*
+> *Portofolio teknis mandiri oleh **InfiniteNull, S.Kom** — Lulusan S1 Informatika Universitas Potensi Utama & Praktisi IT Serba Bisa.*
+
+---
+
+## 👨‍💻 Profil Pengembang
+
+* **Nama / Handle:** InfiniteNull, S.Kom
+* **Pendidikan:** S1 Informatika — Universitas Potensi Utama
+* **Fokus Keahlian:** IT Support, Administrasi Jaringan, Keamanan Sistem (VAPT), Analisis Data (NLP/Python), & Full-Stack Web Development.
+* **Sertifikasi Nasional:**
+  * 📜 **Fundamental of Associate Network Administrator** (Komdigi RI, 2026)
+  * 📜 **Junior Network Administrator** (BBPSDMP Kominfo Medan, 2023)
+* **Pengalaman Lapangan & Kepemimpinan:**
+  * **IT Support** @ *Bengkel Mobil Lian* (Hardware/Software, Troubleshooting, OS, LAN Maintenance).
+  * **IT Researcher** @ *Yayasan Amal Bakti Abdi* (Evaluasi sistem & pengolahan data operasional).
+  * **Ketua Tim Proyek SHUNA AI** @ *MSIB Batch 6 Kampus Merdeka di Skilvul* (Lulus Nilai 81.8 — Machine Learning & NLP).
+  * **Kepemimpinan Organisasi** @ *HMPS Informatika* (Reaktivasi & tata kelola internal).
+* **Security & Pentesting:** VAPT (Burp Suite, OWASP ZAP), OSINT, Linux Server & Nginx.
 
 ---
 
@@ -23,6 +40,7 @@ Proyek ini menggabungkan **9 modul aplikasi fungsional** ke dalam satu portal an
 | **Node.js** | `Express.js` `Bcrypt` `JSON Web Token` `Sharp` | Backend Service, Authentication, Image Processing |
 | **SQL (SQLite)** | `SQLite3` `Relational Database` `Transactions` | Skema Tabel `users`, `products`, `books`, `borrowings` |
 | **Frontend Web** | `JavaScript ES6+` `HTML5 Canvas` `Tailwind CSS` `Chart.js` | Single Page Application, Chart Analytics, Responsivitas |
+| **Keamanan (Security)** | `Burp Suite` `OWASP ZAP` `VAPT` `OSINT` | Standar keamanan input, parameterized queries, token validation |
 
 ---
 
@@ -75,16 +93,16 @@ portfolio-hub/
 ## 🚀 Cara Menjalankan Secara Lokal
 
 ### 1. Menjalankan Website Portofolio (Frontend):
-Anda cukup membuka file `index.html` langsung di browser Chrome/Edge, atau menggunakan Live Server di VS Code.
+Buka file `index.html` langsung di browser Chrome/Edge, atau menggunakan Live Server di VS Code.
 
-### 2. Menjalankan Modul Python (Opsional untuk Backend Dev):
+### 2. Menjalankan Modul Python:
 ```bash
 cd python-modules
 pip install -r requirements.txt
 python analyzer.py
 ```
 
-### 3. Menjalankan Modul Backend Node.js (Opsional):
+### 3. Menjalankan Modul Backend Node.js:
 ```bash
 cd backend-modules
 npm install
@@ -93,23 +111,13 @@ npm start
 
 ---
 
-## 🌐 Cara Upload & Deploy ke GitHub Pages (100% Gratis & Instan)
+## 🌐 Live Demo & Deployment
 
-1. Buat repositori baru di akun GitHub Anda (misal bernama `dev-portfolio-suite`).
-2. Buka folder `portfolio-hub/` di terminal, lalu jalankan:
-   ```bash
-   git init
-   git add .
-   git commit -m "feat: Initial commit dev portfolio & tools suite"
-   git branch -M main
-   git remote add origin https://github.com/USERNAME-ANDA/dev-portfolio-suite.git
-   git push -u origin main
-   ```
-3. Buka repositori di GitHub -> Menu **Settings** -> **Pages** -> Pada bagian *Branch*, pilih `main` dan klik **Save**.
-4. Website Anda langsung online di `https://USERNAME-ANDA.github.io/dev-portfolio-suite/`!
+Website resmi aktif dan live di GitHub Pages:  
+👉 **[https://infinitenull.github.io/](https://infinitenull.github.io/)**
 
 ---
 
-## 👨‍💻 Profil Pembuat
-* **Fokus:** Full-Stack Web Engineering & Data Analytics
-* **Spesialisasi:** JavaScript (ES6+ / Node.js), Python (Pandas / NLP / Scraping), SQL & Relational Databases
+## 📬 Kontak & Tautan
+* **GitHub:** [https://github.com/InfiniteNull](https://github.com/InfiniteNull)
+* **Kandidat:** InfiniteNull, S.Kom (S1 Informatika — Universitas Potensi Utama)

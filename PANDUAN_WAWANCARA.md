@@ -1,63 +1,59 @@
 # 🎓 BUKU SAKU & PANDUAN WAWANCARA TEKNIS PENGEMBANG
 ### *Panduan Menjawab Pertanyaan Arsitektur untuk Portofolio Dev & Data Tools Suite*
+**Kandidat: InfiniteNull, S.Kom (Universitas Potensi Utama)**
 
-Dokumen ini disiapkan khusus agar Anda dapat menjawab setiap pertanyaan wawancara teknis dari recruiter, hiring manager, atau klien dengan percaya diri, sistematis, dan profesional.
+Dokumen ini disiapkan khusus agar Anda dapat menjawab setiap pertanyaan wawancara teknis dari recruiter, hiring manager, atau klien dengan percaya diri, sistematis, dan profesional berdasarkan pengalaman nyata Anda.
 
 ---
 
-## 📌 1. Pertanyaan Pengantar: Penjelasan Proyek
+## 📌 1. Pertanyaan Pengantar: Penjelasan Diri & Proyek
 
-### Q: "Bisa ceritakan apa yang Anda bangun pada website portofolio ini?"
+### Q: "Bisa ceritakan latar belakang dan apa yang Anda bangun pada portofolio ini?"
 > **Jawaban:**  
-> *"Selamat pagi/siang. Website ini adalah **Dev & Data Tools Suite**, sebuah platform web mandiri terintegrasi yang menggabungkan **9 tools fungsional**.*  
-> *Proyek ini saya rancang dengan **arsitektur multi-bahasa (Polyglot Engineering)** untuk menunjukkan kompetensi di 3 aspek fundamental:*  
-> 1. ***Data Analytics & Automation (Python):*** *Analisis sentimen ulasan pengguna menggunakan Pandas & NLP VADER, serta web scraping berita terkini dengan BeautifulSoup.*  
-> 2. ***Backend & Relational Database (Node.js & SQLite):*** *Autentikasi aman menggunakan Bcrypt dan JWT, serta sistem CRUD inventaris barang dan sirkulasi buku perpustakaan.*  
-> 3. ***Modern Frontend Web (JavaScript & Tailwind CSS):*** *Antarmuka yang responsif, cepat, memiliki mode gelap/terang, dan tools utilitas seperti kompresi gambar dan konversi mata uang.*  
-> *Semua modul dibuat bersih, modular, dan siap digunakan secara nyata."*
+> *"Selamat pagi/siang. Saya adalah lulusan **S1 Informatika (S.Kom) dari Universitas Potensi Utama** dan seorang Praktisi IT serba bisa dengan fokus di bidang **IT Support, Administrasi Jaringan, Keamanan Sistem (VAPT), serta Analisis Data & Rekayasa Web**.*  
+> *Saya memiliki pengalaman lapangan nyata sebagai **IT Support di Bengkel Mobil Lian** dalam pemeliharaan hardware, troubleshooting laptop/PC, dan maintenance LAN harian, serta sebagai **IT Researcher di Yayasan Amal Bakti Abdi** dalam mengevaluasi kebutuhan sistem operasional.*  
+> *Di samping itu, kompetensi jaringan saya tersertifikasi secara nasional (**Associate Network Administrator Komdigi 2026** dan **Junior Network Administrator Kominfo 2023**), serta memiliki kepemimpinan teruji sebagai **Ketua Tim Proyek SHUNA AI di program MSIB Batch 6 Skilvul (Lulus Nilai 81.8)**.*  
+> *Seluruh keahlian teknis ini saya integrasikan secara nyata ke dalam platform **Dev & Data Tools Suite** yang menggabungkan 9 modul fungsional open-source berbasis Python, Node.js, SQL, dan JavaScript modern."*
 
 ---
 
 ## 🐍 2. Pertanyaan Mengenai Python & AI / Data
 
-### Q: "Mengapa Anda menggunakan Python dan bagaimana cara kerja modul AI Data Analyzer?"
+### Q: "Bagaimana implementasi Python dan NLP pada proyek ini dan pengalaman Anda di SHUNA AI?"
 > **Jawaban:**  
-> *"Python adalah standar industri untuk pengolahan data. Pada modul AI Data Analyzer:*  
-> *1. Pengguna dapat mengunggah file data survei/ulasan (CSV/Excel).*  
-> *2. Script Python menggunakan **Pandas** untuk membaca data ke dalam memori secara efisien.*  
-> *3. Kami menerapkan algoritma **VADER Sentiment Analysis (NLP)** untuk menghitung nilai kepuasan (compound polarity score) dari setiap teks feedback.*  
-> *4. Hasilnya dikelompokkan menjadi sentimen Positif, Netral, atau Negatif dan divisualisasikan dalam bentuk grafik diagram lingkaran.*  
-> *Sistem ini dapat diaplikasikan langsung pada platform SaaS, e-commerce, atau instansi publik untuk menganalisis kepuasan pelanggan secara otomatis."*
+> *"Pada program MSIB Batch 6 Skilvul, saya memimpin tim Proyek SHUNA AI merancang aplikasi pelaporan cerdas berbasis Machine Learning & NLP.*  
+> *Pengalaman tersebut saya terapkan di modul **AI Data Analyzer** pada website ini:*  
+> *1. Menggunakan **Pandas** untuk membaca dan memanipulasi dataset ulasan/survei secara efisien.*  
+> *2. Menerapkan algoritma **VADER Sentiment Analysis (NLP)** untuk menghitung nilai kepuasan (compound polarity score) dari teks ulasan pengguna secara otomatis.*  
+> *3. Menghasilkan visualisasi statistik interaktif (Chart.js) untuk pengambilan keputusan bisnis berbasis data empiris.*  
+> *Pada modul **News Scraper**, saya menggunakan **BeautifulSoup4** dan **Requests** untuk mengotomasi penarikan informasi berita teknologi dari web secara terstruktur."*
 
 ---
 
-## 🟢 3. Pertanyaan Mengenai Backend, Keamanan, & Database (Node.js & SQL)
+## 🟢 3. Pertanyaan Mengenai Backend, Keamanan (VAPT), & Database
 
-### Q: "Bagaimana Anda mengelola autentikasi dan keamanan data pengguna?"
+### Q: "Bagaimana Anda menerapkan prinsip keamanan sistem (VAPT) dan arsitektur database?"
 > **Jawaban:**  
-> *"Untuk backend autentikasi, saya menggunakan **Node.js Express** dengan prinsip keamanan modern:*  
-> *1. Password pengguna **tidak pernah disimpan dalam bentuk teks polos (plain text)**, melainkan di-hash menggunakan algoritma **Bcrypt** dengan salt 10 rounds.*  
-> *2. Untuk sesi login, server menerbitkan **JSON Web Token (JWT)** yang berisi payload terenkripsi sehingga verifikasi akses ke rute terproteksi bersifat stateless dan aman.*  
-> *3. Pada database SQLite, setiap kueri menggunakan **parameterized queries (`?`)** untuk mencegah celah keamanan **SQL Injection**."*
-
-### Q: "Bagaimana Anda mengimplementasikan transaksi di database perpustakaan?"
-> **Jawaban:**  
-> *"Pada modul perpustakaan, terdapat transaksi peminjaman yang melibatkan relasi antar tabel:*  
-> *Ketika anggota meminjam buku, sistem menjalankan transaksi atomik: stok eksemplar di tabel `books` dikurangi 1, dan record baru dicatat di tabel `borrowings`. Jika stok buku 0, transaksi otomatis dibatalkan untuk mencegah anomali data (race condition)."*
+> *"Berdasarkan pemahaman saya dalam Vulnerability Assessment & Penetration Testing (VAPT) menggunakan tools seperti **Burp Suite** dan **OWASP ZAP**:*  
+> *1. **Autentikasi & Password:** Password pengguna tidak pernah disimpan dalam plain text, melainkan di-hash dengan **Bcrypt (10 salt rounds)**, serta sesi dikelola menggunakan **JWT (JSON Web Token)** yang stateless.*  
+> *2. **SQL Injection Prevention:** Seluruh query ke basis data SQLite menggunakan parameterized queries (`?`) untuk mencegah injeksi kode berbahaya.*  
+> *3. **Integritas Transaksi:** Pada sistem perpustakaan dan inventaris, transaksi peminjaman dirancang atomik untuk memastikan konsistensi pengurangan stok dan pencatatan riwayat."*
 
 ---
 
-## ⚡ 4. Pertanyaan Mengenai Frontend & Desain UI/UX
+## 🌐 4. Pertanyaan Mengenai Jaringan & Infrastruktur
 
-### Q: "Mengapa Anda memilih Tailwind CSS dan bagaimana optimasi performa gambarnya?"
+### Q: "Bagaimana sertifikasi Komdigi & Kominfo Anda mendukung peran software development?"
 > **Jawaban:**  
-> *"Saya menggunakan Tailwind CSS karena pendekatan utility-first memungkinkan pembangunan antarmuka yang sangat konsisten, bersih, dan fleksibel baik di layar smartphone maupun desktop tanpa beban file CSS yang besar.*  
-> *Untuk optimasi gambar, kami menggunakan teknologi **HTML5 Canvas** untuk mengompresi ukuran file hingga 70% dan mengonversi format foto ke format modern **WebP**, sehingga menghemat bandwidth server dan mempercepat waktu muat halaman."*
+> *"Sertifikasi **Associate Network Administrator (Komdigi RI 2026)** dan **Junior Network Administrator (Kominfo 2023)** memberi saya fondasi mendalam tentang bagaimana aplikasi beroperasi di atas infrastruktur jaringan nyata:*  
+> *Perancangan skema IP Addressing, konfigurasi routing, pengelolaan server Linux dan web server Nginx, serta pemantauan latensi jaringan (seperti yang saya implementasikan pada tool **API Health & Latency Checker**).*  
+> *Kombinasi ini membuat saya memahami full-cycle: mulai dari fisik jaringan, konfigurasi server, keamanan, hingga lapisan aplikasi pengguna."*
 
 ---
 
 ## 💡 5. Tips Sikap & Komunikasi Saat Wawancara:
-1. **Tenang & Percaya Diri:** Buka website ini langsung di layar Anda. Tunjukkan betapa cepatnya navigasi antar tool, coba fitur upload CSV ulasan, dan buka tab **Source Code Asli** agar penguji melihat potongan kode Python, SQL, dan Node.js yang tertata rapi.
-2. **Fokus pada Problem Solving:** Jelaskan bahwa Anda membangun tools ini bukan hanya sekadar latihan, melainkan untuk menyelesaikan masalah nyata (kompresi aset gambar, monitoring latensi API, kalkulasi valuta asing, dan automasi data).
+1. **Percaya Diri & Terstruktur:** Ceritakan pengalaman nyata di Bengkel Mobil Lian, Yayasan Amal Bakti Abdi, dan proyek SHUNA AI dengan antusias.
+2. **Tunjukkan Live Demo:** Buka website Anda di [https://infinitenull.github.io/](https://infinitenull.github.io/), klik tombol **Tentang Pengembang** dan buka tab **Source Code Asli** di setiap tool.
+3. **Tekankan Karakter Serba Bisa (Versatile):** Perusahaan sangat menyukai kandidat yang tidak hanya bisa koding web, tapi juga paham troubleshooting PC, jaringan LAN, server Linux, keamanan VAPT, dan analisis data.
 
-**Semoga sukses dalam pengembangan karier profesional sebagai Software Developer! 🚀**
+**Semoga sukses dalam pengembangan karier profesional Anda! 🚀**
