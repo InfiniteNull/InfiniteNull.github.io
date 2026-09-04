@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id" class="light">
+<html lang="id" class="light scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -79,10 +79,10 @@
             <span>Panduan Teknis & Arsitektur</span>
           </button>
           
-          <a href="#about-section" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-            <i data-lucide="user" class="w-4 h-4"></i>
+          <button id="aboutDevBtn" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition">
+            <i data-lucide="user" class="w-4 h-4 text-emerald-600 dark:text-emerald-400"></i>
             <span>Tentang Pengembang</span>
-          </a>
+          </button>
 
           <!-- Dark/Light Theme Toggle -->
           <button id="themeToggleBtn" aria-label="Toggle Theme" class="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
@@ -259,6 +259,90 @@
   </div>
 
   <!-- ============================================================ -->
+  <!-- TENTANG PENGEMBANG / DEVELOPER PROFILE MODAL                  -->
+  <!-- ============================================================ -->
+  <div id="aboutDevModal" class="fixed inset-0 z-50 hidden bg-slate-950/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl w-full max-w-2xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden transition-all animate-in fade-in zoom-in-95 duration-200">
+      
+      <div class="px-6 py-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50/70 dark:bg-slate-900/50">
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-500 to-indigo-600 flex items-center justify-center text-white font-bold font-mono text-xl shadow-md">
+            IN
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h3 class="font-bold text-slate-900 dark:text-white text-base">InfiniteNull</h3>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
+                Software Engineer
+              </span>
+            </div>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Full-Stack Web & Data Analytics Specialist</p>
+          </div>
+        </div>
+        <button id="aboutDevModalCloseBtn" class="p-2 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="p-6 overflow-y-auto space-y-5 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+        
+        <!-- Summary Card -->
+        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 space-y-2">
+          <h4 class="font-bold text-slate-900 dark:text-white text-xs uppercase tracking-wider flex items-center gap-2">
+            <i data-lucide="user-check" class="w-4 h-4 text-sky-600"></i>
+            <span>Tentang Pengembang</span>
+          </h4>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            Pengembang perangkat lunak dengan spesialisasi dalam pembangunan aplikasi web full-stack, perancangan arsitektur RESTful API & database relasional yang aman, serta pemrosesan dan analisis data cerdas berbasis Python (NLP & Web Scraping).
+          </p>
+        </div>
+
+        <!-- Technical Competencies -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-slate-900 dark:text-white text-xs uppercase tracking-wider">Keahlian & Teknologi Utama</h4>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            
+            <div class="p-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-1">
+              <div class="font-bold text-blue-600 dark:text-blue-400 flex items-center gap-1.5 text-xs">
+                <span>🐍 Data & AI (Python)</span>
+              </div>
+              <p class="text-[11px] text-slate-500 dark:text-slate-400">Pandas, VADER Sentiment NLP, BeautifulSoup4, FastAPI.</p>
+            </div>
+
+            <div class="p-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-1">
+              <div class="font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5 text-xs">
+                <span>🟢 Backend & Database</span>
+              </div>
+              <p class="text-[11px] text-slate-500 dark:text-slate-400">Node.js, Express.js, SQLite, Bcrypt, JWT, Sharp Engine.</p>
+            </div>
+
+            <div class="p-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-1">
+              <div class="font-bold text-amber-600 dark:text-amber-400 flex items-center gap-1.5 text-xs">
+                <span>⚡ Frontend Web</span>
+              </div>
+              <p class="text-[11px] text-slate-500 dark:text-slate-400">Modern ES6+, HTML5 Canvas, Tailwind CSS, Chart.js.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div class="pt-2 flex flex-wrap items-center justify-between gap-3 border-t border-slate-100 dark:border-slate-800">
+          <div class="flex items-center gap-2">
+            <a href="https://github.com/InfiniteNull" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 dark:bg-slate-100 dark:hover:bg-white text-white dark:text-slate-900 font-bold text-xs flex items-center gap-1.5 transition">
+              <i data-lucide="github" class="w-4 h-4"></i>
+              <span>Profil GitHub (@InfiniteNull)</span>
+            </a>
+          </div>
+          <span class="text-[11px] text-slate-400 font-mono">Portfolio Suite v1.0 • 2026</span>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
   <!-- PANDUAN WAWANCARA / TECHNICAL GUIDE MODAL                     -->
   <!-- ============================================================ -->
   <div id="interviewModal" class="fixed inset-0 z-50 hidden bg-slate-950/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
@@ -323,7 +407,7 @@
       </div>
 
       <div class="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 text-center text-xs text-slate-500">
-        &copy; 2026 Developer Portfolio • Handcrafted with Clean Code & Modern Standards.
+        &copy; 2026 InfiniteNull Developer Portfolio • Handcrafted with Clean Code & Modern Standards.
       </div>
     </div>
   </footer>

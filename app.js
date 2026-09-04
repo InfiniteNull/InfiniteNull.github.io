@@ -464,6 +464,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Developer Profile Modal Handler
+  const aboutDevModal = document.getElementById('aboutDevModal');
+  const aboutDevBtn = document.getElementById('aboutDevBtn');
+  const aboutDevModalCloseBtn = document.getElementById('aboutDevModalCloseBtn');
+
+  if (aboutDevBtn && aboutDevModal) {
+    aboutDevBtn.addEventListener('click', () => {
+      aboutDevModal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      if (window.lucide) lucide.createIcons();
+    });
+
+    if (aboutDevModalCloseBtn) {
+      aboutDevModalCloseBtn.addEventListener('click', () => {
+        aboutDevModal.classList.add('hidden');
+        document.body.style.overflow = '';
+      });
+    }
+
+    aboutDevModal.addEventListener('click', (e) => {
+      if (e.target === aboutDevModal) {
+        aboutDevModal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
   // Global Toast Notification Helper
   window.showToast = function(message) {
     let container = document.querySelector('.toast-container');
