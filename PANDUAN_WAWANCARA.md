@@ -1,4 +1,4 @@
-# 🎓 BUKU SAKU & PANDUAN WAWANCARA TEKNIS PENGEMBANG
+# BUKU SAKU & PANDUAN WAWANCARA TEKNIS PENGEMBANG
 ### *Panduan Menjawab Pertanyaan Arsitektur untuk Portofolio Dev & Data Tools Suite*
 **Kandidat: Rizki Ananda, S.Kom (Universitas Potensi Utama | @InfiniteNull)**
 
@@ -6,7 +6,7 @@ Dokumen ini disiapkan khusus agar Anda (**Rizki Ananda, S.Kom**) dapat menjawab 
 
 ---
 
-## 📌 1. Pertanyaan Pengantar: Penjelasan Diri & Proyek
+## 1. Pertanyaan Pengantar: Penjelasan Diri & Proyek
 
 ### Q: "Bisa ceritakan latar belakang profesional Anda dan apa yang Anda bangun pada website ini?"
 > **Jawaban:**  
@@ -19,7 +19,7 @@ Dokumen ini disiapkan khusus agar Anda (**Rizki Ananda, S.Kom**) dapat menjawab 
 
 ---
 
-## 🖥️ 2. Pertanyaan Mengenai Infrastruktur, Server & Protokol Streaming
+## 2. Pertanyaan Mengenai Infrastruktur, Server & Protokol Streaming
 
 ### Q: "Bisa jelaskan pengalaman Anda dalam merancang Nginx Media Server dan protokol streaming di Adzkia Kedinasan?"
 > **Jawaban:**  
@@ -30,7 +30,7 @@ Dokumen ini disiapkan khusus agar Anda (**Rizki Ananda, S.Kom**) dapat menjawab 
 
 ---
 
-## 🏦 3. Pertanyaan Mengenai IT Support & PC Deployment Perbankan
+## 3. Pertanyaan Mengenai IT Support & PC Deployment Perbankan
 
 ### Q: "Bagaimana Anda menangani proyek PC Deployment di Bank Sinarmas dengan standar keamanan tinggi?"
 > **Jawaban:**  
@@ -41,7 +41,7 @@ Dokumen ini disiapkan khusus agar Anda (**Rizki Ananda, S.Kom**) dapat menjawab 
 
 ---
 
-## 🐍 4. Pertanyaan Mengenai AI / NLP (SHUNA AI & Tools Suite)
+## 4. Pertanyaan Mengenai AI / NLP (SHUNA AI & Tools Suite)
 
 ### Q: "Bagaimana Anda menerapkan Machine Learning dan NLP pada proyek SHUNA AI dan AI Data Analyzer?"
 > **Jawaban:**  
@@ -51,7 +51,7 @@ Dokumen ini disiapkan khusus agar Anda (**Rizki Ananda, S.Kom**) dapat menjawab 
 
 ---
 
-## 🛡️ 5. Pertanyaan Mengenai Keamanan Sistem (VAPT) & Database
+## 5. Pertanyaan Mengenai Keamanan Sistem (VAPT) & Database
 
 ### Q: "Bagaimana Anda memastikan sistem yang Anda bangun aman dari serangan siber?"
 > **Jawaban:**  
@@ -62,9 +62,9 @@ Dokumen ini disiapkan khusus agar Anda (**Rizki Ananda, S.Kom**) dapat menjawab 
 
 ---
 
-## 💡 6. Tips Sikap & Komunikasi Saat Wawancara:
+## 6. Tips Sikap & Komunikasi Saat Wawancara:
 1. **Perkenalkan Diri dengan Jelas:** *"Nama saya Rizki Ananda, S.Kom..."*
 2. **Tunjukkan Portofolio Live:** Buka website [https://infinitenull.github.io/](https://infinitenull.github.io/), tunjukkan modal profil lengkap Anda dan demo interaktif 9 tools.
 3. **Bawa Nilai Tambah (Value-Add):** Anda adalah kandidat unggul karena memiliki spektrum lengkap: **IT Support fisik di bank, server & streaming di Adzkia, jaringan tersertifikasi Komdigi/Kominfo, keamanan VAPT, serta koding full-stack Python & Node.js**.
 
-**Semoga sukses gemilang dalam karier profesional Anda, Rizki Ananda, S.Kom! 🚀**
+**Semoga sukses gemilang dalam karier profesional Anda, Rizki Ananda, S.Kom!**
