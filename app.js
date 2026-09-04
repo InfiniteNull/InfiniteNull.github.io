@@ -191,7 +191,7 @@ const INTERVIEW_GUIDE_CONTENT = `
       <h5 class="text-xs font-bold text-slate-900 dark:text-white mb-2">Q1: "Bisa jelaskan arsitektur dan kapabilitas sistem pada website portofolio ini?"</h5>
       <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
         <strong>Jawaban yang Disarankan:</strong><br>
-        <em>"Website ini adalah **Dev & Data Tools Suite**, sebuah platform terintegrasi yang menggabungkan 9 tools fungsional dengan pendekatan **Polyglot Architecture**. Proyek ini mendemonstrasikan kapabilitas di 3 ranah utama: **Pertama**, pemrosesan dan analisis data AI berbasis **Python (Pandas & VADER NLP)**. **Kedua**, perancangan RESTful API backend dan database relasional berbasis **Node.js Express & SQLite (SQL)**. Serta **Ketiga**, pembuatan antarmuka web modern yang responsif dan interaktif berbasis **Modern JavaScript & Tailwind CSS**."</em>
+        <em>"Website ini adalah <strong>Dev & Data Tools Suite</strong>, sebuah platform terintegrasi yang menggabungkan 9 tools fungsional dengan pendekatan <strong>Polyglot Architecture</strong>. Proyek ini mendemonstrasikan kapabilitas di 3 ranah utama: <strong>Pertama</strong>, pemrosesan dan analisis data AI berbasis <strong>Python (Pandas & VADER NLP)</strong>. <strong>Kedua</strong>, perancangan RESTful API backend dan database relasional berbasis <strong>Node.js Express & SQLite (SQL)</strong>. Serta <strong>Ketiga</strong>, pembuatan antarmuka web modern yang responsif dan interaktif berbasis <strong>Modern JavaScript & Tailwind CSS</strong>."</em>
       </p>
     </div>
 
@@ -200,7 +200,7 @@ const INTERVIEW_GUIDE_CONTENT = `
       <h5 class="text-xs font-bold text-slate-900 dark:text-white mb-2">Q2: "Bagaimana integrasi Python dalam workflow sistem ini?"</h5>
       <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
         <strong>Jawaban yang Disarankan:</strong><br>
-        <em>"Python diimplementasikan khusus untuk domain data engineering dan automasi. Pada modul **AI Data Analyzer**, Pandas digunakan untuk membaca dan memanipulasi dataset secara efisien, sedangkan VADER NLP menghitung skor polaritas sentimen untuk mengkategorikan review publik/pengguna. Pada modul **News Scraper**, BeautifulSoup4 mengekstraksi data berita terkini secara terstruktur menjadi format JSON siap saji."</em>
+        <em>"Python diimplementasikan khusus untuk domain data engineering dan automasi. Pada modul <strong>AI Data Analyzer</strong>, Pandas digunakan untuk membaca dan memanipulasi dataset secara efisien, sedangkan VADER NLP menghitung skor polaritas sentimen untuk mengkategorikan review publik/pengguna. Pada modul <strong>News Scraper</strong>, BeautifulSoup4 mengekstraksi data berita terkini secara terstruktur menjadi format JSON siap saji."</em>
       </p>
     </div>
 
@@ -209,7 +209,7 @@ const INTERVIEW_GUIDE_CONTENT = `
       <h5 class="text-xs font-bold text-slate-900 dark:text-white mb-2">Q3: "Bagaimana penerapan keamanan data dan arsitektur database?"</h5>
       <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
         <strong>Jawaban yang Disarankan:</strong><br>
-        <em>"Untuk backend autentikasi, saya menggunakan Node.js Express dengan standar industri: enkripsi password menggunakan **Bcrypt (10 salt rounds)** dan sesi berbasis **JSON Web Token (JWT)** yang stateless. Di sisi database relasional (SQLite), parameterized query diterapkan untuk mencegah risiko SQL Injection serta menjaga integritas transaksi atomik saat memproses data inventaris dan peminjaman buku."</em>
+        <em>"Untuk backend autentikasi, saya menggunakan Node.js Express dengan standar industri: enkripsi password menggunakan <strong>Bcrypt (10 salt rounds)</strong> dan sesi berbasis <strong>JSON Web Token (JWT)</strong> yang stateless. Di sisi database relasional (SQLite), parameterized query diterapkan untuk mencegah risiko SQL Injection serta menjaga integritas transaksi atomik saat memproses data inventaris dan peminjaman buku."</em>
       </p>
     </div>
 
