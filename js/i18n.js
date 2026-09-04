@@ -39,13 +39,13 @@ window.I18N_DICT = {
     devRoleBadge: "Lulusan S1 Informatika",
     devRoleSub: "Universitas Potensi Utama • Praktisi IT",
     profileHeading: "Profil",
-    profileBio: "Lulusan <strong>S1 Informatika (S.Kom) dari Universitas Potensi Utama</strong> dengan spesialisasi di bidang <strong>IT Support, Administrasi Jaringan, Keamanan Sistem (VAPT), serta Analisis Data & Rekayasa Web</strong>. Berpengalaman teknis dalam deployment infrastruktur server, protokol streaming, peremajaan PC perbankan, dan implementasi machine learning.",
+    profileBio: "Lulusan <strong>S1 Informatika (S.Kom) dari Universitas Potensi Utama</strong> dengan spesialisasi di bidang <strong>IT Support, Administrasi Jaringan, Keamanan Sistem (VAPT), serta Analisis Data & Rekayasa Web</strong>. Berpengalaman teknis dalam deployment infrastruktur server, protokol streaming, peremajaan PC perbankan, dan rekayasa perangkat lunak.",
     
     expHeading: "Pengalaman Kerja",
     job1Title: "IT Researcher",
     job1Company: "• ADZKIA KEDINASAN PUSAT",
     job1Meta: "Nov 2024 - Jun 2025 (Freelance) • Medan",
-    job1Desc: "Bertanggung jawab dalam merancang dan menguji infrastruktur <strong>Nginx Media Server</strong> pada lingkungan Virtual Machine berbasis Linux, serta menguji empat protokol streaming video (<strong>RTMP, HLS, RTSP, dan HTTP</strong>). Melakukan pengujian keamanan jaringan dan <strong>vulnerability assessment (VAPT)</strong> pada sistem internal. Selain itu, mengeksplorasi pengembangan prototipe sistem absensi berbasis <strong>face recognition</strong> dan chatbot interaktif sebagai solusi integrasi sistem.",
+    job1Desc: "Bertanggung jawab dalam merancang, mengonfigurasi, dan menguji infrastruktur <strong>Nginx Media Server</strong> pada lingkungan Virtual Machine berbasis Linux, serta melakukan benchmark terhadap 4 protokol streaming video (<strong>RTMP, HLS, RTSP, dan HTTP</strong>). Melakukan pengujian keamanan jaringan dan <strong>vulnerability assessment (VAPT)</strong> pada sistem internal, audit konfigurasi firewall, serta dokumentasi arsitektur server.",
     
     job2Title: "IT Support (Vendor Outsourcing)",
     job2Company: "• PT Bank Sinarmas, Tbk",
@@ -55,7 +55,7 @@ window.I18N_DICT = {
     leadShunaTitle: "Ketua Tim Proyek SHUNA AI",
     leadShunaScore: "Nilai: 81.8",
     leadShunaOrg: "MSIB Batch 6 Kampus Merdeka @ Skilvul",
-    leadShunaDesc: "Memimpin tim merancang aplikasi pelaporan cerdas berbasis Machine Learning dan Natural Language Processing (NLP).",
+    leadShunaDesc: "Memimpin tim dalam merancang alur data pipeline dan klasifikasi teks berbasis Natural Language Processing (NLP) menggunakan Python.",
     
     leadOrgTitle: "Kepemimpinan Organisasi",
     leadOrgSub: "HMPS Informatika • Univ. Potensi Utama",
@@ -109,13 +109,13 @@ window.I18N_DICT = {
     devRoleBadge: "B.Sc. Computer Science Graduate",
     devRoleSub: "Universitas Potensi Utama • IT Practitioner",
     profileHeading: "Profile",
-    profileBio: "Computer Science Graduate (<strong>S1 Informatika / S.Kom from Universitas Potensi Utama</strong>) specializing in <strong>IT Support, Network Administration, System Security (VAPT), Data Analytics & Full-Stack Web Development</strong>. Hands-on experience in server infrastructure deployment, video streaming protocols, banking PC deployments, and machine learning implementations.",
+    profileBio: "Computer Science Graduate (<strong>S1 Informatika / S.Kom from Universitas Potensi Utama</strong>) specializing in <strong>IT Support, Network Administration, System Security (VAPT), Data Analytics & Full-Stack Web Engineering</strong>. Hands-on experience in server infrastructure deployment, video streaming protocols, banking PC deployments, and deterministic software engineering.",
     
     expHeading: "Work Experience",
     job1Title: "IT Researcher",
     job1Company: "• ADZKIA KEDINASAN PUSAT",
     job1Meta: "Nov 2024 - Jun 2025 (Freelance) • Medan",
-    job1Desc: "Responsible for architecting and evaluating <strong>Nginx Media Server</strong> infrastructure on Linux Virtual Machines, benchmarking 4 video streaming protocols (<strong>RTMP, HLS, RTSP, and HTTP</strong>). Conducted internal network security audits and <strong>vulnerability assessments (VAPT)</strong>. Explored prototype development of <strong>face-recognition</strong> attendance systems and interactive chatbots for internal automation.",
+    job1Desc: "Responsible for architecting, configuring, and benchmarking <strong>Nginx Media Server</strong> infrastructure on Linux Virtual Machines across 4 streaming protocols (<strong>RTMP, HLS, RTSP, and HTTP</strong>). Conducted internal network security audits and <strong>vulnerability assessments (VAPT)</strong>, firewall rules enforcement, and server architectural documentation.",
     
     job2Title: "IT Support (Vendor Outsourcing)",
     job2Company: "• PT Bank Sinarmas, Tbk",
@@ -125,7 +125,7 @@ window.I18N_DICT = {
     leadShunaTitle: "SHUNA AI Project Lead",
     leadShunaScore: "Score: 81.8",
     leadShunaOrg: "MSIB Batch 6 Kampus Merdeka @ Skilvul",
-    leadShunaDesc: "Led the engineering team in designing intelligent reporting applications utilizing Machine Learning and Natural Language Processing (NLP).",
+    leadShunaDesc: "Led the engineering team in designing data processing pipelines and text classification workflows utilizing Natural Language Processing (NLP) with Python.",
     
     leadOrgTitle: "Organizational Leadership",
     leadOrgSub: "HMPS Informatika • Univ. Potensi Utama",

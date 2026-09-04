@@ -234,19 +234,24 @@ const TOOLS_REGISTRY = [
   // ==========================================
   {
     id: "ai-data-analyzer",
-    title: "AI Sentiment & Data Analyzer",
-    title_en: "AI Sentiment & Data Analyzer",
+    title: "NLP Sentiment & Data Analyzer",
+    title_en: "NLP Sentiment & Data Analyzer",
     category: "database",
     techBadge: "Python • Pandas • VADER NLP",
     techColor: "bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300 border-purple-200 dark:border-purple-800",
-    icon: "brain-circuit",
-    description: "Analisis otomatis dataset survei & ulasan dari file CSV menggunakan algoritma VADER Sentiment NLP dan visualisasi Chart.js.",
-    desc_en: "Automated feedback & review dataset processing from CSV files using VADER Sentiment NLP scoring and Chart.js visualization.",
+    icon: "bar-chart-3",
+    description: "Analisis dataset survei & ulasan teks dari file CSV menggunakan algoritma leksikon VADER NLP dan visualisasi Chart.js.",
+    desc_en: "Processes survey & review datasets from CSV files using rule-based VADER NLP lexicon scoring and Chart.js visualization.",
     renderFn: "renderAiDataAnalyzer",
     docs: `
       <div class="space-y-4">
-        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Arsitektur Pemrosesan Data & NLP</h4>
-        <p>Membaca dataset tabular CSV, mengekstraksi kolom teks, dan menghitung compound polarity score sentiment secara otomatis.</p>
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Arsitektur Pemrosesan Leksikon NLP & Vektorisasi Data</h4>
+        <p>Modul analisis teks deterministik berbasis aturan (rule-based NLP) menggunakan kamus leksikon VADER untuk evaluasi sentimen terstruktur:</p>
+        <ul class="list-disc pl-5 space-y-1 text-xs">
+          <li><strong>Text Normalization & Tokenization:</strong> Pembersihan string, penanganan intensitas tanda baca, dan filtering leksikon.</li>
+          <li><strong>Compound Valence Scoring:</strong> Menghitung nilai compound polarity score dengan normalisasi matematis.</li>
+          <li><strong>Data Aggregation:</strong> Agregasi distribusi rating dan visualisasi statistik via Chart.js.</li>
+        </ul>
       </div>
     `
   },

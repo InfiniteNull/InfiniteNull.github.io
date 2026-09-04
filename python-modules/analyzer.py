@@ -1,5 +1,5 @@
 """
-AI Data Analyzer - Sentiment Analysis Service (Python)
+NLP Data Analyzer - Sentiment Analysis Service (Python)
 Personal Developer Portfolio - Software Engineering Suite
 """
 
@@ -7,7 +7,7 @@ import pandas as pd
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import io
 
-# Inisialisasi Model VADER Sentiment
+# Inisialisasi Leksikon VADER Sentiment
 analyzer = SentimentIntensityAnalyzer()
 
 def analyze_sentiment(text: str) -> str:
@@ -50,9 +50,9 @@ def process_file_data(file_content: bytes, filename: str):
     if not text_column:
         raise ValueError("Tidak ditemukan kolom teks di dalam dataset.")
 
-    # Eksekusi AI Sentiment Analysis menggunakan vektorisasi Pandas
-    df['AI_Sentiment'] = df[text_column].apply(analyze_sentiment)
-    sentiment_counts = df['AI_Sentiment'].value_counts().to_dict()
+    # Eksekusi Analisis Sentimen NLP menggunakan vektorisasi Pandas
+    df['NLP_Sentiment'] = df[text_column].apply(analyze_sentiment)
+    sentiment_counts = df['NLP_Sentiment'].value_counts().to_dict()
 
     return {
         "total_rows": len(df),

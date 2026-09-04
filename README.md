@@ -24,10 +24,10 @@
   * **Junior Network Administrator** (BBPSDMP Kominfo Medan, 2023)
 * **Work & Project Experience:**
   * **IT Researcher** — *ADZKIA KEDINASAN PUSAT* (Nov 2024 - Jun 2025 | Freelance | Medan)  
-    *Architected & tested Nginx Media Server on Linux Virtual Machines, benchmarked 4 video streaming protocols (RTMP, HLS, RTSP, HTTP), conducted network security vulnerability assessments, and developed face-recognition attendance & chatbot prototypes.*
+    *Architected, configured, and benchmarked Nginx Media Server on Linux Virtual Machines across 4 streaming protocols (RTMP, HLS, RTSP, HTTP), conducted internal network security audits (VAPT), firewall rules enforcement, and server architectural documentation.*
   * **IT Support** — *PT Bank Sinarmas, Tbk* (Dec 2023 | Freelance / Outsourcing Vendor | KC Medan Mangkubumi)  
     *Executed enterprise PC deployment: hardware assembly, secure user data migration, OS configuration, structured cable management, and peripheral network domain onboarding.*
-  * **SHUNA AI Project Lead** — *MSIB Batch 6 Kampus Merdeka @ Skilvul* (Score: 81.8 — Machine Learning & Natural Language Processing).
+  * **SHUNA AI Project Lead** — *MSIB Batch 6 Kampus Merdeka @ Skilvul* (Score: 81.8 — NLP text classification pipelines & Python workflows).
   * **Organizational Leadership** — *HMPS Informatika Universitas Potensi Utama* (Internal administrative governance).
 * **Technical Toolkit:** Burp Suite, OWASP ZAP, OSINT, Linux VM, Nginx, Python, Node.js, SQLite, JavaScript ES6+, Tailwind CSS.
 
@@ -64,34 +64,31 @@ portfolio-hub/
 │   ├── jwt-debugger.js            # JSON Web Token Claims & Signature Verifier
 │   ├── ai-data-analyzer.js        # NLP Sentiment Analysis & Chart.js Visualizer
 │   ├── inventory-sandbox.js       # CRUD Asset & SQLite Database Simulation
-│   ├── library-sandbox.js         # Relational SQL Borrowing & Transaction Engine
-│   ├── json-sql-converter.js      # JSON Array to SQL INSERT & Schema Generator
-│   ├── log-analyzer.js            # Nginx Access Log Regex Parser & Top IP Aggregator
-│   ├── news-scraper.js            # Tech News Scraper & Feed Aggregator
-│   ├── api-checker.js             # HTTP REST API Latency & Status Checker
-│   ├── image-optimizer.js         # Canvas Image Compressor & WebP Converter
-│   ├── currency-converter.js      # Real-Time Currency Exchange & Offline Cache
-│   ├── typing-test.js             # WPM & Typing Accuracy Benchmark Engine
-│   ├── raid-calculator.js         # RAID 0/1/5/6/10 Storage & Fault Tolerance Engine
-│   ├── psu-calculator.js          # Hardware Component Wattage & PSU Estimator
-│   ├── regex-tester.js            # Interactive RegExp Match & Group Highlight Sandbox
-│   ├── markdown-preview.js        # Markdown to Semantic HTML Live Preview Editor
-│   └── code-snippets.js           # Full Source Code Database for Code Inspector
-├── python-modules/             # Standalone Python Source Modules
-│   ├── analyzer.py                # Pandas & VADER Sentiment Script
-│   ├── scraper.py                 # BeautifulSoup4 Web Scraper
-│   └── requirements.txt           # Python Environment Dependencies
-├── backend-modules/            # Standalone Node.js Backend Modules
-│   └── package.json               # Express, SQLite3, Bcrypt, JWT Dependencies
-├── PANDUAN_WAWANCARA.md        # Technical Interview Guide & Architecture Q&A
+│   ├── library-sandbox.js         # Relational Database Borrowing & Circulation
+│   ├── json-sql-converter.js      # Batch JSON to SQL DDL/DML Schema Transformer
+│   ├── log-analyzer.js            # Nginx Web Server Access Log Metrics & Top IPs
+│   ├── api-checker.js             # REST API Latency Pinger & Payload Inspector
+│   ├── image-optimizer.js         # Canvas Image Resizer & WebP/PNG/JPG Converter
+│   ├── currency-converter.js      # Real-Time Multi-Currency Forex Rate Calculator
+│   ├── typing-test.js             # 60s Typing Benchmark (WPM & Accuracy Metric)
+│   ├── news-scraper.js            # Curated Tech Feed & Automation Scraper
+│   ├── raid-calculator.js         # Storage Array RAID 0/1/5/6/10 Capacity Calculator
+│   ├── psu-calculator.js          # Hardware Wattage & Power Supply Estimator
+│   ├── regex-tester.js            # Live Regular Expression Evaluator & Highlighter
+│   └── markdown-preview.js        # Real-Time Semantic Markdown-to-HTML Live Engine
+├── python-modules/             # Standalone Python CLI & Microservice Backends
+    ├── analyzer.py                # Pandas & VADER Sentiment NLP Pipeline
+    ├── auth_service.py            # Bcrypt Password Hashing & JWT Authentication
+    ├── library_system.py          # SQLite Relational Database Management Script
+    └── scraper.py                 # BeautifulSoup & Requests Web Scraper
 └── README.md                   # Primary Repository Documentation
 ```
 
 ---
 
-## 22 Integrated Tools Catalog
+## Interactive Tools Inventory
 
-| No | Tool Name | Category | Key Capabilities |
+| No | Tool Name | Pillar Category | Core Capabilities |
 |:---:|---|---|---|
 | 1 | **IP Subnetting & VLSM Calculator** | Networking & Server | Calculates Network ID, Broadcast, Subnet Mask, Host Range, and Binary representation. |
 | 2 | **Port Directory & Firewall Rules** | Networking & Server | Standard port directory and instant command generator for UFW, iptables, and Mikrotik. |
@@ -104,7 +101,7 @@ portfolio-hub/
 | 9 | **Password Entropy & Brute-Force** | System Security | Calculates Shannon entropy bits, password policy compliance, and cracking duration on CPU vs GPU. |
 | 10 | **Security Payload Encoder / Decoder** | System Security | Multi-format conversions: Base64, Hexadecimal, URL-Encoding, HTML Entities, and Unicode. |
 | 11 | **JWT Inspector & Claims Debugger** | System Security | Deconstructs Header, Payload claims, expiration timestamps, and HMACSHA256 signature verification. |
-| 12 | **AI Sentiment & Data Analyzer** | Database & Backend | Ingests CSV files, detects review columns, calculates VADER NLP scores, and renders Chart.js graphs. |
+| 12 | **NLP Sentiment & Data Analyzer** | Database & Backend | Ingests CSV files, detects review columns, calculates VADER NLP scores, and renders Chart.js graphs. |
 | 13 | **Inventory & Warehouse CRUD** | Database & Backend | Asset management with RESTful HTTP methods (GET, POST, PUT, DELETE) and low-stock alerts. |
 | 14 | **Library Management System** | Database & Backend | Relational book catalog and borrowing transactions with SQLite ACID data integrity. |
 | 15 | **JSON to SQL / CSV Converter** | Database & Backend | Converts raw JSON arrays into `CREATE TABLE` DDL, batch `INSERT INTO` DML, and structured CSV. |

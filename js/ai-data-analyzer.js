@@ -1,6 +1,6 @@
 /**
  * ai-data-analyzer.js
- * Tool: AI Sentiment & Data Analyzer
+ * Tool: NLP Sentiment & Dataset Analyzer
  * Menganalisis sentimen ulasan teks/survei pengguna dan dataset CSV menggunakan NLP (VADER Polarity Score).
  */
 
@@ -28,11 +28,11 @@ window.renderAiDataAnalyzer = function(container) {
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
               <h4 class="text-sm font-bold text-slate-900 dark:text-white">Upload File CSV atau Gunakan Contoh Data</h4>
-              <p class="text-xs text-slate-500">Menganalisis kolom review/feedback secara otomatis menggunakan NLP.</p>
+              <p class="text-xs text-slate-500">Menganalisis kolom review/feedback secara otomatis menggunakan NLP Leksikon.</p>
             </div>
             <div class="flex items-center gap-2">
               <button id="aiLoadSampleCsvBtn" class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg text-xs font-semibold transition flex items-center gap-1.5">
-                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-500"></i>
+                <i data-lucide="database" class="w-3.5 h-3.5 text-sky-500"></i>
                 <span>Gunakan Contoh Data Ulasan</span>
               </button>
               <label class="px-3 py-1.5 bg-sky-600 hover:bg-sky-700 text-white rounded-lg text-xs font-semibold transition flex items-center gap-1.5 cursor-pointer">
@@ -44,7 +44,7 @@ window.renderAiDataAnalyzer = function(container) {
           </div>
         </div>
 
-        <!-- AI Metrics & Visualization (Hidden initially until data loaded) -->
+        <!-- Sentiment Metrics & Statistical Visualization -->
         <div id="aiAnalysisResults" class="space-y-6">
           
           <!-- Stat Summary Cards -->

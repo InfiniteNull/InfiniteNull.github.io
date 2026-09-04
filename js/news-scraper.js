@@ -48,7 +48,7 @@ window.renderNewsScraper = function(container) {
     { title: "Transformasi Arsitektur Web Modern: Microservices vs Monolith di Skala Enterprise", points: 284, author: "cloud_architect", time: "1 jam lalu", url: "https://news.ycombinator.com" },
     { title: "Standardisasi RESTful API dan Keamanan Data Pengguna dengan JWT & Bcrypt", points: 195, author: "dev_secops", time: "2 jam lalu", url: "https://news.ycombinator.com" },
     { title: "Python vs Node.js: Memilih Ekosistem Terbaik untuk Web Service dan Analisis Big Data", points: 342, author: "data_engineer", time: "3 jam lalu", url: "https://news.ycombinator.com" },
-    { title: "Perkembangan Model AI Lokal dan NLP Sentiment Analysis pada Sistem Modern", points: 156, author: "ai_researcher", time: "4 jam lalu", url: "https://news.ycombinator.com" },
+    { title: "Optimasi Jaringan Linux & Implementasi Nginx Media Server pada Arsitektur Modern", points: 156, author: "sysadmin_lead", time: "4 jam lalu", url: "https://news.ycombinator.com" },
     { title: "Optimasi Query Database Relasional SQL untuk Menangani Jutaan Data Transaksi", points: 210, author: "db_admin", time: "5 jam lalu", url: "https://news.ycombinator.com" }
   ];
 

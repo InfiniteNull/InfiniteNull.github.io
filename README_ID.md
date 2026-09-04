@@ -24,10 +24,10 @@
   * **Junior Network Administrator** (BBPSDMP Kominfo Medan, 2023)
 * **Pengalaman Kerja & Proyek:**
   * **IT Researcher** — *ADZKIA KEDINASAN PUSAT* (Nov 2024 - Jun 2025 | Freelance | Medan)  
-    *Merancang infrastruktur Nginx Media Server (Linux VM), menguji 4 protokol streaming (RTMP, HLS, RTSP, HTTP), melaksanakan audit keamanan jaringan (VAPT), serta merancang prototipe absensi Face Recognition & chatbot interaktif.*
+    *Merancang, mengonfigurasi, dan menguji infrastruktur Nginx Media Server (Linux VM), melakukan benchmark 4 protokol streaming (RTMP, HLS, RTSP, HTTP), audit keamanan jaringan (VAPT), pembuatan aturan firewall, serta dokumentasi arsitektur server.*
   * **IT Support** — *PT Bank Sinarmas, Tbk* (Des 2023 | Freelance / Vendor Outsourcing | KC Medan Mangkubumi)  
     *Melaksanakan proyek PC Deployment: perakitan desktop, instalasi OS, backup & migrasi profil user aman, cable management, hingga konfigurasi peripheral terhubung ke domain internal bank.*
-  * **Ketua Tim Proyek SHUNA AI** — *MSIB Batch 6 Kampus Merdeka di Skilvul* (Nilai: 81.8 — Machine Learning & NLP).
+  * **Ketua Tim Proyek SHUNA AI** — *MSIB Batch 6 Kampus Merdeka di Skilvul* (Nilai: 81.8 — Pipeline klasifikasi teks NLP & Python data workflow).
   * **Kepemimpinan Organisasi** — *HMPS Informatika Universitas Potensi Utama* (Reaktivasi & tata kelola internal).
 * **Tools & Keahlian Teknis:** Burp Suite, OWASP ZAP, OSINT, Linux VM, Nginx, Python, Node.js, SQLite, JavaScript ES6+, Tailwind CSS.
 
@@ -105,7 +105,7 @@ portfolio-hub/
 | 9 | **Password Entropy & Brute-Force** | Keamanan Sistem | Perhitungan entropi bit, kebijakan password, dan waktu cracking CPU vs GPU. |
 | 10 | **Security Payload Encoder / Decoder** | Keamanan Sistem | Konversi format Base64, Hexadecimal, URL-Encode, HTML Entities, dan Unicode. |
 | 11 | **JWT Inspector & Claims Debugger** | Keamanan Sistem | Dekonstruksi Header, Payload claims, expiry, dan verifikasi HMACSHA256. |
-| 12 | **AI Sentiment & Data Analyzer** | Database & Backend | Upload CSV, deteksi ulasan, skor NLP VADER, dan grafik Chart.js. |
+| 12 | **NLP Sentiment & Data Analyzer** | Database & Backend | Upload CSV, deteksi ulasan, skor NLP VADER, dan grafik Chart.js. |
 | 13 | **Inventory & Warehouse CRUD** | Database & Backend | Manajemen inventaris barang dengan RESTful API dan notifikasi stok menipis. |
 | 14 | **Library Management System** | Database & Backend | Katalog buku dan transaksi peminjaman dengan integritas ACID SQL. |
 | 15 | **JSON to SQL / CSV Converter** | Database & Backend | Konversi JSON ke perintah `CREATE TABLE`, batch `INSERT`, dan CSV. |

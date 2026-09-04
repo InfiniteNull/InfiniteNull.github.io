@@ -10,8 +10,8 @@ window.TOOL_CODE_SNIPPETS = {
     language: "Python",
     path: "python-modules/analyzer.py",
     code: `# ================================================================
-# MODUL AI & SENTIMENT ANALYSIS (PYTHON)
-# Menggunakan Pandas untuk data frame & VADER untuk pemrosesan NLP
+# MODUL PEMROSESAN DATA & NLP SENTIMEN (PYTHON)
+# Menggunakan Pandas untuk data frame & VADER untuk pemrosesan teks NLP
 # ================================================================
 
 import pandas as pd

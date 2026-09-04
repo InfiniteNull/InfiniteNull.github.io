@@ -34,7 +34,7 @@ window.renderPsuCalculator = function(container) {
               <option value="75">Entry Discrete GPU (GTX 1650 / RX 6400 - 75W)</option>
               <option value="170">Mid-Range Workstation (RTX 4060 / RTX 3060 - 170W)</option>
               <option value="285">High-End Rendering (RTX 4070 Ti / 4080 - 285W)</option>
-              <option value="450">Ultra AI / ML Workstation (RTX 4090 - 450W)</option>
+              <option value="450">Extreme GPU Compute / CUDA Workstation (RTX 4090 - 450W)</option>
             </select>
           </div>
 
@@ -130,7 +130,7 @@ window.renderPsuCalculator = function(container) {
       badge.textContent = "Mid-Range Technical Workstation";
       badge.className = "px-2.5 py-0.5 rounded text-xs font-mono font-bold bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300";
     } else {
-      badge.textContent = "Heavy-Duty AI / Rendering Workstation";
+      badge.textContent = "High-End Compute & Rendering Workstation";
       badge.className = "px-2.5 py-0.5 rounded text-xs font-mono font-bold bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300";
     }
   }
