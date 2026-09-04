@@ -1,23 +1,26 @@
-# 🚀 Dev & Data Tools Suite | InfiniteNull, S.Kom
+# 🚀 Dev & Data Tools Suite | Rizki Ananda, S.Kom
 
 > **Platform Web Terintegrasi: 9 Tools Fungsional (Data Science, Backend RESTful API, Database SQL & Modern Web Utilities)**  
-> *Portofolio teknis mandiri oleh **InfiniteNull, S.Kom** — Lulusan S1 Informatika Universitas Potensi Utama & Praktisi IT Serba Bisa.*
+> *Portofolio teknis mandiri oleh **Rizki Ananda, S.Kom** (@InfiniteNull) — Lulusan S1 Informatika Universitas Potensi Utama, Praktisi IT Support, Network Administrator & VAPT Security.*
 
 ---
 
-## 👨‍💻 Profil Pengembang
+## 👨‍💻 Profil Profesional
 
-* **Nama / Handle:** InfiniteNull, S.Kom
+* **Nama:** Rizki Ananda, S.Kom
+* **GitHub:** [@InfiniteNull](https://github.com/InfiniteNull)
 * **Pendidikan:** S1 Informatika — Universitas Potensi Utama
-* **Fokus Keahlian:** IT Support, Administrasi Jaringan, Keamanan Sistem (VAPT), Analisis Data (NLP/Python), & Full-Stack Web Development.
+* **Fokus Spesialisasi:** IT Support, Network Administration, System Security & VAPT, Data Analytics & Software Engineering.
 * **Sertifikasi Nasional:**
   * 📜 **Fundamental of Associate Network Administrator** (Komdigi RI, 2026)
   * 📜 **Junior Network Administrator** (BBPSDMP Kominfo Medan, 2023)
-* **Pengalaman Lapangan & Kepemimpinan:**
-  * **IT Support** @ *Bengkel Mobil Lian* (Hardware/Software, Troubleshooting, OS, LAN Maintenance).
-  * **IT Researcher** @ *Yayasan Amal Bakti Abdi* (Evaluasi sistem & pengolahan data operasional).
-  * **Ketua Tim Proyek SHUNA AI** @ *MSIB Batch 6 Kampus Merdeka di Skilvul* (Lulus Nilai 81.8 — Machine Learning & NLP).
-  * **Kepemimpinan Organisasi** @ *HMPS Informatika* (Reaktivasi & tata kelola internal).
+* **Pengalaman Kerja Teknis:**
+  * 🏛️ **IT Researcher** @ *ADZKIA KEDINASAN PUSAT* (Nov 2024 - Jun 2025 | Freelance | Medan)  
+    *Merancang infrastruktur Nginx Media Server (Linux VM), pengujian 4 protokol streaming (RTMP, HLS, RTSP, HTTP), Network Security & Vulnerability Assessment (VAPT), serta eksplorasi prototipe Face Recognition & Chatbot.*
+  * 🏦 **IT Support** @ *PT Bank Sinarmas, Tbk* (Des 2023 | Freelance / Vendor Outsourcing | KC Medan Mangkubumi)  
+    *Proyek PC Deployment: perakitan desktop, instalasi OS, backup & migrasi data profil user aman, cable management, serta konfigurasi peripheral hingga terhubung ke domain internal bank.*
+  * 🤖 **Ketua Tim Proyek SHUNA AI** @ *MSIB Batch 6 Kampus Merdeka di Skilvul* (Lulus Nilai 81.8 — Machine Learning & NLP).
+  * 👥 **Kepemimpinan Organisasi** @ *HMPS Informatika Universitas Potensi Utama* (Reaktivasi & tata kelola internal).
 * **Security & Pentesting:** VAPT (Burp Suite, OWASP ZAP), OSINT, Linux Server & Nginx.
 
 ---
@@ -40,7 +43,7 @@ Proyek ini menggabungkan **9 modul aplikasi fungsional** ke dalam satu portal an
 | **Node.js** | `Express.js` `Bcrypt` `JSON Web Token` `Sharp` | Backend Service, Authentication, Image Processing |
 | **SQL (SQLite)** | `SQLite3` `Relational Database` `Transactions` | Skema Tabel `users`, `products`, `books`, `borrowings` |
 | **Frontend Web** | `JavaScript ES6+` `HTML5 Canvas` `Tailwind CSS` `Chart.js` | Single Page Application, Chart Analytics, Responsivitas |
-| **Keamanan (Security)** | `Burp Suite` `OWASP ZAP` `VAPT` `OSINT` | Standar keamanan input, parameterized queries, token validation |
+| **Infrastruktur & Keamanan** | `Nginx Media Server` `Linux VM` `Burp Suite` `OWASP ZAP` `VAPT` | Streaming Protocols, Vulnerability Assessment, Parameterized SQL Security |
 
 ---
 
@@ -90,27 +93,6 @@ portfolio-hub/
 
 ---
 
-## 🚀 Cara Menjalankan Secara Lokal
-
-### 1. Menjalankan Website Portofolio (Frontend):
-Buka file `index.html` langsung di browser Chrome/Edge, atau menggunakan Live Server di VS Code.
-
-### 2. Menjalankan Modul Python:
-```bash
-cd python-modules
-pip install -r requirements.txt
-python analyzer.py
-```
-
-### 3. Menjalankan Modul Backend Node.js:
-```bash
-cd backend-modules
-npm install
-npm start
-```
-
----
-
 ## 🌐 Live Demo & Deployment
 
 Website resmi aktif dan live di GitHub Pages:  
@@ -119,5 +101,6 @@ Website resmi aktif dan live di GitHub Pages:
 ---
 
 ## 📬 Kontak & Tautan
+* **Nama:** Rizki Ananda, S.Kom
 * **GitHub:** [https://github.com/InfiniteNull](https://github.com/InfiniteNull)
-* **Kandidat:** InfiniteNull, S.Kom (S1 Informatika — Universitas Potensi Utama)
+* **Almamater:** S1 Informatika — Universitas Potensi Utama

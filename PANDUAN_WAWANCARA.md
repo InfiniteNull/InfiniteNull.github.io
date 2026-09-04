@@ -1,59 +1,70 @@
 # 🎓 BUKU SAKU & PANDUAN WAWANCARA TEKNIS PENGEMBANG
 ### *Panduan Menjawab Pertanyaan Arsitektur untuk Portofolio Dev & Data Tools Suite*
-**Kandidat: InfiniteNull, S.Kom (Universitas Potensi Utama)**
+**Kandidat: Rizki Ananda, S.Kom (Universitas Potensi Utama | @InfiniteNull)**
 
-Dokumen ini disiapkan khusus agar Anda dapat menjawab setiap pertanyaan wawancara teknis dari recruiter, hiring manager, atau klien dengan percaya diri, sistematis, dan profesional berdasarkan pengalaman nyata Anda.
+Dokumen ini disiapkan khusus agar Anda (**Rizki Ananda, S.Kom**) dapat menjawab setiap pertanyaan wawancara teknis dari recruiter, hiring manager, atau klien dengan percaya diri, sistematis, dan profesional berdasarkan rekam jejak nyata Anda.
 
 ---
 
 ## 📌 1. Pertanyaan Pengantar: Penjelasan Diri & Proyek
 
-### Q: "Bisa ceritakan latar belakang dan apa yang Anda bangun pada portofolio ini?"
+### Q: "Bisa ceritakan latar belakang profesional Anda dan apa yang Anda bangun pada website ini?"
 > **Jawaban:**  
-> *"Selamat pagi/siang. Saya adalah lulusan **S1 Informatika (S.Kom) dari Universitas Potensi Utama** dan seorang Praktisi IT serba bisa dengan fokus di bidang **IT Support, Administrasi Jaringan, Keamanan Sistem (VAPT), serta Analisis Data & Rekayasa Web**.*  
-> *Saya memiliki pengalaman lapangan nyata sebagai **IT Support di Bengkel Mobil Lian** dalam pemeliharaan hardware, troubleshooting laptop/PC, dan maintenance LAN harian, serta sebagai **IT Researcher di Yayasan Amal Bakti Abdi** dalam mengevaluasi kebutuhan sistem operasional.*  
-> *Di samping itu, kompetensi jaringan saya tersertifikasi secara nasional (**Associate Network Administrator Komdigi 2026** dan **Junior Network Administrator Kominfo 2023**), serta memiliki kepemimpinan teruji sebagai **Ketua Tim Proyek SHUNA AI di program MSIB Batch 6 Skilvul (Lulus Nilai 81.8)**.*  
-> *Seluruh keahlian teknis ini saya integrasikan secara nyata ke dalam platform **Dev & Data Tools Suite** yang menggabungkan 9 modul fungsional open-source berbasis Python, Node.js, SQL, dan JavaScript modern."*
+> *"Selamat pagi/siang Bapak/Ibu. Nama saya **Rizki Ananda**, lulusan **S1 Informatika (S.Kom) dari Universitas Potensi Utama**. Saya adalah seorang Praktisi IT serba bisa dengan spesialisasi di bidang **IT Support, Administrasi Jaringan, Keamanan Sistem (VAPT), serta Analisis Data & Software Engineering**.*  
+> *Secara profesional, saya memiliki pengalaman kerja teknis di:*  
+> 1. ***IT Researcher di ADZKIA KEDINASAN PUSAT (Nov 2024 - Jun 2025):*** *Merancang & menguji infrastruktur Nginx Media Server pada Linux VM, pengujian 4 protokol streaming video (RTMP, HLS, RTSP, HTTP), pengujian keamanan jaringan (VAPT), serta prototipe absensi face recognition & chatbot.*  
+> 2. ***IT Support di PT Bank Sinarmas, Tbk (Des 2023):*** *Melaksanakan PC Deployment di KC Medan Mangkubumi, meliputi perakitan desktop, instalasi OS, backup & migrasi data profil user secara aman, cable management, hingga konfigurasi peripheral terhubung ke domain internal bank.*  
+> *Kompetensi saya diperkuat oleh sertifikasi **Associate Network Administrator (Komdigi RI 2026)** dan **Junior Network Administrator (Kominfo 2023)**, serta kepemimpinan sebagai **Ketua Tim Proyek SHUNA AI di MSIB Skilvul (Nilai 81.8)**.*  
+> *Seluruh keahlian ini saya wujudkan dalam website portofolio interaktif **Dev & Data Tools Suite** yang menggabungkan 9 tools utilitas open-source berbasis Python, Node.js, SQL, dan Modern JavaScript."*
 
 ---
 
-## 🐍 2. Pertanyaan Mengenai Python & AI / Data
+## 🖥️ 2. Pertanyaan Mengenai Infrastruktur, Server & Protokol Streaming
 
-### Q: "Bagaimana implementasi Python dan NLP pada proyek ini dan pengalaman Anda di SHUNA AI?"
+### Q: "Bisa jelaskan pengalaman Anda dalam merancang Nginx Media Server dan protokol streaming di Adzkia Kedinasan?"
 > **Jawaban:**  
-> *"Pada program MSIB Batch 6 Skilvul, saya memimpin tim Proyek SHUNA AI merancang aplikasi pelaporan cerdas berbasis Machine Learning & NLP.*  
-> *Pengalaman tersebut saya terapkan di modul **AI Data Analyzer** pada website ini:*  
-> *1. Menggunakan **Pandas** untuk membaca dan memanipulasi dataset ulasan/survei secara efisien.*  
-> *2. Menerapkan algoritma **VADER Sentiment Analysis (NLP)** untuk menghitung nilai kepuasan (compound polarity score) dari teks ulasan pengguna secara otomatis.*  
-> *3. Menghasilkan visualisasi statistik interaktif (Chart.js) untuk pengambilan keputusan bisnis berbasis data empiris.*  
-> *Pada modul **News Scraper**, saya menggunakan **BeautifulSoup4** dan **Requests** untuk mengotomasi penarikan informasi berita teknologi dari web secara terstruktur."*
+> *"Di Adzkia Kedinasan Pusat, saya merancang dan menguji arsitektur Nginx Media Server pada Virtual Machine Linux:*  
+> *1. Mengonfigurasi modul Nginx RTMP untuk menerima ingest video stream secara real-time.*  
+> *2. Menguji empat protokol streaming: **RTMP** untuk low-latency transmission, **HLS** untuk kompatibilitas lintas browser modern, **RTSP** untuk feed kamera/CCTV, serta **HTTP** untuk delivery konten video terdistribusi.*  
+> *3. Melakukan audit keamanan jaringan dan vulnerability assessment (VAPT) internal untuk memastikan server aman dari potensi eksploitasi."*
 
 ---
 
-## 🟢 3. Pertanyaan Mengenai Backend, Keamanan (VAPT), & Database
+## 🏦 3. Pertanyaan Mengenai IT Support & PC Deployment Perbankan
 
-### Q: "Bagaimana Anda menerapkan prinsip keamanan sistem (VAPT) dan arsitektur database?"
+### Q: "Bagaimana Anda menangani proyek PC Deployment di Bank Sinarmas dengan standar keamanan tinggi?"
 > **Jawaban:**  
-> *"Berdasarkan pemahaman saya dalam Vulnerability Assessment & Penetration Testing (VAPT) menggunakan tools seperti **Burp Suite** dan **OWASP ZAP**:*  
-> *1. **Autentikasi & Password:** Password pengguna tidak pernah disimpan dalam plain text, melainkan di-hash dengan **Bcrypt (10 salt rounds)**, serta sesi dikelola menggunakan **JWT (JSON Web Token)** yang stateless.*  
-> *2. **SQL Injection Prevention:** Seluruh query ke basis data SQLite menggunakan parameterized queries (`?`) untuk mencegah injeksi kode berbahaya.*  
-> *3. **Integritas Transaksi:** Pada sistem perpustakaan dan inventaris, transaksi peminjaman dirancang atomik untuk memastikan konsistensi pengurangan stok dan pencatatan riwayat."*
+> *"Di Bank Sinarmas KC Medan Mangkubumi, integritas data dan kelancaran operasional adalah prioritas utama:*  
+> *1. **Backup & Migrasi Data:** Memastikan seluruh data profil user, bookmark perbankan, dan sertifikat digital dibackup sebelum migrasi ke sistem operasi baru.*  
+> *2. **Standarisasi Hardware & Kerapian:** Melakukan unboxing, instalasi OS enterprise, serta cable management yang rapi dan aman.*  
+> *3. **Konfigurasi Peripheral & Domain:** Mengonfigurasi printer slip teller, scanner dokumen nasabah, dan memastikan PC terdaftar pada Active Directory Domain perbankan dengan hak akses yang tepat."*
 
 ---
 
-## 🌐 4. Pertanyaan Mengenai Jaringan & Infrastruktur
+## 🐍 4. Pertanyaan Mengenai AI / NLP (SHUNA AI & Tools Suite)
 
-### Q: "Bagaimana sertifikasi Komdigi & Kominfo Anda mendukung peran software development?"
+### Q: "Bagaimana Anda menerapkan Machine Learning dan NLP pada proyek SHUNA AI dan AI Data Analyzer?"
 > **Jawaban:**  
-> *"Sertifikasi **Associate Network Administrator (Komdigi RI 2026)** dan **Junior Network Administrator (Kominfo 2023)** memberi saya fondasi mendalam tentang bagaimana aplikasi beroperasi di atas infrastruktur jaringan nyata:*  
-> *Perancangan skema IP Addressing, konfigurasi routing, pengelolaan server Linux dan web server Nginx, serta pemantauan latensi jaringan (seperti yang saya implementasikan pada tool **API Health & Latency Checker**).*  
-> *Kombinasi ini membuat saya memahami full-cycle: mulai dari fisik jaringan, konfigurasi server, keamanan, hingga lapisan aplikasi pengguna."*
+> *"Sebagai Ketua Tim Proyek SHUNA AI pada MSIB Batch 6 Skilvul, saya memimpin perancangan sistem pelaporan berbasis Machine Learning & NLP.*  
+> *Keahlian tersebut saya tuangkan pada modul **AI Data Analyzer** di website ini:*  
+> *Menggunakan **Pandas** untuk membaca dataset feedback survei secara cepat, dan menerapkan **VADER Sentiment Analysis (NLP)** untuk mengekstrak compound polarity score ulasan masyarakat/pengguna menjadi sentimen Positif, Netral, atau Negatif, yang divisualisasikan dengan Chart.js secara real-time."*
 
 ---
 
-## 💡 5. Tips Sikap & Komunikasi Saat Wawancara:
-1. **Percaya Diri & Terstruktur:** Ceritakan pengalaman nyata di Bengkel Mobil Lian, Yayasan Amal Bakti Abdi, dan proyek SHUNA AI dengan antusias.
-2. **Tunjukkan Live Demo:** Buka website Anda di [https://infinitenull.github.io/](https://infinitenull.github.io/), klik tombol **Tentang Pengembang** dan buka tab **Source Code Asli** di setiap tool.
-3. **Tekankan Karakter Serba Bisa (Versatile):** Perusahaan sangat menyukai kandidat yang tidak hanya bisa koding web, tapi juga paham troubleshooting PC, jaringan LAN, server Linux, keamanan VAPT, dan analisis data.
+## 🛡️ 5. Pertanyaan Mengenai Keamanan Sistem (VAPT) & Database
 
-**Semoga sukses dalam pengembangan karier profesional Anda! 🚀**
+### Q: "Bagaimana Anda memastikan sistem yang Anda bangun aman dari serangan siber?"
+> **Jawaban:**  
+> *"Dengan pemahaman VAPT (menggunakan tools seperti **Burp Suite** dan **OWASP ZAP**):*  
+> *1. **Autentikasi Aman:** Password dienkripsi dengan **Bcrypt (10 salt rounds)** dan sesi diamankan dengan **JSON Web Token (JWT)**.*  
+> *2. **Pencegahan SQL Injection:** Setiap interaksi dengan database SQLite menggunakan parameterized queries (`?`).*  
+> *3. **Integritas Transaksi:** Pada sistem perpustakaan dan inventaris, transaksi peminjaman dirancang atomik agar tidak terjadi inkonsistensi stok saat banyak request terjadi bersamaan."*
+
+---
+
+## 💡 6. Tips Sikap & Komunikasi Saat Wawancara:
+1. **Perkenalkan Diri dengan Jelas:** *"Nama saya Rizki Ananda, S.Kom..."*
+2. **Tunjukkan Portofolio Live:** Buka website [https://infinitenull.github.io/](https://infinitenull.github.io/), tunjukkan modal profil lengkap Anda dan demo interaktif 9 tools.
+3. **Bawa Nilai Tambah (Value-Add):** Anda adalah kandidat unggul karena memiliki spektrum lengkap: **IT Support fisik di bank, server & streaming di Adzkia, jaringan tersertifikasi Komdigi/Kominfo, keamanan VAPT, serta koding full-stack Python & Node.js**.
+
+**Semoga sukses gemilang dalam karier profesional Anda, Rizki Ananda, S.Kom! 🚀**
