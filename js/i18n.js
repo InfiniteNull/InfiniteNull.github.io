@@ -15,8 +15,10 @@ window.I18N_DICT = {
 
     // Hero Section
     heroBadge: "Rizki Ananda, S.Kom • S1 Informatika",
-    heroTitle: "Halo, saya Rizki Ananda. Saya membuat aplikasi web & perkakas digital yang fungsional.",
-    heroDesc: "Lulusan Informatika yang suka mengeksplorasi kode, memecahkan masalah, dan mengembangkan proyek yang bermanfaat — mulai dari sistem manajemen rumah sakit hingga puluhan perkakas komputasi interaktif.",
+    heroTitle: "Rizki Ananda",
+    heroSubTitle: "Software & Web Developer",
+    heroAvailability: "Available for Projects & Opportunities",
+    heroDesc: "Fokus pada pengembangan aplikasi web, arsitektur backend, dan perkakas komputasi praktis dengan standar clean code.",
     btnHeroViewProjects: "Lihat Proyek ➔",
     btnHeroViewExp: "Pengalaman & Keahlian",
     
@@ -104,8 +106,10 @@ window.I18N_DICT = {
 
     // Hero Section
     heroBadge: "Rizki Ananda, S.Kom • Computer Science",
-    heroTitle: "Hi, I'm Rizki Ananda. I build functional web applications and digital tools.",
-    heroDesc: "Computer Science graduate passionate about crafting clean code, solving real-world problems, and building useful projects — from hospital management systems to interactive web tools.",
+    heroTitle: "Rizki Ananda",
+    heroSubTitle: "Software & Web Developer",
+    heroAvailability: "Available for Projects & Opportunities",
+    heroDesc: "Focused on building web applications, backend architectures, and practical engineering utilities with clean code standards.",
     btnHeroViewProjects: "View Projects ➔",
     btnHeroViewExp: "Experience & Skills",
     
@@ -221,6 +225,12 @@ window.setLanguage = function(lang) {
 
   const heroTitleText = document.getElementById('heroTitleText');
   if (heroTitleText) heroTitleText.textContent = dict.heroTitle;
+
+  const heroSubTitleText = document.getElementById('heroSubTitleText');
+  if (heroSubTitleText && dict.heroSubTitle) heroSubTitleText.textContent = dict.heroSubTitle;
+
+  const heroAvailabilityText = document.getElementById('heroAvailabilityText');
+  if (heroAvailabilityText && dict.heroAvailability) heroAvailabilityText.textContent = dict.heroAvailability;
 
   const heroDescText = document.getElementById('heroDescText');
   if (heroDescText) heroDescText.textContent = dict.heroDesc;

@@ -1194,6 +1194,109 @@ function toggleTheme() {
   }
 }
 
+
+// ==========================================
+// INTERACTIVE TERMINAL LOGIC
+// ==========================================
+window.runTerminalCmd = function(cmd) {
+  const terminalInput = document.getElementById('terminalInput');
+  if (terminalInput) {
+    terminalInput.value = cmd;
+    window.submitTerminal();
+  }
+};
+
+window.submitTerminal = function() {
+  const inputEl = document.getElementById('terminalInput');
+  const outputEl = document.getElementById('terminalOutput');
+  if (!inputEl || !outputEl) return;
+
+  const rawCmd = inputEl.value.trim();
+  if (!rawCmd) return;
+  const cmd = rawCmd.toLowerCase();
+  inputEl.value = '';
+
+  if (cmd === 'clear' || cmd === 'cls') {
+    outputEl.innerHTML = '';
+    return;
+  }
+
+  let responseHtml = '';
+
+  if (cmd === 'help') {
+    responseHtml = `
+      <div class="text-slate-300 pl-3 border-l-2 border-slate-600 text-[10px] sm:text-xs space-y-1">
+        <div><strong>Available Commands:</strong></div>
+        <div>• <span class="text-emerald-400">whoami</span>: Ringkasan profil pengembang</div>
+        <div>• <span class="text-emerald-400">stack</span>: Tech stack backend, frontend, & sistem</div>
+        <div>• <span class="text-emerald-400">projects</span>: Daftar sistem produksi utama</div>
+        <div>• <span class="text-emerald-400">simrs</span>: Buka aplikasi SIMRS Core</div>
+        <div>• <span class="text-emerald-400">devtools</span>: Buka workspace 29 Web Tools</div>
+        <div>• <span class="text-emerald-400">contact</span>: Informasi kontak & GitHub</div>
+        <div>• <span class="text-emerald-400">clear</span>: Bersihkan layar terminal</div>
+      </div>
+    `;
+  } else if (cmd === 'whoami') {
+    responseHtml = `
+      <div class="text-slate-300 pl-3 border-l-2 border-emerald-500/50">
+        <strong>Rizki Ananda, S.Kom</strong> (@InfiniteNull)<br>
+        <span class="text-slate-400 text-[10px]">S1 Informatika • Universitas Potensi Utama</span><br>
+        <span class="text-slate-400 text-[10px]">Track Record: IT Researcher (Adzkia Kedinasan), IT Support Deployment (Bank Sinarmas)</span>
+      </div>
+    `;
+  } else if (cmd === 'stack') {
+    responseHtml = `
+      <div class="text-sky-300 pl-3 border-l-2 border-sky-500/50 text-[10px] sm:text-xs">
+        {<br>
+        &nbsp;&nbsp;"backend": ["Laravel 11", "PHP 8.2", "Python", "FastAPI"],<br>
+        &nbsp;&nbsp;"frontend": ["JavaScript ES6+", "TailwindCSS", "HTML5"],<br>
+        &nbsp;&nbsp;"systems": ["Linux Virtual Machine", "Nginx Media Server", "Mikrotik RouterOS", "SQLite/MySQL"],<br>
+        &nbsp;&nbsp;"security": ["VAPT Assessment", "OWASP Standards", "Burp Suite", "OSINT"]<br>
+        }
+      </div>
+    `;
+  } else if (cmd === 'projects') {
+    responseHtml = `
+      <div class="text-slate-300 pl-3 border-l-2 border-purple-500/50 text-[10px] sm:text-xs space-y-1.5">
+        <div>1. <strong class="text-sky-400">SIMRS Core Enterprise</strong>: Hospital MIS (Permenkes 24/2022, BPJS V-Claim 2.0, SatuSehat FHIR R4)</div>
+        <div>2. <strong class="text-purple-400">Dev & Data Engineering Suite</strong>: 29 interactive utilities (IPv4 CIDR, Firewall CLI, Outlier QC, Hashes)</div>
+        <div class="pt-1"><a href="#projects" class="text-emerald-400 underline hover:text-emerald-300">➔ Scroll ke kartu proyek</a></div>
+      </div>
+    `;
+  } else if (cmd === 'simrs') {
+    window.location.hash = '#simrs';
+    responseHtml = `<div class="text-emerald-400 pl-3 border-l-2 border-emerald-500/50">Navigating to SIMRS Core Enterprise...</div>`;
+  } else if (cmd === 'devtools' || cmd === 'tools') {
+    window.location.hash = '#devtools';
+    responseHtml = `<div class="text-emerald-400 pl-3 border-l-2 border-emerald-500/50">Navigating to Dev & Data Suite (29 Tools)...</div>`;
+  } else if (cmd === 'contact' || cmd === 'github') {
+    responseHtml = `
+      <div class="text-slate-300 pl-3 border-l-2 border-sky-500/50 text-[10px] sm:text-xs">
+        GitHub: <a href="https://github.com/InfiniteNull" target="_blank" class="text-sky-400 underline">github.com/InfiniteNull</a><br>
+        Location: Medan, Indonesia
+      </div>
+    `;
+  } else if (cmd === 'date') {
+    responseHtml = `<div class="text-slate-300 pl-3 border-l-2 border-slate-500">${new Date().toString()}</div>`;
+  } else {
+    responseHtml = `
+      <div class="text-rose-400 pl-3 border-l-2 border-rose-500/50 text-[10px] sm:text-xs">
+        command not found: <code>${rawCmd}</code>. Ketik <span class="text-white font-bold cursor-pointer underline" onclick="window.runTerminalCmd('help')">help</span> untuk melihat daftar perintah.
+      </div>
+    `;
+  }
+
+  const newEntry = document.createElement('div');
+  newEntry.className = 'space-y-1';
+  newEntry.innerHTML = `
+    <div><span class="text-emerald-400">guest@rizkiananda</span>:<span class="text-sky-400">~</span>$ <span class="text-white">${rawCmd}</span></div>
+    ${responseHtml}
+  `;
+
+  outputEl.appendChild(newEntry);
+  outputEl.scrollTop = outputEl.scrollHeight;
+};
+
 // ==========================================
 // MASTER URL HASH ROUTER
 // Routes: #home, #projects, #experience, #simrs, #devtools
