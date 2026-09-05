@@ -43,7 +43,7 @@ window.I18N_DICT = {
     // SHUNA AI Card
     shunaCardTitle: "SHUNA AI Data Engine",
     shunaCardSub: "NLP & Machine Learning Engine",
-    shunaCardDesc: "Sistem analitik data terpadu yang dirancang dan dibangun mandiri oleh pengembang (95%+ implementasi kode end-to-end) pada program MSIB Skilvul (Score 81.8): pipeline NLP sentimen & ekstraksi aspek, simulator prediksi retensi/dropout tabular (Sigmoid Logistic Regression), serta time-series forecasting (Holt-Winters) dan deteksi lonjakan anomali Z-Score.",
+    shunaCardDesc: "Platform analitik data terpadu berbasis Machine Learning: pipeline NLP klasifikasi sentimen & ekstraksi aspek teks, simulator prediksi retensi tabular, time-series forecasting (Holt-Winters), serta deteksi lonjakan anomali Z-Score.",
     shunaBtnOpen: "Buka SHUNA AI",
     shunaBackLink: "Kembali ke Beranda",
 
@@ -144,7 +144,7 @@ window.I18N_DICT = {
     // SHUNA AI Card
     shunaCardTitle: "SHUNA AI Data Engine",
     shunaCardSub: "NLP & Machine Learning Engine",
-    shunaCardDesc: "Unified data intelligence suite independently engineered by the developer (95%+ solo end-to-end codebase execution) during MSIB Skilvul (Final Score 81.8): live NLP sentiment & aspect extraction pipeline, tabular retention & dropout predictor (Sigmoid Logistic Regression), plus Holt-Winters time-series forecasting and rolling Z-score anomaly detection.",
+    shunaCardDesc: "Integrated data intelligence platform featuring NLP sentiment & aspect classification pipeline, tabular student retention simulator, Holt-Winters time-series forecasting, and rolling Z-score anomaly detection.",
     shunaBtnOpen: "Open SHUNA AI",
     shunaBackLink: "Back to Home",
 
