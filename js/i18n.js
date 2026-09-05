@@ -14,20 +14,20 @@ window.I18N_DICT = {
     btnAboutDev: "Profil Pengembang",
 
     // Hero Section
-    heroBadge: "Lulusan S1 Informatika • Praktisi IT Support & Network Admin",
-    heroTitle: "Rekayasa Perangkat Lunak, Infrastruktur Jaringan & Keamanan Sistem",
-    heroDesc: "Selamat datang di portal portofolio teknis Rizki Ananda, S.Kom. Berpengalaman dalam arsitektur backend enterprise (Laravel 11 & Python), manajemen infrastruktur jaringan (Mikrotik & Linux), audit keamanan sistem (VAPT), serta rekayasa data.",
-    btnHeroViewProjects: "Jelajahi Proyek Unggulan ➔",
-    btnHeroViewProfile: "Lihat Profil & Pengalaman",
+    heroBadge: "Rizki Ananda, S.Kom • S1 Informatika",
+    heroTitle: "Halo, saya Rizki Ananda. Saya membuat aplikasi web & perkakas digital yang fungsional.",
+    heroDesc: "Lulusan Informatika yang suka mengeksplorasi kode, memecahkan masalah, dan mengembangkan proyek yang bermanfaat — mulai dari sistem manajemen rumah sakit hingga puluhan perkakas komputasi interaktif.",
+    btnHeroViewProjects: "Lihat Proyek ➔",
+    btnHeroViewProfile: "Tentang Saya",
     
     // Quick Stats
-    statProjTitle: "Arsitektur Proyek",
-    statProjVal: "2 Sistem",
-    statToolsTitle: "Modul Web Tools",
-    statToolsVal: "29 Utilitas",
-    statCertTitle: "Sertifikasi BNSP/Kominfo",
+    statProjTitle: "Proyek Utama",
+    statProjVal: "2 Aplikasi",
+    statToolsTitle: "Perkakas Web",
+    statToolsVal: "29 Tools",
+    statCertTitle: "Sertifikasi",
     statCertVal: "2 Lisensi",
-    statQualityTitle: "Standar Kualitas",
+    statQualityTitle: "Standar Kode",
     statQualityVal: "Clean Code",
 
     // Featured Projects Section
@@ -113,20 +113,20 @@ window.I18N_DICT = {
     btnAboutDev: "About Developer",
 
     // Hero Section
-    heroBadge: "B.Sc. Computer Science • IT Support & Network Admin",
-    heroTitle: "Software Engineering, Network Infrastructure & System Security",
-    heroDesc: "Welcome to the technical engineering portfolio of Rizki Ananda, S.Kom. Experienced in enterprise backend architecture (Laravel 11 & Python), network infrastructure (Mikrotik & Linux), system security auditing (VAPT), and data engineering.",
-    btnHeroViewProjects: "Explore Featured Projects ➔",
-    btnHeroViewProfile: "View Profile & Experience",
+    heroBadge: "Rizki Ananda, S.Kom • Computer Science",
+    heroTitle: "Hi, I'm Rizki Ananda. I build functional web applications and digital tools.",
+    heroDesc: "Computer Science graduate passionate about crafting clean code, solving real-world problems, and building useful projects — from hospital management systems to interactive web tools.",
+    btnHeroViewProjects: "View Projects ➔",
+    btnHeroViewProfile: "About Me",
     
     // Quick Stats
-    statProjTitle: "Project Architectures",
-    statProjVal: "2 Systems",
-    statToolsTitle: "Web Tools Modules",
-    statToolsVal: "29 Utilities",
-    statCertTitle: "National Certifications",
+    statProjTitle: "Main Projects",
+    statProjVal: "2 Apps",
+    statToolsTitle: "Web Tools",
+    statToolsVal: "29 Tools",
+    statCertTitle: "Certifications",
     statCertVal: "2 Licenses",
-    statQualityTitle: "Quality Standard",
+    statQualityTitle: "Code Quality",
     statQualityVal: "Clean Code",
 
     // Featured Projects Section
