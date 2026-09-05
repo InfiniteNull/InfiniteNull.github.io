@@ -931,10 +931,10 @@ function openToolModal(tool) {
   const toolModal = document.getElementById('toolModal');
   const modalTitle = document.getElementById('modalTitle');
   const modalTechBadge = document.getElementById('modalTechBadge');
-  const modalSubtitle = document.getElementById('modalSubtitle');
   const modalIcon = document.getElementById('modalIcon');
-  const modalTabDemoContent = document.getElementById('modalTabDemoContent');
-  const modalDocsBody = document.getElementById('modalDocsBody');
+  
+  const modalDemoContent = document.getElementById('modalDemoContent') || document.getElementById('modalTabDemoContent');
+  const modalDocsContent = document.getElementById('modalDocsContent') || document.getElementById('modalDocsBody');
 
   const title = (lang === 'en' && tool.title_en) ? tool.title_en : tool.title;
   const desc = (lang === 'en' && tool.desc_en) ? tool.desc_en : tool.description;
@@ -942,7 +942,6 @@ function openToolModal(tool) {
 
   if (modalTitle) modalTitle.textContent = title;
   if (modalTechBadge) modalTechBadge.textContent = tool.techBadge;
-  if (modalSubtitle) modalSubtitle.textContent = desc;
   if (modalIcon) modalIcon.setAttribute('data-lucide', tool.icon);
 
   // Set default tab to demo
@@ -956,11 +955,11 @@ function openToolModal(tool) {
   }
 
   // Render Tool interactive content
-  if (modalTabDemoContent) {
+  if (modalDemoContent) {
     if (typeof window[tool.renderFn] === 'function') {
-      window[tool.renderFn](modalTabDemoContent);
+      window[tool.renderFn](modalDemoContent);
     } else {
-      modalTabDemoContent.innerHTML = `<div class="p-8 text-center text-xs text-slate-400">Modul '${title}' siap dijalankan.</div>`;
+      modalDemoContent.innerHTML = `<div class="p-8 text-center text-xs text-slate-400">Modul '${title}' siap dijalankan.</div>`;
     }
   }
 
@@ -968,8 +967,8 @@ function openToolModal(tool) {
   loadCodeSnippet(tool.id);
 
   // Load Architecture documentation
-  if (modalDocsBody) {
-    modalDocsBody.innerHTML = docs || `<div class="p-8 text-center text-xs text-slate-400">Dokumentasi teknis lengkap tersedia pada file README.md repository.</div>`;
+  if (modalDocsContent) {
+    modalDocsContent.innerHTML = docs || `<div class="p-8 text-center text-xs text-slate-400">Dokumentasi teknis lengkap tersedia pada file README.md repository.</div>`;
   }
 
   if (window.lucide) {
@@ -980,7 +979,7 @@ window.openToolModal = openToolModal;
 
 function closeToolModal() {
   const toolModal = document.getElementById('toolModal');
-  const modalTabDemoContent = document.getElementById('modalTabDemoContent');
+  const modalDemoContent = document.getElementById('modalDemoContent') || document.getElementById('modalTabDemoContent');
 
   if (toolModal) {
     toolModal.classList.add('hidden');
@@ -989,7 +988,7 @@ function closeToolModal() {
   document.body.style.overflow = '';
   activeTool = null;
   window.activeTool = null;
-  if (modalTabDemoContent) modalTabDemoContent.innerHTML = '';
+  if (modalDemoContent) modalDemoContent.innerHTML = '';
 }
 
 function switchModalTab(tab) {
@@ -997,32 +996,32 @@ function switchModalTab(tab) {
   const tabBtnCode = document.getElementById('tabBtnCode');
   const tabBtnDocs = document.getElementById('tabBtnDocs');
 
-  const modalTabDemoContent = document.getElementById('modalTabDemoContent');
-  const modalTabCodeContent = document.getElementById('modalTabCodeContent');
-  const modalTabDocsContent = document.getElementById('modalTabDocsContent');
+  const modalDemoContent = document.getElementById('modalDemoContent') || document.getElementById('modalTabDemoContent');
+  const modalCodeContent = document.getElementById('modalCodeContent') || document.getElementById('modalTabCodeContent');
+  const modalDocsContent = document.getElementById('modalDocsContent') || document.getElementById('modalDocsBody') || document.getElementById('modalTabDocsContent');
 
   // Reset tab button styles
   [tabBtnDemo, tabBtnCode, tabBtnDocs].forEach(btn => {
     if (!btn) return;
-    btn.className = "modal-tab-btn py-3 border-b-2 border-transparent text-slate-500 hover:text-slate-900 dark:hover:text-slate-200 transition flex items-center gap-1.5";
+    btn.className = "modal-tab-btn px-4 py-2.5 text-xs font-medium border-b-2 border-transparent text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 transition flex items-center gap-2";
   });
 
   // Hide all contents
-  if (modalTabDemoContent) modalTabDemoContent.classList.add('hidden');
-  if (modalTabCodeContent) modalTabCodeContent.classList.add('hidden');
-  if (modalTabDocsContent) modalTabDocsContent.classList.add('hidden');
+  if (modalDemoContent) modalDemoContent.classList.add('hidden');
+  if (modalCodeContent) modalCodeContent.classList.add('hidden');
+  if (modalDocsContent) modalDocsContent.classList.add('hidden');
 
-  const activeClass = "modal-tab-btn active py-3 border-b-2 border-slate-900 dark:border-slate-100 text-slate-900 dark:text-white font-semibold transition flex items-center gap-1.5";
+  const activeClass = "modal-tab-btn active px-4 py-2.5 text-xs font-semibold border-b-2 border-slate-900 dark:border-slate-100 text-slate-900 dark:text-white transition flex items-center gap-2";
 
   if (tab === 'demo') {
     if (tabBtnDemo) tabBtnDemo.className = activeClass;
-    if (modalTabDemoContent) modalTabDemoContent.classList.remove('hidden');
+    if (modalDemoContent) modalDemoContent.classList.remove('hidden');
   } else if (tab === 'code') {
     if (tabBtnCode) tabBtnCode.className = activeClass;
-    if (modalTabCodeContent) modalTabCodeContent.classList.remove('hidden');
+    if (modalCodeContent) modalCodeContent.classList.remove('hidden');
   } else if (tab === 'docs') {
     if (tabBtnDocs) tabBtnDocs.className = activeClass;
-    if (modalTabDocsContent) modalTabDocsContent.classList.remove('hidden');
+    if (modalDocsContent) modalDocsContent.classList.remove('hidden');
   }
 
   if (window.lucide) {
@@ -1031,21 +1030,133 @@ function switchModalTab(tab) {
 }
 
 function loadCodeSnippet(toolId) {
-  const codeLanguageLabel = document.getElementById('codeLanguageLabel');
-  const codeFilePathLabel = document.getElementById('codeFilePathLabel');
+  const modalCodeLang = document.getElementById('modalCodeLang');
   const modalCodeSnippet = document.getElementById('modalCodeSnippet');
 
   if (!window.TOOL_CODE_SNIPPETS || !window.TOOL_CODE_SNIPPETS[toolId]) {
-    if (codeLanguageLabel) codeLanguageLabel.textContent = "Script";
-    if (codeFilePathLabel) codeFilePathLabel.textContent = "Source Code Module";
-    if (modalCodeSnippet) modalCodeSnippet.textContent = "// Source code sedang dimuat...";
+    if (modalCodeLang) modalCodeLang.textContent = "Script / Module";
+    if (modalCodeSnippet) modalCodeSnippet.textContent = "// Source code sedang dimuat atau tersedia pada repository...";
     return;
   }
 
   const snippet = window.TOOL_CODE_SNIPPETS[toolId];
-  if (codeLanguageLabel) codeLanguageLabel.textContent = snippet.language || "JavaScript";
-  if (codeFilePathLabel) codeFilePathLabel.textContent = snippet.path || snippet.filename;
+  if (modalCodeLang) modalCodeLang.textContent = (snippet.language || "JavaScript") + " • " + (snippet.path || snippet.filename || "module.js");
   if (modalCodeSnippet) modalCodeSnippet.textContent = snippet.code;
+}
+
+// ==========================================
+// TECHNICAL INTERVIEW GUIDE MODAL
+// ==========================================
+function openInterviewGuide() {
+  const modal = document.getElementById('interviewModal');
+  const content = document.getElementById('interviewModalContent');
+  if (!modal || !content) return;
+
+  const isEn = window.currentLang === 'en';
+
+  content.innerHTML = isEn ? `
+    <div class="space-y-6">
+      <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+        <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1.5 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-sky-500"></span>
+          1. SIMRS Core Enterprise Architecture (Laravel 11 & Clean Architecture)
+        </h4>
+        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-2">
+          Architected based on Indonesian Ministry of Health standards (<strong>Permenkes No. 24 / 2022</strong>) and <strong>BPJS V-Claim 2.0 Bridging</strong> specifications:
+        </p>
+        <ul class="list-disc pl-5 space-y-1 text-xs text-slate-600 dark:text-slate-400">
+          <li><strong>SatuSehat FHIR R4:</strong> Generates valid interoperability bundles containing <code>Encounter</code>, <code>Condition</code>, <code>MedicationRequest</code>, and <code>Observation</code> resources.</li>
+          <li><strong>SOAP Medical Records:</strong> ICD-10 diagnosis selector (40+ live records) with automatic BMI and Triage categorizations.</li>
+          <li><strong>Hospital Operational Indicators:</strong> Full implementation of Barber-Johnson formulas (BOR, ALOS, TOI, BTO) with real-time recalculation.</li>
+          <li><strong>Billing Ledger:</strong> Real-time cross-module synchronization aggregating administrative tariffs, doctor consultation fees, pharmacy prescriptions, and lab orders with official receipt generation.</li>
+        </ul>
+      </div>
+
+      <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+        <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1.5 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+          2. Dev & Data Engineering Suite (29 Interactive Tools)
+        </h4>
+        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-2">
+          Engineered for systems administration, networking, security assessments, and statistical data cleaning:
+        </p>
+        <ul class="list-disc pl-5 space-y-1 text-xs text-slate-600 dark:text-slate-400">
+          <li><strong>Networking:</strong> 32-bit bitwise IPv4 subnetting & VLSM calculations adhering to RFC 791/4632.</li>
+          <li><strong>Data Cleaning & QC:</strong> Statistical outlier detection using $Q1 - 1.5 \times \text{IQR}$, Z-Score, Min-Max Normalization, and deterministic regex formula parsing.</li>
+          <li><strong>System Security & Cryptography:</strong> Password entropy analysis ($E = L \times \log_2(N)$), SHA-256/MD5 hashing, JWT base64url decoding, and security headers audit.</li>
+        </ul>
+      </div>
+
+      <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+        <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1.5 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          3. Real-world IT Support & Research Track Record
+        </h4>
+        <ul class="list-disc pl-5 space-y-1 text-xs text-slate-600 dark:text-slate-400">
+          <li><strong>Nginx Media Server Research:</strong> Virtual Machine deployment benchmarking RTMP, HLS, RTSP, and HTTP protocols, firewall hardening, and VAPT assessment.</li>
+          <li><strong>Banking PC Deployment (Bank Sinarmas):</strong> Full hardware setup, secure data profile migrations, domain onboarding, and peripheral configuration for banking operations.</li>
+        </ul>
+      </div>
+    </div>
+  ` : `
+    <div class="space-y-6">
+      <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+        <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1.5 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-sky-500"></span>
+          1. Arsitektur SIMRS Core Enterprise (Laravel 11 & Standar Kemenkes RI)
+        </h4>
+        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-2">
+          Dirancang berdasarkan regulasi <strong>Permenkes No. 24 Tahun 2022</strong> dan integrasi <strong>BPJS V-Claim 2.0</strong>:
+        </p>
+        <ul class="list-disc pl-5 space-y-1 text-xs text-slate-600 dark:text-slate-400">
+          <li><strong>SatuSehat FHIR R4:</strong> Generator bundle interoperabilitas resmi Kemenkes (resource <code>Encounter</code>, <code>Condition</code>, <code>MedicationRequest</code>, dan <code>Observation</code>).</li>
+          <li><strong>RME SOAP & ICD-10:</strong> Pencarian live 40+ kode ICD-10 klinis, kalkulasi otomatis BMI, dan penentuan prioritas triage IGD.</li>
+          <li><strong>Indikator Barber-Johnson:</strong> Formula matematis BOR, ALOS, TOI, BTO untuk evaluasi utilisasi tempat tidur rumah sakit.</li>
+          <li><strong>Billing Ledger & Kwitansi:</strong> Rekonsiliasi kasir lintas modul (admisi, tindakan, farmasi, lab) dengan modal cetak kwitansi resmi.</li>
+        </ul>
+      </div>
+
+      <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+        <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1.5 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+          2. Dev & Data Engineering Suite (29 Interactive Tools)
+        </h4>
+        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-2">
+          Suite perkakas mandiri untuk administrasi sistem, jaringan, audit keamanan, dan analisis data:
+        </p>
+        <ul class="list-disc pl-5 space-y-1 text-xs text-slate-600 dark:text-slate-400">
+          <li><strong>Jaringan & Server:</strong> Kalkulator subnetting IPv4 bitwise 32-bit, VLSM generator, estimasi throughput jaringan, dan generator rules firewall (Linux UFW, iptables, Mikrotik).</li>
+          <li><strong>Data Cleaner & QC:</strong> Deteksi pencilan statistik IQR ($Q1 - 1.5 \times \text{IQR}$), Z-Score, normalisasi Min-Max, dan spreadsheet formula parser.</li>
+          <li><strong>Keamanan Sistem & VAPT:</strong> Analisis entropi password Shannon, kalkulator hash SHA-256/MD5, debugger JWT base64url, dan audit security headers HTTP.</li>
+        </ul>
+      </div>
+
+      <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+        <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1.5 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          3. Pengalaman Lapangan IT Support & Riset Infrastruktur
+        </h4>
+        <ul class="list-disc pl-5 space-y-1 text-xs text-slate-600 dark:text-slate-400">
+          <li><strong>IT Researcher (Adzkia Kedinasan):</strong> Perancangan Nginx Media Server Linux VM, pengujian komparatif 4 protokol streaming (RTMP, HLS, RTSP, HTTP), dan pengujian VAPT.</li>
+          <li><strong>IT Support Deployment (Bank Sinarmas):</strong> Perakitan hardware desktop, migrasi data profil user, instalasi OS, dan konfigurasi printer slip/scanner hingga terhubung ke domain internal bank.</li>
+        </ul>
+      </div>
+    </div>
+  `;
+
+  modal.classList.remove('hidden');
+  modal.classList.add('flex');
+  document.body.style.overflow = 'hidden';
+  if (window.lucide) lucide.createIcons();
+}
+
+function closeInterviewGuide() {
+  const modal = document.getElementById('interviewModal');
+  if (modal) {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
 }
 
 // ==========================================
@@ -1106,6 +1217,75 @@ function toggleTheme() {
 }
 
 // ==========================================
+// MASTER URL HASH ROUTER
+// Routes: #home, #projects, #experience, #simrs, #devtools
+// ==========================================
+window.currentProject = 'home';
+
+window.handleRoute = function() {
+  const rawHash = (window.location.hash || '#home').toLowerCase();
+  const cleanHash = rawHash.split('?')[0];
+
+  const viewHome = document.getElementById('viewHome');
+  const viewSimrs = document.getElementById('viewSimrs');
+  const viewDevTools = document.getElementById('viewDevTools');
+
+  if (cleanHash === '#simrs') {
+    window.currentProject = 'simrs';
+    if (viewHome) viewHome.classList.add('hidden');
+    if (viewDevTools) viewDevTools.classList.add('hidden');
+    if (viewSimrs) viewSimrs.classList.remove('hidden');
+    window.scrollTo({ top: 0, behavior: 'instant' });
+
+    const root = document.getElementById('simrsSuiteRoot');
+    if (root && typeof window.renderSimrsSuite === 'function') {
+      window.renderSimrsSuite(root);
+    }
+  } else if (cleanHash === '#devtools') {
+    window.currentProject = 'devtools';
+    if (viewHome) viewHome.classList.add('hidden');
+    if (viewSimrs) viewSimrs.classList.add('hidden');
+    if (viewDevTools) viewDevTools.classList.remove('hidden');
+    window.scrollTo({ top: 0, behavior: 'instant' });
+
+    renderToolsGrid();
+  } else {
+    // Default: Home Landing Page
+    window.currentProject = 'home';
+    if (viewSimrs) viewSimrs.classList.add('hidden');
+    if (viewDevTools) viewDevTools.classList.add('hidden');
+    if (viewHome) viewHome.classList.remove('hidden');
+
+    if (cleanHash === '#projects') {
+      const el = document.getElementById('projects');
+      if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 50);
+    } else if (cleanHash === '#experience') {
+      const el = document.getElementById('experience');
+      if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 50);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
+  if (window.lucide) {
+    lucide.createIcons();
+  }
+};
+
+window.addEventListener('hashchange', window.handleRoute);
+
+// Backward-compatible switchProject function
+window.switchProject = function(projectName) {
+  if (projectName === 'simrs') {
+    window.location.hash = '#simrs';
+  } else if (projectName === 'devtools') {
+    window.location.hash = '#devtools';
+  } else {
+    window.location.hash = '#home';
+  }
+};
+
+// ==========================================
 // EVENT LISTENERS & INITIALIZATION
 // ==========================================
 function initApp() {
@@ -1119,53 +1299,6 @@ function initApp() {
     renderToolsGrid();
   }
 
-  // Master Project Switcher
-  window.currentProject = 'simrs'; // Default to Flagship SIMRS
-
-  window.switchProject = function(projectName) {
-    window.currentProject = projectName;
-    const projectSimrsView = document.getElementById('projectSimrsView');
-    const projectDevToolsView = document.getElementById('projectDevToolsView');
-    const btnSimrs = document.getElementById('projectBtnSimrs');
-    const btnDevTools = document.getElementById('projectBtnDevTools');
-
-    if (projectName === 'simrs') {
-      if (projectSimrsView) projectSimrsView.classList.remove('hidden');
-      if (projectDevToolsView) projectDevToolsView.classList.add('hidden');
-      if (btnSimrs) {
-        btnSimrs.classList.add('active');
-        btnSimrs.classList.remove('text-slate-600', 'dark:text-slate-400');
-      }
-      if (btnDevTools) {
-        btnDevTools.classList.remove('active');
-        btnDevTools.classList.add('text-slate-600', 'dark:text-slate-400');
-      }
-      const root = document.getElementById('simrsSuiteRoot');
-      if (root && typeof window.renderSimrsSuite === 'function') {
-        window.renderSimrsSuite(root);
-      }
-    } else {
-      if (projectSimrsView) projectSimrsView.classList.add('hidden');
-      if (projectDevToolsView) projectDevToolsView.classList.remove('hidden');
-      if (btnDevTools) {
-        btnDevTools.classList.add('active');
-        btnDevTools.classList.remove('text-slate-600', 'dark:text-slate-400');
-      }
-      if (btnSimrs) {
-        btnSimrs.classList.remove('active');
-        btnSimrs.classList.add('text-slate-600', 'dark:text-slate-400');
-      }
-      renderToolsGrid();
-    }
-
-    if (window.lucide) lucide.createIcons();
-  };
-
-  const btnSimrs = document.getElementById('projectBtnSimrs');
-  const btnDevTools = document.getElementById('projectBtnDevTools');
-  if (btnSimrs) btnSimrs.addEventListener('click', () => window.switchProject('simrs'));
-  if (btnDevTools) btnDevTools.addEventListener('click', () => window.switchProject('devtools'));
-
   // Language Switcher Toggle Button
   const langToggleBtn = document.getElementById('langToggleBtn');
   if (langToggleBtn) {
@@ -1177,7 +1310,7 @@ function initApp() {
     });
   }
 
-  // Search Input
+  // Search Input for DevTools
   const searchInput = document.getElementById('toolSearchInput');
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
@@ -1186,7 +1319,7 @@ function initApp() {
     });
   }
 
-  // Category Filters
+  // Category Filters for DevTools
   const categoryFilterContainer = document.getElementById('categoryFilterContainer');
   if (categoryFilterContainer) {
     categoryFilterContainer.addEventListener('click', (e) => {
@@ -1242,13 +1375,21 @@ function initApp() {
   const aboutDevModal = document.getElementById('aboutDevModal');
   const aboutDevModalCloseBtn = document.getElementById('aboutDevModalCloseBtn');
   const viewInterviewDocBtn = document.getElementById('viewInterviewDocBtn');
+  const interviewModal = document.getElementById('interviewModal');
 
   if (aboutDevBtn) aboutDevBtn.addEventListener('click', openDevModal);
-  if (viewInterviewDocBtn) viewInterviewDocBtn.addEventListener('click', openDevModal);
   if (aboutDevModalCloseBtn) aboutDevModalCloseBtn.addEventListener('click', closeDevModal);
   if (aboutDevModal) {
     aboutDevModal.addEventListener('click', (e) => {
       if (e.target === aboutDevModal) closeDevModal();
+    });
+  }
+
+  // Technical Guide Modal
+  if (viewInterviewDocBtn) viewInterviewDocBtn.addEventListener('click', openInterviewGuide);
+  if (interviewModal) {
+    interviewModal.addEventListener('click', (e) => {
+      if (e.target === interviewModal) closeInterviewGuide();
     });
   }
 
@@ -1261,13 +1402,15 @@ function initApp() {
     if (e.key === 'Escape') {
       const toolModal = document.getElementById('toolModal');
       const aboutDevModal = document.getElementById('aboutDevModal');
+      const interviewModal = document.getElementById('interviewModal');
       if (toolModal && !toolModal.classList.contains('hidden')) closeToolModal();
       if (aboutDevModal && !aboutDevModal.classList.contains('hidden')) closeDevModal();
+      if (interviewModal && !interviewModal.classList.contains('hidden')) closeInterviewGuide();
     }
   });
 
-  // Initial Project Render
-  window.switchProject('simrs');
+  // Execute Initial Route
+  window.handleRoute();
 
   if (window.lucide) {
     lucide.createIcons();

@@ -1,178 +1,205 @@
 /**
  * i18n.js
  * Internationalization Engine (Indonesian <-> English)
- * Mengelola peralihan bahasa secara real-time pada dashboard, kartu tools, modal workspace, dan profil pengembang.
+ * Mengelola peralihan bahasa secara real-time pada Landing Page, SIMRS Core, DevTools Suite, Modal Workspace, dan Profil Pengembang.
  */
 
 window.I18N_DICT = {
   id: {
-    // Project Switcher
-    projectSwitcherLabel: "Proyek:",
-    labelProjectSimrs: "SIMRS Core",
-    labelProjectDevTools: "Dev & Data Suite",
-
-    // Header
-    headerSubtitle: "IT Support • Network Admin • VAPT Security • Data Analytics & Web Suite",
+    // Top Navbar
+    navLinkHome: "Beranda",
+    navLinkProjects: "Proyek Unggulan",
+    navLinkExp: "Pengalaman & Keahlian",
     btnInterviewGuide: "Panduan Teknis",
-    btnAboutDev: "Tentang Pengembang",
+    btnAboutDev: "Profil Pengembang",
+
+    // Hero Section
+    heroBadge: "Lulusan S1 Informatika • Praktisi IT Support & Network Admin",
+    heroTitle: "Rekayasa Perangkat Lunak, Infrastruktur Jaringan & Keamanan Sistem",
+    heroDesc: "Selamat datang di portal portofolio teknis Rizki Ananda, S.Kom. Berpengalaman dalam arsitektur backend enterprise (Laravel 11 & Python), manajemen infrastruktur jaringan (Mikrotik & Linux), audit keamanan sistem (VAPT), serta rekayasa data.",
+    btnHeroViewProjects: "Jelajahi Proyek Unggulan ➔",
+    btnHeroViewProfile: "Lihat Profil & Pengalaman",
     
-    // Hero
-    heroBadge: "Rizki Ananda, S.Kom • Universitas Potensi Utama",
-    heroTitle: "Web Tools & Data Suite",
-    heroDesc: "Platform utilitas mandiri 29 tools interaktif untuk manajemen jaringan, audit keamanan sistem, database & data wrangling, serta utilitas IT harian.",
+    // Quick Stats
+    statProjTitle: "Arsitektur Proyek",
+    statProjVal: "2 Sistem",
+    statToolsTitle: "Modul Web Tools",
+    statToolsVal: "29 Utilitas",
+    statCertTitle: "Sertifikasi BNSP/Kominfo",
+    statCertVal: "2 Lisensi",
+    statQualityTitle: "Standar Kualitas",
+    statQualityVal: "Clean Code",
+
+    // Featured Projects Section
+    secHeadingProjects: "Proyek Unggulan (Featured Projects)",
+    secSubProjects: "Pilih dan jelajahi aplikasi produksi mandiri di bawah ini:",
     
-    // Categories
+    // SIMRS Card
+    simrsCardTitle: "SIMRS Core Enterprise",
+    simrsCardSub: "Hospital Management Information System",
+    simrsCardStatus: "PRODUKSI",
+    simrsCardDesc: "Sistem manajemen rumah sakit terintegrasi penuh: admisi & bridging BPJS SEP, rekam medis elektronik (RME SOAP) dengan pencarian 40+ ICD-10, E-Order Lab LOINC, E-Prescribing farmasi, kasir billing reaktif berkwitansi resmi, alokasi ranjang kamar inap (Bed Matrix), serta indikator efisiensi BOR.",
+    simrsBtnOpen: "Buka Aplikasi SIMRS",
+
+    // DevTools Card
+    devtoolsCardTitle: "Dev & Data Engineering Suite",
+    devtoolsCardSub: "29 Interactive Computational Tools",
+    devtoolsCardStatus: "29 MODUL",
+    devtoolsCardDesc: "Platform utilitas mandiri 29 tools interaktif untuk kalkulasi subnetting IPv4, generator firewall Linux/Mikrotik, data cleaner & outlier QC inspector, spreadsheet formula engine (VLOOKUP/Regex), security audit (JWT/Hash/Entropy), dan kalkulator hardware server.",
+    devtoolsBtnOpen: "Jelajahi 29 Tools",
+
+    // Experience & Certifications Section
+    secHeadingExp: "Pengalaman Kerja & Sertifikasi",
+    secSubExp: "Rekam jejak profesional, penelitian infrastruktur, dan lisensi kompetensi nasional:",
+    
+    job1Title: "IT Researcher (Freelance)",
+    job1Company: "• ADZKIA KEDINASAN PUSAT",
+    job1Meta: "Nov 2024 - Jun 2025 • Medan",
+    job1Desc: "Merancang, mengonfigurasi, dan menguji infrastruktur <strong>Nginx Media Server</strong> pada Linux VM, serta melakukan benchmark terhadap 4 protokol streaming video (<strong>RTMP, HLS, RTSP, HTTP</strong>). Melakukan audit keamanan jaringan & <strong>vulnerability assessment (VAPT)</strong> pada sistem internal.",
+    
+    job2Title: "IT Support (Vendor Outsourcing)",
+    job2Company: "• PT Bank Sinarmas, Tbk (KC Medan Mangkubumi)",
+    job2Meta: "Des 2023 • Medan",
+    job2Desc: "Melaksanakan proyek peremajaan komputer (<strong>PC Deployment</strong>), instalasi hardware, backup dan migrasi data profil user secara aman, perapian kabel, serta konfigurasi peripheral printer slip dan scanner hingga terhubung ke domain perbankan.",
+
+    cert1Title: "Associate Network Administrator",
+    cert1Issuer: "BNSP / Komdigi RI (2026)",
+    cert1Desc: "Standar kompetensi nasional perancangan skema pengalamatan IP Addressing, subnetting VLSM, konfigurasi perangkat router/switch, dan routing jaringan terdistribusi.",
+    
+    cert2Title: "Junior Network Administrator",
+    cert2Issuer: "BBPSDMP Kominfo (2023)",
+    cert2Desc: "Instalasi jaringan komputer lokal (LAN), manajemen sistem operasi Linux / Nginx, dan pemeliharaan server data.",
+
+    // DevTools View UI
+    devtoolsViewTitle: "Dev & Data Engineering Suite (29 Tools)",
+    devtoolsViewDesc: "Platform utilitas mandiri untuk manajemen jaringan IPv4, hardening firewall, manipulasi & QC data, audit keamanan VAPT, serta utilitas hardware.",
     catAll: "Semua Tools (29)",
     catNetwork: "Jaringan & Server",
     catSecurity: "Keamanan Sistem",
     catDatabase: "Data & Backend",
     catUtility: "Utilitas & Hardware",
-    
-    // Search & Empty State
     searchPlaceholder: "Cari nama tool / teknologi...",
     emptyTitle: "Tidak ada tool yang cocok",
     emptyDesc: "Coba gunakan kata kunci pencarian lain atau ubah filter kategori.",
     openWorkspace: "Buka Workspace",
-    
-    // Modal Workspace
+
+    // Tool Workspace Modal
     tabDemo: "Live Demo Interaktif",
     tabCode: "Source Code Asli",
     tabDocs: "Arsitektur & Penjelasan Teknis",
     copyCode: "Salin Kode",
-    
+
     // Developer Profile Modal
-    devRoleBadge: "Lulusan S1 Informatika",
     devRoleSub: "Universitas Potensi Utama • Praktisi IT",
     profileHeading: "Profil",
     profileBio: "Lulusan <strong>S1 Informatika (S.Kom) dari Universitas Potensi Utama</strong> dengan spesialisasi di bidang <strong>IT Support, Administrasi Jaringan, Keamanan Sistem (VAPT), serta Analisis Data & Rekayasa Web</strong>. Berpengalaman teknis dalam deployment infrastruktur server, protokol streaming, peremajaan PC perbankan, dan rekayasa perangkat lunak.",
-    
     expHeading: "Pengalaman Kerja",
-    job1Title: "IT Researcher",
-    job1Company: "• ADZKIA KEDINASAN PUSAT",
-    job1Meta: "Nov 2024 - Jun 2025 (Freelance) • Medan",
-    job1Desc: "Bertanggung jawab dalam merancang, mengonfigurasi, dan menguji infrastruktur <strong>Nginx Media Server</strong> pada lingkungan Virtual Machine berbasis Linux, serta melakukan benchmark terhadap 4 protokol streaming video (<strong>RTMP, HLS, RTSP, dan HTTP</strong>). Melakukan pengujian keamanan jaringan dan <strong>vulnerability assessment (VAPT)</strong> pada sistem internal, audit konfigurasi firewall, serta dokumentasi arsitektur server.",
-    
-    job2Title: "IT Support (Vendor Outsourcing)",
-    job2Company: "• PT Bank Sinarmas, Tbk",
-    job2Meta: "Des 2023 (Freelance) • KC Medan Mangkubumi",
-    job2Desc: "Bekerja secara independen di bawah naungan vendor IT outsourcing untuk melaksanakan proyek peremajaan perangkat komputer (<strong>PC Deployment</strong>) di Bank Sinarmas KC Medan Mangkubumi. Bertanggung jawab penuh melakukan unboxing, instalasi, dan perakitan PC desktop, melakukan backup dan migrasi data profil user secara aman, instalasi sistem operasi, serta perapian kabel (cable management). Selain itu, menangani konfigurasi perangkat peripheral seperti printer slip dan scanner dokumen hingga komputer siap terhubung ke domain jaringan internal bank.",
-    
-    leadShunaTitle: "Ketua Tim Proyek SHUNA AI",
-    leadShunaScore: "Nilai: 81.8",
-    leadShunaOrg: "MSIB Batch 6 Kampus Merdeka @ Skilvul",
-    leadShunaDesc: "Memimpin tim dalam merancang alur data pipeline dan klasifikasi teks berbasis Natural Language Processing (NLP) menggunakan Python.",
-    
-    leadOrgTitle: "Kepemimpinan Organisasi",
-    leadOrgSub: "HMPS Informatika • Univ. Potensi Utama",
-    leadOrgDesc: "Memimpin reaktivasi dan tata kelola administrasi internal organisasi Himpunan Mahasiswa Program Studi Informatika.",
-    
     certHeading: "Sertifikasi & Keahlian",
-    cert1Title: "Associate Network Administrator (Komdigi RI, 2026)",
-    cert1Desc: "Standar perancangan skema IP Addressing, konfigurasi router/switch, dan routing terdistribusi.",
-    cert2Title: "Junior Network Administrator (BBPSDMP Kominfo, 2023)",
-    cert2Desc: "Instalasi jaringan komputer dan pemeliharaan server Linux / Nginx.",
-    
-    skillSecurityTitle: "Keamanan Sistem & VAPT:",
-    skillSecurityDesc: "Burp Suite, OWASP ZAP, Vulnerability Assessment, OSINT, Parameterized SQL Security.",
-    skillProgTitle: "Bahasa Pemrograman & Backend:",
-    skillProgDesc: "Python (Pandas, VADER, BS4, FastAPI), Node.js (Express, Sharp), C++, SQL (SQLite), JavaScript ES6+.",
-    
-    footerBioText: "Lulusan S1 Informatika Universitas Potensi Utama. Praktisi IT Support (Bank Sinarmas), IT Researcher (Adzkia Kedinasan), Network Administrator (Komdigi & Kominfo), VAPT Security, serta Analisis Data & Software Engineering.",
-    footerTechHeading: "Kompetensi & Teknologi",
-    footerTechList: `
-      <li>• <strong>Infrastruktur & Media:</strong> Nginx Media Server (RTMP, HLS, RTSP), Linux VM</li>
-      <li>• <strong>Data & NLP:</strong> Python (Pandas, VADER Lexicon, BeautifulSoup, FastAPI)</li>
-      <li>• <strong>Backend & Jaringan:</strong> Node.js REST API, SQLite, IP Routing, PC Deployment</li>
-      <li>• <strong>Keamanan:</strong> VAPT (Burp Suite, OWASP ZAP), OSINT, Bcrypt, JWT</li>
-    `,
+
+    // Footer
+    footerBioText: "Lulusan S1 Informatika Universitas Potensi Utama. Praktisi IT Support, Network Administrator, VAPT Security, serta Analisis Data & Software Engineering.",
+    footerTechHeading: "Kompetensi Inti",
     footerLinksHeading: "Tautan & Portofolio",
-    footerLinksDesc: "Seluruh 29 modul aplikasi dirancang secara modular dan dapat dicoba secara interaktif.",
-    footerTagline: "© 2026 Rizki Ananda, S.Kom (@InfiniteNull) • Dibangun dengan Clean Code & Standar Profesional IT."
+    footerLinksDesc: "Seluruh sistem dirancang mandiri dengan clean code dan dapat diakses interaktif.",
+    footerTagline: "© 2026 Rizki Ananda, S.Kom (@InfiniteNull) • Handcrafted with Clean Code & Professional IT Standards."
   },
 
   en: {
-    // Project Switcher
-    projectSwitcherLabel: "Project:",
-    labelProjectSimrs: "SIMRS Core",
-    labelProjectDevTools: "Dev & Data Suite",
-
-    // Header
-    headerSubtitle: "IT Support • Network Admin • VAPT Security • Data Analytics & Web Suite",
+    // Top Navbar
+    navLinkHome: "Home",
+    navLinkProjects: "Featured Projects",
+    navLinkExp: "Experience & Skills",
     btnInterviewGuide: "Technical Guide",
     btnAboutDev: "About Developer",
+
+    // Hero Section
+    heroBadge: "B.Sc. Computer Science • IT Support & Network Admin",
+    heroTitle: "Software Engineering, Network Infrastructure & System Security",
+    heroDesc: "Welcome to the technical engineering portfolio of Rizki Ananda, S.Kom. Experienced in enterprise backend architecture (Laravel 11 & Python), network infrastructure (Mikrotik & Linux), system security auditing (VAPT), and data engineering.",
+    btnHeroViewProjects: "Explore Featured Projects ➔",
+    btnHeroViewProfile: "View Profile & Experience",
     
-    // Hero
-    heroBadge: "Rizki Ananda, S.Kom • Universitas Potensi Utama",
-    heroTitle: "Web Tools & Engineering Suite",
-    heroDesc: "A standalone platform of 29 interactive production-ready tools for network management, system security auditing, database & data wrangling, and daily IT utilities.",
+    // Quick Stats
+    statProjTitle: "Project Architectures",
+    statProjVal: "2 Systems",
+    statToolsTitle: "Web Tools Modules",
+    statToolsVal: "29 Utilities",
+    statCertTitle: "National Certifications",
+    statCertVal: "2 Licenses",
+    statQualityTitle: "Quality Standard",
+    statQualityVal: "Clean Code",
+
+    // Featured Projects Section
+    secHeadingProjects: "Featured Projects",
+    secSubProjects: "Select and explore standalone production applications below:",
     
-    // Categories
+    // SIMRS Card
+    simrsCardTitle: "SIMRS Core Enterprise",
+    simrsCardSub: "Hospital Management Information System",
+    simrsCardStatus: "PRODUCTION",
+    simrsCardDesc: "Fully integrated hospital management system: admission & BPJS SEP bridging, electronic medical records (EMR SOAP) with searchable 40+ ICD-10 diagnoses, LOINC Lab E-Orders, Pharmacy E-Prescribing, reactive billing cashier with official receipts, Inpatient Bed Matrix, and BOR efficiency indicators.",
+    simrsBtnOpen: "Launch SIMRS App",
+
+    // DevTools Card
+    devtoolsCardTitle: "Dev & Data Engineering Suite",
+    devtoolsCardSub: "29 Interactive Computational Tools",
+    devtoolsCardStatus: "29 MODULES",
+    devtoolsCardDesc: "Standalone platform of 29 interactive tools for IPv4 subnetting calculations, multi-platform Linux/Mikrotik firewall generators, data cleaning & outlier QC inspectors, spreadsheet formula engines (VLOOKUP/Regex), security audits (JWT/Hash/Entropy), and server hardware calculators.",
+    devtoolsBtnOpen: "Explore 29 Tools",
+
+    // Experience & Certifications Section
+    secHeadingExp: "Work Experience & Certifications",
+    secSubExp: "Professional track record, infrastructure research, and national competency credentials:",
+    
+    job1Title: "IT Researcher (Freelance)",
+    job1Company: "• ADZKIA KEDINASAN PUSAT",
+    job1Meta: "Nov 2024 - Jun 2025 • Medan",
+    job1Desc: "Architected, configured, and benchmarked <strong>Nginx Media Server</strong> infrastructure on Linux VMs across 4 streaming protocols (<strong>RTMP, HLS, RTSP, HTTP</strong>). Conducted internal network security audits and <strong>vulnerability assessments (VAPT)</strong>.",
+    
+    job2Title: "IT Support (Vendor Outsourcing)",
+    job2Company: "• PT Bank Sinarmas, Tbk (KC Medan Mangkubumi)",
+    job2Meta: "Dec 2023 • Medan",
+    job2Desc: "Executed enterprise <strong>PC Deployment</strong>, hardware assembly, secure user profile data backup & migration, OS installation, and peripheral configuration (slip printers, document scanners) connected to banking domain.",
+
+    cert1Title: "Associate Network Administrator",
+    cert1Issuer: "BNSP / Komdigi RI (2026)",
+    cert1Desc: "National competency standard for IP Addressing scheme design, VLSM subnetting, router/switch configuration, and distributed network routing.",
+    
+    cert2Title: "Junior Network Administrator",
+    cert2Issuer: "BBPSDMP Kominfo (2023)",
+    cert2Desc: "Local Area Network (LAN) installation, Linux / Nginx server administration, and data server maintenance.",
+
+    // DevTools View UI
+    devtoolsViewTitle: "Dev & Data Engineering Suite (29 Tools)",
+    devtoolsViewDesc: "Standalone platform for IPv4 networking, firewall hardening, data wrangling & QC, VAPT security auditing, and hardware sizing utilities.",
     catAll: "All Tools (29)",
     catNetwork: "Networking & Server",
     catSecurity: "System Security",
     catDatabase: "Data & Backend",
     catUtility: "Utilities & Hardware",
-    
-    // Search & Empty State
     searchPlaceholder: "Search tools, tech stack, or keywords...",
     emptyTitle: "No tools found",
     emptyDesc: "Try another search keyword or switch category filters.",
     openWorkspace: "Open Workspace",
-    
-    // Modal Workspace
+
+    // Tool Workspace Modal
     tabDemo: "Interactive Live Demo",
-    tabCode: "Original Source Code (Python / Node.js)",
+    tabCode: "Original Source Code",
     tabDocs: "Architecture & Technical Docs",
     copyCode: "Copy Code",
-    
+
     // Developer Profile Modal
-    devRoleBadge: "B.Sc. Computer Science Graduate",
     devRoleSub: "Universitas Potensi Utama • IT Practitioner",
     profileHeading: "Profile",
     profileBio: "Computer Science Graduate (<strong>S1 Informatika / S.Kom from Universitas Potensi Utama</strong>) specializing in <strong>IT Support, Network Administration, System Security (VAPT), Data Analytics & Full-Stack Web Engineering</strong>. Hands-on experience in server infrastructure deployment, video streaming protocols, banking PC deployments, and deterministic software engineering.",
-    
     expHeading: "Work Experience",
-    job1Title: "IT Researcher",
-    job1Company: "• ADZKIA KEDINASAN PUSAT",
-    job1Meta: "Nov 2024 - Jun 2025 (Freelance) • Medan",
-    job1Desc: "Responsible for architecting, configuring, and benchmarking <strong>Nginx Media Server</strong> infrastructure on Linux Virtual Machines across 4 streaming protocols (<strong>RTMP, HLS, RTSP, and HTTP</strong>). Conducted internal network security audits and <strong>vulnerability assessments (VAPT)</strong>, firewall rules enforcement, and server architectural documentation.",
-    
-    job2Title: "IT Support (Vendor Outsourcing)",
-    job2Company: "• PT Bank Sinarmas, Tbk",
-    job2Meta: "Dec 2023 (Freelance) • KC Medan Mangkubumi",
-    job2Desc: "Executed independent IT outsourcing operations for enterprise <strong>PC Deployment</strong> at Bank Sinarmas KC Medan Mangkubumi. Fully responsible for desktop unboxing, hardware assembly, secure user profile data backup & migration, OS installation, and structured cable management. Configured peripherals (slip printers, document scanners) until fully onboarded to internal banking domain.",
-    
-    leadShunaTitle: "SHUNA AI Project Lead",
-    leadShunaScore: "Score: 81.8",
-    leadShunaOrg: "MSIB Batch 6 Kampus Merdeka @ Skilvul",
-    leadShunaDesc: "Led the engineering team in designing data processing pipelines and text classification workflows utilizing Natural Language Processing (NLP) with Python.",
-    
-    leadOrgTitle: "Organizational Leadership",
-    leadOrgSub: "HMPS Informatika • Univ. Potensi Utama",
-    leadOrgDesc: "Led the reactivation and internal administrative governance of the Informatics Student Association.",
-    
     certHeading: "Certifications & Expertise",
-    cert1Title: "Associate Network Administrator (Komdigi RI, 2026)",
-    cert1Desc: "National standard for IP addressing schemes, router/switch configuration, and distributed routing.",
-    cert2Title: "Junior Network Administrator (BBPSDMP Kominfo, 2023)",
-    cert2Desc: "Computer network installation and Linux / Nginx server administration.",
-    
-    skillSecurityTitle: "System Security & VAPT:",
-    skillSecurityDesc: "Burp Suite, OWASP ZAP, Vulnerability Assessment, OSINT, Parameterized SQL Security.",
-    skillProgTitle: "Programming & Backend:",
-    skillProgDesc: "Python (Pandas, VADER, BS4, FastAPI), Node.js (Express, Sharp), C++, SQL (SQLite), JavaScript ES6+.",
-    
-    // Footer section
-    footerBioText: "B.Sc. in Computer Science graduate from Universitas Potensi Utama. IT Support Practitioner (Bank Sinarmas), IT Researcher (Adzkia Kedinasan), Certified Network Administrator (Komdigi & Kominfo), VAPT Security, and Data Analytics & Software Engineering.",
-    footerTechHeading: "Competencies & Tech Stack",
-    footerTechList: `
-      <li>• <strong>Infrastructure & Media:</strong> Nginx Media Server (RTMP, HLS, RTSP), Linux VM</li>
-      <li>• <strong>Data & NLP:</strong> Python (Pandas, VADER Lexicon, BeautifulSoup, FastAPI)</li>
-      <li>• <strong>Backend & Networking:</strong> Node.js REST API, SQLite, IP Routing, PC Deployment</li>
-      <li>• <strong>Security:</strong> VAPT (Burp Suite, OWASP ZAP), OSINT, Bcrypt, JWT</li>
-    `,
+
+    // Footer
+    footerBioText: "B.Sc. in Computer Science graduate from Universitas Potensi Utama. IT Support Practitioner, Network Administrator, VAPT Security, and Data Analytics & Software Engineering.",
+    footerTechHeading: "Core Competencies",
     footerLinksHeading: "Links & Portfolio",
-    footerLinksDesc: "All 29 modular application tools are designed for real-time interactive exploration.",
+    footerLinksDesc: "All systems are handcrafted with clean code and interactively accessible.",
     footerTagline: "© 2026 Rizki Ananda, S.Kom (@InfiniteNull) • Handcrafted with Clean Code & Professional IT Standards."
   }
 };
@@ -189,25 +216,18 @@ window.setLanguage = function(lang) {
   const dict = window.I18N_DICT[lang];
   if (!dict) return;
 
-  // 1. Navbar Toggle Button
+  // 1. Navbar
   const langLabel = document.getElementById('langLabel');
-  if (langLabel) {
-    langLabel.textContent = lang === 'id' ? 'ID' : 'EN';
-  }
+  if (langLabel) langLabel.textContent = lang === 'id' ? 'ID' : 'EN';
 
-  // Project Switcher Elements
-  const projectSwitcherLabel = document.getElementById('projectSwitcherLabel');
-  if (projectSwitcherLabel) projectSwitcherLabel.textContent = dict.projectSwitcherLabel;
+  const navLinkHome = document.getElementById('navLinkHome');
+  if (navLinkHome) navLinkHome.textContent = dict.navLinkHome;
 
-  const labelProjectSimrs = document.getElementById('labelProjectSimrs');
-  if (labelProjectSimrs) labelProjectSimrs.textContent = dict.labelProjectSimrs;
+  const navLinkProjects = document.getElementById('navLinkProjects');
+  if (navLinkProjects) navLinkProjects.textContent = dict.navLinkProjects;
 
-  const labelProjectDevTools = document.getElementById('labelProjectDevTools');
-  if (labelProjectDevTools) labelProjectDevTools.textContent = dict.labelProjectDevTools;
-
-  // 2. Navigation Header & Buttons
-  const headerSubtitle = document.getElementById('headerSubtitle');
-  if (headerSubtitle) headerSubtitle.textContent = dict.headerSubtitle;
+  const navLinkExp = document.getElementById('navLinkExp');
+  if (navLinkExp) navLinkExp.textContent = dict.navLinkExp;
 
   const btnInterviewGuideText = document.getElementById('btnInterviewGuideText');
   if (btnInterviewGuideText) btnInterviewGuideText.textContent = dict.btnInterviewGuide;
@@ -215,7 +235,7 @@ window.setLanguage = function(lang) {
   const btnAboutDevText = document.getElementById('btnAboutDevText');
   if (btnAboutDevText) btnAboutDevText.textContent = dict.btnAboutDev;
 
-  // 3. Hero Section
+  // 2. Hero Section
   const heroBadgeText = document.getElementById('heroBadgeText');
   if (heroBadgeText) heroBadgeText.textContent = dict.heroBadge;
 
@@ -225,7 +245,81 @@ window.setLanguage = function(lang) {
   const heroDescText = document.getElementById('heroDescText');
   if (heroDescText) heroDescText.textContent = dict.heroDesc;
 
-  // 4. Category Tabs
+  const btnHeroViewProjects = document.getElementById('btnHeroViewProjects');
+  if (btnHeroViewProjects) {
+    const span = btnHeroViewProjects.querySelector('span');
+    if (span) span.textContent = dict.btnHeroViewProjects;
+  }
+
+  const btnHeroViewProfile = document.getElementById('btnHeroViewProfile');
+  if (btnHeroViewProfile) {
+    const span = btnHeroViewProfile.querySelector('span');
+    if (span) span.textContent = dict.btnHeroViewProfile;
+  }
+
+  // Quick Stats
+  const statProjTitle = document.getElementById('statProjTitle');
+  if (statProjTitle) statProjTitle.textContent = dict.statProjTitle;
+  const statProjVal = document.getElementById('statProjVal');
+  if (statProjVal) statProjVal.textContent = dict.statProjVal;
+
+  const statToolsTitle = document.getElementById('statToolsTitle');
+  if (statToolsTitle) statToolsTitle.textContent = dict.statToolsTitle;
+  const statToolsVal = document.getElementById('statToolsVal');
+  if (statToolsVal) statToolsVal.textContent = dict.statToolsVal;
+
+  const statCertTitle = document.getElementById('statCertTitle');
+  if (statCertTitle) statCertTitle.textContent = dict.statCertTitle;
+  const statCertVal = document.getElementById('statCertVal');
+  if (statCertVal) statCertVal.textContent = dict.statCertVal;
+
+  const statQualityTitle = document.getElementById('statQualityTitle');
+  if (statQualityTitle) statQualityTitle.textContent = dict.statQualityTitle;
+  const statQualityVal = document.getElementById('statQualityVal');
+  if (statQualityVal) statQualityVal.textContent = dict.statQualityVal;
+
+  // 3. Featured Projects
+  const secHeadingProjects = document.getElementById('secHeadingProjects');
+  if (secHeadingProjects) {
+    const span = secHeadingProjects.querySelector('span');
+    if (span) span.textContent = dict.secHeadingProjects;
+  }
+
+  const secSubProjects = document.getElementById('secSubProjects');
+  if (secSubProjects) secSubProjects.textContent = dict.secSubProjects;
+
+  const simrsCardTitle = document.getElementById('simrsCardTitle');
+  if (simrsCardTitle) simrsCardTitle.textContent = dict.simrsCardTitle;
+
+  const simrsCardSub = document.getElementById('simrsCardSub');
+  if (simrsCardSub) simrsCardSub.textContent = dict.simrsCardSub;
+
+  const simrsCardDesc = document.getElementById('simrsCardDesc');
+  if (simrsCardDesc) simrsCardDesc.textContent = dict.simrsCardDesc;
+
+  const simrsBtnOpen = document.getElementById('simrsBtnOpen');
+  if (simrsBtnOpen) simrsBtnOpen.textContent = dict.simrsBtnOpen;
+
+  const devtoolsCardTitle = document.getElementById('devtoolsCardTitle');
+  if (devtoolsCardTitle) devtoolsCardTitle.textContent = dict.devtoolsCardTitle;
+
+  const devtoolsCardSub = document.getElementById('devtoolsCardSub');
+  if (devtoolsCardSub) devtoolsCardSub.textContent = dict.devtoolsCardSub;
+
+  const devtoolsCardDesc = document.getElementById('devtoolsCardDesc');
+  if (devtoolsCardDesc) devtoolsCardDesc.textContent = dict.devtoolsCardDesc;
+
+  const devtoolsBtnOpen = document.getElementById('devtoolsBtnOpen');
+  if (devtoolsBtnOpen) devtoolsBtnOpen.textContent = dict.devtoolsBtnOpen;
+
+  // 4. Experience & Certifications
+  const secHeadingExp = document.getElementById('secHeadingExp');
+  if (secHeadingExp) secHeadingExp.textContent = dict.secHeadingExp;
+
+  const secSubExp = document.getElementById('secSubExp');
+  if (secSubExp) secSubExp.textContent = dict.secSubExp;
+
+  // 5. Category Tabs
   const catAllBtn = document.querySelector('button[data-category="all"]');
   if (catAllBtn) catAllBtn.textContent = dict.catAll;
 
@@ -241,18 +335,18 @@ window.setLanguage = function(lang) {
   const catUtilBtn = document.querySelector('button[data-category="utility"]');
   if (catUtilBtn) catUtilBtn.textContent = dict.catUtility;
 
-  // 5. Search Placeholder
+  // 6. Search Placeholder
   const searchInput = document.getElementById('toolSearchInput');
   if (searchInput) searchInput.placeholder = dict.searchPlaceholder;
 
-  // 6. Empty State
+  // 7. Empty State
   const emptyStateTitle = document.getElementById('emptyStateTitle');
   if (emptyStateTitle) emptyStateTitle.textContent = dict.emptyTitle;
 
   const emptyStateDesc = document.getElementById('emptyStateDesc');
   if (emptyStateDesc) emptyStateDesc.textContent = dict.emptyDesc;
 
-  // 7. Modal Tabs
+  // 8. Modal Tabs
   const tabDemoText = document.getElementById('tabDemoText');
   if (tabDemoText) tabDemoText.textContent = dict.tabDemo;
 
@@ -262,13 +356,10 @@ window.setLanguage = function(lang) {
   const tabDocsText = document.getElementById('tabDocsText');
   if (tabDocsText) tabDocsText.textContent = dict.tabDocs;
 
-  const copyCodeBtnText = document.getElementById('copyCodeBtnText');
+  const copyCodeBtnText = document.getElementById('copyCodeBtnText') || document.getElementById('copyCodeText');
   if (copyCodeBtnText) copyCodeBtnText.textContent = dict.copyCode;
 
-  // 8. Developer Profile Modal Elements
-  const devRoleBadge = document.getElementById('devRoleBadge');
-  if (devRoleBadge) devRoleBadge.textContent = dict.devRoleBadge;
-
+  // 9. Developer Profile Modal
   const devRoleSub = document.getElementById('devRoleSub');
   if (devRoleSub) devRoleSub.textContent = dict.devRoleSub;
 
@@ -305,24 +396,6 @@ window.setLanguage = function(lang) {
   const job2Desc = document.getElementById('job2Desc');
   if (job2Desc) job2Desc.innerHTML = dict.job2Desc;
 
-  const leadShunaTitle = document.getElementById('leadShunaTitle');
-  if (leadShunaTitle) leadShunaTitle.textContent = dict.leadShunaTitle;
-
-  const leadShunaScore = document.getElementById('leadShunaScore');
-  if (leadShunaScore) leadShunaScore.textContent = dict.leadShunaScore;
-
-  const leadShunaDesc = document.getElementById('leadShunaDesc');
-  if (leadShunaDesc) leadShunaDesc.textContent = dict.leadShunaDesc;
-
-  const leadOrgTitle = document.getElementById('leadOrgTitle');
-  if (leadOrgTitle) leadOrgTitle.textContent = dict.leadOrgTitle;
-
-  const leadOrgSub = document.getElementById('leadOrgSub');
-  if (leadOrgSub) leadOrgSub.textContent = dict.leadOrgSub;
-
-  const leadOrgDesc = document.getElementById('leadOrgDesc');
-  if (leadOrgDesc) leadOrgDesc.textContent = dict.leadOrgDesc;
-
   const certHeading = document.getElementById('certHeading');
   if (certHeading) certHeading.textContent = dict.certHeading;
 
@@ -338,27 +411,12 @@ window.setLanguage = function(lang) {
   const cert2Desc = document.getElementById('cert2Desc');
   if (cert2Desc) cert2Desc.textContent = dict.cert2Desc;
 
-  const skillSecurityTitle = document.getElementById('skillSecurityTitle');
-  if (skillSecurityTitle) skillSecurityTitle.textContent = dict.skillSecurityTitle;
-
-  const skillSecurityDesc = document.getElementById('skillSecurityDesc');
-  if (skillSecurityDesc) skillSecurityDesc.textContent = dict.skillSecurityDesc;
-
-  const skillProgTitle = document.getElementById('skillProgTitle');
-  if (skillProgTitle) skillProgTitle.textContent = dict.skillProgTitle;
-
-  const skillProgDesc = document.getElementById('skillProgDesc');
-  if (skillProgDesc) skillProgDesc.textContent = dict.skillProgDesc;
-
-  // 9. Footer Translations
+  // 10. Footer
   const footerBioText = document.getElementById('footerBioText');
   if (footerBioText) footerBioText.textContent = dict.footerBioText;
 
   const footerTechHeading = document.getElementById('footerTechHeading');
   if (footerTechHeading) footerTechHeading.textContent = dict.footerTechHeading;
-
-  const footerTechList = document.getElementById('footerTechList');
-  if (footerTechList) footerTechList.innerHTML = dict.footerTechList;
 
   const footerLinksHeading = document.getElementById('footerLinksHeading');
   if (footerLinksHeading) footerLinksHeading.textContent = dict.footerLinksHeading;
@@ -369,12 +427,12 @@ window.setLanguage = function(lang) {
   const footerTagline = document.getElementById('footerTagline');
   if (footerTagline) footerTagline.textContent = dict.footerTagline;
 
-  // Re-render Tools Grid to update titles & descriptions
+  // Re-render Tools Grid
   if (typeof window.renderToolsGrid === 'function') {
     window.renderToolsGrid();
   }
 
-  // Re-render SIMRS Suite if active
+  // Re-render SIMRS if active
   if (window.currentProject === 'simrs' && typeof window.renderSimrsSuite === 'function') {
     const root = document.getElementById('simrsSuiteRoot');
     if (root) window.renderSimrsSuite(root);

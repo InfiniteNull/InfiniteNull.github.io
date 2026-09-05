@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="id" class="light scroll-smooth">
+<html lang="id" class="dark scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dev & Data Tools Suite | Rizki Ananda, S.Kom</title>
-  
-  <!-- Inter Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  
+  <title>Rizki Ananda, S.Kom — Portofolio IT Support, Jaringan, Keamanan & Rekayasa Perangkat Lunak</title>
+  <meta name="description" content="Portofolio resmi Rizki Ananda, S.Kom - Lulusan S1 Informatika Universitas Potensi Utama. Menampilkan SIMRS Core (Hospital MIS) dan Dev & Data Engineering Suite (29 Tools)." />
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -28,6 +29,7 @@
               500: '#0284c7',
               600: '#0369a1',
               700: '#075985',
+              900: '#0c4a6e',
             }
           }
         }
@@ -37,34 +39,38 @@
 
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  
-  <!-- Chart.js for NLP & Data Analyzer -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-  <!-- PapaParse for CSV parsing -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
-
-  <!-- Custom CSS -->
+  <!-- Custom Styles -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen font-sans antialiased transition-colors duration-200">
 
   <!-- ============================================================ -->
-  <!-- TOP NAVIGATION BAR                                           -->
+  <!-- TOP MASTER NAVBAR                                            -->
   <!-- ============================================================ -->
   <header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         
-        <!-- Logo & Title -->
-        <div class="flex items-center gap-3">
-          <div class="w-9 h-9 rounded-lg bg-slate-900 dark:bg-slate-100 flex items-center justify-center text-white dark:text-slate-900 font-bold font-mono text-sm shadow-sm border border-slate-800 dark:border-slate-300">
-            &lt;/&gt;
+        <!-- Logo & Developer Name -->
+        <a href="#home" class="flex items-center gap-3 group">
+          <div class="w-9 h-9 rounded-lg bg-slate-900 dark:bg-slate-100 flex items-center justify-center text-white dark:text-slate-900 font-bold font-mono text-xs shadow-sm border border-slate-800 dark:border-slate-300 group-hover:scale-105 transition">
+            RA
           </div>
-          <h1 class="font-bold text-slate-900 dark:text-white text-base leading-tight">Dev & Data Suite</h1>
-        </div>
+          <div>
+            <span class="font-bold text-slate-900 dark:text-white text-sm tracking-tight block">Rizki Ananda, S.Kom</span>
+            <span class="text-[10px] text-slate-500 dark:text-slate-400 font-mono block">@InfiniteNull • S1 Informatika</span>
+          </div>
+        </a>
 
-        <!-- Right Controls (Search, Quick Links, Theme Toggle, Language Switcher) -->
+        <!-- Center Nav (Visible on Home) -->
+        <nav class="hidden md:flex items-center gap-6 text-xs font-medium text-slate-600 dark:text-slate-300">
+          <a href="#home" class="hover:text-slate-900 dark:hover:text-white transition" id="navLinkHome">Beranda</a>
+          <a href="#projects" class="hover:text-slate-900 dark:hover:text-white transition" id="navLinkProjects">Proyek Unggulan</a>
+          <a href="#experience" class="hover:text-slate-900 dark:hover:text-white transition" id="navLinkExp">Pengalaman & Keahlian</a>
+        </nav>
+
+        <!-- Right Controls (About Dev, Language, Dark Mode) -->
         <div class="flex items-center gap-2 sm:gap-3">
           <button id="viewInterviewDocBtn" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition border border-slate-200/80 dark:border-slate-700/80">
             <i data-lucide="book-open" class="w-3.5 h-3.5 text-slate-500"></i>
@@ -73,7 +79,7 @@
           
           <button id="aboutDevBtn" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition border border-slate-200 dark:border-slate-700 shadow-sm">
             <i data-lucide="user" class="w-3.5 h-3.5 text-slate-500"></i>
-            <span id="btnAboutDevText" class="font-semibold">Tentang Pengembang</span>
+            <span id="btnAboutDevText" class="font-semibold">Profil Pengembang</span>
           </button>
 
           <!-- Language Switcher (ID / EN) -->
@@ -94,87 +100,359 @@
   </header>
 
   <!-- ============================================================ -->
-  <!-- MASTER PORTFOLIO PROJECT SWITCHER                            -->
+  <!-- VIEW 1: PORTFOLIO HOMEPAGE / LANDING PAGE (#home)             -->
   <!-- ============================================================ -->
-  <div class="bg-slate-100/90 dark:bg-slate-900/90 border-b border-slate-200 dark:border-slate-800 py-2">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-      <div class="flex items-center gap-2.5">
-        <span id="projectSwitcherLabel" class="text-[11px] font-mono font-medium text-slate-500 dark:text-slate-400">Proyek:</span>
-        <div class="inline-flex p-0.5 rounded-lg bg-slate-200/80 dark:bg-slate-800 border border-slate-300/60 dark:border-slate-700/60" id="projectSwitcherContainer">
-          <button id="projectBtnSimrs" data-project="simrs" class="project-switcher-btn active px-3 py-1 rounded-md text-xs font-semibold transition flex items-center gap-1.5">
-            <i data-lucide="hospital" class="w-3.5 h-3.5"></i>
-            <span id="labelProjectSimrs">SIMRS Core</span>
-          </button>
-          <button id="projectBtnDevTools" data-project="devtools" class="project-switcher-btn px-3 py-1 rounded-md text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition flex items-center gap-1.5">
-            <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i>
-            <span id="labelProjectDevTools">Dev & Data Suite</span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============================================================ -->
-  <!-- PROJECT 2 VIEW: SIMRS LARAVEL ENTERPRISE HOSPITAL SUITE      -->
-  <!-- ============================================================ -->
-  <main id="projectSimrsView" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <div id="simrsSuiteRoot">
-      <!-- Populated by simrs-laravel-suite.js -->
-    </div>
-  </main>
-
-  <!-- ============================================================ -->
-  <!-- PROJECT 1 VIEW: 29 DEV & ENGINEERING TOOLS SUITE             -->
-  <!-- ============================================================ -->
-  <div id="projectDevToolsView" class="hidden">
-    <!-- HERO & SKILLS BADGES -->
-    <section class="border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-8">
+  <main id="viewHome" class="portfolio-view">
+    
+    <!-- Hero Section -->
+    <section class="border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-12 sm:py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+        <div class="max-w-3xl space-y-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-medium border border-slate-200 dark:border-slate-700">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span id="heroBadgeText">Lulusan S1 Informatika • Praktisi IT Support & Network Admin</span>
+          </div>
           
-          <div class="max-w-3xl">
-            <h2 id="heroTitleText" class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
-              Web Tools & Data Suite
-            </h2>
-            <p id="heroDescText" class="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
-              Platform utilitas mandiri 29 tools interaktif untuk manajemen jaringan, audit keamanan sistem, database & data wrangling, serta utilitas IT harian.
-            </p>
-          </div>
+          <h1 id="heroTitleText" class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
+            Rekayasa Perangkat Lunak, Infrastruktur Jaringan & Keamanan Sistem
+          </h1>
+          
+          <p id="heroDescText" class="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+            Selamat datang di portal portofolio teknis Rizki Ananda, S.Kom. Berpengalaman dalam arsitektur backend enterprise (Laravel 11 & Python), manajemen infrastruktur jaringan (Mikrotik & Linux), audit keamanan sistem (VAPT), serta rekayasa data.
+          </p>
 
-        </div>
-
-        <!-- Category Filter Tabs & Search Bar -->
-        <div class="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <!-- Filter Tabs -->
-          <div class="flex items-center gap-1.5 overflow-x-auto pb-2 md:pb-0 scrollbar-none" id="categoryFilterContainer">
-            <button data-category="all" class="category-filter-btn active px-3.5 py-1.5 rounded-lg text-xs font-semibold transition">
-              Semua Tools (29)
-            </button>
-            <button data-category="network" class="category-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-              Jaringan & Server
-            </button>
-            <button data-category="security" class="category-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-              Keamanan Sistem
-            </button>
-            <button data-category="database" class="category-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-              Data & Backend
-            </button>
-            <button data-category="utility" class="category-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-              Utilitas & Hardware
+          <div class="pt-2 flex flex-wrap items-center gap-3">
+            <a href="#projects" class="px-4 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 dark:bg-slate-100 dark:hover:bg-white text-white dark:text-slate-900 font-semibold text-xs flex items-center gap-2 transition shadow-sm" id="btnHeroViewProjects">
+              <i data-lucide="layers" class="w-4 h-4"></i>
+              <span>Jelajahi Proyek Unggulan ➔</span>
+            </a>
+            <button onclick="document.getElementById('aboutDevBtn').click()" class="px-4 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-medium text-xs flex items-center gap-2 transition border border-slate-200 dark:border-slate-700" id="btnHeroViewProfile">
+              <i data-lucide="file-text" class="w-4 h-4"></i>
+              <span>Lihat Profil & Pengalaman</span>
             </button>
           </div>
 
-          <!-- Search Input -->
-          <div class="relative w-full md:w-64">
-            <i data-lucide="search" class="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
-            <input type="text" id="toolSearchInput" placeholder="Cari nama tool / teknologi..." class="w-full pl-9 pr-3 py-1.5 text-xs rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-slate-400 dark:focus:ring-slate-500 transition font-mono" />
+          <!-- Quick Stats Bar -->
+          <div class="pt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 border-t border-slate-100 dark:border-slate-800">
+            <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60">
+              <span id="statProjTitle" class="text-[10px] text-slate-500 uppercase font-mono block">Arsitektur Proyek</span>
+              <span id="statProjVal" class="text-lg font-bold font-mono text-slate-900 dark:text-white">2 Sistem</span>
+            </div>
+            <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60">
+              <span id="statToolsTitle" class="text-[10px] text-slate-500 uppercase font-mono block">Modul Web Tools</span>
+              <span id="statToolsVal" class="text-lg font-bold font-mono text-slate-900 dark:text-white">29 Utilitas</span>
+            </div>
+            <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60">
+              <span id="statCertTitle" class="text-[10px] text-slate-500 uppercase font-mono block">Sertifikasi BNSP/Kominfo</span>
+              <span id="statCertVal" class="text-lg font-bold font-mono text-slate-900 dark:text-white">2 Lisensi</span>
+            </div>
+            <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60">
+              <span id="statQualityTitle" class="text-[10px] text-slate-500 uppercase font-mono block">Standar Kualitas</span>
+              <span id="statQualityVal" class="text-lg font-bold font-mono text-emerald-600 dark:text-emerald-400">Clean Code</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <div id="toolsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+    <!-- FEATURED PROJECTS SHOWCASE SECTION -->
+    <section id="projects" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">
+      
+      <div class="space-y-1">
+        <h2 class="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-2" id="secHeadingProjects">
+          <i data-lucide="folder-git-2" class="w-5 h-5 text-slate-700 dark:text-slate-300"></i>
+          <span>Proyek Unggulan (Featured Projects)</span>
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400" id="secSubProjects">
+          Pilih dan jelajahi aplikasi produksi mandiri di bawah ini:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        
+        <!-- PROJECT 1 CARD: SIMRS CORE ENTERPRISE -->
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md hover:border-slate-300 dark:hover:border-slate-700 transition flex flex-col justify-between space-y-5">
+          <div class="space-y-3.5">
+            <div class="flex items-start justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-sky-50 dark:bg-sky-950 text-sky-600 dark:text-sky-400 flex items-center justify-center border border-sky-200 dark:border-sky-800">
+                  <i data-lucide="hospital" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h3 id="simrsCardTitle" class="font-bold text-slate-900 dark:text-white text-base">SIMRS Core Enterprise</h3>
+                  <span id="simrsCardSub" class="text-xs text-slate-500 font-mono">Hospital Management Information System</span>
+                </div>
+              </div>
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold font-mono bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
+                PRODUKSI
+              </span>
+            </div>
+
+            <!-- Tech Badges -->
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-mono">
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Laravel 11</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Permenkes No. 24/2022</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">BPJS V-Claim 2.0</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">SatuSehat FHIR R4</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Barber-Johnson</span>
+            </div>
+
+            <p id="simrsCardDesc" class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Sistem manajemen rumah sakit terintegrasi penuh: admisi & bridging BPJS SEP, rekam medis elektronik (RME SOAP) dengan pencarian 40+ ICD-10, E-Order Lab LOINC, E-Prescribing farmasi, kasir billing reaktif berkwitansi resmi, alokasi ranjang kamar inap (Bed Matrix), serta indikator efisiensi BOR.</p>
+
+            <!-- Key Features List -->
+            <ul class="text-xs space-y-1.5 text-slate-700 dark:text-slate-300 font-medium">
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i>
+                <span>Bridging BPJS V-Claim & SatuSehat FHIR Bundle Permenkes 24/2022</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i>
+                <span>Alur Layanan Klinis Terkoneksi Real-time (Admisi ➔ SOAP ➔ Lab/Rx ➔ Kasir)</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i>
+                <span>Modal Manajemen Bed Ranap, Audio Antrean, & Kwitansi Resmi</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-3">
+            <a href="https://github.com/InfiniteNull/simrs-laravel" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center gap-1.5 transition">
+              <i data-lucide="github" class="w-3.5 h-3.5"></i>
+              <span>GitHub Repo ↗</span>
+            </a>
+            <a href="#simrs" class="px-4 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 dark:bg-slate-100 dark:hover:bg-white text-white dark:text-slate-900 font-bold text-xs flex items-center gap-1.5 transition shadow-sm">
+              <span id="simrsBtnOpen">Buka Aplikasi SIMRS</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- PROJECT 2 CARD: DEV & DATA ENGINEERING SUITE -->
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md hover:border-slate-300 dark:hover:border-slate-700 transition flex flex-col justify-between space-y-5">
+          <div class="space-y-3.5">
+            <div class="flex items-start justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-950 text-purple-600 dark:text-purple-400 flex items-center justify-center border border-purple-200 dark:border-purple-800">
+                  <i data-lucide="layout-grid" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h3 id="devtoolsCardTitle" class="font-bold text-slate-900 dark:text-white text-base">Dev & Data Engineering Suite</h3>
+                  <span id="devtoolsCardSub" class="text-xs text-slate-500 font-mono">29 Interactive Computational Tools</span>
+                </div>
+              </div>
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold font-mono bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-300 border border-purple-200 dark:border-purple-800">
+                29 MODUL
+              </span>
+            </div>
+
+            <!-- Tech Badges -->
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-mono">
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Python & JS</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">IPv4/CIDR VLSM</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">UFW / iptables</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Data Wrangling</span>
+              <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">VAPT Security</span>
+            </div>
+
+            <p id="devtoolsCardDesc" class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Platform utilitas mandiri 29 tools interaktif untuk kalkulasi subnetting IPv4, generator firewall Linux/Mikrotik, data cleaner & outlier QC inspector, spreadsheet formula engine (VLOOKUP/Regex), security audit (JWT/Hash/Entropy), dan kalkulator hardware server.</p>
+
+            <!-- Key Features List -->
+            <ul class="text-xs space-y-1.5 text-slate-700 dark:text-slate-300 font-medium">
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-purple-500 shrink-0"></i>
+                <span>Kalkulator Subnetting IPv4/VLSM & Firewall CLI Multi-Platform</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-purple-500 shrink-0"></i>
+                <span>Data Cleaner Studio, Outlier Inspector, & Formula Parser</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-purple-500 shrink-0"></i>
+                <span>Sistem Keamanan & Kriptografi (Entropy, JWT Debugger, Hashes)</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-3">
+            <a href="https://github.com/InfiniteNull" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center gap-1.5 transition">
+              <i data-lucide="github" class="w-3.5 h-3.5"></i>
+              <span>GitHub: @InfiniteNull ↗</span>
+            </a>
+            <a href="#devtools" class="px-4 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 dark:bg-slate-100 dark:hover:bg-white text-white dark:text-slate-900 font-bold text-xs flex items-center gap-1.5 transition shadow-sm">
+              <span id="devtoolsBtnOpen">Jelajahi 29 Tools</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- WORK EXPERIENCE & CERTIFICATIONS SECTION -->
+    <section id="experience" class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        
+        <div class="space-y-1">
+          <h2 class="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
+            <i data-lucide="briefcase" class="w-5 h-5 text-slate-700 dark:text-slate-300"></i>
+            <span id="secHeadingExp">Pengalaman Kerja & Sertifikasi</span>
+          </h2>
+          <p id="secSubExp" class="text-xs sm:text-sm text-slate-600 dark:text-slate-400">Rekam jejak profesional, penelitian infrastruktur, dan lisensi kompetensi nasional:</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          <!-- Experience Card 1 -->
+          <div class="p-5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 space-y-2.5">
+            <div class="flex items-center justify-between">
+              <h3 class="font-bold text-slate-900 dark:text-white text-sm">IT Researcher (Freelance)</h3>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300">Nov 2024 - Jun 2025</span>
+            </div>
+            <p class="text-xs font-semibold text-slate-700 dark:text-slate-300">• ADZKIA KEDINASAN PUSAT</p>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              Merancang, mengonfigurasi, dan menguji infrastruktur <strong>Nginx Media Server</strong> pada Linux VM, serta melakukan benchmark terhadap 4 protokol streaming video (<strong>RTMP, HLS, RTSP, HTTP</strong>). Melakukan audit keamanan jaringan & <strong>vulnerability assessment (VAPT)</strong> pada sistem internal.
+            </p>
+          </div>
+
+          <!-- Experience Card 2 -->
+          <div class="p-5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 space-y-2.5">
+            <div class="flex items-center justify-between">
+              <h3 class="font-bold text-slate-900 dark:text-white text-sm">IT Support (Vendor Outsourcing)</h3>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300">Des 2023</span>
+            </div>
+            <p class="text-xs font-semibold text-slate-700 dark:text-slate-300">• PT Bank Sinarmas, Tbk (KC Medan Mangkubumi)</p>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              Melaksanakan proyek peremajaan komputer (<strong>PC Deployment</strong>), instalasi hardware, backup dan migrasi data profil user secara aman, perapian kabel, serta konfigurasi peripheral printer slip dan scanner hingga terhubung ke domain perbankan.
+            </p>
+          </div>
+
+          <!-- Certification 1 -->
+          <div class="p-5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 space-y-2.5">
+            <div class="flex items-center justify-between">
+              <h3 class="font-bold text-slate-900 dark:text-white text-sm">Associate Network Administrator</h3>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 font-bold">BNSP / Komdigi RI (2026)</span>
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              Standar kompetensi nasional perancangan skema pengalamatan IP Addressing, subnetting VLSM, konfigurasi perangkat router/switch, dan routing jaringan terdistribusi.
+            </p>
+          </div>
+
+          <!-- Certification 2 -->
+          <div class="p-5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 space-y-2.5">
+            <div class="flex items-center justify-between">
+              <h3 class="font-bold text-slate-900 dark:text-white text-sm">Junior Network Administrator</h3>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-sky-100 dark:bg-sky-950 text-sky-800 dark:text-sky-300 font-bold">BBPSDMP Kominfo (2023)</span>
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              Instalasi jaringan komputer lokal (LAN), manajemen sistem operasi Linux / Nginx, dan pemeliharaan server data.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================ -->
+  <!-- VIEW 2: DEDICATED SIMRS CORE ENTERPRISE WORKSPACE (#simrs)    -->
+  <!-- ============================================================ -->
+  <main id="viewSimrs" class="portfolio-view hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-5">
+    
+    <!-- Top Return / Breadcrumb Navigation Bar -->
+    <div class="flex items-center justify-between p-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+      <div class="flex items-center gap-2 text-xs">
+        <a href="#home" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-semibold transition">
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+          <span>Kembali ke Beranda</span>
+        </a>
+        <span class="text-slate-400">/</span>
+        <span class="font-medium text-slate-500">Proyek</span>
+        <span class="text-slate-400">/</span>
+        <span class="font-bold text-slate-900 dark:text-white">SIMRS Core Enterprise</span>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <a href="https://github.com/InfiniteNull/simrs-laravel" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 dark:bg-slate-100 dark:hover:bg-white text-white dark:text-slate-900 font-semibold text-xs flex items-center gap-1.5 transition">
+          <i data-lucide="github" class="w-3.5 h-3.5"></i>
+          <span>GitHub Repo ↗</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- SIMRS Container Hook -->
+    <div id="simrsSuiteRoot">
+      <!-- Populated dynamically by simrs-laravel-suite.js -->
+    </div>
+
+  </main>
+
+  <!-- ============================================================ -->
+  <!-- VIEW 3: DEDICATED DEV & DATA ENGINEERING SUITE (#devtools)   -->
+  <!-- ============================================================ -->
+  <main id="viewDevTools" class="portfolio-view hidden space-y-6">
+    
+    <!-- Top Return Bar -->
+    <div class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm border-b border-slate-200 dark:border-slate-800 py-3">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div class="flex items-center gap-2 text-xs">
+          <a href="#home" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-semibold transition">
+            <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+            <span>Kembali ke Beranda</span>
+          </a>
+          <span class="text-slate-400">/</span>
+          <span class="font-medium text-slate-500">Proyek</span>
+          <span class="text-slate-400">/</span>
+          <span class="font-bold text-slate-900 dark:text-white">Dev & Data Engineering Suite</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero & Categories Filter Bar -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      
+      <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <h2 class="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
+              Dev & Data Engineering Suite (29 Tools)
+            </h2>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">
+              Platform utilitas mandiri untuk manajemen jaringan IPv4, hardening firewall, manipulasi & QC data, audit keamanan VAPT, serta utilitas hardware.
+            </p>
+          </div>
+          
+          <!-- Search Bar -->
+          <div class="relative w-full md:w-72 shrink-0">
+            <i data-lucide="search" class="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+            <input type="text" id="toolSearchInput" placeholder="Cari nama tool / teknologi..." class="w-full pl-9 pr-3 py-2 text-xs rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-slate-400 font-mono" />
+          </div>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none" id="categoryFilterContainer">
+          <button data-category="all" class="category-filter-btn active px-3.5 py-1.5 rounded-lg text-xs font-semibold transition">
+            Semua Tools (29)
+          </button>
+          <button data-category="network" class="category-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+            Jaringan & Server
+          </button>
+          <button data-category="security" class="category-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+            Keamanan Sistem
+          </button>
+          <button data-category="database" class="category-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+            Data & Backend
+          </button>
+          <button data-category="utility" class="category-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+            Utilitas & Hardware
+          </button>
+        </div>
+      </div>
+
+      <!-- Tools Grid -->
+      <div id="toolsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 pb-12">
         <!-- Cards will be populated by JavaScript -->
       </div>
 
@@ -186,11 +464,13 @@
         <h3 id="emptyStateTitle" class="text-sm font-bold text-slate-900 dark:text-white">Tidak ada tool yang cocok</h3>
         <p id="emptyStateDesc" class="text-xs text-slate-500 dark:text-slate-400 mt-1">Coba gunakan kata kunci pencarian lain atau ubah filter kategori.</p>
       </div>
-    </main>
-  </div>
+
+    </section>
+
+  </main>
 
   <!-- ============================================================ -->
-  <!-- INTERACTIVE TOOL WORKSPACE MODAL / DRAWER                   -->
+  <!-- INTERACTIVE TOOL WORKSPACE MODAL                            -->
   <!-- ============================================================ -->
   <div id="toolModal" class="fixed inset-0 z-50 hidden bg-slate-950/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
     <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl w-full max-w-5xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden transition-all duration-150">
@@ -198,322 +478,203 @@
       <!-- Modal Header -->
       <div class="px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-slate-900/50">
         <div class="flex items-center gap-3">
-          <div id="modalIconContainer" class="w-9 h-9 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700/60 flex items-center justify-center">
-            <i id="modalIcon" data-lucide="box" class="w-4 h-4"></i>
+          <div id="modalIconContainer" class="w-9 h-9 rounded-xl flex items-center justify-center bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
+            <i id="modalIcon" data-lucide="wrench" class="w-5 h-5"></i>
           </div>
           <div>
-            <div class="flex items-center gap-2">
-              <h3 id="modalTitle" class="text-base font-bold text-slate-900 dark:text-white leading-tight">Nama Tool</h3>
-              <span id="modalTechBadge" class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
-                Tech
-              </span>
-            </div>
-            <p id="modalSubtitle" class="text-xs text-slate-500 dark:text-slate-400">Deskripsi singkat fungsi tool</p>
+            <h3 id="modalTitle" class="font-bold text-slate-900 dark:text-white text-base leading-tight">Nama Tool</h3>
+            <p id="modalTechBadge" class="text-xs font-mono text-slate-500 dark:text-slate-400 mt-0.5">Teknologi</p>
           </div>
         </div>
 
-        <div class="flex items-center gap-2">
-          <button id="modalCloseBtn" class="p-2 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-            <i data-lucide="x" class="w-5 h-5"></i>
-          </button>
-        </div>
+        <button id="modalCloseBtn" aria-label="Tutup Modal" class="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
       </div>
 
-      <!-- Modal Tab Navigation -->
-      <div class="px-6 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex items-center gap-6 text-xs font-medium">
-        <button id="tabBtnDemo" class="modal-tab-btn active py-3 border-b-2 border-slate-900 dark:border-slate-100 text-slate-900 dark:text-white font-semibold transition flex items-center gap-1.5">
+      <!-- Modal Tabs Navigation -->
+      <div class="flex border-b border-slate-200 dark:border-slate-800 px-6 bg-slate-50/30 dark:bg-slate-900/30">
+        <button id="tabBtnDemo" class="modal-tab-btn active px-4 py-2.5 text-xs font-semibold border-b-2 border-slate-900 dark:border-slate-100 text-slate-900 dark:text-white transition flex items-center gap-2">
           <i data-lucide="play" class="w-3.5 h-3.5"></i>
           <span id="tabDemoText">Live Demo Interaktif</span>
         </button>
-        <button id="tabBtnCode" class="modal-tab-btn py-3 border-b-2 border-transparent text-slate-500 hover:text-slate-900 dark:hover:text-slate-200 transition flex items-center gap-1.5">
+        <button id="tabBtnCode" class="modal-tab-btn px-4 py-2.5 text-xs font-medium border-b-2 border-transparent text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 transition flex items-center gap-2">
           <i data-lucide="code" class="w-3.5 h-3.5"></i>
-          <span id="tabCodeText">Source Code Asli (Python / Node.js)</span>
+          <span id="tabCodeText">Source Code Asli</span>
         </button>
-        <button id="tabBtnDocs" class="modal-tab-btn py-3 border-b-2 border-transparent text-slate-500 hover:text-slate-900 dark:hover:text-slate-200 transition flex items-center gap-1.5">
+        <button id="tabBtnDocs" class="modal-tab-btn px-4 py-2.5 text-xs font-medium border-b-2 border-transparent text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 transition flex items-center gap-2">
           <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
           <span id="tabDocsText">Arsitektur & Penjelasan Teknis</span>
         </button>
       </div>
 
-      <!-- Modal Body Content -->
-      <div class="p-6 overflow-y-auto flex-1 bg-slate-50/50 dark:bg-slate-950/40">
-        
-        <!-- Tab 1: Live Demo Container -->
-        <div id="modalTabDemoContent" class="modal-tab-pane">
-          <!-- Injected via specific tool script -->
-        </div>
+      <!-- Modal Content Body -->
+      <div class="p-6 overflow-y-auto flex-1 min-h-[380px] bg-white dark:bg-slate-900">
+        <!-- Live Demo Container -->
+        <div id="modalDemoContent" class="space-y-4"></div>
 
-        <!-- Tab 2: Source Code Inspector Container -->
-        <div id="modalTabCodeContent" class="modal-tab-pane hidden">
-          <div class="flex items-center justify-between mb-3">
-            <div class="flex items-center gap-2">
-              <span id="codeLanguageLabel" class="text-xs font-mono font-semibold px-2.5 py-1 rounded bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200">
-                script.py
-              </span>
-              <span id="codeFilePathLabel" class="text-xs text-slate-500 font-mono">
-                /ai-data-analyzer/analyzer.py
-              </span>
-            </div>
-            <button id="copyCodeBtn" class="px-2.5 py-1 rounded text-xs font-medium bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition flex items-center gap-1.5 font-mono">
+        <!-- Source Code Container -->
+        <div id="modalCodeContent" class="hidden space-y-3">
+          <div class="flex items-center justify-between bg-slate-900 text-slate-200 px-4 py-2 rounded-t-lg border-b border-slate-800 text-xs font-mono">
+            <span id="modalCodeLang">python / javascript</span>
+            <button id="copyCodeBtn" class="flex items-center gap-1.5 hover:text-white transition text-xs font-sans">
               <i data-lucide="copy" class="w-3.5 h-3.5"></i>
-              <span id="copyCodeBtnText">Salin Kode</span>
+              <span id="copyCodeText">Salin Kode</span>
             </button>
           </div>
-          <pre class="bg-slate-900 text-slate-100 p-4 rounded-xl text-xs font-mono overflow-x-auto leading-relaxed border border-slate-800 shadow-inner max-h-[500px]"><code id="modalCodeSnippet"># Memuat kode sumber...</code></pre>
+          <pre class="bg-slate-950 text-slate-100 p-4 rounded-b-lg text-xs font-mono overflow-x-auto leading-relaxed border border-slate-800 shadow-inner max-h-[480px]"><code id="modalCodeSnippet"></code></pre>
         </div>
 
-        <!-- Tab 3: Technical Docs Container -->
-        <div id="modalTabDocsContent" class="modal-tab-pane hidden">
-          <div id="modalDocsBody" class="prose prose-sm dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed">
-            <!-- Documentation injected dynamically -->
-          </div>
-        </div>
-
+        <!-- Architecture Docs Container -->
+        <div id="modalDocsContent" class="hidden prose dark:prose-invert max-w-none text-xs leading-relaxed"></div>
       </div>
 
     </div>
   </div>
 
   <!-- ============================================================ -->
-  <!-- TENTANG PENGEMBANG / DEVELOPER PROFILE MODAL (LENGKAP)        -->
+  <!-- DEVELOPER PROFILE MODAL                                     -->
   <!-- ============================================================ -->
   <div id="aboutDevModal" class="fixed inset-0 z-50 hidden bg-slate-950/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
-    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl w-full max-w-3xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden transition-all duration-150">
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl w-full max-w-2xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden transition-all duration-150">
       
       <!-- Modal Header -->
-      <div class="px-6 py-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50/70 dark:bg-slate-900/50">
-        <div class="flex items-center gap-3.5">
-          <div class="w-11 h-11 rounded-xl bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900 flex items-center justify-center font-bold font-mono text-base shadow-md border border-slate-800 dark:border-slate-300">
+      <div class="px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-slate-900/50">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl flex items-center justify-center bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900 font-bold font-mono text-xs">
             RA
           </div>
           <div>
-            <div class="flex items-center gap-2">
-              <h3 class="font-bold text-slate-900 dark:text-white text-base">Rizki Ananda, S.Kom</h3>
-              <span id="devRoleBadge" class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
-                Lulusan S1 Informatika
-              </span>
-            </div>
-            <p id="devRoleSub" class="text-xs text-slate-500 dark:text-slate-400">Universitas Potensi Utama • Praktisi IT</p>
+            <h3 class="font-bold text-slate-900 dark:text-white text-base leading-tight">Rizki Ananda, S.Kom</h3>
+            <p id="devRoleSub" class="text-xs font-mono text-slate-500 dark:text-slate-400 mt-0.5">Universitas Potensi Utama • Praktisi IT</p>
           </div>
         </div>
-        <button id="aboutDevModalCloseBtn" class="p-2 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition">
+
+        <button id="aboutDevModalCloseBtn" aria-label="Tutup Modal" class="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
 
-      <!-- Modal Body -->
-      <div class="p-6 overflow-y-auto space-y-6 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+      <!-- Modal Content Body -->
+      <div class="p-6 overflow-y-auto flex-1 text-xs leading-relaxed space-y-5 text-slate-700 dark:text-slate-300">
         
-        <!-- Summary / Bio Card -->
-        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 space-y-2">
-          <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white">
-            <i data-lucide="user-check" class="w-4 h-4 text-slate-500"></i>
-            <span id="profileHeading">Profil</span>
-          </div>
-          <p id="profileBio" class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+        <div>
+          <h4 id="profileHeading" class="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white mb-2">Profil</h4>
+          <p id="profileBio" class="leading-relaxed">
             Lulusan <strong>S1 Informatika (S.Kom) dari Universitas Potensi Utama</strong> dengan spesialisasi di bidang <strong>IT Support, Administrasi Jaringan, Keamanan Sistem (VAPT), serta Analisis Data & Rekayasa Web</strong>. Berpengalaman teknis dalam deployment infrastruktur server, protokol streaming, peremajaan PC perbankan, dan rekayasa perangkat lunak.
           </p>
         </div>
 
-        <!-- Work Experience & Leadership Grid -->
-        <div class="space-y-3">
-          <h4 class="font-bold text-slate-900 dark:text-white text-xs uppercase tracking-wider flex items-center gap-2">
-            <i data-lucide="briefcase" class="w-4 h-4 text-slate-500"></i>
-            <span id="expHeading">Pengalaman Kerja</span>
-          </h4>
-          
-          <div class="grid grid-cols-1 gap-3.5">
-            
-            <!-- Job 1: Adzkia Kedinasan Pusat -->
-            <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-2">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                <div>
-                  <span id="job1Title" class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">IT Researcher</span>
-                  <span id="job1Company" class="text-xs text-slate-600 dark:text-slate-400 font-semibold ml-1.5">• ADZKIA KEDINASAN PUSAT</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <span id="job1Meta" class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 border border-slate-200 dark:border-slate-700">Nov 2024 - Jun 2025 (Freelance)</span>
-                </div>
+        <div>
+          <h4 id="expHeading" class="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white mb-2">Pengalaman Kerja</h4>
+          <div class="space-y-3">
+            <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+              <div class="flex items-center justify-between mb-1">
+                <span id="job1Title" class="font-bold text-slate-900 dark:text-white">IT Researcher</span>
+                <span id="job1Meta" class="font-mono text-[10px] text-slate-500">Nov 2024 - Jun 2025 • Medan</span>
               </div>
-              <div class="text-[11px] text-slate-400 font-mono">Petisah Hulu, Medan Baru, Kota Medan, Sumatera Utara</div>
-              <p id="job1Desc" class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                Bertanggung jawab dalam merancang, mengonfigurasi, dan menguji infrastruktur <strong>Nginx Media Server</strong> pada lingkungan Virtual Machine berbasis Linux, serta melakukan benchmark terhadap 4 protokol streaming video (<strong>RTMP, HLS, RTSP, dan HTTP</strong>). Melakukan pengujian keamanan jaringan dan <strong>vulnerability assessment (VAPT)</strong> pada sistem internal, audit konfigurasi firewall, serta dokumentasi arsitektur server.
+              <p id="job1Company" class="text-[11px] font-semibold text-slate-700 dark:text-slate-300 mb-1">• ADZKIA KEDINASAN PUSAT</p>
+              <p id="job1Desc" class="text-slate-600 dark:text-slate-400">
+                Merancang dan menguji <strong>Nginx Media Server</strong> pada Linux VM, benchmark 4 protokol streaming video (<strong>RTMP, HLS, RTSP, HTTP</strong>), pengujian keamanan <strong>vulnerability assessment (VAPT)</strong>, dan audit konfigurasi firewall.
               </p>
             </div>
 
-            <!-- Job 2: Bank Sinarmas -->
-            <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-2">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                <div>
-                  <span id="job2Title" class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">IT Support (Vendor Outsourcing)</span>
-                  <span id="job2Company" class="text-xs text-slate-600 dark:text-slate-400 font-semibold ml-1.5">• PT Bank Sinarmas, Tbk</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <span id="job2Meta" class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 border border-slate-200 dark:border-slate-700">Des 2023 (Freelance)</span>
-                </div>
+            <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+              <div class="flex items-center justify-between mb-1">
+                <span id="job2Title" class="font-bold text-slate-900 dark:text-white">IT Support (Vendor Outsourcing)</span>
+                <span id="job2Meta" class="font-mono text-[10px] text-slate-500">Des 2023 • Medan</span>
               </div>
-              <div class="text-[11px] text-slate-400 font-mono">KC Medan Mangkubumi, Aur, Medan Maimun, Kota Medan, Sumatera Utara</div>
-              <p id="job2Desc" class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                Bekerja secara independen di bawah naungan vendor IT outsourcing untuk melaksanakan proyek peremajaan perangkat komputer (<strong>PC Deployment</strong>) di Bank Sinarmas KC Medan Mangkubumi. Bertanggung jawab penuh melakukan unboxing, instalasi, dan perakitan PC desktop, melakukan backup dan migrasi data profil user secara aman, instalasi sistem operasi, serta perapian kabel (cable management). Selain itu, menangani konfigurasi perangkat peripheral seperti printer slip dan scanner dokumen hingga komputer siap terhubung ke domain jaringan internal bank.
+              <p id="job2Company" class="text-[11px] font-semibold text-slate-700 dark:text-slate-300 mb-1">• PT Bank Sinarmas, Tbk (KC Medan Mangkubumi)</p>
+              <p id="job2Desc" class="text-slate-600 dark:text-slate-400">
+                Melaksanakan peremajaan komputer (<strong>PC Deployment</strong>), perakitan hardware, backup dan migrasi profil user, instalasi OS, serta konfigurasi printer slip dan scanner hingga terhubung ke domain perbankan.
               </p>
-            </div>
-
-            <!-- Leadership Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-              
-              <div class="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 space-y-1.5">
-                <div class="flex items-center justify-between">
-                  <span id="leadShunaTitle" class="font-bold text-slate-900 dark:text-white text-xs">Ketua Tim Proyek SHUNA AI</span>
-                  <span id="leadShunaScore" class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold border border-slate-200 dark:border-slate-700">Nilai: 81.8</span>
-                </div>
-                <div class="text-[11px] text-slate-400">MSIB Batch 6 Kampus Merdeka @ Skilvul</div>
-                <p id="leadShunaDesc" class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">
-                  Memimpin tim dalam merancang alur data pipeline dan klasifikasi teks berbasis Natural Language Processing (NLP) menggunakan Python.
-                </p>
-              </div>
-
-              <div class="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 space-y-1.5">
-                <div class="flex items-center justify-between">
-                  <span id="leadOrgTitle" class="font-bold text-slate-900 dark:text-white text-xs">Kepemimpinan Organisasi</span>
-                  <span id="leadOrgSub" class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">HMPS Informatika</span>
-                </div>
-                <div class="text-[11px] text-slate-400">Universitas Potensi Utama</div>
-                <p id="leadOrgDesc" class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">
-                  Memimpin reaktivasi dan tata kelola administrasi internal organisasi Himpunan Mahasiswa Program Studi Informatika.
-                </p>
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Certifications & Networking / Security -->
-        <div class="space-y-3">
-          <h4 class="font-bold text-slate-900 dark:text-white text-xs uppercase tracking-wider flex items-center gap-2">
-            <i data-lucide="shield-check" class="w-4 h-4 text-slate-500"></i>
-            <span id="certHeading">Sertifikasi & Keahlian</span>
-          </h4>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            
-            <div class="p-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 space-y-1">
-              <div class="flex items-center gap-1.5 text-xs font-bold text-slate-900 dark:text-white">
-                <span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
-                <span id="cert1Title">Associate Network Administrator (Komdigi RI, 2026)</span>
-              </div>
-              <p id="cert1Desc" class="text-[11px] text-slate-500 dark:text-slate-400">
-                Standar perancangan skema IP Addressing, konfigurasi router/switch, dan routing terdistribusi.
-              </p>
-            </div>
-
-            <div class="p-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 space-y-1">
-              <div class="flex items-center gap-1.5 text-xs font-bold text-slate-900 dark:text-white">
-                <span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
-                <span id="cert2Title">Junior Network Administrator (BBPSDMP Kominfo, 2023)</span>
-              </div>
-              <p id="cert2Desc" class="text-[11px] text-slate-500 dark:text-slate-400">
-                Instalasi jaringan komputer dan pemeliharaan server Linux / Nginx.
-              </p>
-            </div>
-
-          </div>
-
-          <!-- Security & Pentest Tools -->
-          <div class="p-3.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-2.5">
-            <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-2">
-              <span id="skillSecurityTitle" class="font-bold text-xs text-slate-900 dark:text-white shrink-0">Keamanan Sistem & VAPT:</span>
-              <span id="skillSecurityDesc" class="text-xs text-slate-600 dark:text-slate-400">Burp Suite, OWASP ZAP, Vulnerability Assessment, OSINT, Parameterized SQL Security.</span>
-            </div>
-            <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-2">
-              <span id="skillProgTitle" class="font-bold text-xs text-slate-900 dark:text-white shrink-0">Bahasa Pemrograman & Backend:</span>
-              <span id="skillProgDesc" class="text-xs text-slate-600 dark:text-slate-400">Python (Pandas, VADER, BS4, FastAPI), Node.js (Express, Sharp), C++, SQL (SQLite), JavaScript ES6+.</span>
             </div>
           </div>
         </div>
 
-        <!-- Links & GitHub -->
-        <div class="pt-3 flex flex-wrap items-center justify-between gap-3 border-t border-slate-100 dark:border-slate-800">
-          <div class="flex items-center gap-2">
-            <a href="https://github.com/InfiniteNull" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 dark:bg-slate-100 dark:hover:bg-white text-white dark:text-slate-900 font-bold text-xs flex items-center gap-2 transition shadow-sm">
-              <i data-lucide="github" class="w-4 h-4"></i>
-              <span>GitHub: @InfiniteNull</span>
-            </a>
+        <div>
+          <h4 id="certHeading" class="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white mb-2">Sertifikasi & Keahlian</h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            <div class="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+              <strong id="cert1Title" class="block text-slate-900 dark:text-white">Associate Network Administrator (Komdigi RI, 2026)</strong>
+              <p id="cert1Desc" class="text-slate-500 dark:text-slate-400 text-[11px] mt-0.5">Perancangan IP Addressing, subnetting VLSM, router/switch, dan routing.</p>
+            </div>
+            <div class="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+              <strong id="cert2Title" class="block text-slate-900 dark:text-white">Junior Network Administrator (Kominfo, 2023)</strong>
+              <p id="cert2Desc" class="text-slate-500 dark:text-slate-400 text-[11px] mt-0.5">Instalasi jaringan komputer dan pemeliharaan server Linux / Nginx.</p>
+            </div>
           </div>
-          <span class="text-xs text-slate-500 font-medium font-mono">Rizki Ananda, S.Kom • Universitas Potensi Utama</span>
         </div>
 
+      </div>
+
+      <div class="px-6 py-3 border-t border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 flex justify-end">
+        <button onclick="document.getElementById('aboutDevModal').classList.add('hidden')" class="px-4 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 dark:bg-slate-100 dark:hover:bg-white text-white dark:text-slate-900 font-semibold text-xs transition">
+          Tutup
+        </button>
       </div>
 
     </div>
   </div>
 
   <!-- ============================================================ -->
-  <!-- PANDUAN WAWANCARA / TECHNICAL GUIDE MODAL                     -->
+  <!-- TECHNICAL INTERVIEW GUIDE MODAL                             -->
   <!-- ============================================================ -->
   <div id="interviewModal" class="fixed inset-0 z-50 hidden bg-slate-950/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
-    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl w-full max-w-4xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
-      <div class="px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50 dark:bg-slate-800/50">
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl w-full max-w-3xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden transition-all duration-150">
+      <div class="px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-slate-900/50">
         <div class="flex items-center gap-2.5">
-          <i data-lucide="award" class="w-5 h-5 text-amber-500"></i>
-          <h3 class="font-bold text-slate-900 dark:text-white text-base">Panduan Teknis & Pertanyaan Wawancara Arsitektur</h3>
+          <i data-lucide="book-open" class="w-5 h-5 text-slate-700 dark:text-slate-300"></i>
+          <h3 class="font-bold text-slate-900 dark:text-white text-base">Panduan Teknis & Arsitektur Sistem</h3>
         </div>
-        <button id="interviewModalCloseBtn" class="p-2 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition">
+        <button onclick="document.getElementById('interviewModal').classList.add('hidden')" class="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
-      <div class="p-6 overflow-y-auto space-y-6 text-sm text-slate-700 dark:text-slate-300 leading-relaxed" id="interviewModalContent">
-        <!-- Content filled dynamically -->
-      </div>
+      <div id="interviewModalContent" class="p-6 overflow-y-auto flex-1 text-xs leading-relaxed space-y-4 text-slate-700 dark:text-slate-300"></div>
     </div>
   </div>
 
+  <!-- Toast Notification Container -->
+  <div id="toastContainer" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
   <!-- ============================================================ -->
-  <!-- ABOUT SECTION & FOOTER                                       -->
+  <!-- GLOBAL FOOTER                                                -->
   <!-- ============================================================ -->
-  <footer id="about-section" class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-12 mt-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
-        <!-- Bio Summary -->
-        <div class="space-y-3">
-          <div class="flex items-center gap-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
-            <h4 class="font-bold text-slate-900 dark:text-white text-sm">Rizki Ananda, S.Kom</h4>
-          </div>
-          <p id="footerBioText" class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-            Lulusan S1 Informatika Universitas Potensi Utama. Praktisi IT Support (Bank Sinarmas), IT Researcher (Adzkia Kedinasan), Network Administrator (Komdigi & Kominfo), VAPT Security, serta Analisis Data & Software Engineering.
+  <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-10 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs">
+        <div class="space-y-2">
+          <span class="font-bold text-slate-900 dark:text-white text-sm">Rizki Ananda, S.Kom</span>
+          <p id="footerBioText" class="text-slate-600 dark:text-slate-400 leading-relaxed">
+            Lulusan S1 Informatika Universitas Potensi Utama. Praktisi IT Support, Network Administrator, VAPT Security, serta Analisis Data & Software Engineering.
           </p>
         </div>
 
-        <!-- Tech Stack Highlights -->
-        <div class="space-y-3">
-          <h4 id="footerTechHeading" class="font-bold text-slate-900 dark:text-white text-sm">Kompetensi & Teknologi</h4>
-          <ul id="footerTechList" class="text-xs text-slate-600 dark:text-slate-400 space-y-1.5">
-            <li>• <strong>Infrastruktur & Media:</strong> Nginx Media Server (RTMP, HLS, RTSP), Linux VM</li>
-            <li>• <strong>Data & NLP:</strong> Python (Pandas, VADER Lexicon, BeautifulSoup, FastAPI)</li>
-            <li>• <strong>Backend & Jaringan:</strong> Node.js REST API, SQLite, IP Routing, PC Deployment</li>
-            <li>• <strong>Keamanan:</strong> VAPT (Burp Suite, OWASP ZAP), OSINT, Bcrypt, JWT</li>
+        <div class="space-y-2">
+          <span id="footerTechHeading" class="font-bold text-slate-900 dark:text-white text-sm">Kompetensi Inti</span>
+          <ul id="footerTechList" class="space-y-1 text-slate-600 dark:text-slate-400 font-mono text-[11px]">
+            <li>• Backend: Laravel 11, PHP 8.2, Python FastAPI, MySQL</li>
+            <li>• Infrastruktur: Nginx Media Server, Linux VM, Mikrotik</li>
+            <li>• Keamanan: VAPT (Burp Suite, OWASP ZAP), OSINT</li>
           </ul>
         </div>
 
-        <!-- Links / Action -->
-        <div class="space-y-3">
-          <h4 id="footerLinksHeading" class="font-bold text-slate-900 dark:text-white text-sm">Tautan & Portofolio</h4>
-          <p id="footerLinksDesc" class="text-xs text-slate-600 dark:text-slate-400">
-            Seluruh 29 modul aplikasi dirancang secara modular dan dapat dicoba secara interaktif.
+        <div class="space-y-2">
+          <span id="footerLinksHeading" class="font-bold text-slate-900 dark:text-white text-sm">Tautan & Portofolio</span>
+          <p id="footerLinksDesc" class="text-slate-600 dark:text-slate-400">
+            Seluruh sistem dirancang mandiri dengan clean code dan dapat diakses interaktif.
           </p>
-          <div class="pt-2">
-            <a href="https://github.com/InfiniteNull" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-sky-600 dark:text-sky-400 hover:underline">
+          <div class="pt-1">
+            <a href="https://github.com/InfiniteNull" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 font-semibold text-sky-600 dark:text-sky-400 hover:underline font-mono">
               <i data-lucide="github" class="w-3.5 h-3.5"></i>
-              <span>GitHub: @InfiniteNull</span>
+              <span>github.com/InfiniteNull</span>
             </a>
           </div>
         </div>
-
       </div>
 
-      <div class="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 text-center text-xs text-slate-500">
+      <div class="pt-6 border-t border-slate-100 dark:border-slate-800 text-center text-xs text-slate-500 font-mono">
         <p id="footerTagline">&copy; 2026 Rizki Ananda, S.Kom (@InfiniteNull) • Handcrafted with Clean Code & Professional IT Standards.</p>
       </div>
     </div>
@@ -530,12 +691,10 @@
   <script src="js/auth-sandbox.js"></script>
   <script src="js/inventory-sandbox.js"></script>
   <script src="js/library-sandbox.js"></script>
-  <!-- Data Wrangling & Analysis Tools -->
   <script src="js/data-cleaner-studio.js"></script>
   <script src="js/data-qc-inspector.js"></script>
   <script src="js/kpi-monitoring-dashboard.js"></script>
   <script src="js/spreadsheet-formula-engine.js"></script>
-  <!-- Networking, Security & Utilities -->
   <script src="js/subnet-calculator.js"></script>
   <script src="js/firewall-generator.js"></script>
   <script src="js/bandwidth-estimator.js"></script>
@@ -557,8 +716,7 @@
   <script src="app.js"></script>
 
   <script>
-    // Initialize icons on load
-    lucide.createIcons();
+    if (window.lucide) lucide.createIcons();
   </script>
 </body>
 </html>
