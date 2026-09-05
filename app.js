@@ -1160,28 +1160,6 @@ function closeInterviewGuide() {
 }
 
 // ==========================================
-// DEVELOPER PROFILE MODAL
-// ==========================================
-function openDevModal() {
-  const aboutDevModal = document.getElementById('aboutDevModal');
-  if (aboutDevModal) {
-    aboutDevModal.classList.remove('hidden');
-    aboutDevModal.classList.add('flex');
-    document.body.style.overflow = 'hidden';
-    if (window.lucide) lucide.createIcons();
-  }
-}
-
-function closeDevModal() {
-  const aboutDevModal = document.getElementById('aboutDevModal');
-  if (aboutDevModal) {
-    aboutDevModal.classList.add('hidden');
-    aboutDevModal.classList.remove('flex');
-    document.body.style.overflow = '';
-  }
-}
-
-// ==========================================
 // THEME SWITCHER (DARK / LIGHT)
 // ==========================================
 function initTheme() {
@@ -1371,20 +1349,10 @@ function initApp() {
   }
 
   // Developer Profile Modal
-  const aboutDevBtn = document.getElementById('aboutDevBtn');
-  const aboutDevModal = document.getElementById('aboutDevModal');
-  const aboutDevModalCloseBtn = document.getElementById('aboutDevModalCloseBtn');
-  const viewInterviewDocBtn = document.getElementById('viewInterviewDocBtn');
+        const viewInterviewDocBtn = document.getElementById('viewInterviewDocBtn');
   const interviewModal = document.getElementById('interviewModal');
 
-  if (aboutDevBtn) aboutDevBtn.addEventListener('click', openDevModal);
-  if (aboutDevModalCloseBtn) aboutDevModalCloseBtn.addEventListener('click', closeDevModal);
-  if (aboutDevModal) {
-    aboutDevModal.addEventListener('click', (e) => {
-      if (e.target === aboutDevModal) closeDevModal();
-    });
-  }
-
+    
   // Technical Guide Modal
   if (viewInterviewDocBtn) viewInterviewDocBtn.addEventListener('click', openInterviewGuide);
   if (interviewModal) {
@@ -1401,11 +1369,9 @@ function initApp() {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       const toolModal = document.getElementById('toolModal');
-      const aboutDevModal = document.getElementById('aboutDevModal');
-      const interviewModal = document.getElementById('interviewModal');
+            const interviewModal = document.getElementById('interviewModal');
       if (toolModal && !toolModal.classList.contains('hidden')) closeToolModal();
-      if (aboutDevModal && !aboutDevModal.classList.contains('hidden')) closeDevModal();
-      if (interviewModal && !interviewModal.classList.contains('hidden')) closeInterviewGuide();
+            if (interviewModal && !interviewModal.classList.contains('hidden')) closeInterviewGuide();
     }
   });
 

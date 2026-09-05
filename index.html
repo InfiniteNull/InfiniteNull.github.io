@@ -58,8 +58,8 @@
             RA
           </div>
           <div>
-            <span class="font-bold text-slate-900 dark:text-white text-sm tracking-tight block">Rizki Ananda, S.Kom</span>
-            <span class="text-[10px] text-slate-500 dark:text-slate-400 font-mono block">@InfiniteNull • S1 Informatika</span>
+            <span class="font-bold text-slate-900 dark:text-white text-sm tracking-tight block">Rizki Ananda</span>
+            <span class="text-[10px] text-slate-500 dark:text-slate-400 font-mono block">@InfiniteNull</span>
           </div>
         </a>
 
@@ -77,11 +77,6 @@
             <span id="btnInterviewGuideText">Panduan Teknis</span>
           </button>
           
-          <button id="aboutDevBtn" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition border border-slate-200 dark:border-slate-700 shadow-sm">
-            <i data-lucide="user" class="w-3.5 h-3.5 text-slate-500"></i>
-            <span id="btnAboutDevText" class="font-semibold">Profil Pengembang</span>
-          </button>
-
           <!-- Language Switcher (ID / EN) -->
           <button id="langToggleBtn" aria-label="Toggle Language" class="inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-bold rounded-lg text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition border border-slate-200 dark:border-slate-700 shadow-sm" title="Ganti Bahasa / Switch Language">
             <i data-lucide="languages" class="w-3.5 h-3.5 text-slate-500"></i>
@@ -108,11 +103,6 @@
     <section class="border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-12 sm:py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-3xl space-y-4">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-medium border border-slate-200 dark:border-slate-700">
-            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span id="heroBadgeText">Rizki Ananda, S.Kom • S1 Informatika</span>
-          </div>
-          
           <h1 id="heroTitleText" class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">Halo, saya Rizki Ananda. Saya membuat aplikasi web &amp; perkakas digital yang fungsional.</h1>
           
           <p id="heroDescText" class="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">Lulusan Informatika yang suka mengeksplorasi kode, memecahkan masalah, dan mengembangkan proyek yang bermanfaat — mulai dari sistem manajemen rumah sakit hingga puluhan perkakas komputasi interaktif.</p>
@@ -122,10 +112,10 @@
               <i data-lucide="layers" class="w-4 h-4"></i>
               <span>Lihat Proyek ➔</span>
             </a>
-            <button onclick="document.getElementById('aboutDevBtn').click()" class="px-4 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-medium text-xs flex items-center gap-2 transition border border-slate-200 dark:border-slate-700" id="btnHeroViewProfile">
-              <i data-lucide="file-text" class="w-4 h-4"></i>
-              <span>Tentang Saya</span>
-            </button>
+            <a href="#experience" class="px-4 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-medium text-xs flex items-center gap-2 transition border border-slate-200 dark:border-slate-700" id="btnHeroViewExp">
+              <i data-lucide="briefcase" class="w-4 h-4"></i>
+              <span>Pengalaman & Keahlian</span>
+            </a>
           </div>
 
           <!-- Quick Stats Bar -->
@@ -523,91 +513,6 @@
 
         <!-- Architecture Docs Container -->
         <div id="modalDocsContent" class="hidden prose dark:prose-invert max-w-none text-xs leading-relaxed"></div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ============================================================ -->
-  <!-- DEVELOPER PROFILE MODAL                                     -->
-  <!-- ============================================================ -->
-  <div id="aboutDevModal" class="fixed inset-0 z-50 hidden bg-slate-950/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
-    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl w-full max-w-2xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden transition-all duration-150">
-      
-      <!-- Modal Header -->
-      <div class="px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-slate-900/50">
-        <div class="flex items-center gap-3">
-          <div class="w-9 h-9 rounded-xl flex items-center justify-center bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900 font-bold font-mono text-xs">
-            RA
-          </div>
-          <div>
-            <h3 class="font-bold text-slate-900 dark:text-white text-base leading-tight">Rizki Ananda, S.Kom</h3>
-            <p id="devRoleSub" class="text-xs font-mono text-slate-500 dark:text-slate-400 mt-0.5">Universitas Potensi Utama • Praktisi IT</p>
-          </div>
-        </div>
-
-        <button id="aboutDevModalCloseBtn" aria-label="Tutup Modal" class="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-          <i data-lucide="x" class="w-5 h-5"></i>
-        </button>
-      </div>
-
-      <!-- Modal Content Body -->
-      <div class="p-6 overflow-y-auto flex-1 text-xs leading-relaxed space-y-5 text-slate-700 dark:text-slate-300">
-        
-        <div>
-          <h4 id="profileHeading" class="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white mb-2">Profil</h4>
-          <p id="profileBio" class="leading-relaxed">
-            Lulusan <strong>S1 Informatika (S.Kom) dari Universitas Potensi Utama</strong> dengan spesialisasi di bidang <strong>IT Support, Administrasi Jaringan, Keamanan Sistem (VAPT), serta Analisis Data & Rekayasa Web</strong>. Berpengalaman teknis dalam deployment infrastruktur server, protokol streaming, peremajaan PC perbankan, dan rekayasa perangkat lunak.
-          </p>
-        </div>
-
-        <div>
-          <h4 id="expHeading" class="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white mb-2">Pengalaman Kerja</h4>
-          <div class="space-y-3">
-            <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
-              <div class="flex items-center justify-between mb-1">
-                <span id="job1Title" class="font-bold text-slate-900 dark:text-white">IT Researcher</span>
-                <span id="job1Meta" class="font-mono text-[10px] text-slate-500">Nov 2024 - Jun 2025 • Medan</span>
-              </div>
-              <p id="job1Company" class="text-[11px] font-semibold text-slate-700 dark:text-slate-300 mb-1">• ADZKIA KEDINASAN PUSAT</p>
-              <p id="job1Desc" class="text-slate-600 dark:text-slate-400">
-                Merancang dan menguji <strong>Nginx Media Server</strong> pada Linux VM, benchmark 4 protokol streaming video (<strong>RTMP, HLS, RTSP, HTTP</strong>), pengujian keamanan <strong>vulnerability assessment (VAPT)</strong>, dan audit konfigurasi firewall.
-              </p>
-            </div>
-
-            <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
-              <div class="flex items-center justify-between mb-1">
-                <span id="job2Title" class="font-bold text-slate-900 dark:text-white">IT Support (Vendor Outsourcing)</span>
-                <span id="job2Meta" class="font-mono text-[10px] text-slate-500">Des 2023 • Medan</span>
-              </div>
-              <p id="job2Company" class="text-[11px] font-semibold text-slate-700 dark:text-slate-300 mb-1">• PT Bank Sinarmas, Tbk (KC Medan Mangkubumi)</p>
-              <p id="job2Desc" class="text-slate-600 dark:text-slate-400">
-                Melaksanakan peremajaan komputer (<strong>PC Deployment</strong>), perakitan hardware, backup dan migrasi profil user, instalasi OS, serta konfigurasi printer slip dan scanner hingga terhubung ke domain perbankan.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <h4 id="certHeading" class="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white mb-2">Sertifikasi & Keahlian</h4>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-            <div class="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
-              <strong id="cert1Title" class="block text-slate-900 dark:text-white">Associate Network Administrator (Komdigi RI, 2026)</strong>
-              <p id="cert1Desc" class="text-slate-500 dark:text-slate-400 text-[11px] mt-0.5">Perancangan IP Addressing, subnetting VLSM, router/switch, dan routing.</p>
-            </div>
-            <div class="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
-              <strong id="cert2Title" class="block text-slate-900 dark:text-white">Junior Network Administrator (Kominfo, 2023)</strong>
-              <p id="cert2Desc" class="text-slate-500 dark:text-slate-400 text-[11px] mt-0.5">Instalasi jaringan komputer dan pemeliharaan server Linux / Nginx.</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="px-6 py-3 border-t border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 flex justify-end">
-        <button onclick="document.getElementById('aboutDevModal').classList.add('hidden')" class="px-4 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 dark:bg-slate-100 dark:hover:bg-white text-white dark:text-slate-900 font-semibold text-xs transition">
-          Tutup
-        </button>
       </div>
 
     </div>

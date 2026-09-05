@@ -18,7 +18,7 @@ window.I18N_DICT = {
     heroTitle: "Halo, saya Rizki Ananda. Saya membuat aplikasi web & perkakas digital yang fungsional.",
     heroDesc: "Lulusan Informatika yang suka mengeksplorasi kode, memecahkan masalah, dan mengembangkan proyek yang bermanfaat — mulai dari sistem manajemen rumah sakit hingga puluhan perkakas komputasi interaktif.",
     btnHeroViewProjects: "Lihat Proyek ➔",
-    btnHeroViewProfile: "Tentang Saya",
+    btnHeroViewExp: "Pengalaman & Keahlian",
     
     // Quick Stats
     statProjTitle: "Proyek Utama",
@@ -117,7 +117,7 @@ window.I18N_DICT = {
     heroTitle: "Hi, I'm Rizki Ananda. I build functional web applications and digital tools.",
     heroDesc: "Computer Science graduate passionate about crafting clean code, solving real-world problems, and building useful projects — from hospital management systems to interactive web tools.",
     btnHeroViewProjects: "View Projects ➔",
-    btnHeroViewProfile: "About Me",
+    btnHeroViewExp: "Experience & Skills",
     
     // Quick Stats
     statProjTitle: "Main Projects",
@@ -251,10 +251,10 @@ window.setLanguage = function(lang) {
     if (span) span.textContent = dict.btnHeroViewProjects;
   }
 
-  const btnHeroViewProfile = document.getElementById('btnHeroViewProfile');
-  if (btnHeroViewProfile) {
-    const span = btnHeroViewProfile.querySelector('span');
-    if (span) span.textContent = dict.btnHeroViewProfile;
+  const btnHeroViewExp = document.getElementById('btnHeroViewExp');
+  if (btnHeroViewExp) {
+    const span = btnHeroViewExp.querySelector('span');
+    if (span) span.textContent = dict.btnHeroViewExp;
   }
 
   // Quick Stats
