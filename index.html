@@ -142,10 +142,10 @@
           <!-- CTA Buttons -->
           <div class="pt-3 flex flex-wrap items-center gap-3">
             <a href="#projects" class="px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-slate-100 dark:hover:bg-white text-white dark:text-slate-900 font-bold text-xs sm:text-sm transition flex items-center gap-2 shadow-sm" id="btnHeroViewProjects">
-              <span>Lihat Proyek Unggulan ➔</span>
+              <span id="btnHeroViewProjectsText">Lihat Proyek Unggulan ➔</span>
             </a>
             <a href="#experience" class="px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold text-xs sm:text-sm border border-slate-200 dark:border-slate-700 transition" id="btnHeroViewExp">
-              Pengalaman &amp; Keahlian
+              <span id="btnHeroViewExpText">Pengalaman &amp; Keahlian</span>
             </a>
           </div>
         </div>
@@ -254,15 +254,15 @@
             <ul class="text-xs space-y-1.5 text-slate-700 dark:text-slate-300 font-medium">
               <li class="flex items-center gap-2">
                 <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i>
-                <span>Bridging BPJS V-Claim &amp; SatuSehat FHIR Bundle Permenkes 24/2022</span>
+                <span id="simrsBullet1">Bridging BPJS V-Claim &amp; SatuSehat FHIR Bundle Permenkes 24/2022</span>
               </li>
               <li class="flex items-center gap-2">
                 <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i>
-                <span>Alur Layanan Klinis Terkoneksi Real-time (Admisi ➔ SOAP ➔ Lab/Rx ➔ Kasir)</span>
+                <span id="simrsBullet2">Alur Layanan Klinis Terkoneksi Real-time (Admisi ➔ SOAP ➔ Lab/Rx ➔ Kasir)</span>
               </li>
               <li class="flex items-center gap-2">
                 <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i>
-                <span>Modal Manajemen Bed Ranap, Audio Antrean, &amp; Kwitansi Resmi</span>
+                <span id="simrsBullet3">Modal Manajemen Bed Ranap, Audio Antrean, &amp; Kwitansi Resmi</span>
               </li>
             </ul>
           </div>
@@ -309,15 +309,15 @@
             <ul class="text-xs space-y-1.5 text-slate-700 dark:text-slate-300 font-medium">
               <li class="flex items-center gap-2">
                 <i data-lucide="check" class="w-3.5 h-3.5 text-purple-500 shrink-0"></i>
-                <span>Kalkulator Subnetting IPv4/VLSM &amp; Firewall CLI Multi-Platform</span>
+                <span id="devtoolsBullet1">Kalkulator Subnetting IPv4/VLSM &amp; Firewall CLI Multi-Platform</span>
               </li>
               <li class="flex items-center gap-2">
                 <i data-lucide="check" class="w-3.5 h-3.5 text-purple-500 shrink-0"></i>
-                <span>Data Cleaner Studio, Outlier Inspector, &amp; Formula Parser</span>
+                <span id="devtoolsBullet2">Data Cleaner Studio, Outlier Inspector, &amp; Formula Parser</span>
               </li>
               <li class="flex items-center gap-2">
                 <i data-lucide="check" class="w-3.5 h-3.5 text-purple-500 shrink-0"></i>
-                <span>Sistem Keamanan &amp; Kriptografi (Entropy, JWT Debugger, Hashes)</span>
+                <span id="devtoolsBullet3">Sistem Keamanan &amp; Kriptografi (Entropy, JWT Debugger, Hashes)</span>
               </li>
             </ul>
           </div>
@@ -364,15 +364,15 @@
             <ul class="text-xs space-y-1.5 text-slate-700 dark:text-slate-300 font-medium">
               <li class="flex items-center gap-2">
                 <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i>
-                <span>Pipeline NLP Interaktif (Slang Normalizer ID, Stopwords, TF-IDF)</span>
+                <span id="shunaBullet1">Pipeline NLP Interaktif (Slang Normalizer ID, Stopwords, TF-IDF)</span>
               </li>
               <li class="flex items-center gap-2">
                 <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i>
-                <span>Multi-Model Arena (LogReg, SVM, NB, RF) &amp; Dynamic ROC-AUC Curve</span>
+                <span id="shunaBullet2">Multi-Model Arena (LogReg, SVM, NB, RF) &amp; Dynamic ROC-AUC Curve</span>
               </li>
               <li class="flex items-center gap-2">
                 <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i>
-                <span>Word Cloud Leksikal, Simulator Retensi Tabular, &amp; Batch CSV Engine</span>
+                <span id="shunaBullet3">Word Cloud Leksikal, Simulator Retensi Tabular, &amp; Batch CSV Engine</span>
               </li>
             </ul>
           </div>
@@ -479,7 +479,7 @@
                 BNSP / Komdigi RI (2026)
               </p>
             </div>
-            <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
+            <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800" id="cert1Verified">
               TERVERIFIKASI
             </span>
           </div>
@@ -499,7 +499,7 @@
                 BBPSDMP Kominfo (2023)
               </p>
             </div>
-            <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800">
+            <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800" id="cert2Verified">
               TERVERIFIKASI
             </span>
           </div>
@@ -524,8 +524,8 @@
             <i data-lucide="book-open" class="w-5 h-5"></i>
           </div>
           <div>
-            <h3 class="font-bold text-slate-900 dark:text-white text-base">Panduan Teknis &amp; Arsitektur</h3>
-            <p class="text-xs text-slate-500 font-mono">Dokumentasi Standar Rekayasa &amp; Pertanyaan Wawancara</p>
+            <h3 class="font-bold text-slate-900 dark:text-white text-base" id="modalInterviewTitle">Panduan Teknis &amp; Arsitektur</h3>
+            <p class="text-xs text-slate-500 font-mono" id="modalInterviewSub">Dokumentasi Standar Rekayasa &amp; Pertanyaan Wawancara</p>
           </div>
         </div>
 
@@ -560,7 +560,7 @@
         <span>•</span>
         <a href="https://github.com/InfiniteNull/SHUNA-AI" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 dark:hover:text-white transition">SHUNA-AI</a>
         <span>•</span>
-        <a href="#home" class="hover:text-sky-600 dark:hover:text-sky-400 transition font-sans font-semibold">Ke Atas ↑</a>
+        <a href="#home" class="hover:text-sky-600 dark:hover:text-sky-400 transition font-sans font-semibold" id="footerBackToTop">Ke Atas ↑</a>
       </div>
 
     </div>

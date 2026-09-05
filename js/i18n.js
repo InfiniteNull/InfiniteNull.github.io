@@ -8,7 +8,7 @@ window.I18N_DICT = {
   id: {
     // Top Navbar
     navLinkHome: "Beranda",
-    navLinkProjects: "Proyek",
+    navLinkProjects: "Proyek Unggulan",
     navLinkExp: "Pengalaman",
     navLinkCert: "Sertifikasi",
     btnInterviewGuide: "Panduan Teknis",
@@ -18,8 +18,8 @@ window.I18N_DICT = {
     heroBadge: "Rizki Ananda, S.Kom • S1 Informatika",
     heroTitle: "Rizki Ananda",
     heroSubTitle: "Software & Web Developer",
-        heroDesc: "Fokus pada pengembangan aplikasi web menggunakan Laravel, Python, dan JavaScript, dari perancangan backend hingga integrasi UI/UX.",
-    btnHeroViewProjects: "Lihat Proyek ➔",
+    heroDesc: "Fokus pada pengembangan aplikasi web menggunakan Laravel, Python, dan JavaScript, mulai dari perancangan arsitektur backend hingga integrasi antarmuka yang fungsional dan responsif.",
+    btnHeroViewProjects: "Lihat Proyek Unggulan ➔",
     btnHeroViewExp: "Pengalaman & Keahlian",
     
     // Featured Projects Section
@@ -28,22 +28,31 @@ window.I18N_DICT = {
     
     // SIMRS Card
     simrsCardTitle: "SIMRS Core Enterprise",
-    simrsCardSub: "Hospital Management Information System",
+    simrsCardSub: "Hospital MIS • Permenkes 24/2022",
     simrsCardStatus: "PRODUKSI",
     simrsCardDesc: "Sistem manajemen rumah sakit terintegrasi penuh: admisi & bridging BPJS SEP, rekam medis elektronik (RME SOAP) dengan pencarian 40+ ICD-10, E-Order Lab LOINC, E-Prescribing farmasi, kasir billing reaktif berkwitansi resmi, alokasi ranjang kamar inap (Bed Matrix), serta indikator efisiensi BOR.",
-    simrsBtnOpen: "Buka Aplikasi SIMRS",
+    simrsBullet1: "Bridging BPJS V-Claim & SatuSehat FHIR Bundle Permenkes 24/2022",
+    simrsBullet2: "Alur Layanan Klinis Terkoneksi Real-time (Admisi ➔ SOAP ➔ Lab/Rx ➔ Kasir)",
+    simrsBullet3: "Modal Manajemen Bed Ranap, Audio Antrean, & Kwitansi Resmi",
+    simrsBtnOpen: "Buka SIMRS",
 
     // DevTools Card
     devtoolsCardTitle: "Dev & Data Engineering Suite",
     devtoolsCardSub: "29 Interactive Computational Tools",
     devtoolsCardStatus: "29 MODUL",
     devtoolsCardDesc: "Platform utilitas 29 modul komputasi interaktif: kalkulasi subnetting IPv4/VLSM, generator firewall Linux/Mikrotik, data cleaner & outlier QC inspector, formula engine spreadsheet (VLOOKUP/Regex), security audit (JWT/Hash/Entropy), serta kalkulator hardware server.",
+    devtoolsBullet1: "Kalkulator Subnetting IPv4/VLSM & Firewall CLI Multi-Platform",
+    devtoolsBullet2: "Data Cleaner Studio, Outlier Inspector, & Formula Parser",
+    devtoolsBullet3: "Sistem Keamanan & Kriptografi (Entropy, JWT Debugger, Hashes)",
     devtoolsBtnOpen: "Jelajahi 29 Tools",
 
     // SHUNA AI Card
     shunaCardTitle: "SHUNA AI Data Engine",
     shunaCardSub: "NLP & Machine Learning Engine",
     shunaCardDesc: "Platform analitik data & machine learning: pipeline NLP klasifikasi sentimen (TF-IDF & slang normalizer), visualisasi word cloud leksikal, benchmark multi-model ROC-AUC, simulator prediksi retensi tabular (Sigmoid), time-series forecasting (Holt-Winters), serta deteksi lonjakan anomali Z-Score.",
+    shunaBullet1: "Pipeline NLP Interaktif (Slang Normalizer ID, Stopwords, TF-IDF)",
+    shunaBullet2: "Multi-Model Arena (LogReg, SVM, NB, RF) & Dynamic ROC-AUC Curve",
+    shunaBullet3: "Word Cloud Leksikal, Simulator Retensi Tabular, & Batch CSV Engine",
     shunaBtnOpen: "Buka SHUNA AI",
     shunaBackLink: "Kembali ke Beranda",
 
@@ -52,12 +61,11 @@ window.I18N_DICT = {
     secSubExp: "Rekam jejak praktis di bidang riset infrastruktur server dan operasional IT:",
     secHeadingCert: "Lisensi & Sertifikasi",
     secSubCert: "Kredensial kompetensi nasional di bidang administrasi jaringan dan infrastruktur:",
-    secSubExp: "Rekam jejak profesional, penelitian infrastruktur, dan lisensi kompetensi nasional:",
     
     job1Title: "IT Researcher (Freelance)",
     job1Company: "ADZKIA KEDINASAN PUSAT MEDAN",
     job1Meta: "Nov 2024 - Jun 2025",
-    job1Desc: "Merancang, mengonfigurasi, dan menguji infrastruktur <strong>Nginx Media Server</strong> pada Linux VM, serta melakukan benchmark terhadap 4 protokol streaming video (<strong>RTMP, HLS, RTSP, HTTP</strong>). Melakukan audit keamanan jaringan & <strong>vulnerability assessment (VAPT)</strong> pada sistem internal.",
+    job1Desc: "Merancang, mengonfigurasi, dan menguji infrastruktur <strong>Nginx Media Server</strong> pada Linux VM, serta melakukan benchmark terhadap 4 protokol streaming video (<strong>RTMP, HLS, RTSP, HTTP</strong>). Melakukan audit keamanan jaringan &amp; <strong>vulnerability assessment (VAPT)</strong> pada sistem internal.",
     
     job2Title: "IT Support (Vendor Outsourcing)",
     job2Company: "PT BANK SINARMAS, TBK (KC MEDAN MANGKUBUMI)",
@@ -72,31 +80,11 @@ window.I18N_DICT = {
     cert2Issuer: "BBPSDMP Kominfo (2023)",
     cert2Desc: "Instalasi jaringan komputer lokal (LAN), manajemen sistem operasi Linux / Nginx, dan pemeliharaan server data.",
 
-    // DevTools View UI
-    devtoolsViewTitle: "Dev & Data Engineering Suite (29 Tools)",
-    devtoolsViewDesc: "Platform utilitas mandiri untuk manajemen jaringan IPv4, hardening firewall, manipulasi & QC data, audit keamanan VAPT, serta utilitas hardware.",
-    catAll: "Semua Tools (29)",
-    catNetwork: "Jaringan & Server",
-    catSecurity: "Keamanan Sistem",
-    catDatabase: "Data & Backend",
-    catUtility: "Utilitas & Hardware",
-    searchPlaceholder: "Cari nama tool / teknologi...",
-    emptyTitle: "Tidak ada tool yang cocok",
-    emptyDesc: "Coba gunakan kata kunci pencarian lain atau ubah filter kategori.",
-    openWorkspace: "Buka Workspace",
+    verifiedLabel: "TERVERIFIKASI",
 
-    // Tool Workspace Modal
-    tabDemo: "Live Demo Interaktif",
-    tabCode: "Source Code Asli",
-    tabDocs: "Arsitektur & Penjelasan Teknis",
-    copyCode: "Salin Kode",
-
-    // Developer Profile Modal
-    devRoleSub: "Universitas Potensi Utama • Praktisi IT",
-    profileHeading: "Profil",
-    profileBio: "Lulusan <strong>S1 Informatika (S.Kom) dari Universitas Potensi Utama</strong> dengan spesialisasi di bidang <strong>IT Support, Administrasi Jaringan, Keamanan Sistem (VAPT), serta Analisis Data & Rekayasa Web</strong>. Berpengalaman teknis dalam deployment infrastruktur server, protokol streaming, peremajaan PC perbankan, dan rekayasa perangkat lunak.",
-    expHeading: "Pengalaman Kerja",
-    certHeading: "Sertifikasi & Keahlian",
+    // Technical Interview Guide Modal
+    modalInterviewTitle: "Panduan Teknis & Arsitektur",
+    modalInterviewSub: "Dokumentasi Standar Rekayasa & Pertanyaan Wawancara",
 
     // Terminal CLI
     terminalPromptTitle: "bash — infinitenull@terminal:~",
@@ -115,17 +103,14 @@ window.I18N_DICT = {
     `,
 
     // Footer
-    footerBioText: "Lulusan S1 Informatika Universitas Potensi Utama. Praktisi IT Support, Network Administrator, VAPT Security, serta Analisis Data & Software Engineering.",
-    footerTechHeading: "Kompetensi Inti",
-    footerLinksHeading: "Tautan & Portofolio",
-    footerLinksDesc: "Seluruh sistem dirancang mandiri dengan clean code dan dapat diakses interaktif.",
-    footerTagline: "© 2026 Rizki Ananda, S.Kom (@InfiniteNull) • Handcrafted with Clean Code & Professional IT Standards."
+    footerTagline: "© 2026 Rizki Ananda, S.Kom (@InfiniteNull) • Handcrafted with Clean Code & Professional IT Standards.",
+    footerBackToTop: "Ke Atas ↑"
   },
 
   en: {
     // Top Navbar
     navLinkHome: "Home",
-    navLinkProjects: "Projects",
+    navLinkProjects: "Featured Projects",
     navLinkExp: "Experience",
     navLinkCert: "Certifications",
     btnInterviewGuide: "Technical Guide",
@@ -135,8 +120,8 @@ window.I18N_DICT = {
     heroBadge: "Rizki Ananda, S.Kom • Computer Science",
     heroTitle: "Rizki Ananda",
     heroSubTitle: "Software & Web Developer",
-        heroDesc: "Focused on web application development using Laravel, Python, and JavaScript, from backend architecture to UI/UX integration.",
-    btnHeroViewProjects: "View Projects ➔",
+    heroDesc: "Focused on web application development using Laravel, Python, and JavaScript, from backend architecture design to responsive and functional user interfaces.",
+    btnHeroViewProjects: "View Featured Projects ➔",
     btnHeroViewExp: "Experience & Skills",
     
     // Featured Projects Section
@@ -145,31 +130,39 @@ window.I18N_DICT = {
     
     // SIMRS Card
     simrsCardTitle: "SIMRS Core Enterprise",
-    simrsCardSub: "Hospital Management Information System",
+    simrsCardSub: "Hospital MIS • Permenkes 24/2022",
     simrsCardStatus: "PRODUCTION",
     simrsCardDesc: "Fully integrated hospital management system: admission & BPJS SEP bridging, electronic medical records (EMR SOAP) with searchable 40+ ICD-10 diagnoses, LOINC Lab E-Orders, Pharmacy E-Prescribing, reactive billing cashier with official receipts, Inpatient Bed Matrix, and BOR efficiency indicators.",
-    simrsBtnOpen: "Launch SIMRS App",
+    simrsBullet1: "BPJS V-Claim Bridging & SatuSehat FHIR Bundle (Permenkes 24/2022)",
+    simrsBullet2: "Real-Time Connected Clinical Workflow (Admission ➔ SOAP ➔ Lab/Rx ➔ Cashier)",
+    simrsBullet3: "Inpatient Bed Matrix, Audio Queue Caller, & Official Receipts",
+    simrsBtnOpen: "Launch SIMRS",
 
     // DevTools Card
     devtoolsCardTitle: "Dev & Data Engineering Suite",
     devtoolsCardSub: "29 Interactive Computational Tools",
     devtoolsCardStatus: "29 MODULES",
     devtoolsCardDesc: "Standalone platform of 29 interactive computational tools: IPv4/VLSM subnetting calculations, multi-platform Linux/Mikrotik firewall generators, data cleaning & outlier QC inspectors, spreadsheet formula engines (VLOOKUP/Regex), security audits (JWT/Hash/Entropy), and server hardware calculators.",
+    devtoolsBullet1: "IPv4/VLSM Subnet Calculator & Multi-Platform Firewall CLI",
+    devtoolsBullet2: "Data Cleaner Studio, Outlier Inspector, & Formula Parser",
+    devtoolsBullet3: "Security & Cryptography Systems (Entropy, JWT Debugger, Hashes)",
     devtoolsBtnOpen: "Explore 29 Tools",
 
     // SHUNA AI Card
     shunaCardTitle: "SHUNA AI Data Engine",
     shunaCardSub: "NLP & Machine Learning Engine",
     shunaCardDesc: "Integrated data intelligence & machine learning platform: live NLP sentiment pipeline (TF-IDF & slang normalizer), lexical word cloud visualizer, multi-model ROC-AUC arena, tabular student retention predictive simulator (Sigmoid), Holt-Winters forecasting, and rolling Z-score spike anomaly detection.",
-    shunaBtnOpen: "Open SHUNA AI",
+    shunaBullet1: "Interactive NLP Pipeline (Indonesian Slang Normalizer, Stopwords, TF-IDF)",
+    shunaBullet2: "Multi-Model Arena (LogReg, SVM, NB, RF) & Dynamic ROC-AUC Curve",
+    shunaBullet3: "Lexical Word Cloud, Tabular Retention Simulator, & Batch CSV Engine",
+    shunaBtnOpen: "Launch SHUNA AI",
     shunaBackLink: "Back to Home",
 
     // Experience & Certifications Section
     secHeadingExp: "Work Experience",
     secSubExp: "Practical track record in server infrastructure research and IT operations:",
     secHeadingCert: "Licenses & Certifications",
-    secSubCert: "National competency credentials in network administration and server systems:",
-    secSubExp: "Professional track record, infrastructure research, and national competency credentials:",
+    secSubCert: "National competency credentials in network administration and infrastructure:",
     
     job1Title: "IT Researcher (Freelance)",
     job1Company: "ADZKIA KEDINASAN PUSAT MEDAN",
@@ -189,31 +182,11 @@ window.I18N_DICT = {
     cert2Issuer: "BBPSDMP Kominfo (2023)",
     cert2Desc: "Local Area Network (LAN) installation, Linux / Nginx server administration, and data server maintenance.",
 
-    // DevTools View UI
-    devtoolsViewTitle: "Dev & Data Engineering Suite (29 Tools)",
-    devtoolsViewDesc: "Standalone platform for IPv4 networking, firewall hardening, data wrangling & QC, VAPT security auditing, and hardware sizing utilities.",
-    catAll: "All Tools (29)",
-    catNetwork: "Networking & Server",
-    catSecurity: "System Security",
-    catDatabase: "Data & Backend",
-    catUtility: "Utilities & Hardware",
-    searchPlaceholder: "Search tools, tech stack, or keywords...",
-    emptyTitle: "No tools found",
-    emptyDesc: "Try another search keyword or switch category filters.",
-    openWorkspace: "Open Workspace",
+    verifiedLabel: "VERIFIED",
 
-    // Tool Workspace Modal
-    tabDemo: "Interactive Live Demo",
-    tabCode: "Original Source Code",
-    tabDocs: "Architecture & Technical Docs",
-    copyCode: "Copy Code",
-
-    // Developer Profile Modal
-    devRoleSub: "Universitas Potensi Utama • IT Practitioner",
-    profileHeading: "Profile",
-    profileBio: "Computer Science Graduate (<strong>S1 Informatika / S.Kom from Universitas Potensi Utama</strong>) specializing in <strong>IT Support, Network Administration, System Security (VAPT), Data Analytics & Full-Stack Web Engineering</strong>. Hands-on experience in server infrastructure deployment, video streaming protocols, banking PC deployments, and deterministic software engineering.",
-    expHeading: "Work Experience",
-    certHeading: "Certifications & Expertise",
+    // Technical Interview Guide Modal
+    modalInterviewTitle: "Technical & Architecture Guide",
+    modalInterviewSub: "Engineering Standards & Interview Readiness Documentation",
 
     // Terminal CLI
     terminalPromptTitle: "bash — infinitenull@terminal:~",
@@ -232,11 +205,8 @@ window.I18N_DICT = {
     `,
 
     // Footer
-    footerBioText: "B.Sc. in Computer Science graduate from Universitas Potensi Utama. IT Support Practitioner, Network Administrator, VAPT Security, and Data Analytics & Software Engineering.",
-    footerTechHeading: "Core Competencies",
-    footerLinksHeading: "Links & Portfolio",
-    footerLinksDesc: "All systems are handcrafted with clean code and interactively accessible.",
-    footerTagline: "© 2026 Rizki Ananda, S.Kom (@InfiniteNull) • Handcrafted with Clean Code & Professional IT Standards."
+    footerTagline: "© 2026 Rizki Ananda, S.Kom (@InfiniteNull) • Handcrafted with Clean Code & Professional IT Standards.",
+    footerBackToTop: "Back to Top ↑"
   }
 };
 
@@ -265,37 +235,30 @@ window.setLanguage = function(lang) {
   const navLinkExp = document.getElementById('navLinkExp');
   if (navLinkExp) navLinkExp.textContent = dict.navLinkExp;
 
-  const btnInterviewGuideText = document.getElementById('btnInterviewGuideText');
-  if (btnInterviewGuideText) btnInterviewGuideText.textContent = dict.btnInterviewGuide;
+  const navLinkCert = document.getElementById('navLinkCert');
+  if (navLinkCert) navLinkCert.textContent = dict.navLinkCert;
 
-  const btnAboutDevText = document.getElementById('btnAboutDevText');
-  if (btnAboutDevText) btnAboutDevText.textContent = dict.btnAboutDev;
+  const btnInterviewGuide = document.getElementById('btnInterviewGuide');
+  if (btnInterviewGuide) btnInterviewGuide.textContent = dict.btnInterviewGuide;
 
   // 2. Hero Section
-  const heroBadgeText = document.getElementById('heroBadgeText');
-  if (heroBadgeText) heroBadgeText.textContent = dict.heroBadge;
+  const heroBadge = document.getElementById('heroBadge');
+  if (heroBadge) heroBadge.textContent = dict.heroBadge;
 
-  const heroTitleText = document.getElementById('heroTitleText');
-  if (heroTitleText) heroTitleText.textContent = dict.heroTitle;
+  const heroTitle = document.getElementById('heroTitle');
+  if (heroTitle) heroTitle.textContent = dict.heroTitle;
 
-  const heroSubTitleText = document.getElementById('heroSubTitleText');
-  if (heroSubTitleText && dict.heroSubTitle) heroSubTitleText.textContent = dict.heroSubTitle;
+  const heroSubTitle = document.getElementById('heroSubTitle');
+  if (heroSubTitle) heroSubTitle.textContent = dict.heroSubTitle;
 
+  const heroDesc = document.getElementById('heroDesc');
+  if (heroDesc) heroDesc.textContent = dict.heroDesc;
 
-  const heroDescText = document.getElementById('heroDescText');
-  if (heroDescText) heroDescText.textContent = dict.heroDesc;
+  const btnHeroViewProjectsText = document.getElementById('btnHeroViewProjectsText');
+  if (btnHeroViewProjectsText) btnHeroViewProjectsText.textContent = dict.btnHeroViewProjects;
 
-  const btnHeroViewProjects = document.getElementById('btnHeroViewProjects');
-  if (btnHeroViewProjects) {
-    const span = btnHeroViewProjects.querySelector('span');
-    if (span) span.textContent = dict.btnHeroViewProjects;
-  }
-
-  const btnHeroViewExp = document.getElementById('btnHeroViewExp');
-  if (btnHeroViewExp) {
-    const span = btnHeroViewExp.querySelector('span');
-    if (span) span.textContent = dict.btnHeroViewExp;
-  }
+  const btnHeroViewExpText = document.getElementById('btnHeroViewExpText');
+  if (btnHeroViewExpText) btnHeroViewExpText.textContent = dict.btnHeroViewExp;
 
   // 3. Featured Projects
   const secHeadingProjects = document.getElementById('secHeadingProjects');
@@ -307,6 +270,7 @@ window.setLanguage = function(lang) {
   const secSubProjects = document.getElementById('secSubProjects');
   if (secSubProjects) secSubProjects.textContent = dict.secSubProjects;
 
+  // SIMRS Card
   const simrsCardTitle = document.getElementById('simrsCardTitle');
   if (simrsCardTitle) simrsCardTitle.textContent = dict.simrsCardTitle;
 
@@ -316,9 +280,19 @@ window.setLanguage = function(lang) {
   const simrsCardDesc = document.getElementById('simrsCardDesc');
   if (simrsCardDesc) simrsCardDesc.textContent = dict.simrsCardDesc;
 
+  const simrsBullet1 = document.getElementById('simrsBullet1');
+  if (simrsBullet1) simrsBullet1.textContent = dict.simrsBullet1;
+
+  const simrsBullet2 = document.getElementById('simrsBullet2');
+  if (simrsBullet2) simrsBullet2.textContent = dict.simrsBullet2;
+
+  const simrsBullet3 = document.getElementById('simrsBullet3');
+  if (simrsBullet3) simrsBullet3.textContent = dict.simrsBullet3;
+
   const simrsBtnOpen = document.getElementById('simrsBtnOpen');
   if (simrsBtnOpen) simrsBtnOpen.textContent = dict.simrsBtnOpen;
 
+  // DevTools Card
   const devtoolsCardTitle = document.getElementById('devtoolsCardTitle');
   if (devtoolsCardTitle) devtoolsCardTitle.textContent = dict.devtoolsCardTitle;
 
@@ -328,68 +302,49 @@ window.setLanguage = function(lang) {
   const devtoolsCardDesc = document.getElementById('devtoolsCardDesc');
   if (devtoolsCardDesc) devtoolsCardDesc.textContent = dict.devtoolsCardDesc;
 
+  const devtoolsBullet1 = document.getElementById('devtoolsBullet1');
+  if (devtoolsBullet1) devtoolsBullet1.textContent = dict.devtoolsBullet1;
+
+  const devtoolsBullet2 = document.getElementById('devtoolsBullet2');
+  if (devtoolsBullet2) devtoolsBullet2.textContent = dict.devtoolsBullet2;
+
+  const devtoolsBullet3 = document.getElementById('devtoolsBullet3');
+  if (devtoolsBullet3) devtoolsBullet3.textContent = dict.devtoolsBullet3;
+
   const devtoolsBtnOpen = document.getElementById('devtoolsBtnOpen');
   if (devtoolsBtnOpen) devtoolsBtnOpen.textContent = dict.devtoolsBtnOpen;
 
-  // 4. Experience & Certifications
+  // SHUNA AI Card
+  const shunaCardTitle = document.getElementById('shunaCardTitle');
+  if (shunaCardTitle) shunaCardTitle.textContent = dict.shunaCardTitle;
+
+  const shunaCardSub = document.getElementById('shunaCardSub');
+  if (shunaCardSub) shunaCardSub.textContent = dict.shunaCardSub;
+
+  const shunaCardDesc = document.getElementById('shunaCardDesc');
+  if (shunaCardDesc) shunaCardDesc.textContent = dict.shunaCardDesc;
+
+  const shunaBullet1 = document.getElementById('shunaBullet1');
+  if (shunaBullet1) shunaBullet1.textContent = dict.shunaBullet1;
+
+  const shunaBullet2 = document.getElementById('shunaBullet2');
+  if (shunaBullet2) shunaBullet2.textContent = dict.shunaBullet2;
+
+  const shunaBullet3 = document.getElementById('shunaBullet3');
+  if (shunaBullet3) shunaBullet3.textContent = dict.shunaBullet3;
+
+  const shunaBtnOpen = document.getElementById('shunaBtnOpen');
+  if (shunaBtnOpen) shunaBtnOpen.textContent = dict.shunaBtnOpen;
+
+  // 4. Experience Section
   const secHeadingExp = document.getElementById('secHeadingExp');
-  if (secHeadingExp) secHeadingExp.textContent = dict.secHeadingExp;
+  if (secHeadingExp) {
+    const span = secHeadingExp.querySelector('span');
+    if (span) span.textContent = dict.secHeadingExp;
+  }
 
   const secSubExp = document.getElementById('secSubExp');
   if (secSubExp) secSubExp.textContent = dict.secSubExp;
-
-  // 5. Category Tabs
-  const catAllBtn = document.querySelector('button[data-category="all"]');
-  if (catAllBtn) catAllBtn.textContent = dict.catAll;
-
-  const catNetBtn = document.querySelector('button[data-category="network"]');
-  if (catNetBtn) catNetBtn.textContent = dict.catNetwork;
-
-  const catSecBtn = document.querySelector('button[data-category="security"]');
-  if (catSecBtn) catSecBtn.textContent = dict.catSecurity;
-
-  const catDbBtn = document.querySelector('button[data-category="database"]');
-  if (catDbBtn) catDbBtn.textContent = dict.catDatabase;
-
-  const catUtilBtn = document.querySelector('button[data-category="utility"]');
-  if (catUtilBtn) catUtilBtn.textContent = dict.catUtility;
-
-  // 6. Search Placeholder
-  const searchInput = document.getElementById('toolSearchInput');
-  if (searchInput) searchInput.placeholder = dict.searchPlaceholder;
-
-  // 7. Empty State
-  const emptyStateTitle = document.getElementById('emptyStateTitle');
-  if (emptyStateTitle) emptyStateTitle.textContent = dict.emptyTitle;
-
-  const emptyStateDesc = document.getElementById('emptyStateDesc');
-  if (emptyStateDesc) emptyStateDesc.textContent = dict.emptyDesc;
-
-  // 8. Modal Tabs
-  const tabDemoText = document.getElementById('tabDemoText');
-  if (tabDemoText) tabDemoText.textContent = dict.tabDemo;
-
-  const tabCodeText = document.getElementById('tabCodeText');
-  if (tabCodeText) tabCodeText.textContent = dict.tabCode;
-
-  const tabDocsText = document.getElementById('tabDocsText');
-  if (tabDocsText) tabDocsText.textContent = dict.tabDocs;
-
-  const copyCodeBtnText = document.getElementById('copyCodeBtnText') || document.getElementById('copyCodeText');
-  if (copyCodeBtnText) copyCodeBtnText.textContent = dict.copyCode;
-
-  // 9. Developer Profile Modal
-  const devRoleSub = document.getElementById('devRoleSub');
-  if (devRoleSub) devRoleSub.textContent = dict.devRoleSub;
-
-  const profileHeading = document.getElementById('profileHeading');
-  if (profileHeading) profileHeading.textContent = dict.profileHeading;
-
-  const profileBio = document.getElementById('profileBio');
-  if (profileBio) profileBio.innerHTML = dict.profileBio;
-
-  const expHeading = document.getElementById('expHeading');
-  if (expHeading) expHeading.textContent = dict.expHeading;
 
   const job1Title = document.getElementById('job1Title');
   if (job1Title) job1Title.textContent = dict.job1Title;
@@ -415,8 +370,15 @@ window.setLanguage = function(lang) {
   const job2Desc = document.getElementById('job2Desc');
   if (job2Desc) job2Desc.innerHTML = dict.job2Desc;
 
-  const certHeading = document.getElementById('certHeading');
-  if (certHeading) certHeading.textContent = dict.certHeading;
+  // 5. Certifications Section
+  const secHeadingCert = document.getElementById('secHeadingCert');
+  if (secHeadingCert) {
+    const span = secHeadingCert.querySelector('span');
+    if (span) span.textContent = dict.secHeadingCert;
+  }
+
+  const secSubCert = document.getElementById('secSubCert');
+  if (secSubCert) secSubCert.textContent = dict.secSubCert;
 
   const cert1Title = document.getElementById('cert1Title');
   if (cert1Title) cert1Title.textContent = dict.cert1Title;
@@ -424,10 +386,26 @@ window.setLanguage = function(lang) {
   const cert1Desc = document.getElementById('cert1Desc');
   if (cert1Desc) cert1Desc.textContent = dict.cert1Desc;
 
+  const cert1Verified = document.getElementById('cert1Verified');
+  if (cert1Verified) cert1Verified.textContent = dict.verifiedLabel;
+
   const cert2Title = document.getElementById('cert2Title');
   if (cert2Title) cert2Title.textContent = dict.cert2Title;
 
-  // 10. Terminal CLI
+  const cert2Desc = document.getElementById('cert2Desc');
+  if (cert2Desc) cert2Desc.textContent = dict.cert2Desc;
+
+  const cert2Verified = document.getElementById('cert2Verified');
+  if (cert2Verified) cert2Verified.textContent = dict.verifiedLabel;
+
+  // 6. Technical Interview Guide Modal
+  const modalInterviewTitle = document.getElementById('modalInterviewTitle');
+  if (modalInterviewTitle) modalInterviewTitle.textContent = dict.modalInterviewTitle;
+
+  const modalInterviewSub = document.getElementById('modalInterviewSub');
+  if (modalInterviewSub) modalInterviewSub.textContent = dict.modalInterviewSub;
+
+  // 7. Terminal CLI
   const terminalPromptTitle = document.getElementById('terminalPromptTitle');
   if (terminalPromptTitle && dict.terminalPromptTitle) terminalPromptTitle.textContent = dict.terminalPromptTitle;
 
@@ -440,35 +418,10 @@ window.setLanguage = function(lang) {
   const terminalHelpBody = document.getElementById('terminalHelpBody');
   if (terminalHelpBody && dict.terminalHelpContent) terminalHelpBody.innerHTML = dict.terminalHelpContent;
 
-  // 11. Footer
-  const footerBioText = document.getElementById('footerBioText');
-  if (footerBioText) footerBioText.textContent = dict.footerBioText;
-
-  const footerTechHeading = document.getElementById('footerTechHeading');
-  if (footerTechHeading) footerTechHeading.textContent = dict.footerTechHeading;
-
-  const footerLinksHeading = document.getElementById('footerLinksHeading');
-  if (footerLinksHeading) footerLinksHeading.textContent = dict.footerLinksHeading;
-
-  const footerLinksDesc = document.getElementById('footerLinksDesc');
-  if (footerLinksDesc) footerLinksDesc.textContent = dict.footerLinksDesc;
-
+  // 8. Footer
   const footerTagline = document.getElementById('footerTagline');
   if (footerTagline) footerTagline.textContent = dict.footerTagline;
 
-  // Re-render Tools Grid
-  if (typeof window.renderToolsGrid === 'function') {
-    window.renderToolsGrid();
-  }
-
-  // Re-render SIMRS if active
-  if (window.currentProject === 'simrs' && typeof window.renderSimrsSuite === 'function') {
-    const root = document.getElementById('simrsSuiteRoot');
-    if (root) window.renderSimrsSuite(root);
-  }
-
-  // If a modal is open, refresh its content in the active language
-  if (window.activeTool && typeof window.openToolModal === 'function') {
-    window.openToolModal(window.activeTool);
-  }
+  const footerBackToTop = document.getElementById('footerBackToTop');
+  if (footerBackToTop) footerBackToTop.textContent = dict.footerBackToTop;
 };
