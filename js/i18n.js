@@ -17,8 +17,7 @@ window.I18N_DICT = {
     heroBadge: "Rizki Ananda, S.Kom • S1 Informatika",
     heroTitle: "Rizki Ananda",
     heroSubTitle: "Software & Web Developer",
-    heroAvailability: "Available for Projects & Opportunities",
-    heroDesc: "Fokus pada pengembangan aplikasi web, arsitektur backend, dan perkakas komputasi praktis dengan standar clean code.",
+        heroDesc: "Membangun aplikasi web dan sistem informasi yang fungsional, terstruktur, dan mudah digunakan.",
     btnHeroViewProjects: "Lihat Proyek ➔",
     btnHeroViewExp: "Pengalaman & Keahlian",
     
@@ -108,8 +107,7 @@ window.I18N_DICT = {
     heroBadge: "Rizki Ananda, S.Kom • Computer Science",
     heroTitle: "Rizki Ananda",
     heroSubTitle: "Software & Web Developer",
-    heroAvailability: "Available for Projects & Opportunities",
-    heroDesc: "Focused on building web applications, backend architectures, and practical engineering utilities with clean code standards.",
+        heroDesc: "Building web applications and information systems that are functional, structured, and easy to use.",
     btnHeroViewProjects: "View Projects ➔",
     btnHeroViewExp: "Experience & Skills",
     
@@ -229,8 +227,6 @@ window.setLanguage = function(lang) {
   const heroSubTitleText = document.getElementById('heroSubTitleText');
   if (heroSubTitleText && dict.heroSubTitle) heroSubTitleText.textContent = dict.heroSubTitle;
 
-  const heroAvailabilityText = document.getElementById('heroAvailabilityText');
-  if (heroAvailabilityText && dict.heroAvailability) heroAvailabilityText.textContent = dict.heroAvailability;
 
   const heroDescText = document.getElementById('heroDescText');
   if (heroDescText) heroDescText.textContent = dict.heroDesc;
