@@ -10,7 +10,7 @@
  * - Client-Side Batch CSV Upload, Instant Inference & Export Engine
  * 
  * Lead Developer & Core Architect: Rizki Ananda, S.Kom (@InfiniteNull)
- * Origin: MSIB Batch 6 @ Skilvul (Machine Learning Track - Score 81.8) & GitHub: InfiniteNull/SHUNA-AI
+ * Origin: Proyek Capstone Kelompok 26 — Studi Independen Bersertifikat (MSIB) Batch 6 @ Skilvul (Machine Learning Track - Score 81.8) & GitHub: InfiniteNull/SHUNA-AI
  */
 
 (function() {
@@ -1802,7 +1802,7 @@
             <h2 class="text-lg font-bold text-slate-900 dark:text-white">Latar Belakang &amp; Kepemilikan Teknis SHUNA AI</h2>
           </div>
           <p class="text-slate-600 dark:text-slate-400">
-            Proyek <strong>SHUNA AI</strong> dirancang, diteliti, dan dibangun secara mandiri oleh Rizki Ananda sebagai <strong>Lead Developer &amp; Core Architect (95%+ implementasi kode dan pipeline teknis mandiri)</strong> dalam program <strong>MSIB Batch 6 @ Skilvul (Machine Learning Track)</strong> dengan nilai akhir <strong>81.8</strong>. Mulai dari data preparation, feature engineering TF-IDF, kalibrasi model Logistic Regression, hingga perancangan arsitektur analitik dilakukan secara end-to-end.
+            Proyek <strong>SHUNA AI</strong> dirancang dan dibangun sebagai proyek akhir capstone <strong>Kelompok 26</strong> dalam program <strong>Studi Independen Bersertifikat (MSIB) Batch 6 @ Skilvul (Machine Learning Track)</strong> dengan nilai kelulusan akhir <strong>81.8</strong>. Rizki Ananda bertindak sebagai <strong>Ketua Tim (Lead Developer &amp; Core Architect)</strong> yang memimpin dan mengeksekusi 95%+ implementasi kode serta pipeline teknis secara mandiri mulai dari data preparation, feature engineering TF-IDF, kalibrasi model Logistic Regression, hingga perancangan arsitektur analitik end-to-end.
           </p>
         </div>
 

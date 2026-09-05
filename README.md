@@ -1,4 +1,4 @@
-# Web Tools & Engineering Suite
+# Rizki Ananda, S.Kom — Production Applications & Engineering Portfolio
 
 <div align="center">
 
@@ -8,137 +8,148 @@
 
 </div>
 
-> **Unified Developer & IT Infrastructure Suite (29 Interactive Production-Ready Tools)**  
-> *Engineered by **Rizki Ananda, S.Kom** ([@InfiniteNull](https://github.com/InfiniteNull)) — Computer Science Graduate (S1 Informatika) from Universitas Potensi Utama, IT Specialist, Certified Network Administrator & Security Practitioner.*
+> **Comprehensive IT Infrastructure, Enterprise Software & Data Intelligence Portfolio**  
+> *Engineered by **Rizki Ananda, S.Kom** ([@InfiniteNull](https://github.com/InfiniteNull)) — Computer Science Graduate (S1 Informatika) from Universitas Potensi Utama, Certified Network Administrator (Komdigi RI & Kominfo), IT Support Specialist, and Full-Stack / Machine Learning Practitioner.*
 
 ---
 
-## Developer Profile
+## 👨‍💻 Developer Profile & Credentials
 
 * **Name:** Rizki Ananda, S.Kom
 * **GitHub:** [@InfiniteNull](https://github.com/InfiniteNull)
 * **Education:** Bachelor of Computer Science (S1 Informatika) — Universitas Potensi Utama
-* **Specializations:** IT Support, Network Administration, System Security (VAPT), Data Analytics & Full-Stack Web Development.
-* **Professional Certifications:**
-  * **Associate Network Administrator** (Komdigi RI, 2026)
-  * **Junior Network Administrator** (BBPSDMP Kominfo Medan, 2023)
-* **Work & Project Experience:**
-  * **IT Researcher** — *ADZKIA KEDINASAN PUSAT* (Nov 2024 - Jun 2025 | Freelance | Medan)  
-    *Architected, configured, and benchmarked Nginx Media Server on Linux Virtual Machines across 4 streaming protocols (RTMP, HLS, RTSP, HTTP), conducted internal network security audits (VAPT), firewall rules enforcement, and server architectural documentation.*
-  * **IT Support** — *PT Bank Sinarmas, Tbk* (Dec 2023 | Freelance / Outsourcing Vendor | KC Medan Mangkubumi)  
-    *Executed enterprise PC deployment: hardware assembly, secure user data migration, OS configuration, structured cable management, and peripheral network domain onboarding.*
-  * **SHUNA AI Project Lead** — *MSIB Batch 6 Kampus Merdeka @ Skilvul* (Score: 81.8 — NLP text classification pipelines & Python workflows).
+* **Specializations:** IT Support, Network Administration, System Security (VAPT), Data Analytics, and Full-Stack Web Engineering.
+* **National Competency Certifications:**
+  * **Associate Network Administrator** (Komdigi RI / BNSP, 2026) — Competency in IPv4/VLSM addressing schemes, dynamic routing, VLANs, and distributed enterprise network configuration.
+  * **Junior Network Administrator** (BBPSDMP Kominfo Medan, 2023) — Competency in Local Area Network (LAN) installation, Linux/Nginx OS administration, and server maintenance.
+* **Work Experience & Authentic Projects:**
+  * **IT Researcher (Freelance)** — *ADZKIA KEDINASAN PUSAT MEDAN* (Nov 2024 - Jun 2025)  
+    *Architected, configured, and benchmarked Nginx Media Server on Linux Virtual Machines across 4 streaming protocols (RTMP, HLS, RTSP, HTTP). Conducted internal network security audits (VAPT), firewall rule hardening, and server documentation.*
+  * **IT Support (Vendor Outsourcing)** — *PT BANK SINARMAS, TBK (KC MEDAN MANGKUBUMI)* (Dec 2023)  
+    *Executed enterprise PC deployment: hardware assembly, secure user profile data migration, OS deployment, structured cable management, and peripheral network domain onboarding.*
+  * **Project Lead & Core Architect (Group 26)** — *SHUNA AI @ Certified Independent Study (MSIB) Batch 6 Kampus Merdeka - Skilvul* (Score: 81.8)  
+    *Led Group 26 (Kelompok 26) in the Certified Independent Study (MSIB) Machine Learning Track, executing 95%+ solo implementation of end-to-end NLP classification pipelines, Scikit-Learn TF-IDF vectorization, tabular retention modeling, and data analytics.*
   * **Organizational Leadership** — *HMPS Informatika Universitas Potensi Utama* (Internal administrative governance).
-* **Technical Toolkit:** Burp Suite, OWASP ZAP, OSINT, Linux VM, Nginx, Python (Pandas, NumPy), Node.js, SQLite, JavaScript ES6+, Tailwind CSS.
+* **Technical Toolkit:** Linux VM, Nginx, Python (Pandas, NumPy, Scikit-Learn, FastAPI), PHP (Laravel), MySQL, JavaScript ES6+, Node.js, SQLite, Tailwind CSS, Burp Suite, OWASP ZAP, OSINT.
 
 ---
 
-## Overview & Architecture
+## 🚀 3 Featured Flagship Projects
 
-This repository hosts a high-performance **29-Tool IT, Data Wrangling & Software Engineering Suite** built with a clean, modular client-side architecture and polyglot backend foundations. The tools are organized into **4 Core Pillars**:
+The live platform showcases 3 production-grade, standalone systems designed and engineered with clean architecture:
 
-1. **Networking & Server Infrastructure (5 Tools):** IPv4 VLSM subnetting, firewall command generation (UFW / iptables / Mikrotik), data transfer bandwidth calculation, streaming egress & disk estimation (RTMP/HLS), and Linux crontab scheduling.
-2. **System Security & Hardening (6 Tools):** Bcrypt & JWT auth simulation, HTTP security headers analyzer (CSP/HSTS/CORS), cryptographic hash verifiers (SHA-256/SHA-512/MD5), password entropy estimators, multi-format payload encoders, and JWT signature debuggers.
-3. **Data & Backend Engineering (9 Tools):**
-   - **Tabular Data Cleaner & Imputation Studio:** Raw dirty data cleaning, deduplication, missing value imputation (mean/median/mode), date standardizing (ISO-8601), and Pandas code export.
-   - **Dataset Integration & Quality Control (QC) Inspector:** Completeness & validity audits, Tukey's IQR statistical outlier detection, and relational dataset table join simulator.
-   - **Periodic Report & KPI Monitoring Dashboard:** Operational tracking across daily/weekly/monthly periods, target vs actual variance analysis, and achievement rate calculations.
-   - **Spreadsheet Formula Simulator & Data Reshaper:** XLOOKUP / VLOOKUP simulation, Pivot Table GroupBy matrix, and cross-platform SQL & Pandas conversion.
-   - VADER NLP sentiment data ingestion, SQLite inventory asset CRUD, relational library transaction management, JSON-to-SQL batch converter, and Nginx access log analyzers.
-4. **Hardware & Web Utilities (9 Tools):** REST API latency health pinger, canvas image optimizer, real-time currency exchange calculator, typing speed benchmark (WPM), RAID array capacity calculator (RAID 0/1/5/6/10), PC power supply (PSU) wattage estimators, Regex tester, and Markdown live preview editor.
+### 1. SIMRS Core Enterprise — Hospital MIS (`#simrs`)
+* **Live Workspace:** Accessible via hash `#simrs` on the portfolio dashboard.
+* **Architecture:** Enterprise-grade Hospital Management Information System (HMIS) built in compliance with Indonesian Ministry of Health standards (**Permenkes No. 24 Tahun 2022**).
+* **Core Capabilities:**
+  * **Admission & BPJS SEP Bridging:** Automated patient registration with simulated BPJS Health V-Claim validation.
+  * **Electronic Medical Records (EMR / RME SOAP):** Interactive clinical notes with a searchable directory of 40+ ICD-10 diagnostic codes.
+  * **Integrated Clinical Workflows:** Connected real-time flow from Admission ➔ Doctor SOAP ➔ LOINC Lab Orders ➔ Pharmacy E-Prescribing ➔ Reactive Cashier Billing with official receipts.
+  * **Inpatient Bed Management:** Reactive room & bed matrix with real-time Bed Occupancy Rate (BOR) hospital efficiency metrics.
+  * **SatuSehat FHIR Compliance:** Formatted JSON FHIR Bundle structures for clinical exchange standards.
+* **Tech Stack:** PHP 8.2, Laravel 11, MySQL, Tailwind CSS, JavaScript ES6+.
+* **Source Repository:** [`https://github.com/InfiniteNull/simrs-laravel`](https://github.com/InfiniteNull/simrs-laravel)
 
 ---
 
-## Directory Structure
+### 2. Dev & Data Engineering Suite — 29 Interactive Tools (`#devtools`)
+* **Live Workspace:** Accessible via hash `#devtools` on the portfolio dashboard.
+* **Architecture:** High-performance, modular computational platform containing 29 standalone production tools divided into 4 Core Pillars:
+  1. **Networking & Server Infrastructure (5 Tools):** IPv4 VLSM subnetting calculator, multi-platform firewall command generator (UFW / iptables / Mikrotik), bandwidth transfer & migration duration estimator, RTMP/HLS streaming bitrate & disk storage calculator, and Linux Crontab visual scheduler.
+  2. **System Security & Hardening (6 Tools):** Bcrypt & JWT authentication sandbox, OWASP HTTP Security Headers audit, cryptographic hash verifier (SHA-256 / SHA-512 / MD5 / HMAC), Shannon password entropy & GPU brute-force estimator, multi-format security payload encoder/decoder, and JWT claims/signature debugger.
+  3. **Data & Backend Engineering (9 Tools):** Tabular Data Cleaner & Imputation Studio (missing value imputation, deduplication, Pandas script export), Dataset Integration & Quality Control (QC) Inspector (Tukey's IQR outlier detection, relational table joiner), Operational KPI & Periodic Report Dashboard, Spreadsheet Formula Simulator (XLOOKUP / VLOOKUP / Pivot Matrix), VADER NLP sentiment data ingestion, SQLite Inventory CRUD, Relational Library Borrowing System, JSON-to-SQL converter, and Nginx access log parser.
+  4. **Hardware & Utilities (9 Tools):** REST API latency pinger, client-side Canvas image compressor (WebP converter), live foreign exchange rate converter, 60-second typing test benchmark (WPM & accuracy), RAID storage capacity & fault-tolerance calculator (RAID 0/1/5/6/10), PC PSU wattage estimator, Regex tester & validator, and live Markdown-to-HTML editor.
+* **Tech Stack:** JavaScript ES6+, Python, FastAPI, Node.js, SQLite, HTML5 / Canvas, Tailwind CSS.
+* **Source Repository:** [`https://github.com/InfiniteNull`](https://github.com/InfiniteNull)
+
+---
+
+### 3. SHUNA AI Data Engine — Machine Learning & NLP Analytics (`#shuna-ai`)
+* **Live Workspace:** Accessible via hash `#shuna-ai` on the portfolio dashboard.
+* **Context & Origin:** **Capstone Project of Group 26 (Kelompok 26)** — Certified Independent Study (MSIB) Batch 6 Kampus Merdeka @ Skilvul (Machine Learning Track • Final Score: **81.8**). Independently led and engineered (95%+ solo codebase implementation) by Rizki Ananda as Lead Developer & Core Architect.
+* **Core Capabilities:**
+  * **NLP & Indonesian Slang Studio:** Live text tokenization, TF-IDF vectorization, compound polarity scoring, and an active Indonesian Slang & Informal Typo Normalizer toggle.
+  * **Lexical Word Cloud & N-Gram Bigrams:** Proportional TF-IDF weighted visualizer for positive sentiment, negative friction points, and 2-word phrase patterns.
+  * **Multi-Model Benchmark Arena:** Live inference comparison across 4 trained algorithms:
+    * *Logistic Regression* (Accuracy: 93.5%, F1: 93.1%)
+    * *Linear SVM* (Accuracy: 94.0%, F1: 93.8%)
+    * *Multinomial Naive Bayes* (Accuracy: 91.2%, F1: 90.9%)
+    * *Random Forest* (Accuracy: 92.4%, F1: 92.0%)
+  * **Dynamic ROC-AUC Curve & Classification Decision Threshold Slider:** Real-time operating point simulation on empirical ROC curve (AUC = 0.962) with dynamic Precision-Recall-F1 Confusion Matrix updates across threshold $\tau \in [0.10, 0.90]$.
+  * **Tabular Retention & Churn Risk Simulator:** Multi-variable Sigmoid Logistic Regression classifier for student completion and dropout risk prediction.
+  * **Time-Series Forecasting & Anomaly Detection:** Holt's Linear Exponential Smoothing vs 7-Day Moving Average forecasting with rolling Z-score spike detector ($k=7, Z \ge 2.0$).
+  * **Batch CSV Processing Engine:** In-browser client-side CSV file upload parser, instant batch sentiment & aspect inference, and enriched CSV report exporter.
+* **Tech Stack:** Python 3.10, Scikit-Learn, Pandas, NumPy, FastAPI, JavaScript ES6+, Tailwind CSS.
+* **Source Repository:** [`https://github.com/InfiniteNull/SHUNA-AI`](https://github.com/InfiniteNull/SHUNA-AI)
+
+---
+
+## 📁 Repository Directory Structure
 
 ```text
 portfolio-hub/
-├── index.html                  # Main SPA Dashboard & Workspace Modal Container
-├── styles.css                  # Custom styling, animations & Dark/Light mode engine
-├── app.js                      # Master Controller, 29-Tool Registry & Modal Manager
-├── js/                         # Modular Interactive Tool Scripts
-│   ├── data-cleaner-studio.js     # Data Wrangling & Imputation Studio
-│   ├── data-qc-inspector.js       # Quality Control Audit & Relational Table Joiner
-│   ├── kpi-monitoring-dashboard.js# Operational KPI & Periodic Report Dashboard
-│   ├── spreadsheet-formula-engine.js# XLOOKUP Simulator & Pivot Reshaper
-│   ├── subnet-calculator.js       # IPv4 / CIDR / VLSM Subnetting Engine
-│   ├── firewall-generator.js      # Port Directory & Linux UFW / iptables Generator
-│   ├── bandwidth-estimator.js     # Data Transfer & Migration Throughput Calculator
-│   ├── streaming-calculator.js    # RTMP / HLS / RTSP Bitrate & Storage Estimator
-│   ├── cron-builder.js            # Linux Crontab Expression Scheduler
-│   ├── security-headers.js        # OWASP HTTP Security Headers Audit & Scorer
-│   ├── crypto-hash.js             # Web Crypto API SHA-256 / SHA-512 / MD5 Verifier
-│   ├── password-entropy.js        # Shannon Entropy & GPU Brute-Force Estimator
-│   ├── payload-encoder.js         # Base64 / Hex / URL / Unicode Payload Sanitizer
-│   ├── jwt-debugger.js            # JSON Web Token Claims & Signature Verifier
-│   ├── ai-data-analyzer.js        # NLP Sentiment Analysis & Chart.js Visualizer
-│   ├── inventory-sandbox.js       # CRUD Asset & SQLite Database Simulation
-│   ├── library-sandbox.js         # Relational Database Borrowing & Circulation
-│   ├── json-sql-converter.js      # Batch JSON to SQL DDL/DML Schema Transformer
-│   ├── log-analyzer.js            # Nginx Web Server Access Log Metrics & Top IPs
-│   ├── api-checker.js             # REST API Latency Pinger & Payload Inspector
-│   ├── image-optimizer.js         # Canvas Image Resizer & WebP/PNG/JPG Converter
-│   ├── currency-converter.js      # Real-Time Multi-Currency Forex Rate Calculator
-│   ├── typing-test.js             # 60s Typing Benchmark (WPM & Accuracy Metric)
-│   ├── news-scraper.js            # Curated Tech Feed & Automation Scraper
-│   ├── raid-calculator.js         # Storage Array RAID 0/1/5/6/10 Capacity Calculator
-│   ├── psu-calculator.js          # Hardware Wattage & Power Supply Estimator
-│   ├── regex-tester.js            # Live Regular Expression Evaluator & Highlighter
-│   └── markdown-preview.js        # Real-Time Semantic Markdown-to-HTML Live Engine
+├── index.html                  # Main SPA Portal (SIMRS, DevTools & SHUNA AI views)
+├── styles.css                  # High-density Slate/Zinc UI theme & dark mode engine
+├── app.js                      # Master Controller, terminal CLI router & modal manager
+├── js/                         # Modular Interactive Scripts & Workspaces
+│   ├── i18n.js                 # Bilingual Translation Engine (ID / EN)
+│   ├── simrs-app.js            # SIMRS Hospital Management System Engine
+│   ├── shuna-ai-suite.js       # SHUNA AI Data Science & Machine Learning Suite
+│   ├── data-cleaner-studio.js  # Tabular Data Wrangling & Imputation Studio
+│   ├── data-qc-inspector.js    # Quality Control Audit & Relational Table Joiner
+│   ├── kpi-monitoring-dashboard.js # Operational KPI & Periodic Report Dashboard
+│   ├── spreadsheet-formula-engine.js # XLOOKUP Simulator & Pivot Table Matrix
+│   ├── subnet-calculator.js    # IPv4 / CIDR / VLSM Subnetting Engine
+│   ├── firewall-generator.js   # Linux UFW / iptables / Mikrotik Firewall Builder
+│   ├── bandwidth-estimator.js  # Data Transfer & Migration Duration Calculator
+│   ├── streaming-calculator.js # RTMP / HLS / RTSP Bitrate & Storage Estimator
+│   ├── cron-builder.js         # Linux Crontab Visual Expression Scheduler
+│   ├── security-headers.js     # OWASP HTTP Security Headers Audit & Scorer
+│   ├── crypto-hash.js          # Web Crypto API SHA-256 / SHA-512 / MD5 Verifier
+│   ├── password-entropy.js     # Shannon Entropy & GPU Brute-Force Estimator
+│   ├── payload-encoder.js      # Base64 / Hex / URL / Unicode Payload Sanitizer
+│   ├── jwt-debugger.js         # JSON Web Token Claims & Signature Verifier
+│   ├── ai-data-analyzer.js     # NLP Sentiment Analysis & Chart.js Visualizer
+│   ├── inventory-sandbox.js    # CRUD Asset & SQLite Database Simulation
+│   ├── library-sandbox.js      # Relational Database Borrowing & Circulation
+│   ├── json-sql-converter.js   # Batch JSON to SQL DDL/DML Schema Transformer
+│   ├── log-analyzer.js         # Nginx Web Server Access Log Metrics & Top IPs
+│   ├── api-checker.js          # REST API Latency Pinger & Payload Inspector
+│   ├── image-optimizer.js      # Canvas Image Resizer & WebP/PNG/JPG Converter
+│   ├── currency-converter.js   # Real-Time Multi-Currency Forex Rate Calculator
+│   ├── typing-test.js          # 60s Typing Benchmark (WPM & Accuracy Metric)
+│   ├── news-scraper.js         # Curated Tech Feed & Automation Scraper
+│   ├── raid-calculator.js      # Storage Array RAID 0/1/5/6/10 Capacity Calculator
+│   ├── psu-calculator.js       # Hardware Wattage & Power Supply Estimator
+│   ├── regex-tester.js         # Live Regular Expression Evaluator & Highlighter
+│   └── markdown-preview.js     # Real-Time Semantic Markdown-to-HTML Live Engine
 ├── python-modules/             # Standalone Python CLI & Microservice Backends
-│   ├── analyzer.py                # Pandas & VADER Sentiment NLP Pipeline
-│   ├── auth_service.py            # Bcrypt Password Hashing & JWT Authentication
-│   ├── library_system.py          # SQLite Relational Database Management Script
-│   └── scraper.py                 # BeautifulSoup & Requests Web Scraper
-└── README.md                   # Primary Repository Documentation
+│   ├── analyzer.py             # Pandas & VADER Sentiment NLP Pipeline
+│   ├── auth_service.py         # Bcrypt Password Hashing & JWT Authentication
+│   ├── library_system.py       # SQLite Relational Database Management Script
+│   └── scraper.py              # BeautifulSoup & Requests Web Scraper
+├── PANDUAN_WAWANCARA.md        # Technical Engineering Interview & Architectural Guide
+├── README_ID.md                # Dokumentasi Versi Bahasa Indonesia
+└── README.md                   # Primary Repository Documentation (English)
 ```
 
 ---
 
-## Interactive Tools Inventory
-
-| No | Tool Name | Pillar Category | Core Capabilities |
-|:---:|---|---|---|
-| 1 | **IP Subnetting & VLSM Calculator** | Networking & Server | Calculates Network ID, Broadcast, Subnet Mask, Host Range, and Binary representation. |
-| 2 | **Port Directory & Firewall Rules** | Networking & Server | Standard port directory and instant command generator for UFW, iptables, and Mikrotik. |
-| 3 | **Bandwidth & Data Transfer Estimator** | Networking & Server | Estimates data backup and server migration duration with TCP/IP overhead efficiency. |
-| 4 | **Streaming Bitrate & Storage** | Networking & Server | Ingest/egress bandwidth and DVR disk storage calculator for RTMP, HLS, RTSP Nginx servers. |
-| 5 | **Cron Task Scheduler Builder** | Networking & Server | Visual Linux crontab 5-field generator with simulation of upcoming 5 scheduled execution dates. |
-| 6 | **Auth & Security Service** | System Security | User registration, Bcrypt hashing (Salt 10), JWT stateless session issuance, and SQLite persistence. |
-| 7 | **Security Headers Analyzer** | System Security | Audits CSP, HSTS, X-Frame-Options, MIME-sniffing headers and outputs security grades (A+ to F). |
-| 8 | **Crypto Hash & Integrity Verifier** | System Security | Computes SHA-256, SHA-512, SHA-1, MD5, and HMAC hashes with instant checksum verification. |
-| 9 | **Password Entropy & Brute-Force** | System Security | Calculates Shannon entropy bits, password policy compliance, and cracking duration on CPU vs GPU. |
-| 10 | **Security Payload Encoder / Decoder** | System Security | Multi-format conversions: Base64, Hexadecimal, URL-Encoding, HTML Entities, and Unicode. |
-| 11 | **JWT Inspector & Claims Debugger** | System Security | Deconstructs Header, Payload claims, expiration timestamps, and HMACSHA256 signature verification. |
-| 12 | **NLP Sentiment & Data Analyzer** | Data & Backend | Ingests CSV files, detects review columns, calculates VADER NLP scores, and renders Chart.js graphs. |
-| 13 | **Inventory & Warehouse CRUD** | Data & Backend | Asset management with RESTful HTTP methods (GET, POST, PUT, DELETE) and low-stock alerts. |
-| 14 | **Library Management System** | Data & Backend | Relational book catalog and borrowing transactions with SQLite ACID data integrity. |
-| 15 | **JSON to SQL / CSV Converter** | Data & Backend | Converts raw JSON arrays into `CREATE TABLE` DDL, batch `INSERT INTO` DML, and structured CSV. |
-| 16 | **Nginx Access Log Analyzer** | Data & Backend | Parses raw Nginx access logs to aggregate 2xx/4xx/5xx status rates, top IPs, and suspicious paths. |
-| 17 | **Tabular Data Cleaner & Imputation Studio** | Data & Backend | Raw data cleaning, deduplication, missing value imputation, and Pandas Python script export. |
-| 18 | **Dataset Integration & Quality Control (QC)** | Data & Backend | Data health scoring, Tukey's IQR outlier detection, and relational dataset join simulation. |
-| 19 | **Periodic Report & KPI Monitoring Dashboard**| Data & Backend | Operational report tracking across daily/weekly/monthly views with variance analysis. |
-| 20 | **Spreadsheet Formula Simulator & Data Reshaper**| Data & Backend | XLOOKUP / VLOOKUP simulation, Pivot Table GroupBy matrix, and cross-platform SQL/Pandas code. |
-| 21 | **Tech News & Feeds Scraper** | Utilities & Hardware | Automated live feed scraper extracting top tech publications and news headlines. |
-| 22 | **API Health & Latency Checker** | Utilities & Hardware | Real-time HTTP REST API endpoint pinger measuring latency (ms) with formatted JSON responses. |
-| 23 | **Image Optimizer & Converter** | Utilities & Hardware | Client-side Canvas image resizer and WebP / PNG / JPG converter saving up to 70% file size. |
-| 24 | **Real-Time Currency Calculator** | Utilities & Hardware | Live global exchange rates (USD, IDR, EUR, SGD, JPY) with offline LocalStorage caching. |
-| 25 | **Typing Speed & Accuracy Test** | Utilities & Hardware | Typing test calculating Words Per Minute (WPM) and accuracy percentage over a 60-second timer. |
-| 26 | **RAID Storage & Capacity Calculator** | Utilities & Hardware | Usable storage, parity overhead, and drive fault tolerance calculator for RAID 0, 1, 5, 6, and 10. |
-| 27 | **PC Power Supply (PSU) Calculator** | Utilities & Hardware | Component wattage estimator (CPU, GPU, RAM, NVMe, HDD, Fans) for enterprise PC deployment. |
-| 28 | **Regex Tester & Validator** | Utilities & Hardware | Real-time regular expression evaluator with visual match highlighting and common pattern presets. |
-| 29 | **Markdown Live Editor & Preview** | Utilities & Hardware | Markdown editor with real-time semantic HTML rendering, tables, code blocks, and HTML copy. |
-
----
-
-## Live Deployment
+## 🌐 Live Platform Deployment
 
 The live suite is permanently hosted and accessible on GitHub Pages:  
-**[https://infinitenull.github.io/](https://infinitenull.github.io/)**
+👉 **[https://infinitenull.github.io/](https://infinitenull.github.io/)**
+
+Direct Navigation Shortcuts:
+* **SIMRS Core Enterprise:** [https://infinitenull.github.io/#simrs](https://infinitenull.github.io/#simrs)
+* **Dev & Data Engineering Suite (29 Tools):** [https://infinitenull.github.io/#devtools](https://infinitenull.github.io/#devtools)
+* **SHUNA AI Data Engine:** [https://infinitenull.github.io/#shuna-ai](https://infinitenull.github.io/#shuna-ai)
 
 ---
 
-## Contact & Links
+## 📬 Contact & Links
+
 * **Developer:** Rizki Ananda, S.Kom
 * **GitHub Profile:** [https://github.com/InfiniteNull](https://github.com/InfiniteNull)
 * **Almamater:** S1 Informatika — Universitas Potensi Utama
+* **License:** MIT License (Handcrafted with Clean Code & Professional IT Standards).

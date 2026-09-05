@@ -1,21 +1,22 @@
 # BUKU SAKU & PANDUAN WAWANCARA TEKNIS PENGEMBANG
-### *Panduan Menjawab Pertanyaan Arsitektur untuk Portofolio Dev & Data Tools Suite*
+### *Panduan Menjawab Pertanyaan Arsitektur Portofolio Software, IT Infrastructure & Data Suite*
 **Kandidat: Rizki Ananda, S.Kom (Universitas Potensi Utama | @InfiniteNull)**
 
 Dokumen ini disiapkan khusus agar Anda (**Rizki Ananda, S.Kom**) dapat menjawab setiap pertanyaan wawancara teknis dari recruiter, hiring manager, atau lead engineer dengan percaya diri, sistematis, dan profesional berdasarkan rekam jejak nyata Anda.
 
 ---
 
-## 1. Pertanyaan Pengantar: Penjelasan Diri & Proyek
+## 1. Pertanyaan Pengantar: Penjelasan Diri & Portofolio
 
 ### Q: "Bisa ceritakan latar belakang profesional Anda dan apa yang Anda bangun pada website ini?"
 > **Jawaban:**  
 > *"Selamat pagi/siang Bapak/Ibu. Nama saya **Rizki Ananda**, lulusan **S1 Informatika (S.Kom) dari Universitas Potensi Utama** dengan fokus spesialisasi di bidang **IT Support, Administrasi Jaringan, Keamanan Sistem (VAPT), serta Analisis Data & Rekayasa Perangkat Lunak**.*  
 > *Secara profesional, saya memiliki pengalaman kerja teknis di:*  
-> 1. ***IT Researcher di ADZKIA KEDINASAN PUSAT (Nov 2024 - Jun 2025):*** *Merancang, mengonfigurasi, dan menguji infrastruktur Nginx Media Server pada Linux VM, melakukan benchmark 4 protokol streaming video (RTMP, HLS, RTSP, HTTP), audit keamanan jaringan internal (VAPT), pembuatan aturan firewall, serta dokumentasi arsitektur server.*  
+> 1. ***IT Researcher di ADZKIA KEDINASAN PUSAT MEDAN (Nov 2024 - Jun 2025):*** *Merancang, mengonfigurasi, dan menguji infrastruktur Nginx Media Server pada Linux VM, melakukan benchmark 4 protokol streaming video (RTMP, HLS, RTSP, HTTP), audit keamanan jaringan internal (VAPT), pembuatan aturan firewall, serta dokumentasi arsitektur server.*  
 > 2. ***IT Support di PT Bank Sinarmas, Tbk (Des 2023):*** *Melaksanakan PC Deployment di KC Medan Mangkubumi, meliputi perakitan desktop, instalasi OS enterprise, backup & migrasi data profil user secara aman, cable management, hingga konfigurasi peripheral terhubung ke domain internal bank.*  
-> *Kompetensi saya diperkuat oleh sertifikasi **Associate Network Administrator (Komdigi RI 2026)** dan **Junior Network Administrator (Kominfo 2023)**, serta kepemimpinan sebagai **Ketua Tim Proyek SHUNA AI di MSIB Skilvul (Nilai 81.8)**.*  
-> *Seluruh keahlian ini saya wujudkan dalam website portofolio interaktif **Web Tools & Engineering Suite** yang menggabungkan 22 tools utilitas fungsional berbasis Python, Node.js, SQL, dan Modern JavaScript."*
+> 3. ***Ketua Tim Proyek Akhir (Kelompok 26) di MSIB Studi Independen Skilvul (Nilai 81.8):*** *Memimpin perancangan dan implementasi 95%+ kode mandiri proyek **SHUNA AI**, yaitu platform analitik data terpadu berbasis NLP TF-IDF, benchmark multi-model machine learning, simulator retensi siswa, dan peramalan time-series.*  
+> *Kompetensi saya diperkuat oleh sertifikasi **Associate Network Administrator (Komdigi RI 2026)** dan **Junior Network Administrator (Kominfo 2023)**.*  
+> *Seluruh keahlian ini saya wujudkan dalam website portofolio interaktif yang menaungi 3 proyek flagship: **SIMRS Core Enterprise (Hospital MIS Permenkes 24/2022)**, **Dev & Data Engineering Suite (29 Tools Interaktif)**, serta **SHUNA AI Data Engine**."*
 
 ---
 
@@ -41,17 +42,33 @@ Dokumen ini disiapkan khusus agar Anda (**Rizki Ananda, S.Kom**) dapat menjawab 
 
 ---
 
-## 4. Pertanyaan Mengenai Analisis Data & NLP (SHUNA AI & Tools Suite)
+## 4. Pertanyaan Mengenai Analisis Data & NLP (SHUNA AI — Kelompok 26 MSIB Skilvul)
 
-### Q: "Bagaimana Anda menerapkan pemrosesan NLP pada proyek SHUNA AI dan modul NLP Data Analyzer?"
+### Q: "Bagaimana peran Anda dan implementasi teknis pada proyek SHUNA AI di MSIB Studi Independen Skilvul?"
 > **Jawaban:**  
-> *"Sebagai Ketua Tim Proyek SHUNA AI pada MSIB Batch 6 Skilvul, saya memimpin perancangan alur data pipeline dan klasifikasi teks berbasis Natural Language Processing (NLP).*  
-> *Keahlian tersebut saya tuangkan pada modul **NLP Sentiment & Data Analyzer** di website ini:*  
-> *Menggunakan **Pandas** untuk membaca dataset feedback survei secara efisien, dan menerapkan **VADER Sentiment Lexicon (NLP)** untuk mengekstrak compound polarity score ulasan menjadi sentimen Positif, Netral, atau Negatif secara deterministik, yang divisualisasikan dengan Chart.js secara real-time."*
+> *"Pada program **Studi Independen Bersertifikat (MSIB) Batch 6 di Skilvul**, saya bertindak sebagai **Ketua Tim (Team Lead & Core Architect) untuk Kelompok 26** yang meraih **Nilai Akhir 81.8**.*  
+> *Saya mengeksekusi lebih dari 95% implementasi kode teknis secara mandiri:*  
+> *1. **Pipeline NLP & Indonesian Slang Normalizer:** Membangun normalisasi bahasa gaul/typo Indonesia, tokenisasi, stopword removal, dan ekstraksi fitur menggunakan pembobotan **TF-IDF (Term Frequency-Inverse Document Frequency)**.*  
+> *2. **Benchmark Multi-Model:** Mengembangkan dan menguji komparasi performa antara Logistic Regression (Akurasi 93.5%), Linear SVM (94.0%), Multinomial Naive Bayes (91.2%), dan Random Forest (92.4%).*  
+> *3. **Dynamic ROC-AUC & Threshold Slider:** Mengimplementasikan simulasi kurva ROC dinamis (AUC = 0.962) dengan kalkulasi Confusion Matrix pada berbagai nilai ambang batas keputusan $\tau$.*  
+> *4. **Predictive Tabular Modeling & Time-Series Anomaly:** Membangun simulator retensi siswa berbasis Sigmoid Logistic Regression serta peramalan runtun waktu Holt-Winters yang dilengkapi deteksi lonjakan anomali Z-score."*
 
 ---
 
-## 5. Pertanyaan Mengenai Data Wrangling & Administrasi Pengolahan Data
+## 5. Pertanyaan Mengenai SIMRS Core Enterprise (Permenkes No. 24 Tahun 2022)
+
+### Q: "Bisa jelaskan arsitektur dan kepatuhan standar pada sistem SIMRS Core Enterprise yang Anda bangun?"
+> **Jawaban:**  
+> *"SIMRS Core Enterprise dirancang berbasis framework **Laravel 11, PHP 8.2, dan MySQL** dengan orientasi kepatuhan penuh terhadap standar Kementerian Kesehatan RI (**Permenkes No. 24 Tahun 2022**):*  
+> *1. **Bridging BPJS V-Claim & SEP:** Menangani alur verifikasi nomor rujukan dan penerbitan Surat Eligibilitas Peserta (SEP) secara reaktif.*  
+> *2. **Rekam Medis Elektronik (RME SOAP):** Integrasi pencatatan Subjective, Objective, Assessment, Plan dengan direktori 40+ kode diagnosa ICD-10.*  
+> *3. **Alur Pelayanan End-to-End:** Terkoneksi dari Admisi ➔ Dokter SOAP ➔ E-Order Lab LOINC ➔ E-Prescribing Farmasi ➔ Kasir Billing berkwitansi resmi.*  
+> *4. **Inpatient Bed Management & BOR:** Manajemen ranjang rawat inap (Bed Matrix) yang menghitung persentase Bed Occupancy Rate (BOR) secara real-time.*  
+> *5. **SatuSehat FHIR Standards:** Skema data dipetakan sesuai struktur bundle HL7/FHIR Kemenkes."*
+
+---
+
+## 6. Pertanyaan Mengenai Data Wrangling & Administrasi Pengolahan Data
 
 ### Q: "Bagaimana alur kerja Anda saat melakukan Data Wrangling dan Data Preparation pada data mentah yang kotor?"
 > **Jawaban:**  
@@ -62,31 +79,13 @@ Dokumen ini disiapkan khusus agar Anda (**Rizki Ananda, S.Kom**) dapat menjawab 
 > *4. **Quality Control & Outlier Check:** Menggunakan metode statistik **Tukey's IQR** ($1.5 \times \text{IQR}$) untuk menemukan nilai anomali dan memastikan relasi primary/foreign key tidak memiliki rekaman orphan.*  
 > *5. **Export & Dokumentasi:** Mengekspor clean dataset dan menyusun script otomatisasi **Python Pandas** yang reusable."*
 
-### Q: "Bagaimana Anda melakukan monitoring laporan operasional dan analisa data administrasi perkantoran?"
-> **Jawaban:**  
-> *"Saya melakukan rekapitulasi data secara periodik (Harian, Mingguan, Bulanan):*  
-> *1. **Agregasi Spreadsheet & Pivot:** Menggunakan fungsi pencarian relasional (**XLOOKUP / VLOOKUP**) dan matriks **Pivot Table / SQL GROUP BY** untuk mengelompokkan data per cabang atau departemen.*  
-> *2. **Analisis Varians:** Membandingkan target vs realisasi aktual untuk menghitung **Tingkat Ketercapaian (Achievement Rate %)** dan **Varians $(\Delta)$**.*  
-> *3. **Evaluasi & Rekomendasi:** Menyajikan ringkasan laporan eksekutif dengan grafik visual (Chart.js) untuk memudahkan manajemen mengambil keputusan."*
-
 ---
 
-## 6. Pertanyaan Mengenai Keamanan Sistem (VAPT) & Database
+## 7. Pertanyaan Mengenai Spreadsheet Formula & Konversi Data
 
-### Q: "Bagaimana Anda memastikan sistem yang Anda bangun aman dari serangan siber?"
+### Q: "Bagaimana penguasaan Anda terhadap fungsi formula Spreadsheet tingkat lanjut?"
 > **Jawaban:**  
-> *"Dengan pemahaman VAPT (menggunakan tools seperti **Burp Suite** dan **OWASP ZAP**):*  
-> *1. **Autentikasi Aman:** Password dienkripsi dengan **Bcrypt (10 salt rounds)** dan sesi diamankan dengan **JSON Web Token (JWT)**.*  
-> *2. **Pencegahan SQL Injection:** Setiap interaksi dengan database SQLite menggunakan parameterized queries (`?`).*  
-> *3. **Integritas Transaksi:** Pada sistem perpustakaan dan inventaris, transaksi peminjaman dirancang atomik agar tidak terjadi inkonsistensi stok saat banyak request terjadi bersamaan.*  
-> *4. **Security Headers:** Menerapkan audit header keamanan seperti CSP, HSTS, X-Content-Type-Options, dan X-Frame-Options untuk mencegah Clickjacking dan XSS."*
-
----
-
-## 7. Tips Sikap & Komunikasi Saat Wawancara:
-1. **Perkenalkan Diri dengan Jelas:** *"Nama saya Rizki Ananda, S.Kom..."*
-2. **Tunjukkan Portofolio Live:** Buka website [https://infinitenull.github.io/](https://infinitenull.github.io/), tunjukkan modal profil lengkap Anda dan demo interaktif 29 tools.
-3. **Bawa Nilai Tambah (Value-Add):** Anda adalah kandidat unggul karena memiliki spektrum lengkap: **IT Support fisik di bank, server & streaming di Adzkia, jaringan tersertifikasi Komdigi/Kominfo, keamanan VAPT, Data Wrangling & Analytics Python Pandas, serta koding full-stack Node.js & Modern JS**.
-
-**Semoga sukses gemilang dalam karier profesional Anda, Rizki Ananda, S.Kom!**
-
+> *"Saya menguasai formula komputasi spreadsheet baik secara manual maupun otomatisasi skrip:*  
+> *1. **Formula Pencarian:** Memahami mekanisme `VLOOKUP` (exact match `FALSE`), `HLOOKUP`, serta kombinasi modern `INDEX & MATCH` dan `XLOOKUP` untuk pencarian dua arah tanpa batasan posisi kolom.*  
+> *2. **Agregasi & Logika Kondisional:** Mahir dalam `SUMIFS`, `COUNTIFS`, `AVERAGEIFS`, dan nested `IF/IFS` dengan handling error `IFERROR`.*  
+> *3. **Pivot Table & Reshaping:** Memahami konsep Pivot Matrix (Rows, Columns, Values, Aggregation: SUM/AVG/COUNT) dan dapat mereplikasi logikanya ke dalam SQL `GROUP BY` maupun `pandas.pivot_table()`."*
