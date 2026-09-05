@@ -8,8 +8,9 @@ window.I18N_DICT = {
   id: {
     // Top Navbar
     navLinkHome: "Beranda",
-    navLinkProjects: "Proyek Unggulan",
-    navLinkExp: "Pengalaman & Keahlian",
+    navLinkProjects: "Proyek",
+    navLinkExp: "Pengalaman",
+    navLinkCert: "Sertifikasi",
     btnInterviewGuide: "Panduan Teknis",
     btnAboutDev: "Profil Pengembang",
 
@@ -40,7 +41,10 @@ window.I18N_DICT = {
     devtoolsBtnOpen: "Jelajahi 29 Tools",
 
     // Experience & Certifications Section
-    secHeadingExp: "Pengalaman Kerja & Sertifikasi",
+    secHeadingExp: "Pengalaman Kerja",
+    secSubExp: "Rekam jejak praktis di bidang riset infrastruktur server dan operasional IT:",
+    secHeadingCert: "Lisensi & Sertifikasi",
+    secSubCert: "Kredensial kompetensi nasional di bidang administrasi jaringan dan infrastruktur:",
     secSubExp: "Rekam jejak profesional, penelitian infrastruktur, dan lisensi kompetensi nasional:",
     
     job1Title: "IT Researcher (Freelance)",
@@ -98,8 +102,9 @@ window.I18N_DICT = {
   en: {
     // Top Navbar
     navLinkHome: "Home",
-    navLinkProjects: "Featured Projects",
-    navLinkExp: "Experience & Skills",
+    navLinkProjects: "Projects",
+    navLinkExp: "Experience",
+    navLinkCert: "Certifications",
     btnInterviewGuide: "Technical Guide",
     btnAboutDev: "About Developer",
 
@@ -130,7 +135,10 @@ window.I18N_DICT = {
     devtoolsBtnOpen: "Explore 29 Tools",
 
     // Experience & Certifications Section
-    secHeadingExp: "Work Experience & Certifications",
+    secHeadingExp: "Work Experience",
+    secSubExp: "Practical track record in server infrastructure research and IT operations:",
+    secHeadingCert: "Licenses & Certifications",
+    secSubCert: "National competency credentials in network administration and server systems:",
     secSubExp: "Professional track record, infrastructure research, and national competency credentials:",
     
     job1Title: "IT Researcher (Freelance)",

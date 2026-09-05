@@ -1343,6 +1343,9 @@ window.handleRoute = function() {
     } else if (cleanHash === '#experience') {
       const el = document.getElementById('experience');
       if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 50);
+    } else if (cleanHash === '#certifications') {
+      const el = document.getElementById('certifications');
+      if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 50);
     } else {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
