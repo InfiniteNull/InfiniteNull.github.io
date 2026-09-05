@@ -471,8 +471,4 @@ window.setLanguage = function(lang) {
   if (window.activeTool && typeof window.openToolModal === 'function') {
     window.openToolModal(window.activeTool);
   }
-
-  if (window.showToast) {
-    showToast(lang === 'id' ? "Bahasa diubah ke Bahasa Indonesia" : "Language switched to English", "info");
-  }
 };
