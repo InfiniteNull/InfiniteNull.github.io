@@ -35,8 +35,8 @@
 
 ## 3 Proyek Unggulan
 
-### 1. SIMRS Core Enterprise (`#simrs`)
-* **Live Workspace:** [infinitenull.github.io/#simrs](https://infinitenull.github.io/#simrs)
+### 1. SIMRS Core Enterprise
+* **Live Workspace:** [infinitenull.github.io/simrs-laravel/](https://infinitenull.github.io/simrs-laravel/)
 * **Deskripsi:** Sistem Informasi Manajemen Rumah Sakit (SIMRS) berbasis Laravel 11 dan MySQL yang selaras dengan **Permenkes No. 24 Tahun 2022**.
 * **Fitur Kunci:**
   * Pendaftaran pasien & simulasi bridging BPJS Kesehatan V-Claim / SEP.
@@ -49,7 +49,7 @@
 
 ---
 
-### 2. Dev & Data Engineering Suite (`#devtools`)
+### 2. Dev & Data Engineering Suite
 * **Live Workspace:** [infinitenull.github.io/dev-tools/](https://infinitenull.github.io/dev-tools/)
 * **Deskripsi:** Platform utilitas 29 modul komputasi mandiri yang terbagi dalam 4 pilar utama:
   1. **Jaringan & Server (5 Tools):** Kalkulator subnetting IPv4/VLSM, generator firewall Linux/Mikrotik, estimasi durasi transfer bandwidth, kalkulator bitrate & kapasitas disk streaming RTMP/HLS, visualizer crontab Linux.
@@ -61,8 +61,8 @@
 
 ---
 
-### 3. SHUNA AI Data Engine (`#shuna-ai`)
-* **Live Workspace:** [infinitenull.github.io/#shuna-ai](https://infinitenull.github.io/#shuna-ai)
+### 3. SHUNA AI Data Engine
+* **Live Workspace:** [infinitenull.github.io/SHUNA-AI/](https://infinitenull.github.io/SHUNA-AI/)
 * **Asal Usul:** Proyek Capstone Kelompok 26 — Studi Independen Bersertifikat (MSIB) Batch 6 @ Skilvul (Machine Learning Track • Nilai Akhir: 81.8).
 * **Fitur Kunci:**
   * Pipeline NLP dengan normalisasi bahasa slang/informal Indonesia dan pembobotan TF-IDF.
@@ -80,26 +80,21 @@
 ## Struktur Direktori Repositori
 
 ```text
-portfolio-hub/
-├── index.html                  # Dashboard SPA Utama (SIMRS, DevTools, SHUNA AI)
+portfolio-hub/ (InfiniteNull.github.io)
+├── index.html                  # Dashboard SPA Beranda Utama
 ├── styles.css                  # UI theme Slate/Zinc & dark mode engine
-├── app.js                      # Master Controller & router navigasi
-├── js/                         # Script modular setiap modul
-│   ├── i18n.js                 # Engine dwibahasa (ID / EN)
-│   ├── simrs-app.js            # Engine SIMRS Hospital Management System
-│   ├── shuna-ai-suite.js       # Suite Data Science & ML SHUNA AI
-│   ├── data-cleaner-studio.js  # Tabular Data Wrangling Studio
-│   ├── data-qc-inspector.js    # QC Audit & Table Join Simulator
-│   ├── kpi-monitoring-dashboard.js # KPI & Periodic Report Dashboard
-│   ├── spreadsheet-formula-engine.js # XLOOKUP & Pivot Reshaper
-│   ├── subnet-calculator.js    # Subnetting IPv4 / CIDR / VLSM
-│   ├── firewall-generator.js   # Linux / Mikrotik Firewall Builder
-│   └── ...                     # Modul utilitas lainnya
-├── python-modules/             # Source code Python backend
+├── app.js                      # Master Controller, terminal CLI & modal panduan
+├── js/
+│   └── i18n.js                 # Engine dwibahasa (ID / EN)
 ├── PANDUAN_WAWANCARA.md        # Panduan teknis wawancara
 ├── README_ID.md                # Dokumentasi Bahasa Indonesia
 └── README.md                   # Dokumentasi Utama
 ```
+
+### Repositori Terpisah Terhubung
+* **[InfiniteNull/simrs-laravel](https://github.com/InfiniteNull/simrs-laravel)** — Aplikasi SIMRS Core Hospital MIS & BPJS V-Claim.
+* **[InfiniteNull/dev-tools](https://github.com/InfiniteNull/dev-tools)** — Suite 29 Perangkat Komputasi & Keamanan Mandiri.
+* **[InfiniteNull/SHUNA-AI](https://github.com/InfiniteNull/SHUNA-AI)** — Engine NLP Analitik Sentimen & ML (MSIB Kelompok 26).
 
 ---
 

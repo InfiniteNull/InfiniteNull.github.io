@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="id" class="dark scroll-smooth">
+<html lang="id" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rizki Ananda, S.Kom — Portofolio IT Support, Jaringan, Keamanan & Rekayasa Perangkat Lunak</title>
-  <meta name="description" content="Portofolio resmi Rizki Ananda, S.Kom - Lulusan S1 Informatika Universitas Potensi Utama. Menampilkan SIMRS Core (Hospital MIS) dan Dev & Data Engineering Suite (29 Tools)." />
+  <title>Rizki Ananda, S.Kom — Production Applications & Engineering Portfolio</title>
+  <meta name="description" content="Portofolio resmi Rizki Ananda, S.Kom (@InfiniteNull) — Lulusan S1 Informatika Universitas Potensi Utama, IT Support, Network Administrator & Software Engineer." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230284c7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><path d='m10 15 5-3-5-3v6Z'/></svg>" />
 
-  <!-- Google Fonts: Inter & JetBrains Mono -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -19,17 +20,16 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Inter', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
             mono: ['JetBrains Mono', 'monospace'],
           },
           colors: {
             brand: {
               50: '#f0f9ff',
               100: '#e0f2fe',
-              500: '#0284c7',
-              600: '#0369a1',
-              700: '#075985',
-              900: '#0c4a6e',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
             }
           }
         }
@@ -37,176 +37,171 @@
     }
   </script>
 
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen font-sans antialiased transition-colors duration-200">
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen antialiased flex flex-col justify-between selection:bg-sky-500 selection:text-white transition-colors duration-200">
 
-  <!-- ============================================================ -->
-  <!-- TOP MASTER NAVBAR                                            -->
-  <!-- ============================================================ -->
-  <header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        
-        <!-- Logo & Developer Name -->
-        <a href="#home" class="flex items-center gap-3 group">
-          <div class="w-9 h-9 rounded-lg bg-slate-900 dark:bg-slate-100 flex items-center justify-center text-white dark:text-slate-900 font-bold font-mono text-xs shadow-sm border border-slate-800 dark:border-slate-300 group-hover:scale-105 transition">
-            RA
-          </div>
-          <div>
-            <span class="font-bold text-slate-900 dark:text-white text-sm tracking-tight block">Rizki Ananda</span>
-            <span class="text-[10px] text-slate-500 dark:text-slate-400 font-mono block">@InfiniteNull</span>
-          </div>
-        </a>
-
-        <!-- Center Nav (Visible on Home) -->
-        <nav class="hidden md:flex items-center gap-6 text-xs font-medium text-slate-600 dark:text-slate-300">
-          <a href="#home" class="hover:text-slate-900 dark:hover:text-white transition" id="navLinkHome">Beranda</a>
-          <a href="#projects" class="hover:text-slate-900 dark:hover:text-white transition" id="navLinkProjects">Proyek</a>
-          <a href="#experience" class="hover:text-slate-900 dark:hover:text-white transition" id="navLinkExp">Pengalaman</a>
-          <a href="#certifications" class="hover:text-slate-900 dark:hover:text-white transition" id="navLinkCert">Sertifikasi</a>
-        </nav>
-
-        <!-- Right Controls (About Dev, Language, Dark Mode) -->
-        <div class="flex items-center gap-2 sm:gap-3">
-          <button id="viewInterviewDocBtn" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition border border-slate-200/80 dark:border-slate-700/80">
-            <i data-lucide="book-open" class="w-3.5 h-3.5 text-slate-500"></i>
-            <span id="btnInterviewGuideText">Panduan Teknis</span>
-          </button>
-          
-          <!-- Language Switcher (ID / EN) -->
-          <button id="langToggleBtn" aria-label="Toggle Language" class="inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-bold rounded-lg text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition border border-slate-200 dark:border-slate-700 shadow-sm" title="Ganti Bahasa / Switch Language">
-            <i data-lucide="languages" class="w-3.5 h-3.5 text-slate-500"></i>
-            <span id="langLabel" class="font-mono">ID</span>
-          </button>
-
-          <!-- Dark/Light Theme Toggle -->
-          <button id="themeToggleBtn" aria-label="Toggle Theme" class="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-            <i id="themeIconSun" data-lucide="sun" class="w-4 h-4 hidden"></i>
-            <i id="themeIconMoon" data-lucide="moon" class="w-4 h-4"></i>
-          </button>
+  <!-- TOP NAVBAR -->
+  <header class="sticky top-0 z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#home" class="flex items-center gap-2.5 group">
+        <div class="w-8 h-8 rounded-lg bg-slate-900 dark:bg-white text-white dark:text-slate-900 flex items-center justify-center font-mono font-bold text-xs shadow-sm">
+          RN
         </div>
+        <div class="flex flex-col">
+          <span class="font-bold text-sm tracking-tight text-slate-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+            Rizki Ananda, S.Kom
+          </span>
+          <span class="text-[11px] text-slate-500 dark:text-slate-400 font-mono">
+            @InfiniteNull
+          </span>
+        </div>
+      </a>
 
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-6 text-xs font-medium text-slate-600 dark:text-slate-300">
+        <a href="#home" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors font-semibold" id="navLinkHome">Beranda</a>
+        <a href="#projects" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors" id="navLinkProjects">Proyek Unggulan</a>
+        <a href="#experience" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors" id="navLinkExp">Pengalaman</a>
+        <a href="#certifications" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors" id="navLinkCert">Sertifikasi</a>
+      </nav>
+
+      <!-- Action Buttons: Technical Guide & Language & Theme -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        
+        <!-- Technical Guide Button -->
+        <button id="viewInterviewDocBtn" type="button" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 transition">
+          <i data-lucide="book-open" class="w-3.5 h-3.5 text-sky-600 dark:text-sky-400"></i>
+          <span id="btnInterviewGuide">Panduan Teknis</span>
+        </button>
+
+        <!-- Language Switcher Toggle -->
+        <button id="langToggleBtn" type="button" aria-label="Ganti Bahasa" class="px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 transition flex items-center gap-1">
+          <i data-lucide="languages" class="w-3.5 h-3.5 text-slate-500"></i>
+          <span id="langLabel">ID / EN</span>
+        </button>
+
+        <!-- Dark/Light Theme Toggle -->
+        <button id="themeToggleBtn" type="button" aria-label="Toggle Dark Mode" class="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 transition">
+          <i data-lucide="sun" id="themeIconSun" class="w-4 h-4 hidden"></i>
+          <i data-lucide="moon" id="themeIconMoon" class="w-4 h-4"></i>
+        </button>
+
+        <!-- GitHub Profile Link -->
+        <a href="https://github.com/InfiniteNull" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="p-2 rounded-lg bg-slate-900 hover:bg-slate-800 dark:bg-slate-100 dark:hover:bg-white text-white dark:text-slate-900 transition shadow-sm">
+          <i data-lucide="github" class="w-4 h-4"></i>
+        </a>
       </div>
+
     </div>
   </header>
 
-  <!-- ============================================================ -->
-  <!-- VIEW 1: PORTFOLIO HOMEPAGE / LANDING PAGE (#home)             -->
-  <!-- ============================================================ -->
-  <main id="viewHome" class="portfolio-view">
+  <!-- MAIN WRAPPER -->
+  <main class="flex-1 space-y-12">
     
-    <!-- Hero Section with Split Layout (Left: Intro & Status, Right: Interactive Terminal) -->
-    <section class="border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-12 lg:py-16">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          
-          <!-- Left Column (Clean Intro) -->
-          <div class="lg:col-span-6 space-y-4">
-            
-            <h1 id="heroTitleText" class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
+    <!-- HERO SECTION -->
+    <section id="home" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 pb-8 space-y-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Left Column: Biography & Value Proposition -->
+        <div class="lg:col-span-7 space-y-5">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-sky-50 dark:bg-sky-950 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800" id="heroBadge">
+            <span class="w-2 h-2 rounded-full bg-sky-500 animate-pulse"></span>
+            <span>Rizki Ananda, S.Kom • Informatika</span>
+          </div>
+
+          <div class="space-y-2">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white" id="heroTitle">
               Rizki Ananda
             </h1>
-
-            <p id="heroSubTitleText" class="text-base sm:text-lg font-semibold text-slate-800 dark:text-slate-200 font-sans">
-              Software &amp; Web Developer
+            <p class="text-base sm:text-lg text-slate-700 dark:text-slate-300 font-medium" id="heroSubTitle">
+              Software & Web Developer
             </p>
-            
-            <p id="heroDescText" class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-xl">
-              Fokus pada pengembangan aplikasi web menggunakan Laravel, Python, dan JavaScript, dari perancangan backend hingga integrasi UI/UX.
-            </p>
-
-            <div class="pt-2 flex flex-wrap items-center gap-3">
-              <a href="#projects" class="px-4 py-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 dark:bg-slate-100 dark:hover:bg-white text-white dark:text-slate-900 font-semibold text-xs flex items-center gap-2 transition shadow-sm" id="btnHeroViewProjects">
-                <i data-lucide="layers" class="w-4 h-4"></i>
-                <span>Lihat Proyek ➔</span>
-              </a>
-              <a href="#experience" class="px-4 py-2.5 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-medium text-xs flex items-center gap-2 transition border border-slate-200 dark:border-slate-700" id="btnHeroViewExp">
-                <i data-lucide="briefcase" class="w-4 h-4"></i>
-                <span>Pengalaman &amp; Keahlian</span>
-              </a>
-            </div>
-
           </div>
 
-          <!-- Right Column (Interactive Terminal Card) -->
-          <div class="lg:col-span-6">
-            <div class="rounded-xl overflow-hidden border border-slate-800 bg-slate-950 shadow-2xl font-mono text-xs text-slate-200">
-              
-              <!-- Terminal Header -->
-              <div class="flex items-center justify-between px-4 py-2.5 bg-slate-900/90 border-b border-slate-800 text-[11px] select-none">
-                <div class="flex items-center gap-2">
-                  <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
-                  <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
-                  <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
-                  <span class="ml-2 text-slate-400 font-semibold">rizki@terminal: ~</span>
-                </div>
-                <div class="flex items-center gap-2 text-slate-500 text-[10px]">
-                  <span>bash 5.2</span>
-                </div>
-              </div>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl" id="heroDesc">
+            Fokus pada pengembangan aplikasi web menggunakan Laravel, Python, dan JavaScript, mulai dari perancangan arsitektur backend hingga integrasi antarmuka yang fungsional dan responsif.
+          </p>
 
-              <!-- Terminal Output Area -->
-              <div id="terminalOutput" class="p-4 space-y-3 max-h-[290px] overflow-y-auto leading-relaxed text-[11px] sm:text-xs scrollbar-thin scrollbar-thumb-slate-800">
-                <div>
-                  <span class="text-emerald-400">guest@rizkiananda</span>:<span class="text-sky-400">~</span>$ <span class="text-white">whoami</span>
-                  <div class="text-slate-300 mt-1 pl-3 border-l-2 border-emerald-500/50">
-                    Rizki Ananda, S.Kom (@InfiniteNull)<br>
-                    <span class="text-slate-400 text-[10px]">Role: Web &amp; Software Developer • Medan, Indonesia</span>
-                  </div>
-                </div>
-
-                <div>
-                  <span class="text-emerald-400">guest@rizkiananda</span>:<span class="text-sky-400">~</span>$ <span class="text-white">cat stack.json</span>
-                  <div class="text-sky-300 mt-1 pl-3 border-l-2 border-sky-500/50 text-[10px] sm:text-xs">
-                    {<br>
-                    &nbsp;&nbsp;"backend": ["Laravel 11", "PHP", "Python", "FastAPI"],<br>
-                    &nbsp;&nbsp;"frontend": ["JavaScript ES6+", "TailwindCSS", "HTML5"],<br>
-                    &nbsp;&nbsp;"systems": ["Linux VM", "Nginx", "Mikrotik", "SQLite/MySQL"]<br>
-                    }
-                  </div>
-                </div>
-
-                <div>
-                  <span class="text-emerald-400">guest@rizkiananda</span>:<span class="text-sky-400">~</span>$ <span class="text-white">systemctl status projects</span>
-                  <div class="text-slate-300 mt-1 pl-3 border-l-2 border-purple-500/50 text-[10px] sm:text-xs space-y-0.5">
-                    <div>● <strong class="text-emerald-400">simrs-core.service</strong>: ACTIVE (Hospital MIS • Permenkes 24/2022)</div>
-                    <div>● <strong class="text-emerald-400">web-tools.service</strong>: ACTIVE (29 Interactive Utilities)</div>
-                    <div>● <strong class="text-emerald-400">shuna-ai.service</strong>: ACTIVE (NLP &amp; Predictive Machine Learning Suite)</div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Terminal Quick Command Shortcuts -->
-              <div class="px-4 py-2 border-t border-slate-800/80 bg-slate-900/40 flex flex-wrap items-center gap-1.5 text-[10px]">
-                <span class="text-slate-500">Shortcut:</span>
-                <button type="button" onclick="window.runTerminalCmd('whoami')" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">whoami</button>
-                <button type="button" onclick="window.runTerminalCmd('stack')" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">stack</button>
-                <button type="button" onclick="window.runTerminalCmd('projects')" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">projects</button>
-                <button type="button" onclick="window.runTerminalCmd('shuna')" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-sky-400 border border-slate-700 transition">shuna</button>
-                <button type="button" onclick="window.runTerminalCmd('contact')" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">contact</button>
-                <button type="button" onclick="window.runTerminalCmd('clear')" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-400 border border-slate-700 transition">clear</button>
-              </div>
-
-              <!-- Terminal Input Line -->
-              <form id="terminalForm" onsubmit="event.preventDefault(); window.submitTerminal();" class="flex items-center px-4 py-2.5 bg-slate-950 border-t border-slate-800">
-                <span class="text-emerald-400 shrink-0 select-none">$</span>
-                <input type="text" id="terminalInput" autocomplete="off" placeholder="ketik 'help', 'stack', 'projects', 'clear'..." class="w-full bg-transparent pl-2 text-xs text-white focus:outline-none font-mono placeholder:text-slate-600" />
-              </form>
-
-            </div>
+          <!-- Core Tech Badges -->
+          <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono">
+            <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">PHP / Laravel</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Python / FastAPI</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">JavaScript ES6+</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">MySQL / SQLite</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Linux / Nginx</span>
           </div>
 
+          <!-- CTA Buttons -->
+          <div class="pt-3 flex flex-wrap items-center gap-3">
+            <a href="#projects" class="px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-slate-100 dark:hover:bg-white text-white dark:text-slate-900 font-bold text-xs sm:text-sm transition flex items-center gap-2 shadow-sm" id="btnHeroViewProjects">
+              <span>Lihat Proyek Unggulan ➔</span>
+            </a>
+            <a href="#experience" class="px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold text-xs sm:text-sm border border-slate-200 dark:border-slate-700 transition" id="btnHeroViewExp">
+              Pengalaman &amp; Keahlian
+            </a>
+          </div>
         </div>
+
+        <!-- Right Column: Interactive Terminal CLI -->
+        <div class="lg:col-span-5">
+          <div class="rounded-2xl bg-slate-900 dark:bg-slate-950 border border-slate-800 shadow-xl overflow-hidden font-mono text-xs">
+            
+            <div class="px-4 py-3 bg-slate-800/80 border-b border-slate-800 flex items-center justify-between">
+              <div class="flex items-center gap-1.5">
+                <span class="w-3 h-3 rounded-full bg-rose-500/80"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+              </div>
+              <span class="text-[11px] text-slate-400">bash — rizkinull@terminal:~</span>
+              <div class="w-8"></div>
+            </div>
+
+            <div class="p-4 space-y-3 max-h-72 overflow-y-auto" id="terminalOutput">
+              <div class="text-slate-400 text-[11px]">
+                Type <span class="text-sky-400 font-bold">help</span> or click presets below to inspect live services:
+              </div>
+              <div class="text-emerald-400 space-y-1">
+                <div>● <strong class="text-white">simrs-laravel.service</strong>: ACTIVE (Hospital Management Information System)</div>
+                <div>● <strong class="text-white">devtools.service</strong>: ACTIVE (29 Standalone Computational Utilities)</div>
+                <div>● <strong class="text-white">shuna-ai.service</strong>: ACTIVE (NLP &amp; Predictive Machine Learning Suite)</div>
+              </div>
+            </div>
+
+            <!-- Command Preset Buttons -->
+            <div class="p-2.5 bg-slate-900/90 border-t border-slate-800 flex items-center gap-1.5 overflow-x-auto text-[11px]">
+              <span class="text-slate-500 text-[10px] uppercase font-bold pl-1">Quick:</span>
+              <button type="button" onclick="window.runTerminalCmd('whoami')" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-sky-400 border border-slate-700 transition">whoami</button>
+              <button type="button" onclick="window.runTerminalCmd('stack')" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-sky-400 border border-slate-700 transition">stack</button>
+              <button type="button" onclick="window.runTerminalCmd('projects')" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-sky-400 border border-slate-700 transition">projects</button>
+              <button type="button" onclick="window.runTerminalCmd('simrs')" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-sky-400 border border-slate-700 transition">simrs</button>
+              <button type="button" onclick="window.runTerminalCmd('devtools')" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-sky-400 border border-slate-700 transition">devtools</button>
+              <button type="button" onclick="window.runTerminalCmd('shuna')" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-sky-400 border border-slate-700 transition">shuna</button>
+            </div>
+
+            <!-- Terminal Input -->
+            <form onsubmit="event.preventDefault(); window.submitTerminal();" class="p-3 bg-slate-950 border-t border-slate-800/80 flex items-center gap-2">
+              <span class="text-emerald-400 font-bold">$</span>
+              <input type="text" id="terminalInput" placeholder="Ketik perintah (misal: help, whoami, simrs, devtools, shuna)..." class="w-full bg-transparent text-slate-100 text-xs focus:outline-none placeholder-slate-600" autocomplete="off" />
+              <button type="submit" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] transition">Run</button>
+            </form>
+
+          </div>
+        </div>
+
       </div>
+
     </section>
 
-    <!-- FEATURED PROJECTS SHOWCASE SECTION -->
-    <section id="projects" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">
+    <!-- FEATURED PROJECTS SECTION -->
+    <section id="projects" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 pt-4">
       
       <div class="space-y-1">
         <h2 class="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-2" id="secHeadingProjects">
@@ -244,13 +239,13 @@
               <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Tailwind CSS</span>
             </div>
 
-            <p id="simrsCardDesc" class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Sistem manajemen rumah sakit terintegrasi penuh: admisi & bridging BPJS SEP, rekam medis elektronik (RME SOAP) dengan pencarian 40+ ICD-10, E-Order Lab LOINC, E-Prescribing farmasi, kasir billing reaktif berkwitansi resmi, alokasi ranjang kamar inap (Bed Matrix), serta indikator efisiensi BOR.</p>
+            <p id="simrsCardDesc" class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Sistem manajemen rumah sakit terintegrasi penuh: admisi &amp; bridging BPJS SEP, rekam medis elektronik (RME SOAP) dengan pencarian 40+ ICD-10, E-Order Lab LOINC, E-Prescribing farmasi, kasir billing reaktif berkwitansi resmi, alokasi ranjang kamar inap (Bed Matrix), serta indikator efisiensi BOR.</p>
 
             <!-- Key Features List -->
             <ul class="text-xs space-y-1.5 text-slate-700 dark:text-slate-300 font-medium">
               <li class="flex items-center gap-2">
                 <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i>
-                <span>Bridging BPJS V-Claim & SatuSehat FHIR Bundle Permenkes 24/2022</span>
+                <span>Bridging BPJS V-Claim &amp; SatuSehat FHIR Bundle Permenkes 24/2022</span>
               </li>
               <li class="flex items-center gap-2">
                 <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i>
@@ -258,7 +253,7 @@
               </li>
               <li class="flex items-center gap-2">
                 <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i>
-                <span>Modal Manajemen Bed Ranap, Audio Antrean, & Kwitansi Resmi</span>
+                <span>Modal Manajemen Bed Ranap, Audio Antrean, &amp; Kwitansi Resmi</span>
               </li>
             </ul>
           </div>
@@ -305,15 +300,15 @@
             <ul class="text-xs space-y-1.5 text-slate-700 dark:text-slate-300 font-medium">
               <li class="flex items-center gap-2">
                 <i data-lucide="check" class="w-3.5 h-3.5 text-purple-500 shrink-0"></i>
-                <span>Kalkulator Subnetting IPv4/VLSM & Firewall CLI Multi-Platform</span>
+                <span>Kalkulator Subnetting IPv4/VLSM &amp; Firewall CLI Multi-Platform</span>
               </li>
               <li class="flex items-center gap-2">
                 <i data-lucide="check" class="w-3.5 h-3.5 text-purple-500 shrink-0"></i>
-                <span>Data Cleaner Studio, Outlier Inspector, & Formula Parser</span>
+                <span>Data Cleaner Studio, Outlier Inspector, &amp; Formula Parser</span>
               </li>
               <li class="flex items-center gap-2">
                 <i data-lucide="check" class="w-3.5 h-3.5 text-purple-500 shrink-0"></i>
-                <span>Sistem Keamanan & Kriptografi (Entropy, JWT Debugger, Hashes)</span>
+                <span>Sistem Keamanan &amp; Kriptografi (Entropy, JWT Debugger, Hashes)</span>
               </li>
             </ul>
           </div>
@@ -364,11 +359,11 @@
               </li>
               <li class="flex items-center gap-2">
                 <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i>
-                <span>Multi-Model Arena (LogReg, SVM, NB, RF) & Dynamic ROC-AUC Curve</span>
+                <span>Multi-Model Arena (LogReg, SVM, NB, RF) &amp; Dynamic ROC-AUC Curve</span>
               </li>
               <li class="flex items-center gap-2">
                 <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i>
-                <span>Word Cloud Leksikal, Simulator Retensi Tabular, & Batch CSV Engine</span>
+                <span>Word Cloud Leksikal, Simulator Retensi Tabular, &amp; Batch CSV Engine</span>
               </li>
             </ul>
           </div>
@@ -393,71 +388,55 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         
         <div class="space-y-1">
-          <h2 class="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
+          <h2 class="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-2" id="secHeadingExp">
             <i data-lucide="briefcase" class="w-5 h-5 text-slate-700 dark:text-slate-300"></i>
-            <span id="secHeadingExp">Pengalaman Kerja</span>
+            <span>Pengalaman Kerja</span>
           </h2>
-          <p id="secSubExp" class="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400" id="secSubExp">
             Rekam jejak praktis di bidang riset infrastruktur server dan operasional IT:
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
           
-          <!-- Experience Card 1 -->
-          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/80 space-y-3.5">
-            <div class="flex items-start justify-between gap-3">
+          <!-- Job 1 -->
+          <div class="p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/60 space-y-3">
+            <div class="flex items-start justify-between gap-2">
               <div>
-                <h3 id="job1Title" class="font-bold text-slate-900 dark:text-white text-base">IT Researcher</h3>
-                <p id="job1Company" class="text-xs font-medium text-slate-500 font-mono mt-0.5">ADZKIA KEDINASAN PUSAT MEDAN</p>
+                <h3 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white" id="job1Title">
+                  IT Researcher (Freelance)
+                </h3>
+                <p class="text-xs font-semibold text-sky-600 dark:text-sky-400" id="job1Company">
+                  ADZKIA KEDINASAN PUSAT MEDAN
+                </p>
               </div>
-              <span id="job1Meta" class="text-[10px] font-mono px-2.5 py-1 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 shrink-0 font-medium">
+              <span class="px-2.5 py-1 rounded text-[11px] font-mono bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 shrink-0" id="job1Meta">
                 Nov 2024 - Jun 2025
               </span>
             </div>
-            
-            <ul id="job1List" class="text-xs text-slate-600 dark:text-slate-300 space-y-2 leading-relaxed">
-              <li class="flex items-start gap-2">
-                <span class="text-slate-400 mt-0.5">•</span>
-                <span>Merancang dan mengonfigurasi arsitektur <strong>Nginx Media Server</strong> pada lingkungan Linux Virtual Machine.</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-slate-400 mt-0.5">•</span>
-                <span>Melakukan pengujian komparatif performa 4 protokol streaming (<strong>RTMP, HLS, RTSP, HTTP</strong>).</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-slate-400 mt-0.5">•</span>
-                <span>Melakukan audit keamanan jaringan, konfigurasi firewall, dan <strong>vulnerability assessment</strong> internal.</span>
-              </li>
-            </ul>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed" id="job1Desc">
+              Merancang, mengonfigurasi, dan menguji infrastruktur <strong>Nginx Media Server</strong> pada Linux VM, serta melakukan benchmark terhadap 4 protokol streaming video (<strong>RTMP, HLS, RTSP, HTTP</strong>). Melakukan audit keamanan jaringan &amp; <strong>vulnerability assessment (VAPT)</strong> pada sistem internal.
+            </p>
           </div>
 
-          <!-- Experience Card 2 -->
-          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/80 space-y-3.5">
-            <div class="flex items-start justify-between gap-3">
+          <!-- Job 2 -->
+          <div class="p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/60 space-y-3">
+            <div class="flex items-start justify-between gap-2">
               <div>
-                <h3 id="job2Title" class="font-bold text-slate-900 dark:text-white text-base">IT Support (Vendor Outsourcing)</h3>
-                <p id="job2Company" class="text-xs font-medium text-slate-500 font-mono mt-0.5">PT BANK SINARMAS, TBK (KC MEDAN MANGKUBUMI)</p>
+                <h3 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white" id="job2Title">
+                  IT Support (Vendor Outsourcing)
+                </h3>
+                <p class="text-xs font-semibold text-sky-600 dark:text-sky-400" id="job2Company">
+                  PT BANK SINARMAS, TBK (KC MEDAN MANGKUBUMI)
+                </p>
               </div>
-              <span id="job2Meta" class="text-[10px] font-mono px-2.5 py-1 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 shrink-0 font-medium">
+              <span class="px-2.5 py-1 rounded text-[11px] font-mono bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 shrink-0" id="job2Meta">
                 Des 2023
               </span>
             </div>
-            
-            <ul id="job2List" class="text-xs text-slate-600 dark:text-slate-300 space-y-2 leading-relaxed">
-              <li class="flex items-start gap-2">
-                <span class="text-slate-400 mt-0.5">•</span>
-                <span>Melaksanakan peremajaan perangkat komputer (<strong>PC Deployment</strong>) untuk staf dan teller perbankan.</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-slate-400 mt-0.5">•</span>
-                <span>Melakukan backup data, migrasi profil user secara aman, dan instalasi sistem operasi.</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-slate-400 mt-0.5">•</span>
-                <span>Konfigurasi peripheral (printer slip, scanner dokumen) hingga terhubung ke domain jaringan bank.</span>
-              </li>
-            </ul>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed" id="job2Desc">
+              Melaksanakan proyek peremajaan komputer (<strong>PC Deployment</strong>), instalasi hardware, backup dan migrasi data profil user secara aman, perapian kabel, serta konfigurasi peripheral printer slip dan scanner hingga terhubung ke domain perbankan.
+            </p>
           </div>
 
         </div>
@@ -465,377 +444,120 @@
       </div>
     </section>
 
-    <!-- CERTIFICATIONS SECTION -->
-    <section id="certifications" class="border-t border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/50 py-12">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+    <!-- LICENSES & CERTIFICATIONS SECTION -->
+    <section id="certifications" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      
+      <div class="space-y-1">
+        <h2 class="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-2" id="secHeadingCert">
+          <i data-lucide="award" class="w-5 h-5 text-slate-700 dark:text-slate-300"></i>
+          <span>Lisensi &amp; Sertifikasi</span>
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400" id="secSubCert">
+          Kredensial kompetensi nasional di bidang administrasi jaringan dan infrastruktur:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
         
-        <div class="space-y-1">
-          <h2 class="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
-            <i data-lucide="award" class="w-5 h-5 text-slate-700 dark:text-slate-300"></i>
-            <span id="secHeadingCert">Lisensi &amp; Sertifikasi</span>
-          </h2>
-          <p id="secSubCert" class="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
-            Kredensial kompetensi nasional di bidang administrasi jaringan dan infrastruktur:
+        <!-- Cert 1 -->
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-3 shadow-sm">
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <h3 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white" id="cert1Title">
+                Associate Network Administrator
+              </h3>
+              <p class="text-xs font-semibold text-emerald-600 dark:text-emerald-400" id="cert1Issuer">
+                BNSP / Komdigi RI (2026)
+              </p>
+            </div>
+            <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
+              TERVERIFIKASI
+            </span>
+          </div>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed" id="cert1Desc">
+            Standar kompetensi nasional perancangan skema pengalamatan IP Addressing, subnetting VLSM, konfigurasi perangkat router/switch, dan routing jaringan terdistribusi.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          
-          <!-- Certification 1 -->
-          <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
-            <div class="flex items-start justify-between gap-3">
-              <div class="flex items-center gap-3">
-                <div class="w-9 h-9 rounded-xl bg-emerald-50 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 flex items-center justify-center border border-emerald-200 dark:border-emerald-800 shrink-0">
-                  <i data-lucide="shield-check" class="w-5 h-5"></i>
-                </div>
-                <div>
-                  <h3 id="cert1Title" class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Associate Network Administrator</h3>
-                  <span id="cert1Issuer" class="text-xs text-slate-500 font-mono">BNSP / Komdigi RI</span>
-                </div>
-              </div>
-              <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
-                2026
-              </span>
+        <!-- Cert 2 -->
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-3 shadow-sm">
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <h3 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white" id="cert2Title">
+                Junior Network Administrator
+              </h3>
+              <p class="text-xs font-semibold text-sky-600 dark:text-sky-400" id="cert2Issuer">
+                BBPSDMP Kominfo (2023)
+              </p>
             </div>
-            <p id="cert1Desc" class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed pl-12">
-              Standar kompetensi nasional perancangan skema pengalamatan IP Addressing, subnetting VLSM, konfigurasi perangkat router/switch, dan routing jaringan terdistribusi.
-            </p>
+            <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800">
+              TERVERIFIKASI
+            </span>
           </div>
-
-          <!-- Certification 2 -->
-          <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
-            <div class="flex items-start justify-between gap-3">
-              <div class="flex items-center gap-3">
-                <div class="w-9 h-9 rounded-xl bg-sky-50 dark:bg-sky-950/80 text-sky-600 dark:text-sky-400 flex items-center justify-center border border-sky-200 dark:border-sky-800 shrink-0">
-                  <i data-lucide="network" class="w-5 h-5"></i>
-                </div>
-                <div>
-                  <h3 id="cert2Title" class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Junior Network Administrator</h3>
-                  <span id="cert2Issuer" class="text-xs text-slate-500 font-mono">BBPSDMP Kominfo</span>
-                </div>
-              </div>
-              <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-sky-100 dark:bg-sky-950 text-sky-800 dark:text-sky-300 border border-sky-200 dark:border-sky-800">
-                2023
-              </span>
-            </div>
-            <p id="cert2Desc" class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed pl-12">
-              Instalasi jaringan komputer lokal (LAN), manajemen sistem operasi Linux / Nginx, dan pemeliharaan server data.
-            </p>
-          </div>
-
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed" id="cert2Desc">
+            Instalasi jaringan komputer lokal (LAN), manajemen sistem operasi Linux / Nginx, dan pemeliharaan server data.
+          </p>
         </div>
 
       </div>
+
     </section>
-
-    </main>
-
-  <!-- ============================================================ -->
-  <!-- VIEW 2: DEDICATED SIMRS CORE ENTERPRISE WORKSPACE (#simrs)    -->
-  <!-- ============================================================ -->
-  <main id="viewSimrs" class="portfolio-view hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-5">
-    
-    <!-- Top Return / Breadcrumb Navigation Bar -->
-    <div class="flex items-center justify-between p-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
-      <div class="flex items-center gap-2 text-xs">
-        <a href="#home" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-semibold transition">
-          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
-          <span>Kembali ke Beranda</span>
-        </a>
-        <span class="text-slate-400">/</span>
-        <span class="font-medium text-slate-500">Proyek</span>
-        <span class="text-slate-400">/</span>
-        <span class="font-bold text-slate-900 dark:text-white">SIMRS Core Enterprise</span>
-      </div>
-
-      <div class="flex items-center gap-2">
-        <a href="https://github.com/InfiniteNull/simrs-laravel" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 dark:bg-slate-100 dark:hover:bg-white text-white dark:text-slate-900 font-semibold text-xs flex items-center gap-1.5 transition">
-          <i data-lucide="github" class="w-3.5 h-3.5"></i>
-          <span>GitHub Repo ↗</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- SIMRS Container Hook -->
-    <div id="simrsSuiteRoot">
-      <!-- Populated dynamically by simrs-laravel-suite.js -->
-    </div>
 
   </main>
 
-  <!-- ============================================================ -->
-  <!-- VIEW 3: DEDICATED DEV & DATA ENGINEERING SUITE (#devtools)   -->
-  <!-- ============================================================ -->
-  <main id="viewDevTools" class="portfolio-view hidden space-y-6">
-    
-    <!-- Top Return Bar -->
-    <div class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm border-b border-slate-200 dark:border-slate-800 py-3">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        <div class="flex items-center gap-2 text-xs">
-          <a href="#home" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-semibold transition">
-            <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
-            <span>Kembali ke Beranda</span>
-          </a>
-          <span class="text-slate-400">/</span>
-          <span class="font-medium text-slate-500">Proyek</span>
-          <span class="text-slate-400">/</span>
-          <span class="font-bold text-slate-900 dark:text-white">Dev & Data Engineering Suite</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Hero & Categories Filter Bar -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+  <!-- TECHNICAL INTERVIEW GUIDE MODAL -->
+  <div id="interviewModal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="relative w-full max-w-4xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
       
-      <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
-        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <div>
-            <h2 class="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
-              Dev & Data Engineering Suite (29 Tools)
-            </h2>
-            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">
-              Platform utilitas mandiri untuk manajemen jaringan IPv4, hardening firewall, manipulasi & QC data, audit keamanan VAPT, serta utilitas hardware.
-            </p>
-          </div>
-          
-          <!-- Search Bar -->
-          <div class="relative w-full md:w-72 shrink-0">
-            <i data-lucide="search" class="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
-            <input type="text" id="toolSearchInput" placeholder="Cari nama tool / teknologi..." class="w-full pl-9 pr-3 py-2 text-xs rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-slate-400 font-mono" />
-          </div>
-        </div>
-
-        <!-- Filter Tabs -->
-        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none" id="categoryFilterContainer">
-          <button data-category="all" class="category-filter-btn active px-3.5 py-1.5 rounded-lg text-xs font-semibold transition">
-            Semua Tools (29)
-          </button>
-          <button data-category="network" class="category-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-            Jaringan & Server
-          </button>
-          <button data-category="security" class="category-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-            Keamanan Sistem
-          </button>
-          <button data-category="database" class="category-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-            Data & Backend
-          </button>
-          <button data-category="utility" class="category-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-            Utilitas & Hardware
-          </button>
-        </div>
-      </div>
-
-      <!-- Tools Grid -->
-      <div id="toolsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 pb-12">
-        <!-- Cards will be populated by JavaScript -->
-      </div>
-
-      <!-- Empty State -->
-      <div id="emptyState" class="hidden text-center py-16">
-        <div class="w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-400 flex items-center justify-center mx-auto mb-3 border border-slate-200 dark:border-slate-700">
-          <i data-lucide="search-x" class="w-6 h-6"></i>
-        </div>
-        <h3 id="emptyStateTitle" class="text-sm font-bold text-slate-900 dark:text-white">Tidak ada tool yang cocok</h3>
-        <p id="emptyStateDesc" class="text-xs text-slate-500 dark:text-slate-400 mt-1">Coba gunakan kata kunci pencarian lain atau ubah filter kategori.</p>
-      </div>
-
-    </section>
-
-  </main>
-
-  <!-- ============================================================ -->
-  <!-- VIEW 4: DEDICATED SHUNA AI DATA SCIENCE SUITE (#shuna-ai)    -->
-  <!-- ============================================================ -->
-  <main id="viewShunaAi" class="portfolio-view hidden space-y-6">
-    
-    <!-- Top Return Bar -->
-    <div class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm border-b border-slate-200 dark:border-slate-800 py-3">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        <div class="flex items-center gap-2 text-xs">
-          <a href="#home" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-semibold transition">
-            <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
-            <span id="shunaBackLink">Kembali ke Beranda</span>
-          </a>
-          <span class="text-slate-400">/</span>
-          <span class="font-medium text-slate-500">Proyek</span>
-          <span class="text-slate-400">/</span>
-          <span class="font-bold text-slate-900 dark:text-white">SHUNA AI Data Engine</span>
-        </div>
-        <div class="flex items-center gap-2 font-mono text-[11px] text-slate-500">
-          <span>Route:</span>
-          <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-sky-600 dark:text-sky-400 font-bold">#shuna-ai</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- SHUNA AI Root Container -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
-      <div id="shunaAiRoot" class="space-y-6">
-        <!-- Rendered dynamically by js/shuna-ai-suite.js -->
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ============================================================ -->
-  <!-- INTERACTIVE TOOL WORKSPACE MODAL                            -->
-  <!-- ============================================================ -->
-  <div id="toolModal" class="fixed inset-0 z-50 hidden bg-slate-950/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
-    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl w-full max-w-5xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden transition-all duration-150">
-      
-      <!-- Modal Header -->
-      <div class="px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-slate-900/50">
+      <div class="p-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between gap-3 bg-slate-50 dark:bg-slate-900/90">
         <div class="flex items-center gap-3">
-          <div id="modalIconContainer" class="w-9 h-9 rounded-xl flex items-center justify-center bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400">
-            <i id="modalIcon" data-lucide="wrench" class="w-5 h-5"></i>
+          <div class="w-10 h-10 rounded-xl bg-sky-50 dark:bg-sky-950 text-sky-600 dark:text-sky-400 flex items-center justify-center border border-sky-200 dark:border-sky-800">
+            <i data-lucide="book-open" class="w-5 h-5"></i>
           </div>
           <div>
-            <h3 id="modalTitle" class="font-bold text-slate-900 dark:text-white text-base leading-tight">Nama Tool</h3>
-            <p id="modalTechBadge" class="text-xs font-mono text-slate-500 dark:text-slate-400 mt-0.5">Teknologi</p>
+            <h3 class="font-bold text-slate-900 dark:text-white text-base">Panduan Teknis &amp; Arsitektur</h3>
+            <p class="text-xs text-slate-500 font-mono">Dokumentasi Standar Rekayasa &amp; Pertanyaan Wawancara</p>
           </div>
         </div>
 
-        <button id="modalCloseBtn" aria-label="Tutup Modal" class="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-          <i data-lucide="x" class="w-5 h-5"></i>
+        <button type="button" onclick="window.closeInterviewGuide()" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-500 dark:text-slate-400 flex items-center justify-center transition">
+          <i data-lucide="x" class="w-4 h-4"></i>
         </button>
       </div>
 
-      <!-- Modal Tabs Navigation -->
-      <div class="flex border-b border-slate-200 dark:border-slate-800 px-6 bg-slate-50/30 dark:bg-slate-900/30">
-        <button id="tabBtnDemo" class="modal-tab-btn active px-4 py-2.5 text-xs font-semibold border-b-2 border-slate-900 dark:border-slate-100 text-slate-900 dark:text-white transition flex items-center gap-2">
-          <i data-lucide="play" class="w-3.5 h-3.5"></i>
-          <span id="tabDemoText">Live Demo Interaktif</span>
-        </button>
-        <button id="tabBtnCode" class="modal-tab-btn px-4 py-2.5 text-xs font-medium border-b-2 border-transparent text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 transition flex items-center gap-2">
-          <i data-lucide="code" class="w-3.5 h-3.5"></i>
-          <span id="tabCodeText">Source Code Asli</span>
-        </button>
-        <button id="tabBtnDocs" class="modal-tab-btn px-4 py-2.5 text-xs font-medium border-b-2 border-transparent text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 transition flex items-center gap-2">
-          <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
-          <span id="tabDocsText">Arsitektur & Penjelasan Teknis</span>
-        </button>
-      </div>
-
-      <!-- Modal Content Body -->
-      <div class="p-6 overflow-y-auto flex-1 min-h-[380px] bg-white dark:bg-slate-900">
-        <!-- Live Demo Container -->
-        <div id="modalDemoContent" class="space-y-4"></div>
-
-        <!-- Source Code Container -->
-        <div id="modalCodeContent" class="hidden space-y-3">
-          <div class="flex items-center justify-between bg-slate-900 text-slate-200 px-4 py-2 rounded-t-lg border-b border-slate-800 text-xs font-mono">
-            <span id="modalCodeLang">python / javascript</span>
-            <button id="copyCodeBtn" class="flex items-center gap-1.5 hover:text-white transition text-xs font-sans">
-              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
-              <span id="copyCodeText">Salin Kode</span>
-            </button>
-          </div>
-          <pre class="bg-slate-950 text-slate-100 p-4 rounded-b-lg text-xs font-mono overflow-x-auto leading-relaxed border border-slate-800 shadow-inner max-h-[480px]"><code id="modalCodeSnippet"></code></pre>
-        </div>
-
-        <!-- Architecture Docs Container -->
-        <div id="modalDocsContent" class="hidden prose dark:prose-invert max-w-none text-xs leading-relaxed"></div>
+      <div class="p-6 overflow-y-auto space-y-6 text-xs text-slate-700 dark:text-slate-300 leading-relaxed" id="interviewGuideBody">
+        <!-- Rendered dynamically by app.js -->
       </div>
 
     </div>
   </div>
 
-  <!-- ============================================================ -->
-  <!-- TECHNICAL INTERVIEW GUIDE MODAL                             -->
-  <!-- ============================================================ -->
-  <div id="interviewModal" class="fixed inset-0 z-50 hidden bg-slate-950/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
-    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl w-full max-w-3xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden transition-all duration-150">
-      <div class="px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-slate-900/50">
-        <div class="flex items-center gap-2.5">
-          <i data-lucide="book-open" class="w-5 h-5 text-slate-700 dark:text-slate-300"></i>
-          <h3 class="font-bold text-slate-900 dark:text-white text-base">Panduan Teknis & Arsitektur Sistem</h3>
-        </div>
-        <button onclick="document.getElementById('interviewModal').classList.add('hidden')" class="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition">
-          <i data-lucide="x" class="w-5 h-5"></i>
-        </button>
-      </div>
-      <div id="interviewModalContent" class="p-6 overflow-y-auto flex-1 text-xs leading-relaxed space-y-4 text-slate-700 dark:text-slate-300"></div>
-    </div>
-  </div>
+  <!-- TOAST CONTAINER -->
+  <div id="toastContainer" class="fixed bottom-4 right-4 z-50 flex flex-col gap-2 pointer-events-none"></div>
 
-  <!-- Toast Notification Container -->
-  <div id="toastContainer" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
-
-  <!-- ============================================================ -->
-  <!-- GLOBAL FOOTER                                                -->
-  <!-- ============================================================ -->
-  <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-10 mt-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs">
-        <div class="space-y-2">
-          <span class="font-bold text-slate-900 dark:text-white text-sm">Rizki Ananda, S.Kom</span>
-          <p id="footerBioText" class="text-slate-600 dark:text-slate-400 leading-relaxed">
-            Lulusan S1 Informatika Universitas Potensi Utama. Praktisi IT Support, Network Administrator, VAPT Security, serta Analisis Data & Software Engineering.
-          </p>
-        </div>
-
-        <div class="space-y-2">
-          <span id="footerTechHeading" class="font-bold text-slate-900 dark:text-white text-sm">Kompetensi Inti</span>
-          <ul id="footerTechList" class="space-y-1 text-slate-600 dark:text-slate-400 font-mono text-[11px]">
-            <li>• Backend: Laravel 11, PHP 8.2, Python FastAPI, MySQL</li>
-            <li>• Infrastruktur: Nginx Media Server, Linux VM, Mikrotik</li>
-            <li>• Keamanan: VAPT (Burp Suite, OWASP ZAP), OSINT</li>
-          </ul>
-        </div>
-
-        <div class="space-y-2">
-          <span id="footerLinksHeading" class="font-bold text-slate-900 dark:text-white text-sm">Tautan & Portofolio</span>
-          <p id="footerLinksDesc" class="text-slate-600 dark:text-slate-400">
-            Seluruh sistem dirancang mandiri dengan clean code dan dapat diakses interaktif.
-          </p>
-          <div class="pt-1">
-            <a href="https://github.com/InfiniteNull" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 font-semibold text-sky-600 dark:text-sky-400 hover:underline font-mono">
-              <i data-lucide="github" class="w-3.5 h-3.5"></i>
-              <span>github.com/InfiniteNull</span>
-            </a>
-          </div>
-        </div>
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 py-8 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
+      
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+        <span id="footerTagline">© 2026 Rizki Ananda, S.Kom (@InfiniteNull) • Handcrafted with Clean Code &amp; Professional IT Standards.</span>
       </div>
 
-      <div class="pt-6 border-t border-slate-100 dark:border-slate-800 text-center text-xs text-slate-500 font-mono">
-        <p id="footerTagline">&copy; 2026 Rizki Ananda, S.Kom (@InfiniteNull) • Handcrafted with Clean Code & Professional IT Standards.</p>
+      <div class="flex items-center gap-4 font-mono text-[11px]">
+        <a href="https://github.com/InfiniteNull/simrs-laravel" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 dark:hover:text-white transition">simrs-laravel</a>
+        <span>•</span>
+        <a href="https://github.com/InfiniteNull/dev-tools" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 dark:hover:text-white transition">dev-tools</a>
+        <span>•</span>
+        <a href="https://github.com/InfiniteNull/SHUNA-AI" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 dark:hover:text-white transition">SHUNA-AI</a>
+        <span>•</span>
+        <a href="#home" class="hover:text-sky-600 dark:hover:text-sky-400 transition font-sans font-semibold">Ke Atas ↑</a>
       </div>
+
     </div>
   </footer>
 
   <!-- Scripts -->
-  <script src="js/code-snippets.js"></script>
-  <script src="js/api-checker.js"></script>
-  <script src="js/currency-converter.js"></script>
-  <script src="js/typing-test.js"></script>
-  <script src="js/image-optimizer.js"></script>
-  <script src="js/ai-data-analyzer.js"></script>
-  <script src="js/news-scraper.js"></script>
-  <script src="js/auth-sandbox.js"></script>
-  <script src="js/inventory-sandbox.js"></script>
-  <script src="js/library-sandbox.js"></script>
-  <script src="js/data-cleaner-studio.js"></script>
-  <script src="js/data-qc-inspector.js"></script>
-  <script src="js/kpi-monitoring-dashboard.js"></script>
-  <script src="js/spreadsheet-formula-engine.js"></script>
-  <script src="js/subnet-calculator.js"></script>
-  <script src="js/firewall-generator.js"></script>
-  <script src="js/bandwidth-estimator.js"></script>
-  <script src="js/streaming-calculator.js"></script>
-  <script src="js/cron-builder.js"></script>
-  <script src="js/security-headers.js"></script>
-  <script src="js/crypto-hash.js"></script>
-  <script src="js/password-entropy.js"></script>
-  <script src="js/payload-encoder.js"></script>
-  <script src="js/jwt-debugger.js"></script>
-  <script src="js/json-sql-converter.js"></script>
-  <script src="js/log-analyzer.js"></script>
-  <script src="js/raid-calculator.js"></script>
-  <script src="js/psu-calculator.js"></script>
-  <script src="js/regex-tester.js"></script>
-  <script src="js/markdown-preview.js"></script>
-  <script src="js/simrs-laravel-suite.js"></script>
-  <script src="js/shuna-ai-suite.js"></script>
   <script src="js/i18n.js"></script>
   <script src="app.js"></script>
 

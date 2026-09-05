@@ -35,8 +35,8 @@
 
 ## 3 Featured Flagship Projects
 
-### 1. SIMRS Core Enterprise (`#simrs`)
-* **Live Workspace:** [infinitenull.github.io/#simrs](https://infinitenull.github.io/#simrs)
+### 1. SIMRS Core Enterprise
+* **Live Workspace:** [infinitenull.github.io/simrs-laravel/](https://infinitenull.github.io/simrs-laravel/)
 * **Description:** Hospital Management Information System (HMIS) built with Laravel 11 and MySQL adhering to Indonesian Ministry of Health standards (**Permenkes No. 24 Tahun 2022**).
 * **Key Capabilities:**
   * Patient admission and simulated BPJS Health V-Claim / SEP bridging.
@@ -49,7 +49,7 @@
 
 ---
 
-### 2. Dev & Data Engineering Suite (`#devtools`)
+### 2. Dev & Data Engineering Suite
 * **Live Workspace:** [infinitenull.github.io/dev-tools/](https://infinitenull.github.io/dev-tools/)
 * **Description:** Modular computational platform hosting 29 standalone tools across 4 core pillars:
   1. **Networking & Server (5 Tools):** IPv4 VLSM subnetting calculator, Linux/Mikrotik firewall rule builder, data transfer bandwidth duration estimator, RTMP/HLS bitrate & storage calculator, Linux crontab visual scheduler.
@@ -61,8 +61,8 @@
 
 ---
 
-### 3. SHUNA AI Data Engine (`#shuna-ai`)
-* **Live Workspace:** [infinitenull.github.io/#shuna-ai](https://infinitenull.github.io/#shuna-ai)
+### 3. SHUNA AI Data Engine
+* **Live Workspace:** [infinitenull.github.io/SHUNA-AI/](https://infinitenull.github.io/SHUNA-AI/)
 * **Origin & Context:** Capstone Project of Group 26 — Certified Independent Study (MSIB) Batch 6 @ Skilvul (Machine Learning Track • Final Score: 81.8).
 * **Key Capabilities:**
   * Live NLP pipeline with Indonesian slang/informal typo normalizer and TF-IDF feature weighting.
@@ -80,26 +80,21 @@
 ## Directory Structure
 
 ```text
-portfolio-hub/
-├── index.html                  # Main SPA Dashboard (SIMRS, DevTools, SHUNA AI views)
+portfolio-hub/ (InfiniteNull.github.io)
+├── index.html                  # Central Hub & Showcase Landing Page
 ├── styles.css                  # UI theme Slate/Zinc & dark mode engine
-├── app.js                      # Master Controller & navigation router
-├── js/                         # Modular interactive tool scripts
-│   ├── i18n.js                 # Bilingual translation engine (ID / EN)
-│   ├── simrs-app.js            # SIMRS Hospital Management System Engine
-│   ├── shuna-ai-suite.js       # SHUNA AI Data Science & ML Suite
-│   ├── data-cleaner-studio.js  # Tabular Data Wrangling Studio
-│   ├── data-qc-inspector.js    # QC Audit & Table Join Simulator
-│   ├── kpi-monitoring-dashboard.js # KPI & Periodic Report Dashboard
-│   ├── spreadsheet-formula-engine.js # XLOOKUP & Pivot Reshaper
-│   ├── subnet-calculator.js    # Subnetting IPv4 / CIDR / VLSM
-│   ├── firewall-generator.js   # Linux / Mikrotik Firewall Builder
-│   └── ...                     # Other standalone utilities
-├── python-modules/             # Python backend source code
+├── app.js                      # Master Controller, terminal CLI & guide modal
+├── js/
+│   └── i18n.js                 # Bilingual translation engine (ID / EN)
 ├── PANDUAN_WAWANCARA.md        # Technical interview preparation guide
 ├── README_ID.md                # Indonesian documentation
 └── README.md                   # Primary English documentation
 ```
+
+### Connected Standalone Repositories
+* **[InfiniteNull/simrs-laravel](https://github.com/InfiniteNull/simrs-laravel)** — Hospital MIS application & BPJS V-Claim bridging.
+* **[InfiniteNull/dev-tools](https://github.com/InfiniteNull/dev-tools)** — 29 Interactive computational tools suite.
+* **[InfiniteNull/SHUNA-AI](https://github.com/InfiniteNull/SHUNA-AI)** — NLP sentiment pipeline & machine learning engine (MSIB Group 26).
 
 ---
 
