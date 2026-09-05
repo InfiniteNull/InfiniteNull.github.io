@@ -1260,6 +1260,7 @@ window.submitTerminal = function() {
       <div class="text-slate-300 pl-3 border-l-2 border-purple-500/50 text-[10px] sm:text-xs space-y-1.5">
         <div>1. <strong class="text-sky-400">SIMRS Core Enterprise</strong>: Hospital MIS (Permenkes 24/2022, BPJS V-Claim 2.0, SatuSehat FHIR R4)</div>
         <div>2. <strong class="text-purple-400">Dev & Data Engineering Suite</strong>: 29 interactive utilities (IPv4 CIDR, Firewall CLI, Outlier QC, Hashes)</div>
+        <div>3. <strong class="text-emerald-400">SHUNA AI Data Engine</strong>: NLP Sentiment Studio, Tabular Retention Predictor, Time-Series Anomaly Detector</div>
         <div class="pt-1"><a href="#projects" class="text-emerald-400 underline hover:text-emerald-300">➔ Scroll ke kartu proyek</a></div>
       </div>
     `;
@@ -1269,6 +1270,9 @@ window.submitTerminal = function() {
   } else if (cmd === 'devtools' || cmd === 'tools') {
     window.location.hash = '#devtools';
     responseHtml = `<div class="text-emerald-400 pl-3 border-l-2 border-emerald-500/50">Navigating to Dev & Data Suite (29 Tools)...</div>`;
+  } else if (cmd === 'shuna' || cmd === 'shuna-ai' || cmd === 'ai' || cmd === 'nlp' || cmd === 'ml') {
+    window.location.hash = '#shuna-ai';
+    responseHtml = `<div class="text-emerald-400 pl-3 border-l-2 border-emerald-500/50">Navigating to SHUNA AI (NLP & ML Analytics Engine)...</div>`;
   } else if (cmd === 'contact' || cmd === 'github') {
     responseHtml = `
       <div class="text-slate-300 pl-3 border-l-2 border-sky-500/50 text-[10px] sm:text-xs">
@@ -1310,11 +1314,13 @@ window.handleRoute = function() {
   const viewHome = document.getElementById('viewHome');
   const viewSimrs = document.getElementById('viewSimrs');
   const viewDevTools = document.getElementById('viewDevTools');
+  const viewShunaAi = document.getElementById('viewShunaAi');
 
   if (cleanHash === '#simrs') {
     window.currentProject = 'simrs';
     if (viewHome) viewHome.classList.add('hidden');
     if (viewDevTools) viewDevTools.classList.add('hidden');
+    if (viewShunaAi) viewShunaAi.classList.add('hidden');
     if (viewSimrs) viewSimrs.classList.remove('hidden');
     window.scrollTo({ top: 0, behavior: 'instant' });
 
@@ -1326,15 +1332,29 @@ window.handleRoute = function() {
     window.currentProject = 'devtools';
     if (viewHome) viewHome.classList.add('hidden');
     if (viewSimrs) viewSimrs.classList.add('hidden');
+    if (viewShunaAi) viewShunaAi.classList.add('hidden');
     if (viewDevTools) viewDevTools.classList.remove('hidden');
     window.scrollTo({ top: 0, behavior: 'instant' });
 
     renderToolsGrid();
+  } else if (cleanHash === '#shuna-ai' || cleanHash === '#shuna' || cleanHash === '#ai') {
+    window.currentProject = 'shuna-ai';
+    if (viewHome) viewHome.classList.add('hidden');
+    if (viewSimrs) viewSimrs.classList.add('hidden');
+    if (viewDevTools) viewDevTools.classList.add('hidden');
+    if (viewShunaAi) viewShunaAi.classList.remove('hidden');
+    window.scrollTo({ top: 0, behavior: 'instant' });
+
+    const root = document.getElementById('shunaAiRoot');
+    if (root && typeof window.renderShunaAiSuite === 'function') {
+      window.renderShunaAiSuite(root);
+    }
   } else {
     // Default: Home Landing Page
     window.currentProject = 'home';
     if (viewSimrs) viewSimrs.classList.add('hidden');
     if (viewDevTools) viewDevTools.classList.add('hidden');
+    if (viewShunaAi) viewShunaAi.classList.add('hidden');
     if (viewHome) viewHome.classList.remove('hidden');
 
     if (cleanHash === '#projects') {
@@ -1364,6 +1384,8 @@ window.switchProject = function(projectName) {
     window.location.hash = '#simrs';
   } else if (projectName === 'devtools') {
     window.location.hash = '#devtools';
+  } else if (projectName === 'shuna' || projectName === 'shuna-ai' || projectName === 'ai') {
+    window.location.hash = '#shuna-ai';
   } else {
     window.location.hash = '#home';
   }

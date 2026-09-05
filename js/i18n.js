@@ -40,6 +40,13 @@ window.I18N_DICT = {
     devtoolsCardDesc: "Platform utilitas mandiri 29 tools interaktif untuk kalkulasi subnetting IPv4, generator firewall Linux/Mikrotik, data cleaner & outlier QC inspector, spreadsheet formula engine (VLOOKUP/Regex), security audit (JWT/Hash/Entropy), dan kalkulator hardware server.",
     devtoolsBtnOpen: "Jelajahi 29 Tools",
 
+    // SHUNA AI Card
+    shunaCardTitle: "SHUNA AI Data Engine",
+    shunaCardSub: "NLP • Tabular ML • Time-Series Analytics",
+    shunaCardDesc: "Sistem analitik data terpadu dari proyek MSIB Skilvul (Project Lead, Score 81.8): pipeline NLP sentimen & ekstraksi aspek, simulator prediksi retensi/dropout tabular (Sigmoid Logistic Regression), serta time-series forecasting (Holt-Winters) dan deteksi lonjakan anomali Z-Score.",
+    shunaBtnOpen: "Buka SHUNA AI",
+    shunaBackLink: "Kembali ke Beranda",
+
     // Experience & Certifications Section
     secHeadingExp: "Pengalaman Kerja",
     secSubExp: "Rekam jejak praktis di bidang riset infrastruktur server dan operasional IT:",
