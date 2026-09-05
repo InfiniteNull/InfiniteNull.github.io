@@ -53,7 +53,7 @@ window.I18N_DICT = {
     job1Desc: "Merancang, mengonfigurasi, dan menguji infrastruktur <strong>Nginx Media Server</strong> pada Linux VM, serta melakukan benchmark terhadap 4 protokol streaming video (<strong>RTMP, HLS, RTSP, HTTP</strong>). Melakukan audit keamanan jaringan & <strong>vulnerability assessment (VAPT)</strong> pada sistem internal.",
     
     job2Title: "IT Support (Vendor Outsourcing)",
-    job2Company: "PT BANK SINARMAS, TBK",
+    job2Company: "PT BANK SINARMAS, TBK (KC MEDAN MANGKUBUMI)",
     job2Meta: "Des 2023",
     job2Desc: "Melaksanakan proyek peremajaan komputer (<strong>PC Deployment</strong>), instalasi hardware, backup dan migrasi data profil user secara aman, perapian kabel, serta konfigurasi peripheral printer slip dan scanner hingga terhubung ke domain perbankan.",
 
@@ -147,7 +147,7 @@ window.I18N_DICT = {
     job1Desc: "Architected, configured, and benchmarked <strong>Nginx Media Server</strong> infrastructure on Linux VMs across 4 streaming protocols (<strong>RTMP, HLS, RTSP, HTTP</strong>). Conducted internal network security audits and <strong>vulnerability assessments (VAPT)</strong>.",
     
     job2Title: "IT Support (Vendor Outsourcing)",
-    job2Company: "PT BANK SINARMAS, TBK",
+    job2Company: "PT BANK SINARMAS, TBK (KC MEDAN MANGKUBUMI)",
     job2Meta: "Dec 2023",
     job2Desc: "Executed enterprise <strong>PC Deployment</strong>, hardware assembly, secure user profile data backup & migration, OS installation, and peripheral configuration (slip printers, document scanners) connected to banking domain.",
 
