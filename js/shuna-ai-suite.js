@@ -589,7 +589,7 @@
             <div class="space-y-1.5">
               <div class="flex items-center gap-2">
                 <span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800">
-                  ● MSIB Batch 6 @ Skilvul • Project Team Lead (Score 81.8)
+                  ● MSIB Batch 6 @ Skilvul • Lead Developer & Core Architect (95%+ Solo Implementation • Score 81.8)
                 </span>
                 <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800">
                   Python 3.10 • Scikit-Learn • NLP TF-IDF
@@ -1330,7 +1330,7 @@
             <h2 class="text-lg font-bold text-slate-900 dark:text-white">Latar Belakang & Fondasi Proyek SHUNA AI</h2>
           </div>
           <p class="text-slate-600 dark:text-slate-400">
-            Proyek <strong>SHUNA AI</strong> dikembangkan dalam program <strong>MSIB Batch 6 @ Skilvul (Machine Learning Track)</strong>, di mana Rizki Ananda bertindak sebagai <strong>Project Team Lead</strong> (Kelompok 26) dan meraih nilai akhir <strong>81.8</strong>. Proyek ini menyelesaikan tantangan riil institusi pendidikan dan platform digital dalam mengolah feedback berskala besar menjadi wawasan terstruktur secara otomatis.
+            Proyek <strong>SHUNA AI</strong> dirancang, diteliti, dan dibangun secara mandiri oleh Rizki Ananda sebagai <strong>Lead Developer &amp; Core Architect (95%+ implementasi kode dan pipeline teknis mandiri)</strong> dalam program <strong>MSIB Batch 6 @ Skilvul (Machine Learning Track)</strong> dengan nilai akhir <strong>81.8</strong>. Mulai dari data preparation, feature engineering TF-IDF, kalibrasi model Logistic Regression, hingga perancangan arsitektur analitik dilakukan secara end-to-end.
           </p>
         </div>
 
