@@ -50,14 +50,14 @@
 ---
 
 ### 2. Dev & Data Engineering Suite (`#devtools`)
-* **Live Workspace:** [infinitenull.github.io/#devtools](https://infinitenull.github.io/#devtools)
+* **Live Workspace:** [infinitenull.github.io/dev-tools/](https://infinitenull.github.io/dev-tools/)
 * **Deskripsi:** Platform utilitas 29 modul komputasi mandiri yang terbagi dalam 4 pilar utama:
   1. **Jaringan & Server (5 Tools):** Kalkulator subnetting IPv4/VLSM, generator firewall Linux/Mikrotik, estimasi durasi transfer bandwidth, kalkulator bitrate & kapasitas disk streaming RTMP/HLS, visualizer crontab Linux.
   2. **Keamanan Sistem (6 Tools):** Sandbox autentikasi Bcrypt & JWT, audit HTTP Security Headers, verifier hash kriptografi (SHA-256/SHA-512/MD5), kalkulator entropi password, encoder/decoder payload, debugger JWT signature.
   3. **Data & Backend (9 Tools):** Tabular Data Cleaner & Imputation Studio (Pandas export), Dataset Integration & QC Inspector (Tukey's IQR outlier detection, table joiner), Dashboard KPI Laporan Berkala, Spreadsheet Formula Engine (XLOOKUP / VLOOKUP / Pivot Matrix), NLP Sentiment Analyzer, SQLite Inventory CRUD, Perpustakaan Relasional, JSON-to-SQL converter, Nginx access log parser.
   4. **Utilitas & Hardware (9 Tools):** REST API latency pinger, kompresi foto Canvas WebP, live currency converter, tes ketik WPM 60 detik, kalkulator RAID storage (0/1/5/6/10), kalkulator daya PSU PC, regex tester, live markdown editor.
 * **Tech Stack:** JavaScript ES6+, Python, FastAPI, Node.js, SQLite, HTML5 / Canvas, Tailwind CSS.
-* **Repositori:** [`InfiniteNull`](https://github.com/InfiniteNull)
+* **Repositori:** [`InfiniteNull/dev-tools`](https://github.com/InfiniteNull/dev-tools)
 
 ---
 

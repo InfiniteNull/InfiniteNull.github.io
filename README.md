@@ -50,14 +50,14 @@
 ---
 
 ### 2. Dev & Data Engineering Suite (`#devtools`)
-* **Live Workspace:** [infinitenull.github.io/#devtools](https://infinitenull.github.io/#devtools)
+* **Live Workspace:** [infinitenull.github.io/dev-tools/](https://infinitenull.github.io/dev-tools/)
 * **Description:** Modular computational platform hosting 29 standalone tools across 4 core pillars:
   1. **Networking & Server (5 Tools):** IPv4 VLSM subnetting calculator, Linux/Mikrotik firewall rule builder, data transfer bandwidth duration estimator, RTMP/HLS bitrate & storage calculator, Linux crontab visual scheduler.
   2. **System Security (6 Tools):** Bcrypt & JWT authentication sandbox, OWASP HTTP Security Headers audit, cryptographic hash verifier (SHA-256/SHA-512/MD5), Shannon password entropy estimator, payload encoder/decoder, JWT signature debugger.
   3. **Data & Backend (9 Tools):** Tabular Data Cleaner & Imputation Studio (Pandas script export), Dataset Integration & QC Inspector (Tukey's IQR outlier detection, table joiner), Operational KPI Dashboard, Spreadsheet Formula Engine (XLOOKUP / VLOOKUP / Pivot Matrix), NLP Sentiment Analyzer, SQLite Inventory CRUD, Relational Library Borrowing System, JSON-to-SQL converter, Nginx access log parser.
   4. **Hardware & Utilities (9 Tools):** REST API latency pinger, Canvas WebP image compressor, real-time currency converter, 60s typing speed test (WPM), RAID storage calculator (0/1/5/6/10), PC PSU wattage estimator, Regex tester, live Markdown editor.
 * **Tech Stack:** JavaScript ES6+, Python, FastAPI, Node.js, SQLite, HTML5 / Canvas, Tailwind CSS.
-* **Repository:** [`InfiniteNull`](https://github.com/InfiniteNull)
+* **Repository:** [`InfiniteNull/dev-tools`](https://github.com/InfiniteNull/dev-tools)
 
 ---
 
