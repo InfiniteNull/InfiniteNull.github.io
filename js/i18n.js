@@ -17,7 +17,7 @@ window.I18N_DICT = {
     heroBadge: "Rizki Ananda, S.Kom • S1 Informatika",
     heroTitle: "Rizki Ananda",
     heroSubTitle: "Software & Web Developer",
-        heroDesc: "Membangun aplikasi web dan sistem informasi yang fungsional, terstruktur, dan mudah digunakan.",
+        heroDesc: "Fokus pada pengembangan aplikasi web menggunakan Laravel, Python, dan JavaScript, dari perancangan backend hingga integrasi UI/UX.",
     btnHeroViewProjects: "Lihat Proyek ➔",
     btnHeroViewExp: "Pengalaman & Keahlian",
     
@@ -107,7 +107,7 @@ window.I18N_DICT = {
     heroBadge: "Rizki Ananda, S.Kom • Computer Science",
     heroTitle: "Rizki Ananda",
     heroSubTitle: "Software & Web Developer",
-        heroDesc: "Building web applications and information systems that are functional, structured, and easy to use.",
+        heroDesc: "Focused on web application development using Laravel, Python, and JavaScript, from backend architecture to UI/UX integration.",
     btnHeroViewProjects: "View Projects ➔",
     btnHeroViewExp: "Experience & Skills",
     
