@@ -881,14 +881,6 @@
         <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div class="space-y-1.5">
-              <div class="flex items-center gap-2">
-                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800">
-                  ● MSIB Batch 6 @ Skilvul • Lead Developer &amp; Core Architect (95%+ Solo Implementation • Score 81.8)
-                </span>
-                <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800">
-                  Python 3.10 • Scikit-Learn • NLP TF-IDF
-                </span>
-              </div>
               <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
                 SHUNA AI — Machine Learning &amp; NLP Analytics Engine
               </h1>
