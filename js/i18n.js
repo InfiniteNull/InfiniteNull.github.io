@@ -20,16 +20,6 @@ window.I18N_DICT = {
     btnHeroViewProjects: "Lihat Proyek ➔",
     btnHeroViewExp: "Pengalaman & Keahlian",
     
-    // Quick Stats
-    statProjTitle: "Proyek Utama",
-    statProjVal: "2 Aplikasi",
-    statToolsTitle: "Perkakas Web",
-    statToolsVal: "29 Tools",
-    statCertTitle: "Sertifikasi",
-    statCertVal: "2 Lisensi",
-    statQualityTitle: "Standar Kode",
-    statQualityVal: "Clean Code",
-
     // Featured Projects Section
     secHeadingProjects: "Proyek Unggulan (Featured Projects)",
     secSubProjects: "Pilih dan jelajahi aplikasi produksi mandiri di bawah ini:",
@@ -119,16 +109,6 @@ window.I18N_DICT = {
     btnHeroViewProjects: "View Projects ➔",
     btnHeroViewExp: "Experience & Skills",
     
-    // Quick Stats
-    statProjTitle: "Main Projects",
-    statProjVal: "2 Apps",
-    statToolsTitle: "Web Tools",
-    statToolsVal: "29 Tools",
-    statCertTitle: "Certifications",
-    statCertVal: "2 Licenses",
-    statQualityTitle: "Code Quality",
-    statQualityVal: "Clean Code",
-
     // Featured Projects Section
     secHeadingProjects: "Featured Projects",
     secSubProjects: "Select and explore standalone production applications below:",
@@ -256,27 +236,6 @@ window.setLanguage = function(lang) {
     const span = btnHeroViewExp.querySelector('span');
     if (span) span.textContent = dict.btnHeroViewExp;
   }
-
-  // Quick Stats
-  const statProjTitle = document.getElementById('statProjTitle');
-  if (statProjTitle) statProjTitle.textContent = dict.statProjTitle;
-  const statProjVal = document.getElementById('statProjVal');
-  if (statProjVal) statProjVal.textContent = dict.statProjVal;
-
-  const statToolsTitle = document.getElementById('statToolsTitle');
-  if (statToolsTitle) statToolsTitle.textContent = dict.statToolsTitle;
-  const statToolsVal = document.getElementById('statToolsVal');
-  if (statToolsVal) statToolsVal.textContent = dict.statToolsVal;
-
-  const statCertTitle = document.getElementById('statCertTitle');
-  if (statCertTitle) statCertTitle.textContent = dict.statCertTitle;
-  const statCertVal = document.getElementById('statCertVal');
-  if (statCertVal) statCertVal.textContent = dict.statCertVal;
-
-  const statQualityTitle = document.getElementById('statQualityTitle');
-  if (statQualityTitle) statQualityTitle.textContent = dict.statQualityTitle;
-  const statQualityVal = document.getElementById('statQualityVal');
-  if (statQualityVal) statQualityVal.textContent = dict.statQualityVal;
 
   // 3. Featured Projects
   const secHeadingProjects = document.getElementById('secHeadingProjects');
