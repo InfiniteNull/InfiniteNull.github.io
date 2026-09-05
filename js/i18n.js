@@ -98,6 +98,22 @@ window.I18N_DICT = {
     expHeading: "Pengalaman Kerja",
     certHeading: "Sertifikasi & Keahlian",
 
+    // Terminal CLI
+    terminalPromptTitle: "bash — infinitenull@terminal:~",
+    terminalQuickLabel: "Akses:",
+    terminalInputPlaceholder: "Ketik perintah (misal: help, whoami, stack, simrs, devtools, shuna)...",
+    terminalHelpContent: `
+      <div class="font-bold text-sky-400">Perintah Interaktif Tersedia (Quick Commands):</div>
+      <div>• <span class="text-emerald-400 font-bold">whoami</span>: Ringkasan profil pengembang</div>
+      <div>• <span class="text-emerald-400 font-bold">stack</span>: Tech stack backend, frontend, &amp; sistem</div>
+      <div>• <span class="text-emerald-400 font-bold">projects</span>: Daftar 3 sistem produksi utama</div>
+      <div>• <span class="text-emerald-400 font-bold">simrs</span>: Buka aplikasi SIMRS Core Enterprise</div>
+      <div>• <span class="text-emerald-400 font-bold">devtools</span>: Buka workspace 29 Web Tools</div>
+      <div>• <span class="text-emerald-400 font-bold">shuna</span>: Buka engine analitik SHUNA AI</div>
+      <div>• <span class="text-emerald-400 font-bold">contact</span>: Informasi kontak &amp; GitHub</div>
+      <div>• <span class="text-emerald-400 font-bold">clear</span>: Bersihkan layar terminal</div>
+    `,
+
     // Footer
     footerBioText: "Lulusan S1 Informatika Universitas Potensi Utama. Praktisi IT Support, Network Administrator, VAPT Security, serta Analisis Data & Software Engineering.",
     footerTechHeading: "Kompetensi Inti",
@@ -198,6 +214,22 @@ window.I18N_DICT = {
     profileBio: "Computer Science Graduate (<strong>S1 Informatika / S.Kom from Universitas Potensi Utama</strong>) specializing in <strong>IT Support, Network Administration, System Security (VAPT), Data Analytics & Full-Stack Web Engineering</strong>. Hands-on experience in server infrastructure deployment, video streaming protocols, banking PC deployments, and deterministic software engineering.",
     expHeading: "Work Experience",
     certHeading: "Certifications & Expertise",
+
+    // Terminal CLI
+    terminalPromptTitle: "bash — infinitenull@terminal:~",
+    terminalQuickLabel: "Quick:",
+    terminalInputPlaceholder: "Type command (e.g. help, whoami, stack, simrs, devtools, shuna)...",
+    terminalHelpContent: `
+      <div class="font-bold text-sky-400">Available Interactive Commands:</div>
+      <div>• <span class="text-emerald-400 font-bold">whoami</span>: Developer profile &amp; credentials summary</div>
+      <div>• <span class="text-emerald-400 font-bold">stack</span>: Backend, frontend, &amp; infrastructure tech stack</div>
+      <div>• <span class="text-emerald-400 font-bold">projects</span>: List of 3 flagship production systems</div>
+      <div>• <span class="text-emerald-400 font-bold">simrs</span>: Open SIMRS Core Enterprise application</div>
+      <div>• <span class="text-emerald-400 font-bold">devtools</span>: Open 29 Web Tools workspace</div>
+      <div>• <span class="text-emerald-400 font-bold">shuna</span>: Open SHUNA AI analytics engine</div>
+      <div>• <span class="text-emerald-400 font-bold">contact</span>: Contact information &amp; GitHub</div>
+      <div>• <span class="text-emerald-400 font-bold">clear</span>: Clear terminal screen</div>
+    `,
 
     // Footer
     footerBioText: "B.Sc. in Computer Science graduate from Universitas Potensi Utama. IT Support Practitioner, Network Administrator, VAPT Security, and Data Analytics & Software Engineering.",
@@ -395,10 +427,20 @@ window.setLanguage = function(lang) {
   const cert2Title = document.getElementById('cert2Title');
   if (cert2Title) cert2Title.textContent = dict.cert2Title;
 
-  const cert2Desc = document.getElementById('cert2Desc');
-  if (cert2Desc) cert2Desc.textContent = dict.cert2Desc;
+  // 10. Terminal CLI
+  const terminalPromptTitle = document.getElementById('terminalPromptTitle');
+  if (terminalPromptTitle && dict.terminalPromptTitle) terminalPromptTitle.textContent = dict.terminalPromptTitle;
 
-  // 10. Footer
+  const terminalQuickLabel = document.getElementById('terminalQuickLabel');
+  if (terminalQuickLabel && dict.terminalQuickLabel) terminalQuickLabel.textContent = dict.terminalQuickLabel;
+
+  const terminalInput = document.getElementById('terminalInput');
+  if (terminalInput && dict.terminalInputPlaceholder) terminalInput.placeholder = dict.terminalInputPlaceholder;
+
+  const terminalHelpBody = document.getElementById('terminalHelpBody');
+  if (terminalHelpBody && dict.terminalHelpContent) terminalHelpBody.innerHTML = dict.terminalHelpContent;
+
+  // 11. Footer
   const footerBioText = document.getElementById('footerBioText');
   if (footerBioText) footerBioText.textContent = dict.footerBioText;
 

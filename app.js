@@ -99,12 +99,25 @@ window.submitTerminal = function() {
     return;
   }
 
+  const isEn = window.currentLang === 'en';
   let responseHtml = '';
 
   if (cmd === 'help') {
-    responseHtml = `
+    responseHtml = isEn ? `
       <div class="text-slate-300 pl-3 border-l-2 border-slate-600 text-[10px] sm:text-xs space-y-1">
-        <div><strong>Available Commands:</strong></div>
+        <div class="font-bold text-sky-400">Available Interactive Commands:</div>
+        <div>• <span class="text-emerald-400 font-bold">whoami</span>: Developer profile & credentials summary</div>
+        <div>• <span class="text-emerald-400 font-bold">stack</span>: Backend, frontend, & infrastructure tech stack</div>
+        <div>• <span class="text-emerald-400 font-bold">projects</span>: List of 3 flagship production systems</div>
+        <div>• <span class="text-emerald-400 font-bold">simrs</span>: Open SIMRS Core Enterprise (infinitenull.github.io/simrs-laravel/)</div>
+        <div>• <span class="text-emerald-400 font-bold">devtools</span>: Open 29 Web Tools workspace (infinitenull.github.io/dev-tools/)</div>
+        <div>• <span class="text-emerald-400 font-bold">shuna</span>: Open SHUNA AI engine (infinitenull.github.io/SHUNA-AI/)</div>
+        <div>• <span class="text-emerald-400 font-bold">contact</span>: Contact information & GitHub</div>
+        <div>• <span class="text-emerald-400 font-bold">clear</span>: Clear terminal screen</div>
+      </div>
+    ` : `
+      <div class="text-slate-300 pl-3 border-l-2 border-slate-600 text-[10px] sm:text-xs space-y-1">
+        <div class="font-bold text-sky-400">Perintah Interaktif Tersedia (Quick Commands):</div>
         <div>• <span class="text-emerald-400 font-bold">whoami</span>: Ringkasan profil pengembang</div>
         <div>• <span class="text-emerald-400 font-bold">stack</span>: Tech stack backend, frontend, & sistem</div>
         <div>• <span class="text-emerald-400 font-bold">projects</span>: Daftar 3 sistem produksi utama</div>
@@ -116,16 +129,22 @@ window.submitTerminal = function() {
       </div>
     `;
   } else if (cmd === 'whoami') {
-    responseHtml = `
-      <div class="text-slate-300 pl-3 border-l-2 border-emerald-500/50">
+    responseHtml = isEn ? `
+      <div class="text-slate-300 pl-3 border-l-2 border-emerald-500/50 text-[10px] sm:text-xs space-y-1">
         <strong>Rizki Ananda, S.Kom</strong> (@InfiniteNull)<br>
-        <span class="text-slate-400 text-[10px]">S1 Informatika • Universitas Potensi Utama</span><br>
-        <span class="text-slate-400 text-[10px]">Track Record: IT Researcher (Adzkia Kedinasan), IT Support Deployment (Bank Sinarmas), Lead Developer SHUNA AI (MSIB Skilvul Batch 6)</span>
+        <span class="text-slate-400">Bachelor of Computer Science • Universitas Potensi Utama</span><br>
+        <span class="text-slate-400">Track Record: IT Researcher (Adzkia Kedinasan), IT Support PC Deployment (Bank Sinarmas), Lead Developer SHUNA AI (MSIB Skilvul Batch 6)</span>
+      </div>
+    ` : `
+      <div class="text-slate-300 pl-3 border-l-2 border-emerald-500/50 text-[10px] sm:text-xs space-y-1">
+        <strong>Rizki Ananda, S.Kom</strong> (@InfiniteNull)<br>
+        <span class="text-slate-400">S1 Informatika • Universitas Potensi Utama</span><br>
+        <span class="text-slate-400">Rekam Jejak: IT Researcher (Adzkia Kedinasan), IT Support PC Deployment (Bank Sinarmas), Lead Developer SHUNA AI (MSIB Skilvul Batch 6)</span>
       </div>
     `;
   } else if (cmd === 'stack') {
     responseHtml = `
-      <div class="text-sky-300 pl-3 border-l-2 border-sky-500/50 text-[10px] sm:text-xs">
+      <div class="text-sky-300 pl-3 border-l-2 border-sky-500/50 text-[10px] sm:text-xs font-mono">
         {<br>
         &nbsp;&nbsp;"backend": ["PHP 8.2 (Laravel 11)", "Python 3.10+ (FastAPI, Flask)", "Node.js (Express)"],<br>
         &nbsp;&nbsp;"database": ["MySQL (3NF / InnoDB)", "SQLite (ACID transactions)", "Redis"],<br>
@@ -136,32 +155,44 @@ window.submitTerminal = function() {
       </div>
     `;
   } else if (cmd === 'projects') {
-    responseHtml = `
+    responseHtml = isEn ? `
       <div class="text-slate-300 pl-3 border-l-2 border-slate-600 text-[10px] sm:text-xs space-y-1">
-        <div>1. <strong class="text-sky-400">SIMRS Core Enterprise</strong>: Hospital MIS Permenkes 24/2022, BPJS V-Claim, SatuSehat FHIR (<a href="https://infinitenull.github.io/simrs-laravel/" target="_blank" class="text-sky-300 underline">buka ↗</a>)</div>
+        <div>1. <strong class="text-sky-400">SIMRS Core Enterprise</strong>: Hospital MIS Permenkes 24/2022, BPJS V-Claim (<a href="https://infinitenull.github.io/simrs-laravel/" target="_blank" class="text-sky-300 underline">open ↗</a>)</div>
+        <div>2. <strong class="text-purple-400">Dev & Data Engineering Suite</strong>: 29 Modular Network, Security & Data Tools (<a href="https://infinitenull.github.io/dev-tools/" target="_blank" class="text-purple-300 underline">open ↗</a>)</div>
+        <div>3. <strong class="text-emerald-400">SHUNA AI Data Engine</strong>: NLP Sentiment, Multi-Model Arena, Tabular Retention (<a href="https://infinitenull.github.io/SHUNA-AI/" target="_blank" class="text-emerald-300 underline">open ↗</a>)</div>
+      </div>
+    ` : `
+      <div class="text-slate-300 pl-3 border-l-2 border-slate-600 text-[10px] sm:text-xs space-y-1">
+        <div>1. <strong class="text-sky-400">SIMRS Core Enterprise</strong>: Hospital MIS Permenkes 24/2022, BPJS V-Claim (<a href="https://infinitenull.github.io/simrs-laravel/" target="_blank" class="text-sky-300 underline">buka ↗</a>)</div>
         <div>2. <strong class="text-purple-400">Dev & Data Engineering Suite</strong>: 29 Modul Komputasi Jaringan, Keamanan, & Data (<a href="https://infinitenull.github.io/dev-tools/" target="_blank" class="text-purple-300 underline">buka ↗</a>)</div>
         <div>3. <strong class="text-emerald-400">SHUNA AI Data Engine</strong>: NLP Sentiment, Model Arena ROC-AUC, Retensi Tabular (<a href="https://infinitenull.github.io/SHUNA-AI/" target="_blank" class="text-emerald-300 underline">buka ↗</a>)</div>
       </div>
     `;
   } else if (cmd === 'simrs' || cmd === 'simrs-laravel') {
     window.open('https://infinitenull.github.io/simrs-laravel/', '_blank');
-    responseHtml = `<div class="text-sky-400 pl-3 border-l-2 border-sky-500/50">Membuka SIMRS Core Enterprise di tab baru: <a href="https://infinitenull.github.io/simrs-laravel/" target="_blank" class="underline">https://infinitenull.github.io/simrs-laravel/</a> ↗</div>`;
+    responseHtml = `<div class="text-sky-400 pl-3 border-l-2 border-sky-500/50 text-[10px] sm:text-xs">${isEn ? 'Opening SIMRS Core Enterprise in new tab:' : 'Membuka SIMRS Core Enterprise di tab baru:'} <a href="https://infinitenull.github.io/simrs-laravel/" target="_blank" class="underline">https://infinitenull.github.io/simrs-laravel/</a> ↗</div>`;
   } else if (cmd === 'devtools' || cmd === 'tools') {
     window.open('https://infinitenull.github.io/dev-tools/', '_blank');
-    responseHtml = `<div class="text-purple-400 pl-3 border-l-2 border-purple-500/50">Membuka Dev & Data Engineering Suite di tab baru: <a href="https://infinitenull.github.io/dev-tools/" target="_blank" class="underline">https://infinitenull.github.io/dev-tools/</a> ↗</div>`;
+    responseHtml = `<div class="text-purple-400 pl-3 border-l-2 border-purple-500/50 text-[10px] sm:text-xs">${isEn ? 'Opening Dev & Data Engineering Suite in new tab:' : 'Membuka Dev & Data Engineering Suite di tab baru:'} <a href="https://infinitenull.github.io/dev-tools/" target="_blank" class="underline">https://infinitenull.github.io/dev-tools/</a> ↗</div>`;
   } else if (cmd === 'shuna' || cmd === 'shuna-ai' || cmd === 'ai' || cmd === 'nlp' || cmd === 'ml') {
     window.open('https://infinitenull.github.io/SHUNA-AI/', '_blank');
-    responseHtml = `<div class="text-emerald-400 pl-3 border-l-2 border-emerald-500/50">Membuka SHUNA AI Data Engine di tab baru: <a href="https://infinitenull.github.io/SHUNA-AI/" target="_blank" class="underline">https://infinitenull.github.io/SHUNA-AI/</a> ↗</div>`;
+    responseHtml = `<div class="text-emerald-400 pl-3 border-l-2 border-emerald-500/50 text-[10px] sm:text-xs">${isEn ? 'Opening SHUNA AI Data Engine in new tab:' : 'Membuka SHUNA AI Data Engine di tab baru:'} <a href="https://infinitenull.github.io/SHUNA-AI/" target="_blank" class="underline">https://infinitenull.github.io/SHUNA-AI/</a> ↗</div>`;
   } else if (cmd === 'contact') {
-    responseHtml = `
-      <div class="text-slate-300 pl-3 border-l-2 border-slate-600 text-[10px]">
-        GitHub: <a href="https://github.com/InfiniteNull" target="_blank" class="text-sky-400 underline">https://github.com/InfiniteNull</a><br>
-        Almamater: S1 Informatika — Universitas Potensi Utama<br>
-        Status: Open for Technical Opportunities (Software Engineer / Data Analyst / IT Support Specialist)
+    responseHtml = isEn ? `
+      <div class="text-slate-300 pl-3 border-l-2 border-slate-600 text-[10px] sm:text-xs space-y-0.5">
+        <div>GitHub: <a href="https://github.com/InfiniteNull" target="_blank" class="text-sky-400 underline">https://github.com/InfiniteNull</a></div>
+        <div>Almamater: Bachelor of Computer Science — Universitas Potensi Utama</div>
+        <div>Status: Open for Technical Opportunities (Software Engineer / Data Analyst / IT Support Specialist)</div>
+      </div>
+    ` : `
+      <div class="text-slate-300 pl-3 border-l-2 border-slate-600 text-[10px] sm:text-xs space-y-0.5">
+        <div>GitHub: <a href="https://github.com/InfiniteNull" target="_blank" class="text-sky-400 underline">https://github.com/InfiniteNull</a></div>
+        <div>Almamater: S1 Informatika — Universitas Potensi Utama</div>
+        <div>Status: Terbuka untuk Peluang Teknis (Software Engineer / Data Analyst / IT Support Specialist)</div>
       </div>
     `;
   } else {
-    responseHtml = `<div class="text-rose-400 pl-3 border-l-2 border-rose-500/50 text-[10px]">Perintah '${rawCmd}' tidak dikenal. Ketik <span class="text-white font-bold">help</span> untuk melihat daftar perintah.</div>`;
+    responseHtml = `<div class="text-rose-400 pl-3 border-l-2 border-rose-500/50 text-[10px] sm:text-xs">${isEn ? `Command '${rawCmd}' not recognized. Type <span class="text-white font-bold">help</span> to list commands.` : `Perintah '${rawCmd}' tidak dikenal. Ketik <span class="text-white font-bold">help</span> untuk melihat daftar perintah.`}</div>`;
   }
 
   const newEntry = document.createElement('div');
