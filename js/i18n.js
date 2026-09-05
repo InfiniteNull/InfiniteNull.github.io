@@ -43,7 +43,7 @@ window.I18N_DICT = {
     // SHUNA AI Card
     shunaCardTitle: "SHUNA AI Data Engine",
     shunaCardSub: "NLP & Machine Learning Engine",
-    shunaCardDesc: "Platform analitik data & machine learning: pipeline NLP klasifikasi sentimen (TF-IDF & slang normalizer), visualisasi word cloud leksikal, benchmark multi-model ROC-AUC, simulator retensi tabular (Sigmoid), time-series forecasting (Holt-Winters), serta deteksi anomali Z-Score.",
+    shunaCardDesc: "Platform analitik data & machine learning: pipeline NLP klasifikasi sentimen (TF-IDF & slang normalizer), visualisasi word cloud leksikal, benchmark multi-model ROC-AUC, simulator prediksi retensi tabular (Sigmoid), time-series forecasting (Holt-Winters), serta deteksi lonjakan anomali Z-Score.",
     shunaBtnOpen: "Buka SHUNA AI",
     shunaBackLink: "Kembali ke Beranda",
 
@@ -144,7 +144,7 @@ window.I18N_DICT = {
     // SHUNA AI Card
     shunaCardTitle: "SHUNA AI Data Engine",
     shunaCardSub: "NLP & Machine Learning Engine",
-    shunaCardDesc: "Integrated data intelligence & machine learning platform: live NLP sentiment pipeline (TF-IDF & slang normalizer), lexical word cloud visualizer, multi-model ROC-AUC arena, tabular student retention simulator (Sigmoid), Holt-Winters forecasting, and rolling Z-score anomaly detection.",
+    shunaCardDesc: "Integrated data intelligence & machine learning platform: live NLP sentiment pipeline (TF-IDF & slang normalizer), lexical word cloud visualizer, multi-model ROC-AUC arena, tabular student retention predictive simulator (Sigmoid), Holt-Winters forecasting, and rolling Z-score spike anomaly detection.",
     shunaBtnOpen: "Open SHUNA AI",
     shunaBackLink: "Back to Home",
 
