@@ -58,12 +58,12 @@ window.I18N_DICT = {
 
     // ZZZleep Card
     zzzleepCardTitle: "ZZZleep",
-    zzzleepCardSub: "Desktop Calendar & Audio Alarm",
+    zzzleepCardSub: "Desktop Calendar, Smart Alarms & Focus Timers",
     zzzleepCardStatus: "DESKTOP",
-    zzzleepCardDesc: "Aplikasi desktop manajemen waktu: sidebar layout modern, 5 pilihan nada audio sintetis (winsound), timer Pomodoro 25/5 & lingkaran progres, pengingat istirahat mata 20-20-20 fleksibel, input waktu anti-error, kalender bulanan, serta auto-update GitHub.",
-    zzzleepBullet1: "Sidebar navigasi modern & input waktu anti-error (tanda ':' terkunci)",
-    zzzleepBullet2: "Lingkaran Progres Pomodoro (25/5) & Pengingat Istirahat Mata 20-20-20",
-    zzzleepBullet3: "5 nada audio sintetis, kalender bulanan, & auto-update GitHub",
+    zzzleepCardDesc: "Aplikasi desktop manajemen waktu: kalender libur nasional Indonesia (2025-2027) & deteksi long weekend, alarm pintar dengan tantangan matematika & skip tanggal merah, timer Pomodoro & progres melingkar, grafik statistik fokus 7-hari, mini floating widget, serta auto-update GitHub.",
+    zzzleepBullet1: "Kalender Libur Nasional & Deteksi Otomatis Long Weekend Indonesia",
+    zzzleepBullet2: "Alarm Pintar (Math Challenge, Skip Tanggal Merah, & Time Picker Ganda)",
+    zzzleepBullet3: "Timer Progres Melingkar, Grafik Sesi Fokus 7-Hari, & Mini Floating Widget",
     zzzleepBtnDownload: "Unduh .exe",
     zzzleepBtnOpen: "Buka Showcase",
 
@@ -170,12 +170,12 @@ window.I18N_DICT = {
 
     // ZZZleep Card
     zzzleepCardTitle: "ZZZleep",
-    zzzleepCardSub: "Desktop Calendar & Audio Alarm",
+    zzzleepCardSub: "Desktop Calendar, Smart Alarms & Focus Timers",
     zzzleepCardStatus: "DESKTOP",
-    zzzleepCardDesc: "Desktop time-management application: modern sidebar navigation, 5 synthesized audio alarm tones (winsound), circular progress Pomodoro (25/5) & 20-20-20 eye rest timers, anti-error time picker, mini monthly calendar, and GitHub auto-updates.",
-    zzzleepBullet1: "Modern sidebar layout & anti-error time picker (fixed ':' separator)",
-    zzzleepBullet2: "Circular progress rings for Pomodoro (25/5) & 20-20-20 Eye Rest",
-    zzzleepBullet3: "5 synthesized alarm tones, monthly calendar, & GitHub auto-update",
+    zzzleepCardDesc: "Desktop time-management tool: Indonesian public holidays & long weekend detector, smart alarms with math challenge & holiday skip, circular Pomodoro progress rings, 7-day focus analytics, mini floating widget, and GitHub auto-updates.",
+    zzzleepBullet1: "Indonesian Public Holidays (2025-2027) & Automated Long Weekend Alerts",
+    zzzleepBullet2: "Smart Alarms (Math Challenge to Dismiss, Holiday Skipping, Dual Spinbox)",
+    zzzleepBullet3: "Circular Progress Rings, 7-Day Focus Session Analytics, & Mini Floating Widget",
     zzzleepBtnDownload: "Download .exe",
     zzzleepBtnOpen: "Open Showcase",
 

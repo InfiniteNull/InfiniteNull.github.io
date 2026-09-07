@@ -248,9 +248,9 @@ window.openInterviewGuide = function() {
       </div>
 
       <div class="p-4 rounded-xl bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-2">
-        <h4 class="font-bold text-slate-900 dark:text-white text-sm">4. ZZZleep (Desktop Calendar &amp; Audio Alarm v1.1.0)</h4>
+        <h4 class="font-bold text-slate-900 dark:text-white text-sm">4. ZZZleep (Desktop Calendar, Smart Alarms &amp; Focus Timers v1.2.0)</h4>
         <p class="text-xs text-slate-600 dark:text-slate-300">
-          Standalone desktop application featuring modern left sidebar layout, 5 synthesized harmonic audio alarm tones (Python <code>winsound</code>), circular animated progress rings for Pomodoro (25/5) and 20-20-20 eye rest timers, anti-error dual spinbox time picker, mini monthly calendar, dark/light mode, and GitHub auto-update synchronization.
+          Standalone desktop application featuring Indonesian public holidays intelligence (2025-2027), automated long weekend streak detection, smart alarms with optional Math Challenge to dismiss, circular animated Pomodoro &amp; 20-20-20 eye rest progress rings, 7-day weekly focus session analytics bar chart, mini floating widget overlay, and GitHub auto-update synchronization.
         </p>
       </div>
     </div>
@@ -279,9 +279,9 @@ window.openInterviewGuide = function() {
       </div>
 
       <div class="p-4 rounded-xl bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-2">
-        <h4 class="font-bold text-slate-900 dark:text-white text-sm">4. ZZZleep (Desktop Calendar &amp; Audio Alarm v1.1.0)</h4>
+        <h4 class="font-bold text-slate-900 dark:text-white text-sm">4. ZZZleep (Desktop Calendar, Alarm Pintar &amp; Timer Fokus v1.2.0)</h4>
         <p class="text-xs text-slate-600 dark:text-slate-300">
-          Aplikasi desktop manajemen waktu mandiri dengan navigasi sidebar kiri modern, 5 pilihan nada audio harmonis sintetis (Python <code>winsound</code>), diagram progress melingkar interaktif (Pomodoro 25/5 &amp; istirahat mata 20-20-20), pemilih waktu anti-error (tanda ':' terkunci), kalender bulanan mini, tema gelap/terang, dan sinkronisasi pembaruan otomatis GitHub.
+          Aplikasi desktop manajemen waktu mandiri: kalender libur nasional Indonesia (2025-2027) &amp; deteksi long weekend, alarm pintar dengan Math Challenge &amp; lewati tanggal merah, timer Pomodoro &amp; progres melingkar, grafik batang statistik fokus 7-hari, mode mini floating widget (always-on-top), 5 nada suara sintetis, dan sinkronisasi pembaruan otomatis GitHub.
         </p>
       </div>
     </div>

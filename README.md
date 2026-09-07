@@ -82,14 +82,15 @@
 ### 4. ZZZleep
 * **Live Showcase:** [infinitenull.github.io/ZZZleep/](https://infinitenull.github.io/ZZZleep/)
 * **Direct Binary Download:** [`bin/ZZZleep.exe`](https://github.com/InfiniteNull/ZZZleep/raw/main/bin/ZZZleep.exe)
-* **Description:** Desktop time-management application featuring modern sidebar navigation, 5 synthesized harmonic audio alarms, circular animated progress rings, anti-error dual time picker, mini monthly calendar, and GitHub auto-updates.
+* **Description:** Desktop time-management application featuring Indonesian public holidays & long weekend detection, smart alarms with math challenges, circular Pomodoro progress rings, 7-day focus analytics, mini floating widget overlay, and GitHub auto-updates.
 * **Key Capabilities:**
-  * **Sidebar Navigation & Modern UI:** Dynamic responsive view switching with Dark/Light and bilingual (ID/EN) toggles.
-  * **Synthesized Audio Tones:** 5 distinct harmonic frequencies via `winsound.Beep` without external audio file dependencies.
+  * **Indonesian Public Holidays (2025-2027):** Built-in SKB 3 Menteri database with automated long weekend streak detection.
+  * **Smart Alarms & Anti-Error Time Picker:** Skip on public holidays, optional math problem solving to dismiss, and dual spinboxes with permanent `:` separator.
   * **Circular Progress Timers:** Canvas-rendered circular rings for Pomodoro (25/5) and 20-20-20 Screen Eye Rest reminders.
-  * **Anti-Error Time Picker:** Dedicated dual spinboxes for hours and minutes with locked `:` separator.
+  * **Weekly Focus Analytics:** Lightweight Canvas 7-day session bar chart tracking completed Pomodoros without external libraries.
+  * **Mini Floating Widget Mode:** Instant compact PIP overlay (`300x100 px`) for desktop timer monitoring.
+  * **Synthesized Audio Tones:** 5 distinct harmonic frequencies via `winsound.Beep` without external audio files.
   * **Auto-Update Synchronization:** Release dialog comparing versions with direct binary download link.
-  * **Local Data Storage:** Automatic local JSON data persistence.
 * **Tech Stack:** Python 3, Tkinter GUI, winsound, PyInstaller (`ZZZleep.exe`).
 * **Repository:** [`InfiniteNull/ZZZleep`](https://github.com/InfiniteNull/ZZZleep)
 

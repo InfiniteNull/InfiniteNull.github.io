@@ -80,14 +80,15 @@
 ### 4. ZZZleep
 * **Live Showcase:** [infinitenull.github.io/ZZZleep/](https://infinitenull.github.io/ZZZleep/)
 * **Unduh Binary Langsung:** [`bin/ZZZleep.exe`](https://github.com/InfiniteNull/ZZZleep/raw/main/bin/ZZZleep.exe)
-* **Deskripsi:** Aplikasi desktop manajemen waktu dengan navigasi sidebar modern, 5 nada alarm audio sintetis, timer lingkaran progres Pomodoro & istirahat mata, pemilih waktu anti-error, kalender bulanan, serta auto-update GitHub.
+* **Deskripsi:** Aplikasi desktop manajemen waktu: kalender libur nasional Indonesia (2025-2027) & deteksi long weekend, alarm pintar dengan tantangan matematika & skip tanggal merah, timer Pomodoro & progres melingkar, grafik statistik fokus 7-hari, mini floating widget, serta auto-update GitHub.
 * **Fitur Kunci:**
-  * **Navigasi Sidebar & Antarmuka Modern:** Navigasi samping rapi, switch instan tema Gelap/Terang, dan dwibahasa (ID/EN).
-  * **Generator 5 Nada Audio Sintetis:** Frekuensi harmonis via `winsound.Beep` tanpa dependensi file audio eksternal.
+  * **Kalender Libur Nasional (2025-2027):** Database resmi SKB 3 Menteri dengan highlight tanggal merah dan deteksi otomatis Long Weekend.
+  * **Alarm Pintar & Time Picker Anti-Error:** Lewati alarm saat libur nasional, mode tantangan matematika (Math Challenge) untuk mematikan suara, serta dual spinbox dengan pemisah `:` terkunci.
   * **Lingkaran Progres Melingkar:** Timer Pomodoro (25/5) dan pengingat istirahat layar 20-20-20 dengan visual progress arc dinamis.
-  * **Pemilih Waktu Anti-Error:** Dua spinbox numerik (Jam & Menit) dengan tanda pemisah `:` terkunci permanen.
-  * **Sinkronisasi Pembaruan Otomatis:** Deteksi pembaruan versi GitHub dengan tautan unduh binary langsung.
-  * **Penyimpanan Lokal JSON:** Penyimpanan preferensi dan jadwal lokal otomatis.
+  * **Statistik Fokus Mingguan:** Grafik batang Canvas 7-hari yang merekam sesi fokus tanpa library visualisasi pihak ketiga.
+  * **Mini Floating Widget:** Mode widget ringkas melayang di sudut layar (always-on-top).
+  * **5 Nada Audio Sintetis:** Frekuensi harmonis via `winsound.Beep` tanpa file audio eksternal.
+  * **Sinkronisasi Pembaruan Otomatis:** Deteksi rilis versi GitHub dengan tautan unduh binary langsung.
 * **Tech Stack:** Python 3, Tkinter GUI, winsound, PyInstaller (`ZZZleep.exe`).
 * **Repositori:** [`InfiniteNull/ZZZleep`](https://github.com/InfiniteNull/ZZZleep)
 
