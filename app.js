@@ -160,14 +160,14 @@ window.submitTerminal = function() {
         <div>1. <strong class="text-sky-400">SIMRS Core Enterprise</strong>: Hospital MIS Permenkes 24/2022, BPJS V-Claim (<a href="https://infinitenull.github.io/simrs-laravel/" target="_blank" class="text-sky-300 underline">open ↗</a>)</div>
         <div>2. <strong class="text-purple-400">Dev & Data Tools</strong>: 29 Modular Network, Security & Data Tools (<a href="https://infinitenull.github.io/dev-tools/" target="_blank" class="text-purple-300 underline">open ↗</a>)</div>
         <div>3. <strong class="text-emerald-400">SHUNA AI Data Engine</strong>: NLP Sentiment, Multi-Model Arena, Tabular Retention (<a href="https://infinitenull.github.io/SHUNA-AI/" target="_blank" class="text-emerald-300 underline">open ↗</a>)</div>
-        <div>4. <strong class="text-amber-400">ZZZleep</strong>: Offline Desktop Calendar, Audio Alarm, & Windows App (<a href="https://infinitenull.github.io/ZZZleep/" target="_blank" class="text-amber-300 underline">open ↗</a>)</div>
+        <div>4. <strong class="text-amber-400">ZZZleep</strong>: Windows Desktop App, Audio Alarm & Rest Timer (<a href="https://infinitenull.github.io/ZZZleep/" target="_blank" class="text-amber-300 underline">open ↗</a>)</div>
       </div>
     ` : `
       <div class="text-slate-300 pl-3 border-l-2 border-slate-600 text-[10px] sm:text-xs space-y-1">
         <div>1. <strong class="text-sky-400">SIMRS Core Enterprise</strong>: Hospital MIS Permenkes 24/2022, BPJS V-Claim (<a href="https://infinitenull.github.io/simrs-laravel/" target="_blank" class="text-sky-300 underline">buka ↗</a>)</div>
         <div>2. <strong class="text-purple-400">Dev & Data Tools</strong>: 29 Modul Komputasi Jaringan, Keamanan, & Data (<a href="https://infinitenull.github.io/dev-tools/" target="_blank" class="text-purple-300 underline">buka ↗</a>)</div>
         <div>3. <strong class="text-emerald-400">SHUNA AI Data Engine</strong>: NLP Sentiment, Model Arena ROC-AUC, Retensi Tabular (<a href="https://infinitenull.github.io/SHUNA-AI/" target="_blank" class="text-emerald-300 underline">buka ↗</a>)</div>
-        <div>4. <strong class="text-amber-400">ZZZleep</strong>: Kalender Desktop Offline, Audio Alarm, & Aplikasi Windows (.exe) (<a href="https://infinitenull.github.io/ZZZleep/" target="_blank" class="text-amber-300 underline">buka ↗</a>)</div>
+        <div>4. <strong class="text-amber-400">ZZZleep</strong>: Aplikasi Desktop Windows (.exe), Audio Alarm & Timer Istirahat (<a href="https://infinitenull.github.io/ZZZleep/" target="_blank" class="text-amber-300 underline">buka ↗</a>)</div>
       </div>
     `;
   } else if (cmd === 'simrs' || cmd === 'simrs-laravel') {

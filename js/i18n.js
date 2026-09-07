@@ -60,11 +60,11 @@ window.I18N_DICT = {
     zzzleepCardTitle: "ZZZleep",
     zzzleepCardSub: "Kalender Desktop & Alarm Offline",
     zzzleepCardStatus: "OFFLINE",
-    zzzleepCardDesc: "Aplikasi kalender dan alarm audio offline: generator nada dering Web Audio API & Python winsound (tanpa file mp3 eksternal), timer Pomodoro 25/5, pengingat istirahat mata 20-20-20, pelacak rutinitas, dan aplikasi desktop Windows (.exe).",
-    zzzleepBullet1: "Generator Nada Dering Sintetis (Web Audio API & Python winsound)",
+    zzzleepCardDesc: "Aplikasi desktop native Windows untuk kalender offline, alarm audio sintetis (winsound), timer Pomodoro 25/5, pengingat istirahat layar 20-20-20, dan penyimpanan data lokal JSON.",
+    zzzleepBullet1: "Audio Alarm Sintetis (winsound.Beep tanpa file eksternal)",
     zzzleepBullet2: "Pengingat Istirahat Layar 20-20-20 & Timer Pomodoro 25/5",
-    zzzleepBullet3: "Penyimpanan Data Lokal JSON & Aplikasi Desktop Windows (.exe)",
-    zzzleepBtnOpen: "Buka ZZZleep",
+    zzzleepBullet3: "Penyimpanan Data Lokal JSON & Kompilasi File .exe Mandiri",
+    zzzleepBtnOpen: "Lihat Aplikasi",
 
     // Experience & Certifications Section
     secHeadingExp: "Pengalaman Kerja",
@@ -173,11 +173,11 @@ window.I18N_DICT = {
     zzzleepCardTitle: "ZZZleep",
     zzzleepCardSub: "Offline Calendar & Audio Alarm",
     zzzleepCardStatus: "OFFLINE",
-    zzzleepCardDesc: "Offline desktop calendar and audio alarm application: built-in Web Audio API & Python winsound tone generation (zero external audio files), 25/5 Pomodoro timer, 20-20-20 screen rest reminder, habit tracker, and standalone Windows desktop app (.exe).",
-    zzzleepBullet1: "Built-in Audio Tone Generation (Web Audio API & Python winsound)",
+    zzzleepCardDesc: "Native Windows desktop application for offline calendar, synthesized audio alarms (winsound), 25/5 Pomodoro timer, 20-20-20 screen rest reminder, and local JSON storage.",
+    zzzleepBullet1: "Synthesized Audio Alarm (winsound.Beep without external files)",
     zzzleepBullet2: "20-20-20 Screen Rest Reminder & 25/5 Pomodoro Timer",
-    zzzleepBullet3: "Local JSON Data Storage & Standalone Windows Desktop App (.exe)",
-    zzzleepBtnOpen: "Launch ZZZleep",
+    zzzleepBullet3: "Local JSON Storage & Standalone .exe Compilation",
+    zzzleepBtnOpen: "View Desktop App",
 
     // Experience & Certifications Section
     secHeadingExp: "Work Experience",
