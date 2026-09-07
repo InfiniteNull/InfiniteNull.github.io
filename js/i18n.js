@@ -1,7 +1,7 @@
 /**
  * i18n.js
  * Internationalization Engine (Indonesian <-> English)
- * Mengelola peralihan bahasa secara real-time pada Landing Page, SIMRS Core, DevTools Suite, Modal Workspace, dan Profil Pengembang.
+ * Mengelola peralihan bahasa secara real-time pada Landing Page, SIMRS Core, DevTools, Modal Workspace, dan Profil Pengembang.
  */
 
 window.I18N_DICT = {
@@ -37,7 +37,7 @@ window.I18N_DICT = {
     simrsBtnOpen: "Buka SIMRS",
 
     // DevTools Card
-    devtoolsCardTitle: "Dev & Data Engineering Suite",
+    devtoolsCardTitle: "Dev & Data Tools",
     devtoolsCardSub: "29 Interactive Computational Tools",
     devtoolsCardStatus: "29 MODUL",
     devtoolsCardDesc: "Platform utilitas 29 modul komputasi interaktif: kalkulasi subnetting IPv4/VLSM, generator firewall Linux/Mikrotik, data cleaner & outlier QC inspector, formula engine spreadsheet (VLOOKUP/Regex), security audit (JWT/Hash/Entropy), serta kalkulator hardware server.",
@@ -150,7 +150,7 @@ window.I18N_DICT = {
     simrsBtnOpen: "Launch SIMRS",
 
     // DevTools Card
-    devtoolsCardTitle: "Dev & Data Engineering Suite",
+    devtoolsCardTitle: "Dev & Data Tools",
     devtoolsCardSub: "29 Interactive Computational Tools",
     devtoolsCardStatus: "29 MODULES",
     devtoolsCardDesc: "Standalone platform of 29 interactive computational tools: IPv4/VLSM subnetting calculations, multi-platform Linux/Mikrotik firewall generators, data cleaning & outlier QC inspectors, spreadsheet formula engines (VLOOKUP/Regex), security audits (JWT/Hash/Entropy), and server hardware calculators.",

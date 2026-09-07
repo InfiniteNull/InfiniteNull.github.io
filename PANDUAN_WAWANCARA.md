@@ -1,5 +1,5 @@
 # BUKU SAKU & PANDUAN WAWANCARA TEKNIS PENGEMBANG
-### *Panduan Menjawab Pertanyaan Arsitektur Portofolio Software, IT Infrastructure & Data Suite*
+### *Panduan Menjawab Pertanyaan Arsitektur Portofolio Software, IT Infrastructure & Data Tools*
 **Kandidat: Rizki Ananda, S.Kom (Universitas Potensi Utama | @InfiniteNull)**
 
 Dokumen ini disiapkan khusus agar Anda (**Rizki Ananda, S.Kom**) dapat menjawab setiap pertanyaan wawancara teknis dari recruiter, hiring manager, atau lead engineer dengan percaya diri, sistematis, dan profesional berdasarkan rekam jejak nyata Anda.
@@ -16,7 +16,7 @@ Dokumen ini disiapkan khusus agar Anda (**Rizki Ananda, S.Kom**) dapat menjawab 
 > 2. ***IT Support di PT Bank Sinarmas, Tbk (Des 2023):*** *Melaksanakan PC Deployment di KC Medan Mangkubumi, meliputi perakitan desktop, instalasi OS enterprise, backup & migrasi data profil user secara aman, cable management, hingga konfigurasi peripheral terhubung ke domain internal bank.*  
 > 3. ***Ketua Tim Proyek Akhir (Kelompok 26) di MSIB Studi Independen Skilvul (Nilai 81.8):*** *Memimpin perancangan dan implementasi 95%+ kode mandiri proyek **SHUNA AI**, yaitu platform analitik data terpadu berbasis NLP TF-IDF, benchmark multi-model machine learning, simulator retensi siswa, dan peramalan time-series.*  
 > *Kompetensi saya diperkuat oleh sertifikasi **Associate Network Administrator (Komdigi RI 2026)** dan **Junior Network Administrator (Kominfo 2023)**.*  
-> *Seluruh keahlian ini saya wujudkan dalam website portofolio interaktif yang menaungi 3 proyek flagship: **SIMRS Core Enterprise (Hospital MIS Permenkes 24/2022)**, **Dev & Data Engineering Suite (29 Tools Interaktif)**, serta **SHUNA AI Data Engine**."*
+> *Seluruh keahlian ini saya wujudkan dalam website portofolio interaktif yang menaungi 3 proyek flagship: **SIMRS Core Enterprise (Hospital MIS Permenkes 24/2022)**, **Dev & Data Tools (29 Tools Interaktif)**, serta **SHUNA AI Data Engine**."*
 
 ---
 

@@ -49,7 +49,7 @@
 
 ---
 
-### 2. Dev & Data Engineering Suite
+### 2. Dev & Data Tools
 * **Live Workspace:** [infinitenull.github.io/dev-tools/](https://infinitenull.github.io/dev-tools/)
 * **Description:** Modular computational platform hosting 29 standalone tools across 4 core pillars:
   1. **Networking & Server (5 Tools):** IPv4 VLSM subnetting calculator, Linux/Mikrotik firewall rule builder, data transfer bandwidth duration estimator, RTMP/HLS bitrate & storage calculator, Linux crontab visual scheduler.
@@ -108,7 +108,7 @@ portfolio-hub/ (InfiniteNull.github.io)
 
 ### Connected Standalone Repositories
 * **[InfiniteNull/simrs-laravel](https://github.com/InfiniteNull/simrs-laravel)** — Hospital MIS application & BPJS V-Claim bridging.
-* **[InfiniteNull/dev-tools](https://github.com/InfiniteNull/dev-tools)** — 29 Interactive computational tools suite.
+* **[InfiniteNull/dev-tools](https://github.com/InfiniteNull/dev-tools)** — 29 Interactive computational tools.
 * **[InfiniteNull/SHUNA-AI](https://github.com/InfiniteNull/SHUNA-AI)** — NLP sentiment pipeline & machine learning engine (MSIB Group 26).
 * **[InfiniteNull/ZZZleep](https://github.com/InfiniteNull/ZZZleep)** — Offline desktop calendar, audio alarm & rest timer (.exe ready).
 

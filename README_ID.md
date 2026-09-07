@@ -49,7 +49,7 @@
 
 ---
 
-### 2. Dev & Data Engineering Suite
+### 2. Dev & Data Tools
 * **Live Workspace:** [infinitenull.github.io/dev-tools/](https://infinitenull.github.io/dev-tools/)
 * **Deskripsi:** Platform utilitas 29 modul komputasi mandiri yang terbagi dalam 4 pilar utama:
   1. **Jaringan & Server (5 Tools):** Kalkulator subnetting IPv4/VLSM, generator firewall Linux/Mikrotik, estimasi durasi transfer bandwidth, kalkulator bitrate & kapasitas disk streaming RTMP/HLS, visualizer crontab Linux.
@@ -93,7 +93,7 @@ portfolio-hub/ (InfiniteNull.github.io)
 
 ### Repositori Terpisah Terhubung
 * **[InfiniteNull/simrs-laravel](https://github.com/InfiniteNull/simrs-laravel)** — Aplikasi SIMRS Core Hospital MIS & BPJS V-Claim.
-* **[InfiniteNull/dev-tools](https://github.com/InfiniteNull/dev-tools)** — Suite 29 Perangkat Komputasi & Keamanan Mandiri.
+* **[InfiniteNull/dev-tools](https://github.com/InfiniteNull/dev-tools)** — 29 Alat Komputasi & Keamanan Mandiri.
 * **[InfiniteNull/SHUNA-AI](https://github.com/InfiniteNull/SHUNA-AI)** — Engine NLP Analitik Sentimen & ML (MSIB Kelompok 26).
 
 ---

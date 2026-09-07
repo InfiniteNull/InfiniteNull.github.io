@@ -158,14 +158,14 @@ window.submitTerminal = function() {
     responseHtml = isEn ? `
       <div class="text-slate-300 pl-3 border-l-2 border-slate-600 text-[10px] sm:text-xs space-y-1">
         <div>1. <strong class="text-sky-400">SIMRS Core Enterprise</strong>: Hospital MIS Permenkes 24/2022, BPJS V-Claim (<a href="https://infinitenull.github.io/simrs-laravel/" target="_blank" class="text-sky-300 underline">open ↗</a>)</div>
-        <div>2. <strong class="text-purple-400">Dev & Data Engineering Suite</strong>: 29 Modular Network, Security & Data Tools (<a href="https://infinitenull.github.io/dev-tools/" target="_blank" class="text-purple-300 underline">open ↗</a>)</div>
+        <div>2. <strong class="text-purple-400">Dev & Data Tools</strong>: 29 Modular Network, Security & Data Tools (<a href="https://infinitenull.github.io/dev-tools/" target="_blank" class="text-purple-300 underline">open ↗</a>)</div>
         <div>3. <strong class="text-emerald-400">SHUNA AI Data Engine</strong>: NLP Sentiment, Multi-Model Arena, Tabular Retention (<a href="https://infinitenull.github.io/SHUNA-AI/" target="_blank" class="text-emerald-300 underline">open ↗</a>)</div>
         <div>4. <strong class="text-amber-400">ZZZleep</strong>: Offline Desktop Calendar, Audio Alarm, & Windows App (<a href="https://infinitenull.github.io/ZZZleep/" target="_blank" class="text-amber-300 underline">open ↗</a>)</div>
       </div>
     ` : `
       <div class="text-slate-300 pl-3 border-l-2 border-slate-600 text-[10px] sm:text-xs space-y-1">
         <div>1. <strong class="text-sky-400">SIMRS Core Enterprise</strong>: Hospital MIS Permenkes 24/2022, BPJS V-Claim (<a href="https://infinitenull.github.io/simrs-laravel/" target="_blank" class="text-sky-300 underline">buka ↗</a>)</div>
-        <div>2. <strong class="text-purple-400">Dev & Data Engineering Suite</strong>: 29 Modul Komputasi Jaringan, Keamanan, & Data (<a href="https://infinitenull.github.io/dev-tools/" target="_blank" class="text-purple-300 underline">buka ↗</a>)</div>
+        <div>2. <strong class="text-purple-400">Dev & Data Tools</strong>: 29 Modul Komputasi Jaringan, Keamanan, & Data (<a href="https://infinitenull.github.io/dev-tools/" target="_blank" class="text-purple-300 underline">buka ↗</a>)</div>
         <div>3. <strong class="text-emerald-400">SHUNA AI Data Engine</strong>: NLP Sentiment, Model Arena ROC-AUC, Retensi Tabular (<a href="https://infinitenull.github.io/SHUNA-AI/" target="_blank" class="text-emerald-300 underline">buka ↗</a>)</div>
         <div>4. <strong class="text-amber-400">ZZZleep</strong>: Kalender Desktop Offline, Audio Alarm, & Aplikasi Windows (.exe) (<a href="https://infinitenull.github.io/ZZZleep/" target="_blank" class="text-amber-300 underline">buka ↗</a>)</div>
       </div>
@@ -175,7 +175,7 @@ window.submitTerminal = function() {
     responseHtml = `<div class="text-sky-400 pl-3 border-l-2 border-sky-500/50 text-[10px] sm:text-xs">${isEn ? 'Opening SIMRS Core Enterprise in new tab:' : 'Membuka SIMRS Core Enterprise di tab baru:'} <a href="https://infinitenull.github.io/simrs-laravel/" target="_blank" class="underline">https://infinitenull.github.io/simrs-laravel/</a> ↗</div>`;
   } else if (cmd === 'devtools' || cmd === 'tools') {
     window.open('https://infinitenull.github.io/dev-tools/', '_blank');
-    responseHtml = `<div class="text-purple-400 pl-3 border-l-2 border-purple-500/50 text-[10px] sm:text-xs">${isEn ? 'Opening Dev & Data Engineering Suite in new tab:' : 'Membuka Dev & Data Engineering Suite di tab baru:'} <a href="https://infinitenull.github.io/dev-tools/" target="_blank" class="underline">https://infinitenull.github.io/dev-tools/</a> ↗</div>`;
+    responseHtml = `<div class="text-purple-400 pl-3 border-l-2 border-purple-500/50 text-[10px] sm:text-xs">${isEn ? 'Opening Dev & Data Tools in new tab:' : 'Membuka Dev & Data Tools di tab baru:'} <a href="https://infinitenull.github.io/dev-tools/" target="_blank" class="underline">https://infinitenull.github.io/dev-tools/</a> ↗</div>`;
   } else if (cmd === 'shuna' || cmd === 'shuna-ai' || cmd === 'ai' || cmd === 'nlp' || cmd === 'ml') {
     window.open('https://infinitenull.github.io/SHUNA-AI/', '_blank');
     responseHtml = `<div class="text-emerald-400 pl-3 border-l-2 border-emerald-500/50 text-[10px] sm:text-xs">${isEn ? 'Opening SHUNA AI Data Engine in new tab:' : 'Membuka SHUNA AI Data Engine di tab baru:'} <a href="https://infinitenull.github.io/SHUNA-AI/" target="_blank" class="underline">https://infinitenull.github.io/SHUNA-AI/</a> ↗</div>`;
@@ -232,7 +232,7 @@ window.openInterviewGuide = function() {
       </div>
 
       <div class="p-4 rounded-xl bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-2">
-        <h4 class="font-bold text-slate-900 dark:text-white text-sm">2. Dev & Data Engineering Suite (29 Tools)</h4>
+        <h4 class="font-bold text-slate-900 dark:text-white text-sm">2. Dev & Data Tools (29 Tools)</h4>
         <p class="text-xs text-slate-600 dark:text-slate-300">
           High-performance modular utilities: 32-bit IPv4 bitwise subnetting & VLSM, Linux UFW/iptables/Mikrotik firewall generators, data imputation & Tukey's IQR outlier inspections, and security cryptography tools.
         </p>
@@ -263,7 +263,7 @@ window.openInterviewGuide = function() {
       </div>
 
       <div class="p-4 rounded-xl bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-2">
-        <h4 class="font-bold text-slate-900 dark:text-white text-sm">2. Dev &amp; Data Engineering Suite (29 Modul Komputasi)</h4>
+        <h4 class="font-bold text-slate-900 dark:text-white text-sm">2. Dev &amp; Data Tools (29 Modul Komputasi)</h4>
         <p class="text-xs text-slate-600 dark:text-slate-300">
           Platform utilitas perkakas mandiri untuk manajemen jaringan IPv4, hardening firewall Linux/Mikrotik, manipulasi data kotor (Data Cleaner &amp; Outlier QC Tukey IQR), spreadsheet formula engine (XLOOKUP / Pivot), dan audit keamanan VAPT.
         </p>
