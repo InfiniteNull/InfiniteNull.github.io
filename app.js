@@ -106,25 +106,27 @@ window.submitTerminal = function() {
     responseHtml = isEn ? `
       <div class="text-slate-300 pl-3 border-l-2 border-slate-600 text-[10px] sm:text-xs space-y-1">
         <div class="font-bold text-sky-400">Available Interactive Commands:</div>
-        <div>• <span class="text-emerald-400 font-bold">whoami</span>: Developer profile & credentials summary</div>
-        <div>• <span class="text-emerald-400 font-bold">stack</span>: Backend, frontend, & infrastructure tech stack</div>
-        <div>• <span class="text-emerald-400 font-bold">projects</span>: List of 3 flagship production systems</div>
+        <div>• <span class="text-emerald-400 font-bold">whoami</span>: Developer profile &amp; credentials summary</div>
+        <div>• <span class="text-emerald-400 font-bold">stack</span>: Backend, frontend, &amp; infrastructure tech stack</div>
+        <div>• <span class="text-emerald-400 font-bold">projects</span>: List of 4 standalone production applications</div>
         <div>• <span class="text-emerald-400 font-bold">simrs</span>: Open SIMRS Core Enterprise (infinitenull.github.io/simrs-laravel/)</div>
         <div>• <span class="text-emerald-400 font-bold">devtools</span>: Open 29 Web Tools workspace (infinitenull.github.io/dev-tools/)</div>
         <div>• <span class="text-emerald-400 font-bold">shuna</span>: Open SHUNA AI engine (infinitenull.github.io/SHUNA-AI/)</div>
-        <div>• <span class="text-emerald-400 font-bold">contact</span>: Contact information & GitHub</div>
+        <div>• <span class="text-emerald-400 font-bold">zzzleep</span>: Open ZZZleep showcase (infinitenull.github.io/ZZZleep/)</div>
+        <div>• <span class="text-emerald-400 font-bold">contact</span>: Contact information &amp; GitHub</div>
         <div>• <span class="text-emerald-400 font-bold">clear</span>: Clear terminal screen</div>
       </div>
     ` : `
       <div class="text-slate-300 pl-3 border-l-2 border-slate-600 text-[10px] sm:text-xs space-y-1">
         <div class="font-bold text-sky-400">Perintah Interaktif Tersedia (Quick Commands):</div>
         <div>• <span class="text-emerald-400 font-bold">whoami</span>: Ringkasan profil pengembang</div>
-        <div>• <span class="text-emerald-400 font-bold">stack</span>: Tech stack backend, frontend, & sistem</div>
-        <div>• <span class="text-emerald-400 font-bold">projects</span>: Daftar 3 sistem produksi utama</div>
+        <div>• <span class="text-emerald-400 font-bold">stack</span>: Tech stack backend, frontend, &amp; sistem</div>
+        <div>• <span class="text-emerald-400 font-bold">projects</span>: Daftar 4 aplikasi produksi utama</div>
         <div>• <span class="text-emerald-400 font-bold">simrs</span>: Buka aplikasi SIMRS Core (infinitenull.github.io/simrs-laravel/)</div>
         <div>• <span class="text-emerald-400 font-bold">devtools</span>: Buka workspace 29 Web Tools (infinitenull.github.io/dev-tools/)</div>
         <div>• <span class="text-emerald-400 font-bold">shuna</span>: Buka engine SHUNA AI (infinitenull.github.io/SHUNA-AI/)</div>
-        <div>• <span class="text-emerald-400 font-bold">contact</span>: Informasi kontak & GitHub</div>
+        <div>• <span class="text-emerald-400 font-bold">zzzleep</span>: Buka showcase ZZZleep (infinitenull.github.io/ZZZleep/)</div>
+        <div>• <span class="text-emerald-400 font-bold">contact</span>: Informasi kontak &amp; GitHub</div>
         <div>• <span class="text-emerald-400 font-bold">clear</span>: Bersihkan layar terminal</div>
       </div>
     `;
@@ -158,16 +160,16 @@ window.submitTerminal = function() {
     responseHtml = isEn ? `
       <div class="text-slate-300 pl-3 border-l-2 border-slate-600 text-[10px] sm:text-xs space-y-1">
         <div>1. <strong class="text-sky-400">SIMRS Core Enterprise</strong>: Hospital MIS Permenkes 24/2022, BPJS V-Claim (<a href="https://infinitenull.github.io/simrs-laravel/" target="_blank" class="text-sky-300 underline">open ↗</a>)</div>
-        <div>2. <strong class="text-purple-400">Dev & Data Tools</strong>: 29 Modular Network, Security & Data Tools (<a href="https://infinitenull.github.io/dev-tools/" target="_blank" class="text-purple-300 underline">open ↗</a>)</div>
+        <div>2. <strong class="text-purple-400">Dev &amp; Data Tools</strong>: 29 Modular Network, Security &amp; Data Tools (<a href="https://infinitenull.github.io/dev-tools/" target="_blank" class="text-purple-300 underline">open ↗</a>)</div>
         <div>3. <strong class="text-emerald-400">SHUNA AI Data Engine</strong>: NLP Sentiment, Multi-Model Arena, Tabular Retention (<a href="https://infinitenull.github.io/SHUNA-AI/" target="_blank" class="text-emerald-300 underline">open ↗</a>)</div>
-        <div>4. <strong class="text-amber-400">ZZZleep</strong>: Windows Desktop App, Audio Alarm & Rest Timer (<a href="https://infinitenull.github.io/ZZZleep/" target="_blank" class="text-amber-300 underline">screenshots ↗</a>)</div>
+        <div>4. <strong class="text-amber-400">ZZZleep</strong>: Windows Desktop App v1.1.0 (<a href="https://infinitenull.github.io/ZZZleep/" target="_blank" class="text-amber-300 underline">showcase ↗</a> • <a href="https://github.com/InfiniteNull/ZZZleep/raw/main/bin/ZZZleep.exe" target="_blank" class="text-emerald-400 underline">download .exe ↗</a>)</div>
       </div>
     ` : `
       <div class="text-slate-300 pl-3 border-l-2 border-slate-600 text-[10px] sm:text-xs space-y-1">
         <div>1. <strong class="text-sky-400">SIMRS Core Enterprise</strong>: Hospital MIS Permenkes 24/2022, BPJS V-Claim (<a href="https://infinitenull.github.io/simrs-laravel/" target="_blank" class="text-sky-300 underline">buka ↗</a>)</div>
-        <div>2. <strong class="text-purple-400">Dev & Data Tools</strong>: 29 Modul Komputasi Jaringan, Keamanan, & Data (<a href="https://infinitenull.github.io/dev-tools/" target="_blank" class="text-purple-300 underline">buka ↗</a>)</div>
+        <div>2. <strong class="text-purple-400">Dev &amp; Data Tools</strong>: 29 Modul Komputasi Jaringan, Keamanan, &amp; Data (<a href="https://infinitenull.github.io/dev-tools/" target="_blank" class="text-purple-300 underline">buka ↗</a>)</div>
         <div>3. <strong class="text-emerald-400">SHUNA AI Data Engine</strong>: NLP Sentiment, Model Arena ROC-AUC, Retensi Tabular (<a href="https://infinitenull.github.io/SHUNA-AI/" target="_blank" class="text-emerald-300 underline">buka ↗</a>)</div>
-        <div>4. <strong class="text-amber-400">ZZZleep</strong>: Aplikasi Desktop Windows (.exe), Audio Alarm & Timer Istirahat (<a href="https://infinitenull.github.io/ZZZleep/" target="_blank" class="text-amber-300 underline">screenshot ↗</a>)</div>
+        <div>4. <strong class="text-amber-400">ZZZleep</strong>: Aplikasi Desktop Windows v1.1.0 (.exe) (<a href="https://infinitenull.github.io/ZZZleep/" target="_blank" class="text-amber-300 underline">showcase ↗</a> • <a href="https://github.com/InfiniteNull/ZZZleep/raw/main/bin/ZZZleep.exe" target="_blank" class="text-emerald-400 underline">unduh .exe ↗</a>)</div>
       </div>
     `;
   } else if (cmd === 'simrs' || cmd === 'simrs-laravel') {
@@ -246,9 +248,9 @@ window.openInterviewGuide = function() {
       </div>
 
       <div class="p-4 rounded-xl bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-2">
-        <h4 class="font-bold text-slate-900 dark:text-white text-sm">4. ZZZleep (Desktop Calendar &amp; Audio Alarm)</h4>
+        <h4 class="font-bold text-slate-900 dark:text-white text-sm">4. ZZZleep (Desktop Calendar &amp; Audio Alarm v1.1.0)</h4>
         <p class="text-xs text-slate-600 dark:text-slate-300">
-          Built as a desktop tool: Python <code>winsound</code> integration for synthetic audio alarms without external audio files, 20-20-20 screen rest timer, Pomodoro focus engine (25/5), and local JSON data storage.
+          Standalone desktop application featuring modern left sidebar layout, 5 synthesized harmonic audio alarm tones (Python <code>winsound</code>), circular animated progress rings for Pomodoro (25/5) and 20-20-20 eye rest timers, anti-error dual spinbox time picker, mini monthly calendar, dark/light mode, and GitHub auto-update synchronization.
         </p>
       </div>
     </div>
@@ -277,9 +279,9 @@ window.openInterviewGuide = function() {
       </div>
 
       <div class="p-4 rounded-xl bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-2">
-        <h4 class="font-bold text-slate-900 dark:text-white text-sm">4. ZZZleep (Desktop Calendar &amp; Audio Alarm)</h4>
+        <h4 class="font-bold text-slate-900 dark:text-white text-sm">4. ZZZleep (Desktop Calendar &amp; Audio Alarm v1.1.0)</h4>
         <p class="text-xs text-slate-600 dark:text-slate-300">
-          Aplikasi desktop untuk produktivitas kerja: alarm nada sintetis audio harmonis (winsound) tanpa dependensi file suara, timer Pomodoro (25/5), pengingat istirahat layar 20-20-20, serta penyimpanan preferensi dan jadwal dalam basis data lokal JSON.
+          Aplikasi desktop manajemen waktu mandiri dengan navigasi sidebar kiri modern, 5 pilihan nada audio harmonis sintetis (Python <code>winsound</code>), diagram progress melingkar interaktif (Pomodoro 25/5 &amp; istirahat mata 20-20-20), pemilih waktu anti-error (tanda ':' terkunci), kalender bulanan mini, tema gelap/terang, dan sinkronisasi pembaruan otomatis GitHub.
         </p>
       </div>
     </div>

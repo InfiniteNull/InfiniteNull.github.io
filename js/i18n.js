@@ -60,10 +60,11 @@ window.I18N_DICT = {
     zzzleepCardTitle: "ZZZleep",
     zzzleepCardSub: "Desktop Calendar & Audio Alarm",
     zzzleepCardStatus: "DESKTOP",
-    zzzleepCardDesc: "Aplikasi desktop manajemen waktu: 5 pilihan nada audio sintetis (winsound), timer Pomodoro 25/5, pengingat istirahat mata 20-20-20 fleksibel, dukungan dwibahasa & tema gelap/terang, serta auto-update GitHub.",
-    zzzleepBullet1: "Alarm audio tanpa file suara eksternal (winsound.Beep)",
-    zzzleepBullet2: "Pengingat Istirahat Layar 20-20-20 & Timer Pomodoro 25/5",
-    zzzleepBullet3: "Penyimpanan data lokal JSON & auto-update GitHub",
+    zzzleepCardDesc: "Aplikasi desktop manajemen waktu: sidebar layout modern, 5 pilihan nada audio sintetis (winsound), timer Pomodoro 25/5 & lingkaran progres, pengingat istirahat mata 20-20-20 fleksibel, input waktu anti-error, kalender bulanan, serta auto-update GitHub.",
+    zzzleepBullet1: "Sidebar navigasi modern & input waktu anti-error (tanda ':' terkunci)",
+    zzzleepBullet2: "Lingkaran Progres Pomodoro (25/5) & Pengingat Istirahat Mata 20-20-20",
+    zzzleepBullet3: "5 nada audio sintetis, kalender bulanan, & auto-update GitHub",
+    zzzleepBtnDownload: "Unduh .exe",
     zzzleepBtnOpen: "Buka Showcase",
 
     // Experience & Certifications Section
@@ -90,8 +91,6 @@ window.I18N_DICT = {
     cert2Issuer: "BBPSDMP Kominfo (2023)",
     cert2Desc: "Instalasi jaringan komputer lokal (LAN), manajemen sistem operasi Linux / Nginx, dan pemeliharaan server data.",
 
-    verifiedLabel: "TERVERIFIKASI",
-
     // Technical Interview Guide Modal
     modalInterviewTitle: "Panduan Teknis & Arsitektur",
     modalInterviewSub: "Dokumentasi Standar Rekayasa & Pertanyaan Wawancara",
@@ -104,7 +103,7 @@ window.I18N_DICT = {
       <div class="font-bold text-sky-400">Perintah Interaktif Tersedia (Quick Commands):</div>
       <div>• <span class="text-emerald-400 font-bold">whoami</span>: Ringkasan profil pengembang</div>
       <div>• <span class="text-emerald-400 font-bold">stack</span>: Tech stack backend, frontend, &amp; sistem</div>
-      <div>• <span class="text-emerald-400 font-bold">projects</span>: Daftar 4 sistem produksi utama</div>
+      <div>• <span class="text-emerald-400 font-bold">projects</span>: Daftar 4 aplikasi produksi utama</div>
       <div>• <span class="text-emerald-400 font-bold">simrs</span>: Buka aplikasi SIMRS Core Enterprise</div>
       <div>• <span class="text-emerald-400 font-bold">devtools</span>: Buka workspace 29 Web Tools</div>
       <div>• <span class="text-emerald-400 font-bold">shuna</span>: Buka engine analitik SHUNA AI</div>
@@ -173,10 +172,11 @@ window.I18N_DICT = {
     zzzleepCardTitle: "ZZZleep",
     zzzleepCardSub: "Desktop Calendar & Audio Alarm",
     zzzleepCardStatus: "DESKTOP",
-    zzzleepCardDesc: "Desktop time-management application: 5 synthesized audio alarm tones (winsound), 25/5 Pomodoro timer, toggleable 20-20-20 screen rest reminder, bilingual & dark/light theme support, and GitHub auto-updates.",
-    zzzleepBullet1: "Synthesized audio alarms without external audio files (winsound.Beep)",
-    zzzleepBullet2: "20-20-20 Screen Rest Reminder & 25/5 Pomodoro Timer",
-    zzzleepBullet3: "Local JSON data storage & GitHub auto-update",
+    zzzleepCardDesc: "Desktop time-management application: modern sidebar navigation, 5 synthesized audio alarm tones (winsound), circular progress Pomodoro (25/5) & 20-20-20 eye rest timers, anti-error time picker, mini monthly calendar, and GitHub auto-updates.",
+    zzzleepBullet1: "Modern sidebar layout & anti-error time picker (fixed ':' separator)",
+    zzzleepBullet2: "Circular progress rings for Pomodoro (25/5) & 20-20-20 Eye Rest",
+    zzzleepBullet3: "5 synthesized alarm tones, monthly calendar, & GitHub auto-update",
+    zzzleepBtnDownload: "Download .exe",
     zzzleepBtnOpen: "Open Showcase",
 
     // Experience & Certifications Section
@@ -203,8 +203,6 @@ window.I18N_DICT = {
     cert2Issuer: "BBPSDMP Kominfo (2023)",
     cert2Desc: "Local Area Network (LAN) installation, Linux / Nginx server administration, and data server maintenance.",
 
-    verifiedLabel: "VERIFIED",
-
     // Technical Interview Guide Modal
     modalInterviewTitle: "Technical & Architecture Guide",
     modalInterviewSub: "Engineering Standards & Interview Readiness Documentation",
@@ -217,7 +215,7 @@ window.I18N_DICT = {
       <div class="font-bold text-sky-400">Available Interactive Commands:</div>
       <div>• <span class="text-emerald-400 font-bold">whoami</span>: Developer profile &amp; credentials summary</div>
       <div>• <span class="text-emerald-400 font-bold">stack</span>: Backend, frontend, &amp; infrastructure tech stack</div>
-      <div>• <span class="text-emerald-400 font-bold">projects</span>: List of 4 flagship production systems</div>
+      <div>• <span class="text-emerald-400 font-bold">projects</span>: List of 4 standalone production applications</div>
       <div>• <span class="text-emerald-400 font-bold">simrs</span>: Open SIMRS Core Enterprise application</div>
       <div>• <span class="text-emerald-400 font-bold">devtools</span>: Open 29 Web Tools workspace</div>
       <div>• <span class="text-emerald-400 font-bold">shuna</span>: Open SHUNA AI analytics engine</div>
@@ -358,6 +356,31 @@ window.setLanguage = function(lang) {
   const shunaBtnOpen = document.getElementById('shunaBtnOpen');
   if (shunaBtnOpen) shunaBtnOpen.textContent = dict.shunaBtnOpen;
 
+  // ZZZleep Card
+  const zzzleepCardTitle = document.getElementById('zzzleepCardTitle');
+  if (zzzleepCardTitle) zzzleepCardTitle.textContent = dict.zzzleepCardTitle;
+
+  const zzzleepCardSub = document.getElementById('zzzleepCardSub');
+  if (zzzleepCardSub) zzzleepCardSub.textContent = dict.zzzleepCardSub;
+
+  const zzzleepCardDesc = document.getElementById('zzzleepCardDesc');
+  if (zzzleepCardDesc) zzzleepCardDesc.textContent = dict.zzzleepCardDesc;
+
+  const zzzleepBullet1 = document.getElementById('zzzleepBullet1');
+  if (zzzleepBullet1) zzzleepBullet1.textContent = dict.zzzleepBullet1;
+
+  const zzzleepBullet2 = document.getElementById('zzzleepBullet2');
+  if (zzzleepBullet2) zzzleepBullet2.textContent = dict.zzzleepBullet2;
+
+  const zzzleepBullet3 = document.getElementById('zzzleepBullet3');
+  if (zzzleepBullet3) zzzleepBullet3.textContent = dict.zzzleepBullet3;
+
+  const zzzleepBtnDownload = document.getElementById('zzzleepBtnDownload');
+  if (zzzleepBtnDownload) zzzleepBtnDownload.textContent = dict.zzzleepBtnDownload;
+
+  const zzzleepBtnOpen = document.getElementById('zzzleepBtnOpen');
+  if (zzzleepBtnOpen) zzzleepBtnOpen.textContent = dict.zzzleepBtnOpen;
+
   // 4. Experience Section
   const secHeadingExp = document.getElementById('secHeadingExp');
   if (secHeadingExp) {
@@ -408,17 +431,11 @@ window.setLanguage = function(lang) {
   const cert1Desc = document.getElementById('cert1Desc');
   if (cert1Desc) cert1Desc.textContent = dict.cert1Desc;
 
-  const cert1Verified = document.getElementById('cert1Verified');
-  if (cert1Verified) cert1Verified.textContent = dict.verifiedLabel;
-
   const cert2Title = document.getElementById('cert2Title');
   if (cert2Title) cert2Title.textContent = dict.cert2Title;
 
   const cert2Desc = document.getElementById('cert2Desc');
   if (cert2Desc) cert2Desc.textContent = dict.cert2Desc;
-
-  const cert2Verified = document.getElementById('cert2Verified');
-  if (cert2Verified) cert2Verified.textContent = dict.verifiedLabel;
 
   // 6. Technical Interview Guide Modal
   const modalInterviewTitle = document.getElementById('modalInterviewTitle');

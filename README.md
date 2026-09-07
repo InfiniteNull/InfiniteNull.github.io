@@ -81,14 +81,16 @@
 
 ### 4. ZZZleep
 * **Live Showcase:** [infinitenull.github.io/ZZZleep/](https://infinitenull.github.io/ZZZleep/)
-* **Description:** Desktop calendar, audio alarm, and screen rest reminder application with local JSON storage and modular architecture.
+* **Direct Binary Download:** [`bin/ZZZleep.exe`](https://github.com/InfiniteNull/ZZZleep/raw/main/bin/ZZZleep.exe)
+* **Description:** Desktop time-management application featuring modern sidebar navigation, 5 synthesized harmonic audio alarms, circular animated progress rings, anti-error dual time picker, mini monthly calendar, and GitHub auto-updates.
 * **Key Capabilities:**
-  * **Synthesized Audio Tones:** Tone synthesis via `winsound` audio driver, eliminating external audio file dependencies.
-  * **20-20-20 Screen Rest Reminder:** Automated 20-minute interval timer to reduce digital eye strain.
-  * **Pomodoro Timer (25/5):** Work/break interval timer with audio notification.
-  * **Habit Tracker:** Daily routine checklist with streak counter.
+  * **Sidebar Navigation & Modern UI:** Dynamic responsive view switching with Dark/Light and bilingual (ID/EN) toggles.
+  * **Synthesized Audio Tones:** 5 distinct harmonic frequencies via `winsound.Beep` without external audio file dependencies.
+  * **Circular Progress Timers:** Canvas-rendered circular rings for Pomodoro (25/5) and 20-20-20 Screen Eye Rest reminders.
+  * **Anti-Error Time Picker:** Dedicated dual spinboxes for hours and minutes with locked `:` separator.
+  * **Auto-Update Synchronization:** Release dialog comparing versions with direct binary download link.
   * **Local Data Storage:** Automatic local JSON data persistence.
-* **Tech Stack:** Python 3, Tkinter GUI, winsound, PyInstaller.
+* **Tech Stack:** Python 3, Tkinter GUI, winsound, PyInstaller (`ZZZleep.exe`).
 * **Repository:** [`InfiniteNull/ZZZleep`](https://github.com/InfiniteNull/ZZZleep)
 
 ## Directory Structure
