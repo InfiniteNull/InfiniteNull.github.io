@@ -57,13 +57,13 @@ window.I18N_DICT = {
     shunaBackLink: "Kembali ke Beranda",
 
     // ZZZleep Card
-    zzzleepCardTitle: "ZZZleep Suite",
-    zzzleepCardSub: "Offline Calendar & Audio Alarm Synth",
-    zzzleepCardStatus: "100% OFFLINE",
-    zzzleepCardDesc: "Suite manajemen waktu dan kalender offline mandiri: audio alarm synthesizer presisi (Web Audio API & Winsound), fokus timer Pomodoro 25/5, pengingat kesehatan mata 20-20-20, pelacak rutinitas harian, serta aplikasi desktop native Windows (.EXE) bebas telemetri.",
-    zzzleepBullet1: "Synthesizer Audio Harmoni Offline (Web Audio API & Python winsound)",
-    zzzleepBullet2: "Pelindung Mata Digital 20-20-20, Pomodoro Timer, & Streak Rutinitas",
-    zzzleepBullet3: "Standalone Windows Native App (.EXE) & Zero-Telemetry JSON Vault",
+    zzzleepCardTitle: "ZZZleep",
+    zzzleepCardSub: "Kalender Desktop & Alarm Offline",
+    zzzleepCardStatus: "OFFLINE",
+    zzzleepCardDesc: "Aplikasi kalender dan alarm audio offline: generator nada dering Web Audio API & Python winsound (tanpa file mp3 eksternal), timer Pomodoro 25/5, pengingat istirahat mata 20-20-20, pelacak rutinitas, dan aplikasi desktop Windows (.exe).",
+    zzzleepBullet1: "Generator Nada Dering Sintetis (Web Audio API & Python winsound)",
+    zzzleepBullet2: "Pengingat Istirahat Layar 20-20-20 & Timer Pomodoro 25/5",
+    zzzleepBullet3: "Penyimpanan Data Lokal JSON & Aplikasi Desktop Windows (.exe)",
     zzzleepBtnOpen: "Buka ZZZleep",
 
     // Experience & Certifications Section
@@ -108,7 +108,7 @@ window.I18N_DICT = {
       <div>• <span class="text-emerald-400 font-bold">simrs</span>: Buka aplikasi SIMRS Core Enterprise</div>
       <div>• <span class="text-emerald-400 font-bold">devtools</span>: Buka workspace 29 Web Tools</div>
       <div>• <span class="text-emerald-400 font-bold">shuna</span>: Buka engine analitik SHUNA AI</div>
-      <div>• <span class="text-emerald-400 font-bold">zzzleep</span>: Buka ZZZleep Suite (Kalender, Alarm, & .EXE)</div>
+      <div>• <span class="text-emerald-400 font-bold">zzzleep</span>: Buka aplikasi ZZZleep (.exe / offline)</div>
       <div>• <span class="text-emerald-400 font-bold">contact</span>: Informasi kontak &amp; GitHub</div>
       <div>• <span class="text-emerald-400 font-bold">clear</span>: Bersihkan layar terminal</div>
     `,
@@ -170,13 +170,13 @@ window.I18N_DICT = {
     shunaBackLink: "Back to Home",
 
     // ZZZleep Card
-    zzzleepCardTitle: "ZZZleep Suite",
-    zzzleepCardSub: "Offline Calendar & Audio Alarm Synth",
-    zzzleepCardStatus: "100% OFFLINE",
-    zzzleepCardDesc: "Standalone offline time management and desktop calendar suite: precision synthesized audio alarms (Web Audio API & Winsound), 25/5 Pomodoro focus timer, 20-20-20 digital eye strain guardian, habit streak tracker, and native Windows desktop (.EXE) application with zero telemetry.",
-    zzzleepBullet1: "Offline Harmonic Audio Synthesizer (Web Audio API & Python winsound)",
-    zzzleepBullet2: "20-20-20 Digital Eye Strain Rest, Pomodoro Timer, & Habit Streaks",
-    zzzleepBullet3: "Standalone Windows Native App (.EXE) & Zero-Telemetry JSON Vault",
+    zzzleepCardTitle: "ZZZleep",
+    zzzleepCardSub: "Offline Calendar & Audio Alarm",
+    zzzleepCardStatus: "OFFLINE",
+    zzzleepCardDesc: "Offline desktop calendar and audio alarm application: built-in Web Audio API & Python winsound tone generation (zero external audio files), 25/5 Pomodoro timer, 20-20-20 screen rest reminder, habit tracker, and standalone Windows desktop app (.exe).",
+    zzzleepBullet1: "Built-in Audio Tone Generation (Web Audio API & Python winsound)",
+    zzzleepBullet2: "20-20-20 Screen Rest Reminder & 25/5 Pomodoro Timer",
+    zzzleepBullet3: "Local JSON Data Storage & Standalone Windows Desktop App (.exe)",
     zzzleepBtnOpen: "Launch ZZZleep",
 
     // Experience & Certifications Section

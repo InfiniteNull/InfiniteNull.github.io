@@ -79,16 +79,16 @@
 
 ---
 
-### 4. ZZZleep Suite
+### 4. ZZZleep
 * **Live Workspace:** [infinitenull.github.io/ZZZleep/](https://infinitenull.github.io/ZZZleep/)
-* **Description:** Standalone offline time management, interactive desktop calendar, and synthesized precision audio alarm suite with 100% data privacy and zero telemetry.
+* **Description:** Offline desktop calendar, audio alarm, and screen rest reminder application with local JSON storage and standalone Windows `.exe` build support.
 * **Key Capabilities:**
-  * **Zero External Audio Dependencies:** Harmonic alarm tone synthesis using browser Web Audio API oscillator nodes and Windows `winsound` driver (C-Major gentle chord, 880Hz retro beep, acoustic bell).
-  * **Interactive Monthly Calendar:** Event scheduler, deadline matrix, and local routine planner.
-  * **20-20-20 Digital Eye Strain Rest Guardian:** Automated 20-minute interval timer prompting users to look 20 feet away for 20 seconds.
-  * **Pomodoro Focus Timer:** 25/5 interval engine with session logs and audio chime.
-  * **Daily Habit Streaks & Privacy Vault:** LocalStorage and standalone JSON export/import data ownership.
-  * **Native Windows Application:** Ready-to-run Python GUI compiled into standalone `.EXE` via PyInstaller.
+  * **Built-in Audio Tone Generation:** Tone synthesis via Web Audio API oscillators (browser) and `winsound` (Windows Python), eliminating external `.mp3` dependencies.
+  * **Monthly Calendar & Agenda:** Event schedule tracker with local persistent storage.
+  * **20-20-20 Screen Rest Reminder:** Automated 20-minute interval timer to reduce digital eye strain.
+  * **Pomodoro Timer (25/5):** Work/break interval timer with audio alert.
+  * **Habit Tracker:** Daily routine checklist with streak counter.
+  * **Desktop Executable (.exe):** Standalone Tkinter GUI compiled with PyInstaller.
 * **Tech Stack:** Python 3, Tkinter GUI, JavaScript ES6+, Web Audio API, Tailwind CSS, PyInstaller.
 * **Repository:** [`InfiniteNull/ZZZleep`](https://github.com/InfiniteNull/ZZZleep)
 
@@ -110,7 +110,7 @@ portfolio-hub/ (InfiniteNull.github.io)
 * **[InfiniteNull/simrs-laravel](https://github.com/InfiniteNull/simrs-laravel)** — Hospital MIS application & BPJS V-Claim bridging.
 * **[InfiniteNull/dev-tools](https://github.com/InfiniteNull/dev-tools)** — 29 Interactive computational tools suite.
 * **[InfiniteNull/SHUNA-AI](https://github.com/InfiniteNull/SHUNA-AI)** — NLP sentiment pipeline & machine learning engine (MSIB Group 26).
-* **[InfiniteNull/ZZZleep](https://github.com/InfiniteNull/ZZZleep)** — Smart offline desktop calendar, precision synthesized alarm & routine guardian (.EXE ready).
+* **[InfiniteNull/ZZZleep](https://github.com/InfiniteNull/ZZZleep)** — Offline desktop calendar, audio alarm & rest timer (.exe ready).
 
 ---
 
