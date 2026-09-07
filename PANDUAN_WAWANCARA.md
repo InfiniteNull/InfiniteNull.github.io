@@ -89,3 +89,18 @@ Dokumen ini disiapkan khusus agar Anda (**Rizki Ananda, S.Kom**) dapat menjawab 
 > *1. **Formula Pencarian:** Memahami mekanisme `VLOOKUP` (exact match `FALSE`), `HLOOKUP`, serta kombinasi modern `INDEX & MATCH` dan `XLOOKUP` untuk pencarian dua arah tanpa batasan posisi kolom.*  
 > *2. **Agregasi & Logika Kondisional:** Mahir dalam `SUMIFS`, `COUNTIFS`, `AVERAGEIFS`, dan nested `IF/IFS` dengan handling error `IFERROR`.*  
 > *3. **Pivot Table & Reshaping:** Memahami konsep Pivot Matrix (Rows, Columns, Values, Aggregation: SUM/AVG/COUNT) dan dapat mereplikasi logikanya ke dalam SQL `GROUP BY` maupun `pandas.pivot_table()`."*
+
+
+---
+
+## IV. Proyek 4: ZZZleep Suite (Kalender Offline, Audio Alarm Synth, & Standalone Windows .EXE)
+
+### 1. Pertanyaan: Apa motivasi arsitektural dan masalah yang dipecahkan oleh ZZZleep Suite?
+**Jawaban Profesional:**
+> "Banyak aplikasi pengingat modern bergantung pada server eksternal, membutuhkan koneksi internet, mengumpulkan data pengguna (telemetri), atau mengalami kegagalan audio jika file suara `.mp3` eksternal hilang atau tidak termuat (*broken asset*).
+> **ZZZleep Suite** dirancang dengan prinsip **100% Offline Autonomy & Zero Telemetry**. Seluruh suara alarm disintesis secara matematis menggunakan gelombang osilator (*Web Audio API OscillatorNode* di web dan driver native `winsound.Beep` di Python). Hal ini menjamin audio berbunyi 100% presisi tanpa berkas media eksternal. Selain itu, sistem menyertakan pelindung mata digital aturan 20-20-20, Pomodoro timer, kalender bulanan, dan dapat dikompilasi menjadi aplikasi desktop native Windows `.exe` mandiri via PyInstaller."
+
+### 2. Pertanyaan: Bagaimana generator audio synthesizer bekerja tanpa berkas media `.mp3` atau `.wav`?
+**Jawaban Profesional:**
+> "Pada sisi web, saya menggunakan **Web Audio API**: membuat `AudioContext`, menghubungkan `OscillatorNode` (tipe `sine` dan `triangle`) dengan modulasi frekuensi tangga nada harmonis (misal akor C-Mayor C5 523Hz ➔ E5 659Hz ➔ G5 784Hz ➔ C6 1046Hz), lalu dialirkan ke `GainNode` dengan kurva pembusukan eksponensial (*exponentialRampToValueAtTime*) untuk menghasilkan resonansi bel akustik yang halus tanpa distorsi (*clipping*).
+> Pada sisi desktop Python, saya memanfaatkan modul native `winsound.Beep(frequency, duration)` yang dieksekusi di *background daemon thread* sehingga UI Tkinter tetap responsif 60 FPS tanpa freezing saat alarm berbunyi."

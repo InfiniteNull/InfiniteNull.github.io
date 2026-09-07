@@ -56,6 +56,16 @@ window.I18N_DICT = {
     shunaBtnOpen: "Buka SHUNA AI",
     shunaBackLink: "Kembali ke Beranda",
 
+    // ZZZleep Card
+    zzzleepCardTitle: "ZZZleep Suite",
+    zzzleepCardSub: "Offline Calendar & Audio Alarm Synth",
+    zzzleepCardStatus: "100% OFFLINE",
+    zzzleepCardDesc: "Suite manajemen waktu dan kalender offline mandiri: audio alarm synthesizer presisi (Web Audio API & Winsound), fokus timer Pomodoro 25/5, pengingat kesehatan mata 20-20-20, pelacak rutinitas harian, serta aplikasi desktop native Windows (.EXE) bebas telemetri.",
+    zzzleepBullet1: "Synthesizer Audio Harmoni Offline (Web Audio API & Python winsound)",
+    zzzleepBullet2: "Pelindung Mata Digital 20-20-20, Pomodoro Timer, & Streak Rutinitas",
+    zzzleepBullet3: "Standalone Windows Native App (.EXE) & Zero-Telemetry JSON Vault",
+    zzzleepBtnOpen: "Buka ZZZleep",
+
     // Experience & Certifications Section
     secHeadingExp: "Pengalaman Kerja",
     secSubExp: "Rekam jejak praktis di bidang riset infrastruktur server dan operasional IT:",
@@ -94,10 +104,11 @@ window.I18N_DICT = {
       <div class="font-bold text-sky-400">Perintah Interaktif Tersedia (Quick Commands):</div>
       <div>• <span class="text-emerald-400 font-bold">whoami</span>: Ringkasan profil pengembang</div>
       <div>• <span class="text-emerald-400 font-bold">stack</span>: Tech stack backend, frontend, &amp; sistem</div>
-      <div>• <span class="text-emerald-400 font-bold">projects</span>: Daftar 3 sistem produksi utama</div>
+      <div>• <span class="text-emerald-400 font-bold">projects</span>: Daftar 4 sistem produksi utama</div>
       <div>• <span class="text-emerald-400 font-bold">simrs</span>: Buka aplikasi SIMRS Core Enterprise</div>
       <div>• <span class="text-emerald-400 font-bold">devtools</span>: Buka workspace 29 Web Tools</div>
       <div>• <span class="text-emerald-400 font-bold">shuna</span>: Buka engine analitik SHUNA AI</div>
+      <div>• <span class="text-emerald-400 font-bold">zzzleep</span>: Buka ZZZleep Suite (Kalender, Alarm, & .EXE)</div>
       <div>• <span class="text-emerald-400 font-bold">contact</span>: Informasi kontak &amp; GitHub</div>
       <div>• <span class="text-emerald-400 font-bold">clear</span>: Bersihkan layar terminal</div>
     `,
@@ -158,6 +169,16 @@ window.I18N_DICT = {
     shunaBtnOpen: "Launch SHUNA AI",
     shunaBackLink: "Back to Home",
 
+    // ZZZleep Card
+    zzzleepCardTitle: "ZZZleep Suite",
+    zzzleepCardSub: "Offline Calendar & Audio Alarm Synth",
+    zzzleepCardStatus: "100% OFFLINE",
+    zzzleepCardDesc: "Standalone offline time management and desktop calendar suite: precision synthesized audio alarms (Web Audio API & Winsound), 25/5 Pomodoro focus timer, 20-20-20 digital eye strain guardian, habit streak tracker, and native Windows desktop (.EXE) application with zero telemetry.",
+    zzzleepBullet1: "Offline Harmonic Audio Synthesizer (Web Audio API & Python winsound)",
+    zzzleepBullet2: "20-20-20 Digital Eye Strain Rest, Pomodoro Timer, & Habit Streaks",
+    zzzleepBullet3: "Standalone Windows Native App (.EXE) & Zero-Telemetry JSON Vault",
+    zzzleepBtnOpen: "Launch ZZZleep",
+
     // Experience & Certifications Section
     secHeadingExp: "Work Experience",
     secSubExp: "Practical track record in server infrastructure research and IT operations:",
@@ -196,7 +217,7 @@ window.I18N_DICT = {
       <div class="font-bold text-sky-400">Available Interactive Commands:</div>
       <div>• <span class="text-emerald-400 font-bold">whoami</span>: Developer profile &amp; credentials summary</div>
       <div>• <span class="text-emerald-400 font-bold">stack</span>: Backend, frontend, &amp; infrastructure tech stack</div>
-      <div>• <span class="text-emerald-400 font-bold">projects</span>: List of 3 flagship production systems</div>
+      <div>• <span class="text-emerald-400 font-bold">projects</span>: List of 4 flagship production systems</div>
       <div>• <span class="text-emerald-400 font-bold">simrs</span>: Open SIMRS Core Enterprise application</div>
       <div>• <span class="text-emerald-400 font-bold">devtools</span>: Open 29 Web Tools workspace</div>
       <div>• <span class="text-emerald-400 font-bold">shuna</span>: Open SHUNA AI analytics engine</div>

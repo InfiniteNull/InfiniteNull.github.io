@@ -160,12 +160,14 @@ window.submitTerminal = function() {
         <div>1. <strong class="text-sky-400">SIMRS Core Enterprise</strong>: Hospital MIS Permenkes 24/2022, BPJS V-Claim (<a href="https://infinitenull.github.io/simrs-laravel/" target="_blank" class="text-sky-300 underline">open ↗</a>)</div>
         <div>2. <strong class="text-purple-400">Dev & Data Engineering Suite</strong>: 29 Modular Network, Security & Data Tools (<a href="https://infinitenull.github.io/dev-tools/" target="_blank" class="text-purple-300 underline">open ↗</a>)</div>
         <div>3. <strong class="text-emerald-400">SHUNA AI Data Engine</strong>: NLP Sentiment, Multi-Model Arena, Tabular Retention (<a href="https://infinitenull.github.io/SHUNA-AI/" target="_blank" class="text-emerald-300 underline">open ↗</a>)</div>
+        <div>4. <strong class="text-amber-400">ZZZleep Suite</strong>: Offline Calendar, Precision Alarm Synth & Native Windows App (<a href="https://infinitenull.github.io/ZZZleep/" target="_blank" class="text-amber-300 underline">open ↗</a>)</div>
       </div>
     ` : `
       <div class="text-slate-300 pl-3 border-l-2 border-slate-600 text-[10px] sm:text-xs space-y-1">
         <div>1. <strong class="text-sky-400">SIMRS Core Enterprise</strong>: Hospital MIS Permenkes 24/2022, BPJS V-Claim (<a href="https://infinitenull.github.io/simrs-laravel/" target="_blank" class="text-sky-300 underline">buka ↗</a>)</div>
         <div>2. <strong class="text-purple-400">Dev & Data Engineering Suite</strong>: 29 Modul Komputasi Jaringan, Keamanan, & Data (<a href="https://infinitenull.github.io/dev-tools/" target="_blank" class="text-purple-300 underline">buka ↗</a>)</div>
         <div>3. <strong class="text-emerald-400">SHUNA AI Data Engine</strong>: NLP Sentiment, Model Arena ROC-AUC, Retensi Tabular (<a href="https://infinitenull.github.io/SHUNA-AI/" target="_blank" class="text-emerald-300 underline">buka ↗</a>)</div>
+        <div>4. <strong class="text-amber-400">ZZZleep Suite</strong>: Kalender Offline, Audio Alarm Synth, & Aplikasi Windows (.EXE) (<a href="https://infinitenull.github.io/ZZZleep/" target="_blank" class="text-amber-300 underline">buka ↗</a>)</div>
       </div>
     `;
   } else if (cmd === 'simrs' || cmd === 'simrs-laravel') {
@@ -177,6 +179,9 @@ window.submitTerminal = function() {
   } else if (cmd === 'shuna' || cmd === 'shuna-ai' || cmd === 'ai' || cmd === 'nlp' || cmd === 'ml') {
     window.open('https://infinitenull.github.io/SHUNA-AI/', '_blank');
     responseHtml = `<div class="text-emerald-400 pl-3 border-l-2 border-emerald-500/50 text-[10px] sm:text-xs">${isEn ? 'Opening SHUNA AI Data Engine in new tab:' : 'Membuka SHUNA AI Data Engine di tab baru:'} <a href="https://infinitenull.github.io/SHUNA-AI/" target="_blank" class="underline">https://infinitenull.github.io/SHUNA-AI/</a> ↗</div>`;
+  } else if (cmd === 'zzzleep' || cmd === 'alarm' || cmd === 'calendar' || cmd === 'sleep') {
+    window.open('https://infinitenull.github.io/ZZZleep/', '_blank');
+    responseHtml = `<div class="text-amber-400 pl-3 border-l-2 border-amber-500/50 text-[10px] sm:text-xs">${isEn ? 'Opening ZZZleep Suite in new tab:' : 'Membuka ZZZleep Suite di tab baru:'} <a href="https://infinitenull.github.io/ZZZleep/" target="_blank" class="underline">https://infinitenull.github.io/ZZZleep/</a> ↗</div>`;
   } else if (cmd === 'contact') {
     responseHtml = isEn ? `
       <div class="text-slate-300 pl-3 border-l-2 border-slate-600 text-[10px] sm:text-xs space-y-0.5">
@@ -237,6 +242,13 @@ window.openInterviewGuide = function() {
         <h4 class="font-bold text-slate-900 dark:text-white text-sm">3. SHUNA AI Data Engine (MSIB Skilvul Capstone Group 26 - Score 81.8)</h4>
         <p class="text-xs text-slate-600 dark:text-slate-300">
           NLP pipeline with Indonesian slang/typo normalizer, TF-IDF vectorization, multi-model benchmark arena (LogReg 93.5%, SVM 94.0%, NB 91.2%, RF 92.4%), ROC-AUC curve simulator (AUC = 0.962), and tabular Sigmoid retention classifier.
+        </p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-2">
+        <h4 class="font-bold text-slate-900 dark:text-white text-sm">4. ZZZleep Suite Architecture (Offline Precision Guardian & .EXE)</h4>
+        <p class="text-xs text-slate-600 dark:text-slate-300">
+          Engineered for <strong>100% offline autonomy & zero telemetry</strong>: mathematical Web Audio API & Python winsound audio tone synthesis (C-Major gentle arpeggio, 880Hz retro beep, harmonic acoustic bell), 20-20-20 Digital Eye Strain interval guardian, 25/5 Pomodoro focus timer, monthly calendar matrix, and standalone native Windows executable compilation via PyInstaller.
         </p>
       </div>
     </div>
