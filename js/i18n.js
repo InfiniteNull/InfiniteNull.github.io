@@ -63,7 +63,7 @@ window.I18N_DICT = {
     zzzleepCardDesc: "Aplikasi desktop untuk manajemen waktu: alarm audio sintetis (winsound), timer Pomodoro 25/5, pengingat istirahat mata 20-20-20, dan penyimpanan data lokal JSON.",
     zzzleepBullet1: "Alarm audio tanpa file suara eksternal (winsound.Beep)",
     zzzleepBullet2: "Pengingat Istirahat Layar 20-20-20 & Timer Pomodoro 25/5",
-    zzzleepBullet3: "Penyimpanan data lokal JSON & arsitektur modular",
+    zzzleepBullet3: "Penyimpanan data lokal JSON & auto-update GitHub",
     zzzleepBtnOpen: "Buka Showcase",
 
     // Experience & Certifications Section
@@ -176,7 +176,7 @@ window.I18N_DICT = {
     zzzleepCardDesc: "Desktop application for time management: synthesized audio alarms (winsound), 25/5 Pomodoro timer, 20-20-20 screen rest reminder, and local JSON storage.",
     zzzleepBullet1: "Synthesized audio alarms without external audio files (winsound.Beep)",
     zzzleepBullet2: "20-20-20 Screen Rest Reminder & 25/5 Pomodoro Timer",
-    zzzleepBullet3: "Local JSON data storage & modular architecture",
+    zzzleepBullet3: "Local JSON data storage & GitHub auto-update",
     zzzleepBtnOpen: "Open Showcase",
 
     // Experience & Certifications Section
