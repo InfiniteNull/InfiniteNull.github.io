@@ -58,13 +58,13 @@ window.I18N_DICT = {
 
     // ZZZleep Card
     zzzleepCardTitle: "ZZZleep",
-    zzzleepCardSub: "Aplikasi Desktop Windows (.exe)",
-    zzzleepCardStatus: "OFFLINE",
-    zzzleepCardDesc: "Aplikasi desktop Windows offline untuk manajemen waktu: alarm audio sintetis (winsound), timer Pomodoro 25/5, pengingat istirahat mata 20-20-20, dan penyimpanan data lokal JSON.",
+    zzzleepCardSub: "Desktop Calendar & Audio Alarm",
+    zzzleepCardStatus: "DESKTOP",
+    zzzleepCardDesc: "Aplikasi desktop untuk manajemen waktu: alarm audio sintetis (winsound), timer Pomodoro 25/5, pengingat istirahat mata 20-20-20, dan penyimpanan data lokal JSON.",
     zzzleepBullet1: "Alarm audio tanpa file suara eksternal (winsound.Beep)",
     zzzleepBullet2: "Pengingat Istirahat Layar 20-20-20 & Timer Pomodoro 25/5",
-    zzzleepBullet3: "Penyimpanan data lokal JSON & file .exe mandiri",
-    zzzleepBtnOpen: "Lihat Screenshot",
+    zzzleepBullet3: "Penyimpanan data lokal JSON & arsitektur modular",
+    zzzleepBtnOpen: "Buka Showcase",
 
     // Experience & Certifications Section
     secHeadingExp: "Pengalaman Kerja",
@@ -108,7 +108,7 @@ window.I18N_DICT = {
       <div>• <span class="text-emerald-400 font-bold">simrs</span>: Buka aplikasi SIMRS Core Enterprise</div>
       <div>• <span class="text-emerald-400 font-bold">devtools</span>: Buka workspace 29 Web Tools</div>
       <div>• <span class="text-emerald-400 font-bold">shuna</span>: Buka engine analitik SHUNA AI</div>
-      <div>• <span class="text-emerald-400 font-bold">zzzleep</span>: Buka aplikasi ZZZleep (.exe / offline)</div>
+      <div>• <span class="text-emerald-400 font-bold">zzzleep</span>: Buka showcase ZZZleep</div>
       <div>• <span class="text-emerald-400 font-bold">contact</span>: Informasi kontak &amp; GitHub</div>
       <div>• <span class="text-emerald-400 font-bold">clear</span>: Bersihkan layar terminal</div>
     `,
@@ -171,13 +171,13 @@ window.I18N_DICT = {
 
     // ZZZleep Card
     zzzleepCardTitle: "ZZZleep",
-    zzzleepCardSub: "Windows Desktop Application (.exe)",
-    zzzleepCardStatus: "OFFLINE",
-    zzzleepCardDesc: "Offline Windows desktop app for time management: synthesized audio alarms (winsound), 25/5 Pomodoro timer, 20-20-20 screen rest reminder, and local JSON storage.",
-    zzzleepBullet1: "Synthesized audio alarms without external files (winsound.Beep)",
+    zzzleepCardSub: "Desktop Calendar & Audio Alarm",
+    zzzleepCardStatus: "DESKTOP",
+    zzzleepCardDesc: "Desktop application for time management: synthesized audio alarms (winsound), 25/5 Pomodoro timer, 20-20-20 screen rest reminder, and local JSON storage.",
+    zzzleepBullet1: "Synthesized audio alarms without external audio files (winsound.Beep)",
     zzzleepBullet2: "20-20-20 Screen Rest Reminder & 25/5 Pomodoro Timer",
-    zzzleepBullet3: "Local JSON storage & standalone .exe compilation",
-    zzzleepBtnOpen: "View Screenshots",
+    zzzleepBullet3: "Local JSON data storage & modular architecture",
+    zzzleepBtnOpen: "Open Showcase",
 
     // Experience & Certifications Section
     secHeadingExp: "Work Experience",
@@ -221,6 +221,7 @@ window.I18N_DICT = {
       <div>• <span class="text-emerald-400 font-bold">simrs</span>: Open SIMRS Core Enterprise application</div>
       <div>• <span class="text-emerald-400 font-bold">devtools</span>: Open 29 Web Tools workspace</div>
       <div>• <span class="text-emerald-400 font-bold">shuna</span>: Open SHUNA AI analytics engine</div>
+      <div>• <span class="text-emerald-400 font-bold">zzzleep</span>: Open ZZZleep showcase</div>
       <div>• <span class="text-emerald-400 font-bold">contact</span>: Contact information &amp; GitHub</div>
       <div>• <span class="text-emerald-400 font-bold">clear</span>: Clear terminal screen</div>
     `,

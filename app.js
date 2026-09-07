@@ -246,9 +246,9 @@ window.openInterviewGuide = function() {
       </div>
 
       <div class="p-4 rounded-xl bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-2">
-        <h4 class="font-bold text-slate-900 dark:text-white text-sm">4. ZZZleep (Offline Calendar & Desktop Alarm)</h4>
+        <h4 class="font-bold text-slate-900 dark:text-white text-sm">4. ZZZleep (Desktop Calendar &amp; Audio Alarm)</h4>
         <p class="text-xs text-slate-600 dark:text-slate-300">
-          Built as an offline desktop tool: Web Audio API oscillator nodes for client-side tone generation (arpeggio, digital beep, bell), Python <code>winsound</code> integration for native Windows alarms, 20-20-20 screen rest timer, Pomodoro engine, monthly calendar, and single-file executable compilation via PyInstaller.
+          Built as a desktop tool: Python <code>winsound</code> integration for synthetic audio alarms without external audio files, 20-20-20 screen rest timer, Pomodoro focus engine (25/5), and local JSON data storage.
         </p>
       </div>
     </div>
@@ -273,6 +273,13 @@ window.openInterviewGuide = function() {
         <h4 class="font-bold text-slate-900 dark:text-white text-sm">3. SHUNA AI Data Engine (Proyek Capstone Kelompok 26 MSIB Skilvul - Nilai 81.8)</h4>
         <p class="text-xs text-slate-600 dark:text-slate-300">
           Pipeline klasifikasi sentimen NLP teks ulasan dengan normalizer bahasa gaul/slang Indonesia, pembobotan TF-IDF, komparasi multi-model (LogReg, SVM, NB, RF), simulasi threshold kurva ROC-AUC, serta simulator retensi siswa tabular.
+        </p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-2">
+        <h4 class="font-bold text-slate-900 dark:text-white text-sm">4. ZZZleep (Desktop Calendar &amp; Audio Alarm)</h4>
+        <p class="text-xs text-slate-600 dark:text-slate-300">
+          Aplikasi desktop untuk produktivitas kerja: alarm nada sintetis audio harmonis (winsound) tanpa dependensi file suara, timer Pomodoro (25/5), pengingat istirahat layar 20-20-20, serta penyimpanan preferensi dan jadwal dalam basis data lokal JSON.
         </p>
       </div>
     </div>

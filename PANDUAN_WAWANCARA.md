@@ -93,14 +93,13 @@ Dokumen ini disiapkan khusus agar Anda (**Rizki Ananda, S.Kom**) dapat menjawab 
 
 ---
 
-## IV. Proyek 4: ZZZleep (Kalender Desktop, Alarm Audio Offline & Aplikasi Windows .exe)
+## IV. Proyek 4: ZZZleep (Kalender Desktop, Alarm Audio & Timer Istirahat)
 
 ### 1. Pertanyaan: Bagaimana arsitektur dan alur kerja aplikasi ZZZleep?
 **Jawaban:**
-> "ZZZleep dibangun untuk bekerja sepenuhnya secara offline tanpa dependensi server atau file audio eksternal. Pada sisi web, penyimpanan jadwal dan kebiasaan menggunakan browser LocalStorage dengan opsi ekspor/impor file JSON. Pada sisi desktop, aplikasi dibangun dengan Python menggunakan GUI Tkinter dan penyimpanan file JSON lokal.
-> Untuk alarm dan notifikasi audio, aplikasi menggunakan sintesis gelombang suara langsung (Web Audio API di web dan modul standard library `winsound.Beep` di Python), sehingga audio dapat berbunyi secara konsisten tanpa risiko file `.mp3` rusak atau hilang."
+> "ZZZleep dirancang untuk berjalan mandiri di komputer pengguna tanpa dependensi server atau file audio eksternal. Aplikasi dibangun dengan Python menggunakan GUI Tkinter dan penyimpanan data lokal berformat JSON (`~/.zzzleep_desktop_data.json`).
+> Untuk alarm dan notifikasi audio, aplikasi menggunakan generator gelombang suara frekuensi sintetis melalui modul standard library `winsound.Beep` yang dijalankan di background thread, sehingga audio berbunyi secara instan tanpa risiko file `.mp3` rusak atau hilang."
 
-### 2. Pertanyaan: Bagaimana cara kerja generator audio sintetis pada web dan desktop?
+### 2. Pertanyaan: Bagaimana cara kerja generator audio sintetis pada aplikasi?
 **Jawaban:**
-> "Pada versi web, saya menggunakan **Web Audio API** dengan membuat `AudioContext`, menghubungkan `OscillatorNode` (tipe sine/triangle) dengan rangkaian frekuensi nada (seperti arpeggio C-Mayor 523Hz-1046Hz atau beep 880Hz), lalu mengatur envelope volume melalui `GainNode` menggunakan `exponentialRampToValueAtTime` agar suara tidak mengalami distorsi/clipping saat selesai.
-> Pada versi desktop Python, saya memanfaatkan modul `winsound.Beep(frekuensi, durasi)` yang dijalankan di dalam background daemon thread agar UI Tkinter tetap responsif saat alarm aktif."
+> "Pada desktop Python, saya memanfaatkan modul `winsound.Beep(frekuensi, durasi)` yang mengeksekusi arpeggio nada C-Mayor (523Hz, 659Hz, 784Hz, 1046Hz) dan rangkaian nada peringatan lainnya. Eksekusi suara dilakukan di dalam daemon thread agar UI Tkinter tetap halus dan responsif tanpa blocking loop antarmuka."

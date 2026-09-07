@@ -80,16 +80,15 @@
 ---
 
 ### 4. ZZZleep
-* **Live Workspace:** [infinitenull.github.io/ZZZleep/](https://infinitenull.github.io/ZZZleep/)
-* **Description:** Offline desktop calendar, audio alarm, and screen rest reminder application with local JSON storage and standalone Windows `.exe` build support.
+* **Live Showcase:** [infinitenull.github.io/ZZZleep/](https://infinitenull.github.io/ZZZleep/)
+* **Description:** Desktop calendar, audio alarm, and screen rest reminder application with local JSON storage and modular architecture.
 * **Key Capabilities:**
-  * **Built-in Audio Tone Generation:** Tone synthesis via Web Audio API oscillators (browser) and `winsound` (Windows Python), eliminating external `.mp3` dependencies.
-  * **Monthly Calendar & Agenda:** Event schedule tracker with local persistent storage.
+  * **Synthesized Audio Tones:** Tone synthesis via `winsound` audio driver, eliminating external audio file dependencies.
   * **20-20-20 Screen Rest Reminder:** Automated 20-minute interval timer to reduce digital eye strain.
-  * **Pomodoro Timer (25/5):** Work/break interval timer with audio alert.
+  * **Pomodoro Timer (25/5):** Work/break interval timer with audio notification.
   * **Habit Tracker:** Daily routine checklist with streak counter.
-  * **Desktop Executable (.exe):** Standalone Tkinter GUI compiled with PyInstaller.
-* **Tech Stack:** Python 3, Tkinter GUI, JavaScript ES6+, Web Audio API, Tailwind CSS, PyInstaller.
+  * **Local Data Storage:** Automatic local JSON data persistence.
+* **Tech Stack:** Python 3, Tkinter GUI, winsound, PyInstaller.
 * **Repository:** [`InfiniteNull/ZZZleep`](https://github.com/InfiniteNull/ZZZleep)
 
 ## Directory Structure
@@ -110,7 +109,7 @@ portfolio-hub/ (InfiniteNull.github.io)
 * **[InfiniteNull/simrs-laravel](https://github.com/InfiniteNull/simrs-laravel)** — Hospital MIS application & BPJS V-Claim bridging.
 * **[InfiniteNull/dev-tools](https://github.com/InfiniteNull/dev-tools)** — 29 Interactive computational tools.
 * **[InfiniteNull/SHUNA-AI](https://github.com/InfiniteNull/SHUNA-AI)** — NLP sentiment pipeline & machine learning engine (MSIB Group 26).
-* **[InfiniteNull/ZZZleep](https://github.com/InfiniteNull/ZZZleep)** — Offline desktop calendar, audio alarm & rest timer (.exe ready).
+* **[InfiniteNull/ZZZleep](https://github.com/InfiniteNull/ZZZleep)** — Desktop calendar, audio alarm & rest timer.
 
 ---
 

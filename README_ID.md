@@ -77,6 +77,19 @@
 
 ---
 
+### 4. ZZZleep
+* **Live Showcase:** [infinitenull.github.io/ZZZleep/](https://infinitenull.github.io/ZZZleep/)
+* **Deskripsi:** Aplikasi desktop untuk kalender, alarm audio sintetis, timer Pomodoro, dan pengingat istirahat layar (20-20-20).
+* **Fitur Kunci:**
+  * Generator nada audio alarm sintetis (`winsound.Beep`) tanpa memerlukan file audio eksternal.
+  * Pengingat istirahat mata 20-20-20 (jeda 20 detik setiap 20 menit).
+  * Timer Pomodoro siklus 25/5 menit dengan alarm suara.
+  * Penyimpanan preferensi dan jadwal lokal JSON otomatis.
+* **Tech Stack:** Python 3, Tkinter GUI, winsound, PyInstaller.
+* **Repositori:** [`InfiniteNull/ZZZleep`](https://github.com/InfiniteNull/ZZZleep)
+
+---
+
 ## Struktur Direktori Repositori
 
 ```text
@@ -95,6 +108,7 @@ portfolio-hub/ (InfiniteNull.github.io)
 * **[InfiniteNull/simrs-laravel](https://github.com/InfiniteNull/simrs-laravel)** — Aplikasi SIMRS Core Hospital MIS & BPJS V-Claim.
 * **[InfiniteNull/dev-tools](https://github.com/InfiniteNull/dev-tools)** — 29 Alat Komputasi & Keamanan Mandiri.
 * **[InfiniteNull/SHUNA-AI](https://github.com/InfiniteNull/SHUNA-AI)** — Engine NLP Analitik Sentimen & ML (MSIB Kelompok 26).
+* **[InfiniteNull/ZZZleep](https://github.com/InfiniteNull/ZZZleep)** — Aplikasi Desktop Kalender, Alarm Audio & Timer.
 
 ---
 
